@@ -27,8 +27,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="pt-BR" className={`${satoshi.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col bg-cream-200">
-        <AnnouncementBar />
-        <Header />
+        <div className="sticky top-0 z-50">
+          <AnnouncementBar />
+          <Header />
+        </div>
         <main className="flex-1">{children}</main>
         <Footer />
         <WhatsappButton />

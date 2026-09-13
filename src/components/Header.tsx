@@ -35,7 +35,7 @@ export function Header() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 w-full border-b transition-all duration-300",
+        "w-full border-b transition-all duration-300",
         scrolled
           ? "border-transparent bg-cream-100/95 shadow-[0_4px_24px_-8px_rgba(10,21,48,0.15)] backdrop-blur"
           : "border-navy-900/8 bg-cream-100"
@@ -135,7 +135,7 @@ export function Header() {
             href={siteConfig.contact.whatsappLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-full bg-navy-900 px-5 py-2.5 text-sm font-semibold text-cream-100 transition-all duration-300 hover:bg-navy-800 hover:shadow-[0_8px_24px_-8px_rgba(195,154,62,0.6)]"
+            className="rounded-full bg-navy-900 px-5 py-2.5 text-sm font-semibold text-cream-100 transition-all duration-300 hover:bg-navy-800 hover:shadow-[0_8px_24px_-8px_rgba(59,130,246,0.6)]"
           >
             Fale com a Della
           </a>

@@ -8,7 +8,7 @@ export function InstitutionalBanner() {
         className="pointer-events-none absolute inset-0 opacity-[0.5]"
         style={{
           backgroundImage:
-            "radial-gradient(circle, rgba(201,155,63,0.2) 1px, transparent 1px)",
+            "radial-gradient(circle, rgba(59,130,246,0.2) 1px, transparent 1px)",
           backgroundSize: "24px 24px",
         }}
       />

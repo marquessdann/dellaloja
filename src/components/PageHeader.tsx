@@ -15,7 +15,7 @@ export function PageHeader({
         className="pointer-events-none absolute inset-0 opacity-60"
         style={{
           backgroundImage:
-            "radial-gradient(circle, rgba(201,155,63,0.18) 1px, transparent 1px)",
+            "radial-gradient(circle, rgba(59,130,246,0.18) 1px, transparent 1px)",
           backgroundSize: "28px 28px",
         }}
       />
