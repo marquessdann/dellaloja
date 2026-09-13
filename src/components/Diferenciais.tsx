@@ -45,13 +45,13 @@ export function Diferenciais() {
           {items.map((item, i) => (
             <StaggerItem key={item.title}>
               <div className="group relative h-full bg-cream-100 p-8 transition-colors duration-500 hover:bg-navy-950">
-                <span className="font-display text-sm italic text-gold-500/70">
+                <span className="font-display text-sm text-gold-500/70">
                   0{i + 1}
                 </span>
                 <span className="mt-4 flex h-11 w-11 items-center justify-center border border-navy-900/15 text-navy-900 transition-colors duration-500 group-hover:border-gold-400/50 group-hover:text-gold-400">
                   <item.icon size={18} />
                 </span>
-                <h3 className="mt-5 font-display text-xl font-semibold italic text-navy-900 transition-colors duration-500 group-hover:text-cream-100">
+                <h3 className="mt-5 font-display text-xl font-semibold text-navy-900 transition-colors duration-500 group-hover:text-cream-100">
                   {item.title}
                 </h3>
                 <p className="mt-2 text-[13px] leading-relaxed text-navy-500 transition-colors duration-500 group-hover:text-cream-300/70">

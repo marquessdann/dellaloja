@@ -36,7 +36,7 @@ export default function CatalogoPage() {
             <a
               key={s.category.slug}
               href={`#${s.category.slug}`}
-              className="link-underline shrink-0 text-[11px] font-bold uppercase tracking-[0.12em] text-navy-700 transition-colors hover:text-gold-600"
+              className="link-underline shrink-0 text-[11px] font-semibold uppercase tracking-[0.12em] text-navy-700 transition-colors hover:text-gold-600"
             >
               {s.category.name}
             </a>

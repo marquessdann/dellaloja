@@ -17,7 +17,7 @@ export function ProductCard({ product }: { product: Product }) {
 
       <div className="img-zoom relative aspect-[4/5] w-full bg-cream-300">
         {product.isNew && (
-          <span className="absolute left-3 top-3 z-10 bg-navy-900 px-3 py-1 text-[9px] font-bold tracking-[0.18em] text-gold-300 uppercase">
+          <span className="absolute left-3 top-3 z-10 bg-navy-900 px-3 py-1 text-[9px] font-semibold tracking-[0.18em] text-gold-300 uppercase">
             Novidade
           </span>
         )}
@@ -32,7 +32,7 @@ export function ProductCard({ product }: { product: Product }) {
 
       <div className="flex flex-1 flex-col p-5">
         {category && (
-          <span className="text-[10px] font-bold uppercase tracking-[0.16em] text-gold-600">
+          <span className="text-[10px] font-semibold uppercase tracking-[0.16em] text-gold-600">
             {category.shortName}
           </span>
         )}
@@ -43,7 +43,7 @@ export function ProductCard({ product }: { product: Product }) {
           {product.shortDescription}
         </p>
 
-        <div className="mt-4 flex items-center gap-1.5 text-[13px] font-bold uppercase tracking-[0.08em] text-navy-900 transition-colors group-hover:text-gold-600">
+        <div className="mt-4 flex items-center gap-1.5 text-[13px] font-semibold uppercase tracking-[0.08em] text-navy-900 transition-colors group-hover:text-gold-600">
           Ver produto
           <ArrowUpRight
             size={14}

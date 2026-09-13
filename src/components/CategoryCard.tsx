@@ -23,13 +23,13 @@ export function CategoryCard({ category }: { category: Category }) {
       </div>
 
       <div className="flex flex-1 flex-col p-7">
-        <h3 className="font-display text-2xl font-semibold italic text-navy-900">
+        <h3 className="font-display text-2xl font-semibold text-navy-900">
           {category.name}
         </h3>
         <p className="mt-2 text-[13px] leading-relaxed text-navy-500">
           {category.description}
         </p>
-        <span className="mt-5 inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-[0.16em] text-gold-600">
+        <span className="mt-5 inline-flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-gold-600">
           Explorar
           <ArrowRight
             size={14}

@@ -28,7 +28,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease }}
-            className="inline-flex items-center gap-2.5 text-[11px] font-bold uppercase tracking-[0.32em] text-gold-600"
+            className="inline-flex items-center gap-2.5 text-[11px] font-semibold uppercase tracking-[0.32em] text-gold-600"
           >
             <span className="h-1 w-1 rotate-45 bg-gold-500" />
             Distribuidora de Produtos
@@ -40,9 +40,9 @@ export function Hero() {
             transition={{ duration: 0.7, delay: 0.1, ease }}
             className="mt-7 font-display text-6xl font-semibold leading-[0.98] text-navy-900 sm:text-7xl lg:text-[4.6rem]"
           >
-            <span className="text-foil-dark">Della</span>
+            <span className="text-foil-dark font-bold">Della</span>
             <br />
-            <span className="italic font-medium text-[0.6em] leading-tight text-navy-800/90">
+            <span className="font-medium text-[0.6em] leading-tight text-navy-800/90">
               {siteConfig.heroSlogan.split("\n").map((line) => (
                 <span key={line} className="block">
                   {line}
@@ -69,7 +69,7 @@ export function Hero() {
           >
             <Link
               href="/produtos"
-              className="group flex items-center gap-2 rounded-full bg-navy-900 px-7 py-3.5 text-sm font-bold text-cream-100 transition-all duration-300 hover:bg-navy-800 hover:shadow-[0_18px_36px_-14px_rgba(8,16,38,0.4)]"
+              className="group flex items-center gap-2 rounded-full bg-navy-900 px-7 py-3.5 text-sm font-semibold text-cream-100 transition-all duration-300 hover:bg-navy-800 hover:shadow-[0_18px_36px_-14px_rgba(8,16,38,0.4)]"
             >
               Conheça nossos produtos
               <ArrowRight
@@ -97,7 +97,7 @@ export function Hero() {
             {["Qualidade", "Confiança", "Resultados"].map((word) => (
               <span
                 key={word}
-                className="text-[10px] font-bold uppercase tracking-[0.24em] text-navy-400"
+                className="text-[10px] font-semibold uppercase tracking-[0.24em] text-navy-400"
               >
                 {word}
               </span>
@@ -147,10 +147,10 @@ export function Hero() {
             transition={{ duration: 0.7, delay: 0.6, ease }}
             className="absolute left-14 top-6 flex h-24 w-24 flex-col items-center justify-center rounded-full border border-gold-500/60 bg-navy-900 text-center shadow-[0_16px_32px_-12px_rgba(8,16,38,0.3)]"
           >
-            <span className="font-display text-lg italic text-gold-300">
+            <span className="font-display text-lg text-gold-300">
               12
             </span>
-            <span className="mt-0.5 text-[7px] font-bold uppercase tracking-[0.18em] text-cream-300/80">
+            <span className="mt-0.5 text-[7px] font-semibold uppercase tracking-[0.18em] text-cream-300/80">
               produtos
             </span>
           </motion.div>

@@ -23,8 +23,8 @@
   --color-cream-300: #f2ecdd;
   --color-cream-400: #e8dfc9;
 
-  --font-display: var(--font-bodoni);
-  --font-sans: var(--font-jakarta);
+  --font-display: var(--font-satoshi);
+  --font-sans: var(--font-satoshi);
 }
 
 @theme inline {
@@ -66,7 +66,6 @@ body {
   background: var(--color-cream-200);
   color: var(--foreground);
   font-family: var(--font-sans);
-  font-feature-settings: "ss01" 1;
 }
 
 ::selection {
@@ -76,7 +75,6 @@ body {
 
 .font-display {
   font-family: var(--font-display);
-  font-optical-sizing: auto;
 }
 
 /* Elegant animated underline used across nav + links */

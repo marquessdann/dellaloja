@@ -46,7 +46,7 @@ export function ProductsExplorer() {
               key={tab.value}
               onClick={() => setActiveTab(tab.value)}
               className={cn(
-                "relative shrink-0 whitespace-nowrap pb-3 text-[13px] font-bold uppercase tracking-[0.08em] transition-colors duration-300",
+                "relative shrink-0 whitespace-nowrap pb-3 text-[13px] font-semibold uppercase tracking-[0.08em] transition-colors duration-300",
                 activeTab === tab.value
                   ? "text-navy-900"
                   : "text-navy-400 hover:text-navy-700"
@@ -79,7 +79,7 @@ export function ProductsExplorer() {
         </div>
       </div>
 
-      <p className="mt-5 text-[11px] font-bold uppercase tracking-[0.14em] text-navy-400">
+      <p className="mt-5 text-[11px] font-semibold uppercase tracking-[0.14em] text-navy-400">
         {filtered.length}{" "}
         {filtered.length === 1 ? "produto encontrado" : "produtos encontrados"}
       </p>

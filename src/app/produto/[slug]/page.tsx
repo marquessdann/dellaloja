@@ -89,15 +89,15 @@ export default async function ProductPage({
               {category && (
                 <Link
                   href={`/produtos?categoria=${category.slug}`}
-                  className="inline-flex items-center gap-1.5 border border-gold-500/40 bg-gold-200/50 px-3.5 py-1.5 text-[11px] font-bold uppercase tracking-[0.16em] text-gold-600"
+                  className="inline-flex items-center gap-1.5 border border-gold-500/40 bg-gold-200/50 px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-gold-600"
                 >
                   {category.name}
                 </Link>
               )}
-              <h1 className="mt-5 font-display text-4xl font-semibold italic text-navy-900 sm:text-5xl">
+              <h1 className="mt-5 font-display text-4xl font-bold text-navy-900 sm:text-5xl">
                 {product.name}
               </h1>
-              <p className="mt-2 text-[13px] font-bold uppercase tracking-[0.16em] text-navy-500">
+              <p className="mt-2 text-[13px] font-semibold uppercase tracking-[0.16em] text-navy-500">
                 {product.brand}
               </p>
               <p className="mt-5 text-[15px] leading-relaxed text-navy-600">
@@ -155,7 +155,7 @@ export default async function ProductPage({
         <section className="py-16 sm:py-24">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <Reveal>
-              <h2 className="font-display text-2xl font-semibold italic text-navy-900 sm:text-3xl">
+              <h2 className="font-display text-2xl font-semibold text-navy-900 sm:text-3xl">
                 Você também pode gostar
               </h2>
             </Reveal>

@@ -23,10 +23,10 @@ export function AboutPreview() {
               </div>
             </div>
             <div className="absolute -bottom-7 -right-6 flex h-28 w-28 flex-col items-center justify-center rounded-full border border-gold-500/60 bg-cream-100 text-navy-950 shadow-[0_20px_40px_-16px_rgba(8,16,38,0.3)] sm:-right-10">
-              <span className="font-display text-xl italic font-semibold leading-none">
+              <span className="font-display text-xl font-bold leading-none">
                 Della
               </span>
-              <span className="mt-1.5 text-[8px] font-bold uppercase tracking-widest text-gold-600">
+              <span className="mt-1.5 text-[8px] font-semibold uppercase tracking-widest text-gold-600">
                 Distribuidora
               </span>
             </div>
@@ -34,10 +34,10 @@ export function AboutPreview() {
         </Reveal>
 
         <Reveal delay={0.1}>
-          <span className="ornament-rule max-w-[220px] text-[11px] font-bold uppercase tracking-[0.3em] text-gold-600">
+          <span className="ornament-rule max-w-[220px] text-[11px] font-semibold uppercase tracking-[0.3em] text-gold-600">
             Sobre a Della
           </span>
-          <h2 className="mt-4 font-display text-3xl font-semibold italic text-navy-900 sm:text-4xl">
+          <h2 className="mt-4 font-display text-3xl font-semibold text-navy-900 sm:text-4xl">
             Mais que distribuição.
             <br /> Parceria para o seu negócio.
           </h2>
@@ -49,7 +49,7 @@ export function AboutPreview() {
           </p>
           <Link
             href="/sobre"
-            className="group mt-8 inline-flex items-center gap-1.5 text-[13px] font-bold uppercase tracking-[0.08em] text-navy-900"
+            className="group mt-8 inline-flex items-center gap-1.5 text-[13px] font-semibold uppercase tracking-[0.08em] text-navy-900"
           >
             <span className="link-underline">Conhecer a Della</span>
             <ArrowRight

@@ -1,22 +1,17 @@
 import type { Metadata } from "next";
-import { Bodoni_Moda, Plus_Jakarta_Sans } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { AnnouncementBar } from "@/components/AnnouncementBar";
 import { WhatsappButton } from "@/components/WhatsappButton";
 
-const bodoni = Bodoni_Moda({
-  variable: "--font-bodoni",
-  subsets: ["latin"],
-  weight: ["500", "600", "700", "800"],
-  style: ["normal", "italic"],
-});
-
-const jakarta = Plus_Jakarta_Sans({
-  variable: "--font-jakarta",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
+const satoshi = localFont({
+  src: "../fonts/Satoshi-Variable.woff2",
+  variable: "--font-satoshi",
+  weight: "300 900",
+  style: "normal",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -30,10 +25,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html
-      lang="pt-BR"
-      className={`${bodoni.variable} ${jakarta.variable} h-full antialiased`}
-    >
+    <html lang="pt-BR" className={`${satoshi.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col bg-cream-200">
         <AnnouncementBar />
         <Header />

@@ -23,10 +23,10 @@ export default function SobrePage() {
       <section className="py-16 sm:py-24">
         <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <Reveal>
-            <span className="ornament-rule max-w-[180px] text-[11px] font-bold uppercase tracking-[0.3em] text-gold-600">
+            <span className="ornament-rule max-w-[180px] text-[11px] font-semibold uppercase tracking-[0.3em] text-gold-600">
               Nossa história
             </span>
-            <h2 className="mt-4 font-display text-3xl font-semibold italic text-navy-900 sm:text-4xl">
+            <h2 className="mt-4 font-display text-3xl font-semibold text-navy-900 sm:text-4xl">
               Uma distribuidora pensada para crescer com você
             </h2>
             <p className="mt-5 text-[15px] leading-relaxed text-navy-600">
@@ -43,7 +43,7 @@ export default function SobrePage() {
               foi criada para acompanhar o crescimento do nosso portfólio,
               incluindo futuramente novas categorias e áreas de distribuição.
             </p>
-            <p className="mt-6 font-display text-xl italic text-gold-600">
+            <p className="mt-6 font-display text-xl text-gold-600">
               &ldquo;Produtos certos. Negócios melhores.&rdquo;
             </p>
           </Reveal>
@@ -71,10 +71,10 @@ export default function SobrePage() {
       <section className="py-16 sm:py-24">
         <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
           <Reveal>
-            <span className="ornament-rule mx-auto max-w-[180px] text-[11px] font-bold uppercase tracking-[0.3em] text-gold-600">
+            <span className="ornament-rule mx-auto max-w-[180px] text-[11px] font-semibold uppercase tracking-[0.3em] text-gold-600">
               Posicionamento
             </span>
-            <h2 className="mt-4 font-display text-3xl font-semibold italic text-navy-900 sm:text-4xl">
+            <h2 className="mt-4 font-display text-3xl font-semibold text-navy-900 sm:text-4xl">
               Distribuição pensada para crescer em novas direções
             </h2>
             <p className="mt-5 text-[15px] leading-relaxed text-navy-600">

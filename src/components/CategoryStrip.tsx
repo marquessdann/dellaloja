@@ -9,7 +9,7 @@ export function CategoryStrip() {
         <Reveal>
           <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
             <p className="text-[15px] text-navy-500">
-              <span className="font-display italic text-navy-900">
+              <span className="font-display text-navy-900">
                 Um portfólio em expansão —
               </span>{" "}
               hoje com foco em produtos profissionais de beleza e estética,
@@ -20,7 +20,7 @@ export function CategoryStrip() {
                 <Link
                   key={cat.slug}
                   href={`/produtos?categoria=${cat.slug}`}
-                  className="link-underline shrink-0 text-[11px] font-bold uppercase tracking-[0.12em] text-navy-700 transition-colors hover:text-gold-600"
+                  className="link-underline shrink-0 text-[11px] font-semibold uppercase tracking-[0.12em] text-navy-700 transition-colors hover:text-gold-600"
                 >
                   {cat.name}
                 </Link>

@@ -20,7 +20,7 @@ export function CatalogCta() {
             <span className="flex h-12 w-12 items-center justify-center rounded-full bg-navy-950 text-gold-400">
               <FileText size={20} />
             </span>
-            <h2 className="mt-5 max-w-lg font-display text-3xl font-semibold italic text-navy-950 sm:text-4xl">
+            <h2 className="mt-5 max-w-lg font-display text-3xl font-semibold text-navy-950 sm:text-4xl">
               {siteConfig.ctaSlogan}
             </h2>
             <p className="mt-3 max-w-md text-[15px] text-navy-800/80">
