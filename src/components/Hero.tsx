@@ -104,58 +104,27 @@ export function Hero() {
           </motion.div>
         </div>
 
-        <div className="relative hidden h-[520px] lg:block">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.94 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.9, delay: 0.15, ease }}
-            className="absolute right-2 top-0 h-[440px] w-[300px] border border-gold-500/50"
-          >
-            <span className="absolute -left-2.5 -top-2.5 h-5 w-5 border-l border-t border-gold-500" />
-            <span className="absolute -bottom-2.5 -right-2.5 h-5 w-5 border-b border-r border-gold-500" />
-            <div className="relative h-full w-full overflow-hidden bg-cream-100 p-8 shadow-[0_30px_70px_-30px_rgba(8,16,38,0.25)]">
-              <Image
-                src="/images/products/10-kit-lash-lifting-brow-lamination.webp"
-                alt="Kit Lash Lifting e Brow Lamination Della"
-                fill
-                sizes="300px"
-                className="object-contain p-6"
-                priority
-              />
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4, ease }}
-            className="absolute -left-2 bottom-6 h-44 w-44 overflow-hidden border border-gold-500/30 bg-navy-900 p-5 shadow-[0_30px_60px_-20px_rgba(8,16,38,0.35)]"
-          >
-            <Image
-              src="/images/products/09-pinca-pro-luminus-led.webp"
-              alt="Pinça Pro Luminus LED Della"
-              fill
-              sizes="176px"
-              className="object-contain p-5"
-            />
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.7, delay: 0.6, ease }}
-            className="absolute left-14 top-6 flex h-24 w-24 flex-col items-center justify-center rounded-full border border-gold-500/60 bg-navy-900 text-center shadow-[0_16px_32px_-12px_rgba(8,16,38,0.3)]"
-          >
-            <span className="font-display text-lg text-cream-100">
-              12
-            </span>
-            <span className="mt-0.5 text-[7px] font-semibold uppercase tracking-[0.18em] text-cream-300/80">
-              produtos
-            </span>
-          </motion.div>
-
-          <span className="absolute right-24 -bottom-4 h-px w-24 bg-gold-500/40" />
-        </div>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.96 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.9, delay: 0.15, ease }}
+          className="relative aspect-[4/3] w-full lg:h-[520px] lg:aspect-auto"
+        >
+          <Image
+            src="/images/hero-visual.webp"
+            alt="Della"
+            fill
+            sizes="(max-width: 1024px) 100vw, 45vw"
+            className="object-contain"
+            style={{
+              maskImage:
+                "radial-gradient(ellipse 85% 88% at 66% 50%, black 58%, transparent 100%)",
+              WebkitMaskImage:
+                "radial-gradient(ellipse 85% 88% at 66% 50%, black 58%, transparent 100%)",
+            }}
+            priority
+          />
+        </motion.div>
       </div>
 
       <div className="relative border-t border-navy-900/8 bg-cream-300/50">
