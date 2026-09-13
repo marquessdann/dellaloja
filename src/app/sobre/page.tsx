@@ -23,7 +23,7 @@ export default function SobrePage() {
       <section className="py-16 sm:py-24">
         <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <Reveal>
-            <span className="ornament-rule max-w-[180px] text-[11px] font-semibold uppercase tracking-[0.3em] text-navy-700">
+            <span className="ornament-rule text-[13px] font-medium uppercase tracking-[0.12em] text-[#0b2347]">
               Nossa história
             </span>
             <h2 className="mt-4 font-display text-3xl font-semibold text-navy-900 sm:text-4xl">
@@ -70,7 +70,7 @@ export default function SobrePage() {
       <section className="py-16 sm:py-24">
         <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
           <Reveal>
-            <span className="ornament-rule mx-auto max-w-[180px] text-[11px] font-semibold uppercase tracking-[0.3em] text-navy-700">
+            <span className="ornament-rule text-[13px] font-medium uppercase tracking-[0.12em] text-[#0b2347]">
               Posicionamento
             </span>
             <h2 className="mt-4 font-display text-3xl font-semibold text-navy-900 sm:text-4xl">

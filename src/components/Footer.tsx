@@ -24,7 +24,7 @@ export function Footer() {
               {siteConfig.description}
             </p>
             <p className="mt-5 font-display text-xl text-cream-100">
-              &ldquo;{siteConfig.footerSlogan}&rdquo;
+              {siteConfig.footerSlogan}
             </p>
           </div>
 
@@ -99,8 +99,31 @@ export function Footer() {
           </a>
         </div>
 
-        <div className="mt-10 flex flex-col items-start justify-between gap-4 border-t border-cream-100/10 pt-6 text-xs text-cream-300/60 sm:flex-row sm:items-center">
-          <p>© {new Date().getFullYear()} Della Distribuidora de Produtos. Todos os direitos reservados.</p>
+        <div className="mt-10 flex flex-col items-center gap-3 border-t border-cream-100/10 pt-8 text-center">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-cream-300/60">
+            Compre também em
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm font-medium text-cream-200">
+            {siteConfig.marketplaces.map((marketplace, i) => (
+              <span key={marketplace.label} className="flex items-center gap-3">
+                {i > 0 && <span className="text-cream-100/20">|</span>}
+                <a
+                  href={marketplace.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="link-underline transition-colors hover:text-gold-400"
+                >
+                  {marketplace.label}
+                </a>
+              </span>
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-8 flex flex-col items-center gap-3 border-t border-cream-100/10 pt-6 text-xs text-cream-300/60">
+          <p className="text-center">
+            © {new Date().getFullYear()} Della Distribuidora de Produtos. Todos os direitos reservados.
+          </p>
           <a
             href={siteConfig.contact.whatsappLink}
             target="_blank"

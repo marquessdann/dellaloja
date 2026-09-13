@@ -22,7 +22,7 @@ export function PageHeader({
       <div className="relative mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
         <Reveal>
           {eyebrow && (
-            <span className="ornament-rule mx-auto max-w-xs text-[11px] font-semibold uppercase tracking-[0.32em] text-navy-700">
+            <span className="ornament-rule text-[13px] font-medium uppercase tracking-[0.12em] text-[#0b2347]">
               {eyebrow}
             </span>
           )}

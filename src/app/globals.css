@@ -165,22 +165,8 @@ body {
 
 /* Hairline divider with center ornament */
 .ornament-rule {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 0.75rem;
-}
-.ornament-rule::before,
-.ornament-rule::after {
-  content: "";
-  height: 1px;
-  flex: 1;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    currentColor,
-    transparent
-  );
-  opacity: 0.5;
 }
 
 /* Custom scrollbar for horizontal category chips */

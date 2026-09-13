@@ -16,6 +16,11 @@ export const siteConfig = {
     instagramLink: "https://instagram.com/della.distribuidora",
     city: "Curitiba, PR",
   },
+  marketplaces: [
+    { label: "Mercado Livre", href: "#" },
+    { label: "Shopee", href: "#" },
+    { label: "TikTok Shop", href: "#" },
+  ],
   nav: [
     { label: "Início", href: "/" },
     { label: "Produtos", href: "/produtos" },

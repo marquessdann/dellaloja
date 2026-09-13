@@ -28,9 +28,8 @@ export function Hero() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease }}
-            className="inline-flex items-center gap-2.5 text-[11px] font-semibold uppercase tracking-[0.32em] text-navy-700"
+            className="inline-flex items-center text-[11px] font-semibold uppercase tracking-[0.32em] text-navy-700"
           >
-            <span className="h-1 w-1 rotate-45 bg-gold-500" />
             Distribuidora de Produtos
           </motion.span>
 

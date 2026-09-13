@@ -34,7 +34,7 @@ export function AboutPreview() {
         </Reveal>
 
         <Reveal delay={0.1}>
-          <span className="ornament-rule max-w-[220px] text-[11px] font-semibold uppercase tracking-[0.3em] text-navy-700">
+          <span className="ornament-rule text-[13px] font-medium uppercase tracking-[0.12em] text-[#0b2347]">
             Sobre a Della
           </span>
           <h2 className="mt-4 font-display text-3xl font-semibold text-navy-900 sm:text-4xl">

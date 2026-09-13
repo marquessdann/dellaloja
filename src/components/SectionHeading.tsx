@@ -26,11 +26,10 @@ export function SectionHeading({
       {eyebrow && (
         <span
           className={cn(
-            "mb-4 inline-flex items-center gap-2.5 text-[11px] font-semibold uppercase tracking-[0.3em]",
+            "mb-4 inline-flex items-center text-[11px] font-semibold uppercase tracking-[0.3em]",
             dark ? "text-cream-300" : "text-navy-700"
           )}
         >
-          <span className="h-1 w-1 rotate-45 bg-current" />
           {eyebrow}
         </span>
       )}
