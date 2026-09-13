@@ -1,0 +1,121 @@
+@import "tailwindcss";
+
+:root {
+  --background: #faf8f3;
+  --foreground: #12172a;
+
+  --color-navy-950: #050b1a;
+  --color-navy-900: #0a1530;
+  --color-navy-800: #0f1f42;
+  --color-navy-700: #142a56;
+  --color-navy-600: #1c3868;
+  --color-navy-500: #274a82;
+
+  --color-gold-600: #9c7a26;
+  --color-gold-500: #c39a3e;
+  --color-gold-400: #d3b365;
+  --color-gold-300: #e3cd92;
+  --color-gold-200: #f0e3c1;
+
+  --color-cream-100: #ffffff;
+  --color-cream-200: #faf8f3;
+  --color-cream-300: #f3efe4;
+  --color-cream-400: #ece4d2;
+
+  --font-display: var(--font-cormorant);
+  --font-sans: var(--font-manrope);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-navy-950: var(--color-navy-950);
+  --color-navy-900: var(--color-navy-900);
+  --color-navy-800: var(--color-navy-800);
+  --color-navy-700: var(--color-navy-700);
+  --color-navy-600: var(--color-navy-600);
+  --color-navy-500: var(--color-navy-500);
+
+  --color-gold-600: var(--color-gold-600);
+  --color-gold-500: var(--color-gold-500);
+  --color-gold-400: var(--color-gold-400);
+  --color-gold-300: var(--color-gold-300);
+  --color-gold-200: var(--color-gold-200);
+
+  --color-cream-100: var(--color-cream-100);
+  --color-cream-200: var(--color-cream-200);
+  --color-cream-300: var(--color-cream-300);
+  --color-cream-400: var(--color-cream-400);
+
+  --font-display: var(--font-display);
+  --font-sans: var(--font-sans);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-cream-200);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+::selection {
+  background: var(--color-gold-300);
+  color: var(--color-navy-950);
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+/* Elegant animated underline used across nav + links */
+.link-underline {
+  position: relative;
+}
+.link-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s cubic-bezier(0.65, 0, 0.35, 1);
+}
+.link-underline:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Image zoom container */
+.img-zoom {
+  overflow: hidden;
+}
+.img-zoom img {
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.img-zoom:hover img {
+  transform: scale(1.08);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+/* Custom scrollbar for horizontal category chips */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
