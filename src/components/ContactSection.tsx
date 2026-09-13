@@ -37,8 +37,8 @@ export function ContactSection() {
         <Reveal>
           <SectionHeading
             eyebrow="Fale com a gente"
-            title="Vamos conversar sobre o seu negócio"
-            description="Entre em contato com a Della e conheça mais sobre nosso catálogo de produtos."
+            title="Fale com a Della"
+            description="Tire suas dúvidas sobre os produtos e receba atendimento rápido pelos nossos canais de contato."
           />
         </Reveal>
 

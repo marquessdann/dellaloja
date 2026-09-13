@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { PageHeader } from "@/components/PageHeader";
 import { ContactSection } from "@/components/ContactSection";
+import { Faq } from "@/components/Faq";
 
 export const metadata: Metadata = {
   title: "Contato",
@@ -12,10 +13,11 @@ export default function ContatoPage() {
     <>
       <PageHeader
         eyebrow="Contato"
-        title="Vamos conversar?"
-        description="Estamos à disposição para apresentar o catálogo Della e conhecer mais sobre o seu negócio."
+        title="Fale com a Della"
+        description="Estamos à disposição para apresentar o catálogo Della e tirar todas as suas dúvidas."
       />
       <ContactSection />
+      <Faq />
     </>
   );
 }

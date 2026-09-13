@@ -16,8 +16,8 @@ export default function SobrePage() {
     <>
       <PageHeader
         eyebrow="Sobre a Della"
-        title="Mais que distribuição. Parceria para o seu negócio."
-        description="Conheça o propósito por trás da Della e para onde estamos caminhando."
+        title="Uma vitrine de produtos profissionais"
+        description="Conheça o propósito por trás da Della e o que você encontra em nosso catálogo."
       />
 
       <section className="py-16 sm:py-24">
@@ -27,7 +27,7 @@ export default function SobrePage() {
               Nossa história
             </span>
             <h2 className="mt-4 font-display text-3xl font-semibold text-navy-900 sm:text-4xl">
-              Uma distribuidora pensada para crescer com você
+              Uma distribuidora pensada para o profissional moderno
             </h2>
             <p className="mt-5 text-[15px] leading-relaxed text-navy-600">
               A Della nasce com o propósito de conectar produtos de qualidade

@@ -38,8 +38,8 @@ export function AboutPreview() {
             Sobre a Della
           </span>
           <h2 className="mt-4 font-display text-3xl font-semibold text-navy-900 sm:text-4xl">
-            Mais que distribuição.
-            <br /> Parceria para o seu negócio.
+            Produtos certos.
+            <br /> Negócios melhores.
           </h2>
           <p className="mt-5 text-[15px] leading-relaxed text-navy-500">
             A Della nasce com o propósito de conectar produtos de qualidade a
