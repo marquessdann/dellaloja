@@ -3,7 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { WhatsappButton } from "@/components/WhatsappButton";
+import { ChatWidget } from "@/components/chat/ChatWidget";
 
 const satoshi = localFont({
   src: "../fonts/Satoshi-Variable.woff2",
@@ -29,7 +29,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
-        <WhatsappButton />
+        <ChatWidget />
       </body>
     </html>
   );

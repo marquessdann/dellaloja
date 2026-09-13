@@ -17,9 +17,10 @@ export function ProductsExplorer() {
   const validInitial = categories.some((c) => c.slug === initialCategory)
     ? (initialCategory as CategorySlug)
     : "todos";
+  const initialQuery = searchParams.get("busca") ?? "";
 
   const [activeTab, setActiveTab] = useState<TabValue>(validInitial);
-  const [query, setQuery] = useState("");
+  const [query, setQuery] = useState(initialQuery);
 
   const tabs: { value: TabValue; label: string }[] = [
     { value: "todos", label: "Todos" },

@@ -1,0 +1,247 @@
+import { getSupabaseAdmin } from "@/lib/supabase/admin";
+import { runToolDecision, streamFinalAnswer } from "@/lib/ai/provider";
+import { chatTools, executeTool, type ProductPayload } from "@/lib/ai/tools";
+import { SYSTEM_PROMPT } from "@/lib/ai/system-prompt";
+import {
+  isRateLimited,
+  sweepRateLimiter,
+  validateChatInput,
+  withTimeout,
+  TimeoutError,
+} from "@/lib/ai/security";
+import { PRODUCTS_MARKER } from "@/lib/ai/constants";
+import type { ChatCompletionMessageParam } from "groq-sdk/resources/chat/completions";
+
+export const runtime = "nodejs";
+
+const HISTORY_LIMIT = 12;
+const MAX_TOOL_ROUNDS = 3;
+const TOOL_DECISION_TIMEOUT_MS = 12_000;
+const STREAM_TIMEOUT_MS = 20_000;
+
+const FALLBACK_MESSAGE =
+  "Estou com uma instabilidade agora. Você pode tentar novamente em alguns instantes ou falar diretamente com a Della.";
+
+function jsonError(code: string, message: string, status: number) {
+  return Response.json({ error: true, code, message }, { status });
+}
+
+function getClientIp(req: Request): string {
+  const forwarded = req.headers.get("x-forwarded-for");
+  if (forwarded) return forwarded.split(",")[0]!.trim();
+  return req.headers.get("x-real-ip") ?? "unknown";
+}
+
+async function getOrCreateConversation(
+  supabase: ReturnType<typeof getSupabaseAdmin>,
+  sessionId: string
+): Promise<string> {
+  const { data: existing } = await supabase
+    .from("ai_conversations")
+    .select("id")
+    .eq("session_id", sessionId)
+    .maybeSingle();
+  if (existing) return existing.id as string;
+
+  const { data: created, error } = await supabase
+    .from("ai_conversations")
+    .insert({ session_id: sessionId })
+    .select("id")
+    .single();
+  if (error || !created) throw error ?? new Error("Falha ao criar conversa.");
+  return created.id as string;
+}
+
+export async function POST(req: Request) {
+  let body: unknown;
+  try {
+    body = await req.json();
+  } catch {
+    return jsonError("INVALID_INPUT", "Corpo da requisição inválido.", 400);
+  }
+
+  const validation = validateChatInput(body);
+  if (!validation.ok) {
+    return jsonError("INVALID_INPUT", validation.error, 400);
+  }
+  const { message, sessionId } = validation.value;
+
+  sweepRateLimiter();
+  const ip = getClientIp(req);
+  if (isRateLimited(`session:${sessionId}`, { limit: 20 }) || isRateLimited(`ip:${ip}`, { limit: 60 })) {
+    return jsonError(
+      "RATE_LIMITED",
+      "Você enviou muitas mensagens em pouco tempo. Aguarde um instante e tente novamente.",
+      429
+    );
+  }
+
+  let supabase: ReturnType<typeof getSupabaseAdmin>;
+  let conversationId: string;
+  try {
+    supabase = getSupabaseAdmin();
+    conversationId = await getOrCreateConversation(supabase, sessionId);
+    const { error: insertError } = await supabase
+      .from("ai_messages")
+      .insert({ conversation_id: conversationId, role: "user", content: message });
+    if (insertError) throw insertError;
+  } catch (err) {
+    console.error("[ai/chat] erro no Supabase (conversa/mensagem):", err instanceof Error ? err.message : err);
+    return jsonError("UPSTREAM_ERROR", FALLBACK_MESSAGE, 503);
+  }
+
+  let historyRows: { role: string; content: string }[] = [];
+  try {
+    const { data, error } = await supabase
+      .from("ai_messages")
+      .select("role, content")
+      .eq("conversation_id", conversationId)
+      .order("created_at", { ascending: false })
+      .limit(HISTORY_LIMIT);
+    if (error) throw error;
+    historyRows = (data ?? []).reverse();
+  } catch (err) {
+    console.error("[ai/chat] erro ao buscar histórico:", err instanceof Error ? err.message : err);
+    // Non-fatal: continue with just the current message.
+    historyRows = [{ role: "user", content: message }];
+  }
+
+  const messages: ChatCompletionMessageParam[] = [
+    { role: "system", content: SYSTEM_PROMPT },
+    ...historyRows.map(
+      (row): ChatCompletionMessageParam =>
+        row.role === "assistant"
+          ? { role: "assistant", content: row.content }
+          : { role: "user", content: row.content }
+    ),
+  ];
+
+  let latestProducts: { products: ProductPayload[]; hasMore: boolean } | null = null;
+  let hitRoundLimitWithPendingTools = false;
+
+  try {
+    for (let round = 0; round < MAX_TOOL_ROUNDS; round++) {
+      const completion = await withTimeout(
+        runToolDecision({ messages, tools: chatTools, timeoutMs: TOOL_DECISION_TIMEOUT_MS }),
+        TOOL_DECISION_TIMEOUT_MS + 2_000
+      );
+      const choice = completion.choices[0]?.message;
+      const toolCalls = choice?.tool_calls;
+
+      if (!toolCalls || toolCalls.length === 0) {
+        break;
+      }
+
+      messages.push({
+        role: "assistant",
+        content: choice.content ?? null,
+        tool_calls: toolCalls,
+      });
+
+      for (const call of toolCalls) {
+        const result = await executeTool(call.function.name, call.function.arguments);
+
+        if (
+          (call.function.name === "search_products" || call.function.name === "get_products_by_category") &&
+          result &&
+          typeof result === "object" &&
+          "products" in result
+        ) {
+          latestProducts = result as { products: ProductPayload[]; hasMore: boolean };
+        }
+
+        messages.push({
+          role: "tool",
+          tool_call_id: call.id,
+          content: JSON.stringify(result),
+        });
+      }
+
+      if (round === MAX_TOOL_ROUNDS - 1) {
+        hitRoundLimitWithPendingTools = true;
+      }
+    }
+  } catch (err) {
+    const timedOut = err instanceof TimeoutError;
+    console.error(
+      `[ai/chat] erro na etapa de ferramentas${timedOut ? " (timeout)" : ""}:`,
+      err instanceof Error ? err.message : err
+    );
+    return jsonError(timedOut ? "TIMEOUT" : "UPSTREAM_ERROR", FALLBACK_MESSAGE, 503);
+  }
+
+  if (hitRoundLimitWithPendingTools) {
+    messages.push({
+      role: "system",
+      content:
+        "Responda agora ao cliente com base apenas nas informações já obtidas acima, mesmo que incompletas.",
+    });
+  }
+
+  let stream: Awaited<ReturnType<typeof streamFinalAnswer>>;
+  try {
+    stream = await withTimeout(
+      streamFinalAnswer({ messages, timeoutMs: STREAM_TIMEOUT_MS }),
+      STREAM_TIMEOUT_MS + 2_000
+    );
+  } catch (err) {
+    const timedOut = err instanceof TimeoutError;
+    console.error(
+      `[ai/chat] erro ao iniciar streaming${timedOut ? " (timeout)" : ""}:`,
+      err instanceof Error ? err.message : err
+    );
+    return jsonError(timedOut ? "TIMEOUT" : "UPSTREAM_ERROR", FALLBACK_MESSAGE, 503);
+  }
+
+  const encoder = new TextEncoder();
+  const productsForClient = latestProducts
+    ? { products: latestProducts.products.slice(0, 3), hasMore: latestProducts.hasMore || latestProducts.products.length > 3 }
+    : null;
+
+  const body_ = new ReadableStream<Uint8Array>({
+    async start(controller) {
+      let full = "";
+      try {
+        for await (const chunk of stream) {
+          const delta = chunk.choices?.[0]?.delta?.content ?? "";
+          if (delta) {
+            full += delta;
+            controller.enqueue(encoder.encode(delta));
+          }
+        }
+      } catch (err) {
+        console.error("[ai/chat] erro durante streaming:", err instanceof Error ? err.message : err);
+        if (!full) {
+          controller.enqueue(encoder.encode(FALLBACK_MESSAGE));
+          full = FALLBACK_MESSAGE;
+        }
+      }
+
+      if (!full.trim()) {
+        full = FALLBACK_MESSAGE;
+        controller.enqueue(encoder.encode(full));
+      }
+
+      if (productsForClient && productsForClient.products.length > 0) {
+        controller.enqueue(encoder.encode(PRODUCTS_MARKER + JSON.stringify(productsForClient)));
+      }
+
+      try {
+        await supabase
+          .from("ai_messages")
+          .insert({ conversation_id: conversationId, role: "assistant", content: full });
+      } catch (err) {
+        console.error("[ai/chat] erro ao salvar resposta:", err instanceof Error ? err.message : err);
+      }
+
+      controller.close();
+    },
+  });
+
+  return new Response(body_, {
+    headers: {
+      "Content-Type": "text/plain; charset=utf-8",
+      "Cache-Control": "no-store",
+    },
+  });
+}
