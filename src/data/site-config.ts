@@ -26,7 +26,6 @@ export const siteConfig = {
     { label: "Produtos", href: "/produtos" },
     { label: "Categorias", href: "/categorias" },
     { label: "Sobre a Della", href: "/sobre" },
-    { label: "Catálogo", href: "/catalogo" },
     { label: "Contato", href: "/contato" },
   ],
 } as const;

@@ -43,7 +43,7 @@ export function LocationSection() {
         </Reveal>
 
         <Reveal delay={0.1}>
-          <div className="mt-12 overflow-hidden rounded-2xl border border-navy-900/10 shadow-[0_30px_60px_-30px_rgba(8,16,38,0.25)]">
+          <div className="mt-12 overflow-hidden rounded-[20px] border border-navy-900/10 shadow-[0_30px_60px_-30px_rgba(8,16,38,0.25)]">
             <iframe
               src={MAPS_EMBED_URL}
               width="100%"
@@ -52,7 +52,7 @@ export function LocationSection() {
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               title="Localização da Della no Google Maps"
-              className="h-[280px] w-full sm:h-[380px] lg:h-[440px]"
+              className="h-[300px] w-full sm:h-[380px] lg:h-[440px]"
             />
           </div>
         </Reveal>

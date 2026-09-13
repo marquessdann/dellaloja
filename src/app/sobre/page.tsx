@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { PageHeader } from "@/components/PageHeader";
 import { Diferenciais } from "@/components/Diferenciais";
-import { CatalogCta } from "@/components/CatalogCta";
+import { ProductsCta } from "@/components/ProductsCta";
 import { Reveal } from "@/components/Reveal";
 
 export const metadata: Metadata = {
@@ -86,7 +86,7 @@ export default function SobrePage() {
         </div>
       </section>
 
-      <CatalogCta />
+      <ProductsCta />
     </>
   );
 }
