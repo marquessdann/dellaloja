@@ -27,7 +27,7 @@ export function SectionHeading({
         <span
           className={cn(
             "mb-4 inline-flex items-center gap-2.5 text-[11px] font-semibold uppercase tracking-[0.3em]",
-            dark ? "text-gold-300" : "text-gold-600"
+            dark ? "text-cream-300" : "text-navy-700"
           )}
         >
           <span className="h-1 w-1 rotate-45 bg-current" />

@@ -23,28 +23,27 @@ export default function SobrePage() {
       <section className="py-16 sm:py-24">
         <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <Reveal>
-            <span className="ornament-rule max-w-[180px] text-[11px] font-semibold uppercase tracking-[0.3em] text-gold-600">
+            <span className="ornament-rule max-w-[180px] text-[11px] font-semibold uppercase tracking-[0.3em] text-navy-700">
               Nossa história
             </span>
             <h2 className="mt-4 font-display text-3xl font-semibold text-navy-900 sm:text-4xl">
-              Uma distribuidora pensada para o profissional moderno
+              Uma loja pensada para o consumidor moderno
             </h2>
             <p className="mt-5 text-[15px] leading-relaxed text-navy-600">
-              A Della nasce com o propósito de conectar produtos de qualidade
-              a profissionais e empresas que buscam crescer. Nosso compromisso
-              é oferecer variedade, confiança e novas oportunidades através de
-              uma distribuição moderna e eficiente.
+              A Della nasce com o propósito de conectar você a produtos de
+              qualidade. Nosso compromisso é oferecer variedade, confiança e
+              novidades para tornar suas escolhas mais simples e especiais.
             </p>
             <p className="mt-4 text-[15px] leading-relaxed text-navy-600">
               Começamos com um catálogo focado em produtos profissionais de
               beleza e estética — cílios, sobrancelhas e cuidados
               relacionados — selecionados com atenção à qualidade e à
-              aplicação profissional. É apenas o começo: a estrutura da Della
-              foi criada para acompanhar o crescimento do nosso portfólio,
-              incluindo futuramente novas categorias e áreas de distribuição.
+              aplicação. É apenas o começo: a estrutura da Della foi criada
+              para acompanhar o crescimento do nosso portfólio, incluindo
+              futuramente novas categorias para você descobrir.
             </p>
-            <p className="mt-6 font-display text-xl text-gold-600">
-              &ldquo;Produtos certos. Negócios melhores.&rdquo;
+            <p className="mt-6 font-display text-xl text-navy-900">
+              &ldquo;Variedade para todos os momentos.&rdquo;
             </p>
           </Reveal>
 
@@ -71,19 +70,17 @@ export default function SobrePage() {
       <section className="py-16 sm:py-24">
         <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
           <Reveal>
-            <span className="ornament-rule mx-auto max-w-[180px] text-[11px] font-semibold uppercase tracking-[0.3em] text-gold-600">
+            <span className="ornament-rule mx-auto max-w-[180px] text-[11px] font-semibold uppercase tracking-[0.3em] text-navy-700">
               Posicionamento
             </span>
             <h2 className="mt-4 font-display text-3xl font-semibold text-navy-900 sm:text-4xl">
-              Distribuição pensada para crescer em novas direções
+              Sempre com novidades pensadas para você
             </h2>
             <p className="mt-5 text-[15px] leading-relaxed text-navy-600">
               Hoje, o catálogo da Della reúne produtos profissionais de
-              beleza, estética e cuidados relacionados. Mas a Della não se
-              limita a um único mercado: nossa estrutura de distribuição foi
-              construída para, no futuro, conectar profissionais e empresas a
-              produtos de outras áreas — sempre com o mesmo compromisso com
-              qualidade e confiança.
+              beleza, estética e cuidados relacionados. E esse é só o começo:
+              novas categorias estão a caminho, sempre com o mesmo compromisso
+              com qualidade e confiança.
             </p>
           </Reveal>
         </div>

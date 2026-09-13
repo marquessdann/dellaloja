@@ -15,7 +15,7 @@ export default function ProdutosPage() {
       <PageHeader
         eyebrow="Catálogo Della"
         title="Nossos Produtos"
-        description="Uma vitrine de produtos profissionais selecionados para o seu negócio. Navegue por categoria ou busque pelo que você procura."
+        description="Uma vitrine de produtos selecionados para você. Navegue por categoria ou busque pelo que você procura."
       />
       <section className="py-14 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

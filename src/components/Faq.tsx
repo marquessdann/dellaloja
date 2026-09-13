@@ -10,7 +10,7 @@ import { cn } from "@/lib/utils";
 const faqs = [
   {
     question: "Onde a Della está localizada?",
-    answer: `A Della está localizada em ${siteConfig.contact.city}, com atendimento para profissionais e empresas de todo o Brasil.`,
+    answer: `A Della está localizada em ${siteConfig.contact.city}, com entregas e atendimento para todo o Brasil.`,
   },
   {
     question: "Como faço para comprar os produtos?",
@@ -25,7 +25,7 @@ const faqs = [
   {
     question: "A Della atende apenas Curitiba?",
     answer:
-      "Não. Embora nossa base seja em Curitiba, atendemos profissionais e empresas de todo o Brasil pelos nossos canais de contato.",
+      "Não. Embora nossa base seja em Curitiba, atendemos clientes de todo o Brasil pelos nossos canais de contato.",
   },
   {
     question: "Por que o site não mostra preços?",

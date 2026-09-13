@@ -1,27 +1,28 @@
 @import "tailwindcss";
 
 :root {
-  --background: #fbf9f4;
-  --foreground: #0e1424;
+  --background: #ffffff;
+  --foreground: #071b3d;
 
-  --color-navy-950: #040914;
-  --color-navy-900: #081026;
-  --color-navy-800: #0c1836;
-  --color-navy-700: #10214a;
-  --color-navy-600: #182f63;
-  --color-navy-500: #274782;
+  --color-navy-950: #04101f;
+  --color-navy-900: #071b3d;
+  --color-navy-800: #0a2650;
+  --color-navy-700: #0d2e5d;
+  --color-navy-600: #17427c;
+  --color-navy-500: #2f5e9e;
+  --color-navy-400: #5c7fac;
 
-  --color-gold-700: #1e40af;
-  --color-gold-600: #2563eb;
-  --color-gold-500: #3b82f6;
-  --color-gold-400: #60a5fa;
-  --color-gold-300: #93c5fd;
-  --color-gold-200: #dbeafe;
+  --color-gold-700: #8f6d22;
+  --color-gold-600: #c99a3d;
+  --color-gold-500: #d5a84b;
+  --color-gold-400: #e0bd72;
+  --color-gold-300: #ecd39c;
+  --color-gold-200: #f6e8c9;
 
-  --color-cream-100: #fffdf9;
-  --color-cream-200: #fbf9f4;
-  --color-cream-300: #f2ecdd;
-  --color-cream-400: #e8dfc9;
+  --color-cream-100: #ffffff;
+  --color-cream-200: #f6f7f9;
+  --color-cream-300: #eef0f3;
+  --color-cream-400: #e2e6ec;
 
   --font-display: var(--font-satoshi);
   --font-sans: var(--font-satoshi);
@@ -37,6 +38,7 @@
   --color-navy-700: var(--color-navy-700);
   --color-navy-600: var(--color-navy-600);
   --color-navy-500: var(--color-navy-500);
+  --color-navy-400: var(--color-navy-400);
 
   --color-gold-700: var(--color-gold-700);
   --color-gold-600: var(--color-gold-600);

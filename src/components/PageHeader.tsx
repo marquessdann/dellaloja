@@ -15,14 +15,14 @@ export function PageHeader({
         className="pointer-events-none absolute inset-0 opacity-60"
         style={{
           backgroundImage:
-            "radial-gradient(circle, rgba(59,130,246,0.18) 1px, transparent 1px)",
+            "radial-gradient(circle, rgba(213,168,75,0.18) 1px, transparent 1px)",
           backgroundSize: "28px 28px",
         }}
       />
       <div className="relative mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
         <Reveal>
           {eyebrow && (
-            <span className="ornament-rule mx-auto max-w-xs text-[11px] font-semibold uppercase tracking-[0.32em] text-gold-600">
+            <span className="ornament-rule mx-auto max-w-xs text-[11px] font-semibold uppercase tracking-[0.32em] text-navy-700">
               {eyebrow}
             </span>
           )}

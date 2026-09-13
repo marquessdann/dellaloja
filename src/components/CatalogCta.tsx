@@ -24,8 +24,8 @@ export function CatalogCta() {
               {siteConfig.ctaSlogan}
             </h2>
             <p className="mt-3 max-w-md text-[15px] text-navy-800/80">
-              Navegue pelo catálogo completo da Della e descubra produtos
-              selecionados para o seu negócio.
+              Produtos selecionados para tornar suas escolhas mais simples,
+              práticas e especiais.
             </p>
           </div>
         </Reveal>

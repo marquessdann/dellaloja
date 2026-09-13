@@ -89,7 +89,7 @@ export default async function ProductPage({
               {category && (
                 <Link
                   href={`/produtos?categoria=${category.slug}`}
-                  className="inline-flex items-center gap-1.5 border border-gold-500/40 bg-gold-200/50 px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-gold-600"
+                  className="inline-flex items-center gap-1.5 border border-gold-500/40 bg-gold-200/50 px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-navy-800"
                 >
                   {category.name}
                 </Link>
@@ -132,7 +132,7 @@ export default async function ProductPage({
                   href={product.externalUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex items-center gap-2 rounded-full border border-navy-900/15 px-6 py-3.5 text-sm font-semibold text-navy-900 transition-colors duration-300 hover:border-gold-500 hover:text-gold-600"
+                  className="group flex items-center gap-2 rounded-full border border-navy-900/15 px-6 py-3.5 text-sm font-semibold text-navy-900 transition-colors duration-300 hover:border-gold-500"
                 >
                   Ver no Mercado Livre
                   <ArrowUpRight

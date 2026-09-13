@@ -9,7 +9,7 @@ export function Logo({
   dark?: boolean;
 }) {
   const textColor = dark ? "text-cream-100" : "text-navy-900";
-  const subColor = dark ? "text-gold-300" : "text-gold-600";
+  const subColor = dark ? "text-cream-300" : "text-navy-500";
   const lineColor = dark ? "bg-gold-400/60" : "bg-gold-500/70";
 
   return (
@@ -18,9 +18,9 @@ export function Logo({
       className={cn("group flex items-center gap-3.5 shrink-0", className)}
       aria-label="Della Distribuidora de Produtos - Início"
     >
-      <span className="relative flex h-11 w-11 shrink-0 items-center justify-center border border-gold-500/70 text-gold-500 transition-colors duration-300">
+      <span className="relative flex h-14 w-14 shrink-0 items-center justify-center border border-gold-500/70 text-navy-900 transition-colors duration-300">
         <span className="absolute inset-[3px] border border-gold-500/25" />
-        <span className="font-display text-2xl italic leading-none">D</span>
+        <span className="font-display text-3xl italic leading-none">D</span>
       </span>
       <span className="flex flex-col leading-none">
         <span

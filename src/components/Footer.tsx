@@ -10,12 +10,12 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-12 md:grid-cols-4">
           <div className="md:col-span-2">
             <div className="flex flex-col leading-none">
-              <span className="text-foil font-display text-4xl font-bold">
+              <span className="font-display text-4xl font-bold text-cream-100">
                 Della
               </span>
               <span className="mt-2 flex items-center gap-2">
                 <span className="h-px w-4 bg-gold-400/60" />
-                <span className="text-[10px] font-semibold tracking-[0.32em] text-gold-400 uppercase">
+                <span className="text-[10px] font-semibold tracking-[0.32em] text-cream-300 uppercase">
                   Distribuidora de Produtos
                 </span>
               </span>
@@ -23,13 +23,13 @@ export function Footer() {
             <p className="mt-5 max-w-sm text-[15px] leading-relaxed text-cream-300/80">
               {siteConfig.description}
             </p>
-            <p className="mt-5 font-display text-xl text-gold-300">
+            <p className="mt-5 font-display text-xl text-cream-100">
               &ldquo;{siteConfig.footerSlogan}&rdquo;
             </p>
           </div>
 
           <div>
-            <h3 className="text-[11px] font-semibold tracking-[0.24em] text-gold-400 uppercase">
+            <h3 className="text-[11px] font-semibold tracking-[0.24em] text-cream-300 uppercase">
               Navegação
             </h3>
             <ul className="mt-5 space-y-3">
@@ -47,7 +47,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="text-[11px] font-semibold tracking-[0.24em] text-gold-400 uppercase">
+            <h3 className="text-[11px] font-semibold tracking-[0.24em] text-cream-300 uppercase">
               Categorias
             </h3>
             <ul className="mt-5 space-y-3">
@@ -105,7 +105,7 @@ export function Footer() {
             href={siteConfig.contact.whatsappLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="link-underline flex items-center gap-1 text-gold-300"
+            className="link-underline flex items-center gap-1 text-cream-200"
           >
             Fale com a Della <ArrowUpRight size={12} />
           </a>

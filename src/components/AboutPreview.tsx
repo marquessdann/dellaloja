@@ -26,7 +26,7 @@ export function AboutPreview() {
               <span className="font-display text-xl font-bold leading-none">
                 Della
               </span>
-              <span className="mt-1.5 text-[8px] font-semibold uppercase tracking-widest text-gold-600">
+              <span className="mt-1.5 text-[8px] font-semibold uppercase tracking-widest text-navy-500">
                 Distribuidora
               </span>
             </div>
@@ -34,18 +34,17 @@ export function AboutPreview() {
         </Reveal>
 
         <Reveal delay={0.1}>
-          <span className="ornament-rule max-w-[220px] text-[11px] font-semibold uppercase tracking-[0.3em] text-gold-600">
+          <span className="ornament-rule max-w-[220px] text-[11px] font-semibold uppercase tracking-[0.3em] text-navy-700">
             Sobre a Della
           </span>
           <h2 className="mt-4 font-display text-3xl font-semibold text-navy-900 sm:text-4xl">
-            Produtos certos.
-            <br /> Negócios melhores.
+            Encontre o que
+            <br /> combina com você.
           </h2>
           <p className="mt-5 text-[15px] leading-relaxed text-navy-500">
-            A Della nasce com o propósito de conectar produtos de qualidade a
-            profissionais e empresas que buscam crescer. Nosso compromisso é
-            oferecer variedade, confiança e novas oportunidades através de
-            uma distribuição moderna e eficiente.
+            A Della nasce com o propósito de conectar você a produtos de
+            qualidade. Nosso compromisso é oferecer variedade, confiança e
+            novidades para tornar suas escolhas mais simples e especiais.
           </p>
           <Link
             href="/sobre"

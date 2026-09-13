@@ -7,7 +7,7 @@ export function AnnouncementBar() {
         <span className="hidden sm:inline text-gold-400">✦</span>
         <p>
           {siteConfig.institutionalSlogan}{" "}
-          <span className="text-gold-300">— conheça o catálogo Della</span>
+          <span className="text-cream-100">— conheça o catálogo Della</span>
         </p>
         <span className="hidden sm:inline text-gold-400">✦</span>
       </div>

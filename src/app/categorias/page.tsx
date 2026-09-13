@@ -15,7 +15,7 @@ export default function CategoriasPage() {
       <PageHeader
         eyebrow="Catálogo Della"
         title="Categorias"
-        description="Um portfólio organizado por categoria para facilitar a sua navegação. Novas frentes de distribuição estão a caminho."
+        description="Um portfólio organizado por categoria para facilitar a sua navegação. Novas categorias estão a caminho."
       />
       <section className="py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

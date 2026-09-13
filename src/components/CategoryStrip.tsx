@@ -13,14 +13,14 @@ export function CategoryStrip() {
                 Um portfólio em expansão —
               </span>{" "}
               hoje com foco em produtos profissionais de beleza e estética,
-              amanhã em novas frentes de distribuição.
+              amanhã com novas categorias para você descobrir.
             </p>
             <div className="no-scrollbar flex gap-6 overflow-x-auto">
               {categories.map((cat) => (
                 <Link
                   key={cat.slug}
                   href={`/produtos?categoria=${cat.slug}`}
-                  className="link-underline shrink-0 text-[11px] font-semibold uppercase tracking-[0.12em] text-navy-700 transition-colors hover:text-gold-600"
+                  className="link-underline shrink-0 text-[11px] font-semibold uppercase tracking-[0.12em] text-navy-700 transition-colors hover:text-navy-950"
                 >
                   {cat.name}
                 </Link>

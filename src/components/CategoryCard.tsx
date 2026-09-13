@@ -29,7 +29,7 @@ export function CategoryCard({ category }: { category: Category }) {
         <p className="mt-2 text-[13px] leading-relaxed text-navy-500">
           {category.description}
         </p>
-        <span className="mt-5 inline-flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-gold-600">
+        <span className="mt-5 inline-flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-navy-700">
           Explorar
           <ArrowRight
             size={14}

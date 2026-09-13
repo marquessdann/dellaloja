@@ -32,6 +32,92 @@ export function Header() {
     };
   }, [mobileOpen]);
 
+  const renderNavItem = (item: (typeof siteConfig.nav)[number]) =>
+    item.label === "Categorias" ? (
+      <div
+        key={item.href}
+        className="relative"
+        onMouseEnter={() => setMegaOpen(true)}
+        onMouseLeave={() => setMegaOpen(false)}
+      >
+        <button
+          className="link-underline flex items-center gap-1 text-sm font-medium text-navy-900 py-2"
+          aria-expanded={megaOpen}
+        >
+          {item.label}
+          <ChevronDown
+            size={14}
+            className={cn(
+              "transition-transform duration-300",
+              megaOpen && "rotate-180"
+            )}
+          />
+        </button>
+
+        <AnimatePresence>
+          {megaOpen && (
+            <motion.div
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 8 }}
+              transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
+              className="absolute left-1/2 top-full z-50 mt-2 w-[720px] -translate-x-1/2 border border-navy-900/10 bg-cream-100 p-6 shadow-[0_24px_60px_-20px_rgba(10,21,48,0.35)]"
+            >
+              <div className="grid grid-cols-3 gap-2">
+                {categories.map((cat) => (
+                  <Link
+                    key={cat.slug}
+                    href={`/produtos?categoria=${cat.slug}`}
+                    className="group flex items-center gap-3 rounded-xl p-2 transition-colors hover:bg-navy-900/[0.04]"
+                  >
+                    <span className="img-zoom relative h-14 w-14 shrink-0 overflow-hidden rounded-lg bg-cream-300">
+                      <Image
+                        src={cat.image}
+                        alt={cat.name}
+                        fill
+                        sizes="56px"
+                        className="object-contain p-1.5"
+                      />
+                    </span>
+                    <span className="min-w-0">
+                      <span className="block text-sm font-semibold leading-snug text-navy-900 group-hover:text-navy-700">
+                        {cat.name}
+                      </span>
+                      <span className="block truncate text-xs text-navy-500">
+                        {cat.shortName}
+                      </span>
+                    </span>
+                  </Link>
+                ))}
+              </div>
+              <div className="mt-4 flex items-center justify-between border-t border-navy-900/10 pt-4">
+                <p className="text-xs text-navy-500">
+                  Novas categorias em breve, à medida que o portfólio Della cresce.
+                </p>
+                <Link
+                  href="/categorias"
+                  className="link-underline flex items-center gap-1 text-xs font-semibold text-navy-700"
+                >
+                  Ver todas <ArrowRight size={12} />
+                </Link>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+    ) : (
+      <Link
+        key={item.href}
+        href={item.href}
+        className="link-underline text-sm font-medium text-navy-900 py-2"
+      >
+        {item.label}
+      </Link>
+    );
+
+  const leftNav = siteConfig.nav.slice(0, 3);
+  const rightNav = siteConfig.nav.slice(3);
+
   return (
     <header
       className={cn(
@@ -41,93 +127,17 @@ export function Header() {
           : "border-navy-900/8 bg-cream-100"
       )}
     >
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
-        <Logo />
+      <div className="mx-auto flex max-w-7xl items-center px-4 py-3 sm:px-6 lg:px-8">
+        <nav className="hidden flex-1 items-center justify-end gap-7 lg:flex">
+          {leftNav.map(renderNavItem)}
+        </nav>
 
-        <nav className="hidden items-center gap-8 lg:flex">
-          {siteConfig.nav.map((item) =>
-            item.label === "Categorias" ? (
-              <div
-                key={item.href}
-                className="relative"
-                onMouseEnter={() => setMegaOpen(true)}
-                onMouseLeave={() => setMegaOpen(false)}
-              >
-                <button
-                  className="link-underline flex items-center gap-1 text-sm font-medium text-navy-900 py-2"
-                  aria-expanded={megaOpen}
-                >
-                  {item.label}
-                  <ChevronDown
-                    size={14}
-                    className={cn(
-                      "transition-transform duration-300",
-                      megaOpen && "rotate-180"
-                    )}
-                  />
-                </button>
+        <div className="px-5 lg:px-8">
+          <Logo />
+        </div>
 
-                <AnimatePresence>
-                  {megaOpen && (
-                    <motion.div
-                      initial={{ opacity: 0, y: 8 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: 8 }}
-                      transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
-                      className="absolute left-1/2 top-full z-50 mt-2 w-[720px] -translate-x-1/2 border border-navy-900/10 bg-cream-100 p-6 shadow-[0_24px_60px_-20px_rgba(10,21,48,0.35)]"
-                    >
-                      <div className="grid grid-cols-3 gap-2">
-                        {categories.map((cat) => (
-                          <Link
-                            key={cat.slug}
-                            href={`/produtos?categoria=${cat.slug}`}
-                            className="group flex items-center gap-3 rounded-xl p-2 transition-colors hover:bg-navy-900/[0.04]"
-                          >
-                            <span className="img-zoom relative h-14 w-14 shrink-0 overflow-hidden rounded-lg bg-cream-300">
-                              <Image
-                                src={cat.image}
-                                alt={cat.name}
-                                fill
-                                sizes="56px"
-                                className="object-contain p-1.5"
-                              />
-                            </span>
-                            <span className="min-w-0">
-                              <span className="block text-sm font-semibold leading-snug text-navy-900 group-hover:text-navy-700">
-                                {cat.name}
-                              </span>
-                              <span className="block truncate text-xs text-navy-500">
-                                {cat.shortName}
-                              </span>
-                            </span>
-                          </Link>
-                        ))}
-                      </div>
-                      <div className="mt-4 flex items-center justify-between border-t border-navy-900/10 pt-4">
-                        <p className="text-xs text-navy-500">
-                          Novas categorias em breve, à medida que o portfólio Della cresce.
-                        </p>
-                        <Link
-                          href="/categorias"
-                          className="link-underline flex items-center gap-1 text-xs font-semibold text-gold-600"
-                        >
-                          Ver todas <ArrowRight size={12} />
-                        </Link>
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-            ) : (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="link-underline text-sm font-medium text-navy-900 py-2"
-              >
-                {item.label}
-              </Link>
-            )
-          )}
+        <nav className="hidden flex-1 items-center gap-7 lg:flex">
+          {rightNav.map(renderNavItem)}
         </nav>
 
         <div className="hidden items-center gap-3 lg:flex">
@@ -135,14 +145,14 @@ export function Header() {
             href={siteConfig.contact.whatsappLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-full bg-navy-900 px-5 py-2.5 text-sm font-semibold text-cream-100 transition-all duration-300 hover:bg-navy-800 hover:shadow-[0_8px_24px_-8px_rgba(59,130,246,0.6)]"
+            className="rounded-full bg-navy-900 px-5 py-2.5 text-sm font-semibold text-cream-100 transition-all duration-300 hover:bg-navy-800 hover:shadow-[0_8px_24px_-8px_rgba(213,168,75,0.6)]"
           >
             Fale com a Della
           </a>
         </div>
 
         <button
-          className="flex h-10 w-10 items-center justify-center text-navy-900 lg:hidden"
+          className="ml-auto flex h-10 w-10 items-center justify-center text-navy-900 lg:hidden"
           onClick={() => setMobileOpen(true)}
           aria-label="Abrir menu"
         >

@@ -15,7 +15,7 @@ export function Hero() {
         className="pointer-events-none absolute inset-0 opacity-[0.5]"
         style={{
           backgroundImage:
-            "radial-gradient(circle, rgba(59,130,246,0.18) 1px, transparent 1px)",
+            "radial-gradient(circle, rgba(213,168,75,0.18) 1px, transparent 1px)",
           backgroundSize: "28px 28px",
         }}
       />
@@ -28,7 +28,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease }}
-            className="inline-flex items-center gap-2.5 text-[11px] font-semibold uppercase tracking-[0.32em] text-gold-600"
+            className="inline-flex items-center gap-2.5 text-[11px] font-semibold uppercase tracking-[0.32em] text-navy-700"
           >
             <span className="h-1 w-1 rotate-45 bg-gold-500" />
             Distribuidora de Produtos
@@ -40,7 +40,7 @@ export function Hero() {
             transition={{ duration: 0.7, delay: 0.1, ease }}
             className="mt-7 font-display text-6xl font-semibold leading-[0.98] text-navy-900 sm:text-7xl lg:text-[4.6rem]"
           >
-            <span className="text-foil-dark font-bold">Della</span>
+            <span className="font-bold text-navy-900">Della</span>
             <br />
             <span className="font-medium text-[0.6em] leading-tight text-navy-800/90">
               {siteConfig.heroSlogan.split("\n").map((line) => (
@@ -57,8 +57,7 @@ export function Hero() {
             transition={{ duration: 0.7, delay: 0.25, ease }}
             className="mt-7 max-w-md text-[15px] leading-relaxed text-navy-500"
           >
-            Produtos selecionados para conectar profissionais e empresas a
-            novas oportunidades.
+            Seu próximo best-seller está aqui.
           </motion.p>
 
           <motion.div
@@ -81,7 +80,7 @@ export function Hero() {
               href={siteConfig.contact.whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 border border-navy-900/20 px-7 py-3.5 text-sm font-semibold text-navy-900 transition-colors duration-300 hover:border-gold-500 hover:text-gold-600"
+              className="flex items-center gap-2 border border-navy-900/20 px-7 py-3.5 text-sm font-semibold text-navy-900 transition-colors duration-300 hover:border-gold-500"
             >
               <MessageCircle size={16} />
               Fale com a Della
@@ -147,7 +146,7 @@ export function Hero() {
             transition={{ duration: 0.7, delay: 0.6, ease }}
             className="absolute left-14 top-6 flex h-24 w-24 flex-col items-center justify-center rounded-full border border-gold-500/60 bg-navy-900 text-center shadow-[0_16px_32px_-12px_rgba(8,16,38,0.3)]"
           >
-            <span className="font-display text-lg text-gold-300">
+            <span className="font-display text-lg text-cream-100">
               12
             </span>
             <span className="mt-0.5 text-[7px] font-semibold uppercase tracking-[0.18em] text-cream-300/80">

@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     template: "%s | Della",
   },
   description:
-    "Distribuindo qualidade, impulsionando negócios. Conheça o catálogo de produtos profissionais da Della Distribuidora.",
+    "Tudo o que você procura, em um só lugar. Conheça o catálogo de produtos profissionais da Della Distribuidora.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

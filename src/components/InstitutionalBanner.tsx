@@ -8,7 +8,7 @@ export function InstitutionalBanner() {
         className="pointer-events-none absolute inset-0 opacity-[0.5]"
         style={{
           backgroundImage:
-            "radial-gradient(circle, rgba(59,130,246,0.2) 1px, transparent 1px)",
+            "radial-gradient(circle, rgba(213,168,75,0.2) 1px, transparent 1px)",
           backgroundSize: "24px 24px",
         }}
       />
@@ -17,7 +17,7 @@ export function InstitutionalBanner() {
 
       <div className="relative mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
         <Reveal>
-          <span className="font-display text-6xl text-gold-500">
+          <span className="font-display text-6xl text-navy-400">
             &ldquo;
           </span>
           <p className="-mt-6 font-display text-3xl font-semibold leading-snug text-navy-900 sm:text-4xl">
