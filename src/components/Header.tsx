@@ -35,10 +35,10 @@ export function Header() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 w-full transition-all duration-300",
+        "sticky top-0 z-50 w-full border-b transition-all duration-300",
         scrolled
-          ? "bg-cream-100/95 shadow-[0_4px_24px_-8px_rgba(10,21,48,0.15)] backdrop-blur"
-          : "bg-cream-100"
+          ? "border-transparent bg-cream-100/95 shadow-[0_4px_24px_-8px_rgba(10,21,48,0.15)] backdrop-blur"
+          : "border-navy-900/8 bg-cream-100"
       )}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">

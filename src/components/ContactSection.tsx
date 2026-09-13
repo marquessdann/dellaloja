@@ -32,14 +32,13 @@ const cards = [
 
 export function ContactSection() {
   return (
-    <section className="bg-navy-950 py-20 sm:py-28">
+    <section className="bg-cream-300/60 py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <Reveal>
           <SectionHeading
             eyebrow="Fale com a gente"
             title="Vamos conversar sobre o seu negócio"
             description="Entre em contato com a Della e conheça mais sobre nosso catálogo de produtos."
-            dark
           />
         </Reveal>
 
@@ -52,24 +51,24 @@ export function ContactSection() {
                   {...(card.href
                     ? { href: card.href, target: "_blank", rel: "noopener noreferrer" }
                     : {})}
-                  className="group flex h-full flex-col justify-between border border-cream-100/10 bg-cream-100/[0.03] p-6 transition-all duration-500 hover:-translate-y-1 hover:border-gold-400/40 hover:bg-cream-100/[0.06]"
+                  className="group flex h-full flex-col justify-between border border-navy-900/10 bg-cream-100 p-6 transition-all duration-500 hover:-translate-y-1 hover:border-gold-500/50 hover:shadow-[0_24px_48px_-28px_rgba(8,16,38,0.25)]"
                 >
                   <div className="flex items-center justify-between">
-                    <span className="flex h-11 w-11 items-center justify-center rounded-full bg-gold-500/15 text-gold-400">
+                    <span className="flex h-11 w-11 items-center justify-center rounded-full bg-gold-200 text-gold-600">
                       <card.icon size={18} />
                     </span>
                     {card.href && (
                       <ArrowUpRight
                         size={16}
-                        className="text-cream-300/40 transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-gold-300"
+                        className="text-navy-400 transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-gold-600"
                       />
                     )}
                   </div>
                   <div className="mt-6">
-                    <p className="text-xs uppercase tracking-[0.16em] text-cream-300/50">
+                    <p className="text-xs uppercase tracking-[0.16em] text-navy-400">
                       {card.label}
                     </p>
-                    <p className="mt-1 text-base font-medium text-cream-100 break-words">
+                    <p className="mt-1 text-base font-medium text-navy-900 break-words">
                       {card.value}
                     </p>
                   </div>
