@@ -6,7 +6,8 @@ import { CategoryStrip } from "@/components/CategoryStrip";
 import { Novidades } from "@/components/Novidades";
 import { AboutPreview } from "@/components/AboutPreview";
 import { Diferenciais } from "@/components/Diferenciais";
-import { CatalogCta } from "@/components/CatalogCta";
+import { LocationSection } from "@/components/LocationSection";
+import { ReviewsSection } from "@/components/ReviewsSection";
 import { ContactSection } from "@/components/ContactSection";
 
 export default function Home() {
@@ -20,7 +21,8 @@ export default function Home() {
       <Novidades />
       <AboutPreview />
       <Diferenciais />
-      <CatalogCta />
+      <LocationSection />
+      <ReviewsSection />
       <ContactSection />
     </>
   );

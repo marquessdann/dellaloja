@@ -130,20 +130,17 @@ export function Header() {
           {leftNav.map(renderNavItem)}
         </nav>
 
-        <div className="px-5 lg:px-8">
-          <Logo dark />
-        </div>
+        <div className="hidden w-32 shrink-0 lg:block" />
 
-        <nav className="hidden flex-1 items-center gap-7 lg:flex">
-          {rightNav.map(renderNavItem)}
-        </nav>
-
-        <div className="hidden items-center gap-3 lg:flex">
+        <div className="hidden flex-1 items-center gap-7 lg:flex">
+          <nav className="flex items-center gap-7">
+            {rightNav.map(renderNavItem)}
+          </nav>
           <a
             href={siteConfig.contact.whatsappLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-full bg-gold-500 px-5 py-2.5 text-sm font-semibold text-navy-950 transition-all duration-300 hover:bg-gold-400 hover:shadow-[0_8px_24px_-8px_rgba(213,168,75,0.6)]"
+            className="ml-3 rounded-full bg-gold-500 px-5 py-2.5 text-sm font-semibold text-navy-950 transition-all duration-300 hover:bg-gold-400 hover:shadow-[0_8px_24px_-8px_rgba(213,168,75,0.6)]"
           >
             Fale com a Della
           </a>
@@ -156,6 +153,10 @@ export function Header() {
         >
           <Menu size={26} />
         </button>
+      </div>
+
+      <div className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+        <Logo dark iconOnly className="pointer-events-auto" />
       </div>
 
       <AnimatePresence>
