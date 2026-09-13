@@ -74,7 +74,7 @@ export function Header() {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 8 }}
                       transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
-                      className="absolute left-1/2 top-full z-50 mt-2 w-[720px] -translate-x-1/2 rounded-2xl border border-navy-900/5 bg-cream-100 p-6 shadow-[0_24px_60px_-20px_rgba(10,21,48,0.35)]"
+                      className="absolute left-1/2 top-full z-50 mt-2 w-[720px] -translate-x-1/2 border border-navy-900/10 bg-cream-100 p-6 shadow-[0_24px_60px_-20px_rgba(10,21,48,0.35)]"
                     >
                       <div className="grid grid-cols-3 gap-2">
                         {categories.map((cat) => (

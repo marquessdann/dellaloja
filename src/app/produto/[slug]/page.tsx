@@ -51,22 +51,26 @@ export default async function ProductPage({
 
           <div className="mt-8 grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16">
             <Reveal>
-              <div className="img-zoom relative aspect-square w-full overflow-hidden rounded-3xl bg-cream-300">
-                <Image
-                  src={product.image}
-                  alt={product.name}
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-contain p-10 sm:p-14"
-                  priority
-                />
+              <div className="relative border border-gold-500/40 p-3">
+                <span className="absolute -left-2.5 -top-2.5 h-5 w-5 border-l border-t border-gold-500" />
+                <span className="absolute -bottom-2.5 -right-2.5 h-5 w-5 border-b border-r border-gold-500" />
+                <div className="img-zoom relative aspect-square w-full overflow-hidden bg-cream-300">
+                  <Image
+                    src={product.image}
+                    alt={product.name}
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    className="object-contain p-10 sm:p-14"
+                    priority
+                  />
+                </div>
               </div>
               {product.images.length > 1 && (
                 <div className="mt-4 grid grid-cols-4 gap-3">
                   {product.images.map((img) => (
                     <div
                       key={img}
-                      className="relative aspect-square overflow-hidden rounded-xl border border-navy-900/8 bg-cream-300"
+                      className="relative aspect-square overflow-hidden border border-navy-900/10 bg-cream-300"
                     >
                       <Image
                         src={img}
@@ -85,18 +89,18 @@ export default async function ProductPage({
               {category && (
                 <Link
                   href={`/produtos?categoria=${category.slug}`}
-                  className="inline-flex items-center gap-1.5 rounded-full bg-gold-200 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-wide text-gold-600"
+                  className="inline-flex items-center gap-1.5 border border-gold-500/40 bg-gold-200/50 px-3.5 py-1.5 text-[11px] font-bold uppercase tracking-[0.16em] text-gold-600"
                 >
                   {category.name}
                 </Link>
               )}
-              <h1 className="mt-4 font-display text-4xl font-semibold text-navy-900 sm:text-5xl">
+              <h1 className="mt-5 font-display text-4xl font-semibold italic text-navy-900 sm:text-5xl">
                 {product.name}
               </h1>
-              <p className="mt-2 text-sm font-semibold uppercase tracking-wide text-navy-500">
+              <p className="mt-2 text-[13px] font-bold uppercase tracking-[0.16em] text-navy-500">
                 {product.brand}
               </p>
-              <p className="mt-5 text-base leading-relaxed text-navy-600">
+              <p className="mt-5 text-[15px] leading-relaxed text-navy-600">
                 {product.description}
               </p>
 
@@ -106,7 +110,7 @@ export default async function ProductPage({
                     key={h}
                     className="flex items-start gap-2.5 text-sm text-navy-700"
                   >
-                    <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-navy-900 text-gold-400">
+                    <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center border border-navy-900/20 text-navy-900">
                       <Check size={12} />
                     </span>
                     {h}
@@ -151,7 +155,7 @@ export default async function ProductPage({
         <section className="py-16 sm:py-24">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <Reveal>
-              <h2 className="font-display text-2xl font-semibold text-navy-900 sm:text-3xl">
+              <h2 className="font-display text-2xl font-semibold italic text-navy-900 sm:text-3xl">
                 Você também pode gostar
               </h2>
             </Reveal>

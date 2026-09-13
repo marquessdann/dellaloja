@@ -30,13 +30,13 @@ export default function CatalogoPage() {
         description="Uma vitrine digital com uma seleção de produtos do nosso portfólio, organizada por categoria. O catálogo completo continua crescendo."
       />
 
-      <section className="border-b border-navy-900/8 bg-cream-100 py-8">
-        <div className="no-scrollbar mx-auto flex max-w-7xl gap-2 overflow-x-auto px-4 sm:px-6 lg:px-8">
+      <section className="border-b border-navy-900/10 bg-cream-100 py-6">
+        <div className="no-scrollbar mx-auto flex max-w-7xl gap-7 overflow-x-auto px-4 sm:px-6 lg:px-8">
           {sections.map((s) => (
             <a
               key={s.category.slug}
               href={`#${s.category.slug}`}
-              className="shrink-0 rounded-full border border-navy-900/10 px-4 py-2 text-xs font-semibold text-navy-700 transition-colors hover:border-gold-400 hover:text-gold-600"
+              className="link-underline shrink-0 text-[11px] font-bold uppercase tracking-[0.12em] text-navy-700 transition-colors hover:text-gold-600"
             >
               {s.category.name}
             </a>

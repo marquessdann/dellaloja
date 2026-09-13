@@ -52,7 +52,7 @@ export function ContactSection() {
                   {...(card.href
                     ? { href: card.href, target: "_blank", rel: "noopener noreferrer" }
                     : {})}
-                  className="group flex h-full flex-col justify-between rounded-2xl border border-cream-100/10 bg-cream-100/[0.03] p-6 transition-all duration-500 hover:-translate-y-1.5 hover:border-gold-400/40 hover:bg-cream-100/[0.06]"
+                  className="group flex h-full flex-col justify-between border border-cream-100/10 bg-cream-100/[0.03] p-6 transition-all duration-500 hover:-translate-y-1 hover:border-gold-400/40 hover:bg-cream-100/[0.06]"
                 >
                   <div className="flex items-center justify-between">
                     <span className="flex h-11 w-11 items-center justify-center rounded-full bg-gold-500/15 text-gold-400">

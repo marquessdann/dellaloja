@@ -3,12 +3,12 @@ import { siteConfig } from "@/data/site-config";
 
 export function InstitutionalBanner() {
   return (
-    <section className="relative overflow-hidden bg-navy-900 py-24 sm:py-32">
+    <section className="grain-overlay relative overflow-hidden bg-navy-900 py-24 sm:py-32">
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.05]"
         style={{
           backgroundImage:
-            "radial-gradient(circle, rgba(211,179,101,0.9) 1px, transparent 1px)",
+            "radial-gradient(circle, rgba(220,183,104,0.9) 1px, transparent 1px)",
           backgroundSize: "24px 24px",
         }}
       />
@@ -17,11 +17,13 @@ export function InstitutionalBanner() {
 
       <div className="relative mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
         <Reveal>
-          <span className="text-4xl text-gold-500">&ldquo;</span>
-          <p className="font-display text-3xl font-medium leading-snug text-cream-100 sm:text-4xl">
+          <span className="font-display text-6xl italic text-gold-500/70">
+            &ldquo;
+          </span>
+          <p className="-mt-6 font-display text-3xl font-semibold italic leading-snug text-cream-100 sm:text-4xl">
             {siteConfig.institutionalSlogan}
           </p>
-          <span className="mx-auto mt-6 block h-px w-16 bg-gold-500" />
+          <span className="mx-auto mt-7 block h-px w-16 bg-gold-500" />
         </Reveal>
       </div>
     </section>

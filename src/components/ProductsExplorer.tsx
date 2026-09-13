@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Search, PackageSearch } from "lucide-react";
 import { products } from "@/data/products";
@@ -10,11 +11,9 @@ import { cn } from "@/lib/utils";
 
 type TabValue = "todos" | CategorySlug;
 
-export function ProductsExplorer({
-  initialCategory,
-}: {
-  initialCategory?: string;
-}) {
+export function ProductsExplorer() {
+  const searchParams = useSearchParams();
+  const initialCategory = searchParams.get("categoria") ?? undefined;
   const validInitial = categories.some((c) => c.slug === initialCategory)
     ? (initialCategory as CategorySlug)
     : "todos";
@@ -40,40 +39,47 @@ export function ProductsExplorer({
 
   return (
     <div>
-      <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
-        <div className="no-scrollbar flex gap-2 overflow-x-auto pb-1">
+      <div className="flex flex-col gap-6 border-b border-navy-900/10 pb-1 sm:flex-row sm:items-end sm:justify-between">
+        <div className="no-scrollbar flex gap-7 overflow-x-auto">
           {tabs.map((tab) => (
             <button
               key={tab.value}
               onClick={() => setActiveTab(tab.value)}
               className={cn(
-                "relative shrink-0 rounded-full px-4 py-2 text-sm font-semibold transition-colors duration-300",
+                "relative shrink-0 whitespace-nowrap pb-3 text-[13px] font-bold uppercase tracking-[0.08em] transition-colors duration-300",
                 activeTab === tab.value
-                  ? "bg-navy-900 text-cream-100"
-                  : "bg-cream-300/70 text-navy-700 hover:bg-cream-300"
+                  ? "text-navy-900"
+                  : "text-navy-400 hover:text-navy-700"
               )}
             >
               {tab.label}
+              {activeTab === tab.value && (
+                <motion.span
+                  layoutId="tab-underline"
+                  className="absolute inset-x-0 -bottom-px h-[2px] bg-gold-500"
+                  transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                />
+              )}
             </button>
           ))}
         </div>
 
-        <div className="relative shrink-0 sm:w-72">
+        <div className="relative shrink-0 pb-3 sm:w-72">
           <Search
-            size={16}
-            className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-navy-500"
+            size={15}
+            className="pointer-events-none absolute left-0 top-1/2 -translate-y-1/2 text-navy-400"
           />
           <input
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             type="text"
             placeholder="Buscar produto..."
-            className="w-full rounded-full border border-navy-900/12 bg-cream-100 py-2.5 pl-11 pr-4 text-sm text-navy-900 outline-none transition-colors focus:border-gold-400"
+            className="w-full border-b border-navy-900/15 bg-transparent py-1 pl-6 pr-2 text-sm text-navy-900 outline-none transition-colors placeholder:text-navy-400 focus:border-gold-500"
           />
         </div>
       </div>
 
-      <p className="mt-5 text-xs uppercase tracking-[0.14em] text-navy-500">
+      <p className="mt-5 text-[11px] font-bold uppercase tracking-[0.14em] text-navy-400">
         {filtered.length}{" "}
         {filtered.length === 1 ? "produto encontrado" : "produtos encontrados"}
       </p>
@@ -105,7 +111,7 @@ export function ProductsExplorer({
                 ))}
               </div>
             ) : (
-              <div className="flex flex-col items-center justify-center rounded-2xl border border-dashed border-navy-900/15 py-20 text-center">
+              <div className="flex flex-col items-center justify-center border border-dashed border-navy-900/15 py-20 text-center">
                 <PackageSearch className="text-navy-400" size={32} />
                 <p className="mt-4 text-sm text-navy-500">
                   Nenhum produto encontrado para essa busca.

@@ -41,17 +41,20 @@ export function Diferenciais() {
           />
         </Reveal>
 
-        <StaggerGroup className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {items.map((item) => (
+        <StaggerGroup className="mt-14 grid grid-cols-1 gap-px overflow-hidden border border-navy-900/10 bg-navy-900/10 sm:grid-cols-2 lg:grid-cols-4">
+          {items.map((item, i) => (
             <StaggerItem key={item.title}>
-              <div className="group h-full rounded-2xl border border-navy-900/8 bg-cream-100 p-7 transition-all duration-500 hover:-translate-y-1.5 hover:border-gold-400/50 hover:shadow-[0_24px_48px_-24px_rgba(10,21,48,0.3)]">
-                <span className="flex h-12 w-12 items-center justify-center rounded-full bg-navy-900 text-gold-400 transition-colors duration-500 group-hover:bg-gold-500 group-hover:text-navy-950">
-                  <item.icon size={20} />
+              <div className="group relative h-full bg-cream-100 p-8 transition-colors duration-500 hover:bg-navy-950">
+                <span className="font-display text-sm italic text-gold-500/70">
+                  0{i + 1}
                 </span>
-                <h3 className="mt-5 font-display text-xl font-semibold text-navy-900">
+                <span className="mt-4 flex h-11 w-11 items-center justify-center border border-navy-900/15 text-navy-900 transition-colors duration-500 group-hover:border-gold-400/50 group-hover:text-gold-400">
+                  <item.icon size={18} />
+                </span>
+                <h3 className="mt-5 font-display text-xl font-semibold italic text-navy-900 transition-colors duration-500 group-hover:text-cream-100">
                   {item.title}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-navy-500">
+                <p className="mt-2 text-[13px] leading-relaxed text-navy-500 transition-colors duration-500 group-hover:text-cream-300/70">
                   {item.description}
                 </p>
               </div>

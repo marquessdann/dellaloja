@@ -8,42 +8,39 @@ export function Logo({
   className?: string;
   dark?: boolean;
 }) {
-  const ringColor = dark ? "border-gold-400" : "border-gold-500";
   const textColor = dark ? "text-cream-100" : "text-navy-900";
   const subColor = dark ? "text-gold-300" : "text-gold-600";
+  const lineColor = dark ? "bg-gold-400/60" : "bg-gold-500/70";
 
   return (
     <Link
       href="/"
-      className={cn("group flex items-center gap-3 shrink-0", className)}
+      className={cn("group flex items-center gap-3.5 shrink-0", className)}
       aria-label="Della Distribuidora de Produtos - Início"
     >
-      <span
-        className={cn(
-          "relative flex h-10 w-10 items-center justify-center rounded-full border transition-colors duration-300",
-          ringColor
-        )}
-      >
-        <span className="font-display text-xl font-semibold tracking-tight text-gold-500">
-          D
-        </span>
+      <span className="relative flex h-11 w-11 shrink-0 items-center justify-center border border-gold-500/70 text-gold-500 transition-colors duration-300">
+        <span className="absolute inset-[3px] border border-gold-500/25" />
+        <span className="font-display text-2xl italic leading-none">D</span>
       </span>
       <span className="flex flex-col leading-none">
         <span
           className={cn(
-            "font-display text-2xl font-semibold tracking-wide",
+            "font-display text-[1.7rem] font-semibold tracking-[0.02em]",
             textColor
           )}
         >
-          DELLA
+          Della
         </span>
-        <span
-          className={cn(
-            "text-[9px] font-semibold tracking-[0.28em] uppercase",
-            subColor
-          )}
-        >
-          Distribuidora
+        <span className="mt-1.5 flex items-center gap-1.5">
+          <span className={cn("h-px w-3", lineColor)} />
+          <span
+            className={cn(
+              "text-[9px] font-semibold tracking-[0.32em] uppercase",
+              subColor
+            )}
+          >
+            Distribuidora
+          </span>
         </span>
       </span>
     </Link>
