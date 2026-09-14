@@ -97,18 +97,29 @@ export type { ChatCompletionMessageParam, ChatCompletionTool };
  * can only mean "API key / model / network to Groq" — nothing else in the
  * pipeline is involved yet. See docs/ai-agent.md's layered diagnosis steps.
  */
-export async function pingModel(): Promise<string> {
+export async function pingModel(): Promise<{
+  content: string;
+  finishReason: string | null | undefined;
+}> {
   const groq = getGroqClient();
   const completion = await groq.chat.completions.create(
     {
       model: getAiModel(),
       messages: [{ role: "user", content: "Responda apenas OK." }],
-      max_completion_tokens: 10,
+      reasoning_effort: "low",
+      // gpt-oss (and other reasoning models on Groq) spend part of the
+      // token budget on hidden reasoning before the visible answer — too
+      // low a limit here can starve the real answer and return "" even
+      // though the call itself succeeded.
+      max_completion_tokens: 80,
       stream: false,
     },
     { timeout: 10_000 }
   );
-  return completion.choices[0]?.message?.content ?? "";
+  return {
+    content: completion.choices[0]?.message?.content ?? "",
+    finishReason: completion.choices[0]?.finish_reason,
+  };
 }
 
 /**
