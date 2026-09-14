@@ -1,5 +1,6 @@
 import "server-only";
 import { getSupabaseAdmin } from "@/lib/supabase/admin";
+import { listLinkedMarketplaces, getMarketplacesForProduct } from "@/lib/store/queries";
 import type { ChatCompletionTool } from "groq-sdk/resources/chat/completions";
 
 // ============================================================
@@ -244,13 +245,20 @@ async function getStoreInformation() {
 }
 
 async function getMarketplaceLinks() {
-  const supabase = getSupabaseAdmin();
-  const { data } = await supabase
-    .from("marketplaces")
-    .select("name, url")
-    .eq("active", true)
-    .not("url", "is", null);
-  return { marketplaces: data ?? [] };
+  const marketplaces = await listLinkedMarketplaces();
+  return { marketplaces: marketplaces.map((m) => ({ name: m.name, url: m.url })) };
+}
+
+async function getProductMarketplaceLinksTool(args: { product_id: string }) {
+  const links = await getMarketplacesForProduct(args.product_id);
+  const linked = links.filter((l) => Boolean(l.url));
+  if (linked.length === 0) {
+    return { found: false, note: "Nenhum canal de compra cadastrado ainda para este produto." };
+  }
+  return {
+    found: true,
+    channels: linked.map((l) => ({ name: l.name, url: l.url, specific: l.specific })),
+  };
 }
 
 // ============================================================
@@ -395,6 +403,19 @@ export const chatTools: ChatCompletionTool[] = [
       parameters: { type: "object", properties: {} },
     },
   },
+  {
+    type: "function",
+    function: {
+      name: "get_product_marketplace_links",
+      description:
+        "Retorna onde comprar um produto específico: usa o link exclusivo daquele produto quando existir, senão o link geral do marketplace. Use sempre que o cliente disser que quer comprar/levar um produto ou pedir o link.",
+      parameters: {
+        type: "object",
+        properties: { product_id: { type: "string" } },
+        required: ["product_id"],
+      },
+    },
+  },
 ];
 
 type ToolArgs = Record<string, unknown>;
@@ -413,6 +434,8 @@ const toolHandlers: Record<string, (args: ToolArgs) => Promise<unknown>> = {
   get_policy: (args) => getPolicy(args as { type: string }),
   get_store_information: () => getStoreInformation(),
   get_marketplace_links: () => getMarketplaceLinks(),
+  get_product_marketplace_links: (args) =>
+    getProductMarketplaceLinksTool(args as { product_id: string }),
 };
 
 export async function executeTool(name: string, rawArgs: string): Promise<unknown> {

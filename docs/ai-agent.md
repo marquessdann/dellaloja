@@ -28,6 +28,68 @@ Vercel Serverless Function (src/app/api/ai/chat/route.ts)
 Nenhuma chamada à Groq ou ao Supabase acontece no navegador. O frontend só
 conversa com `/api/ai/chat`, que roda no servidor da Vercel.
 
+### 1.1 Site vitrine — menu determinístico (não depende da IA)
+
+O site da Della **não tem checkout próprio** — ele é uma vitrine que
+direciona para marketplaces (Mercado Livre, Shopee, TikTok Shop, e outros
+que forem cadastrados). Por isso, as opções básicas do chat (Ver produtos,
+Categorias, Onde comprar, Sobre a Della) **não passam pela IA** — elas
+chamam rotas determinísticas que só consultam o Supabase:
+
+```
+ChatWidget (estado local: menu principal → submenus → voltar)
+   │
+   ├─► GET /api/store/categories
+   ├─► GET /api/store/products?category=...
+   ├─► GET /api/store/marketplaces
+   ├─► GET /api/store/product-links?productId=...
+   └─► GET /api/store/about
+```
+
+Nenhuma dessas rotas usa Groq. Isso significa que, mesmo se a Groq estiver
+fora do ar, o cliente ainda consegue navegar pelo catálogo e achar onde
+comprar — só perguntas em linguagem natural (o campo de texto) usam
+`/api/ai/chat`. Ver `src/lib/store/queries.ts` (consultas compartilhadas)
+e `src/components/chat/MenuScreens.tsx` (telas).
+
+Navegação do menu é 100% estado local do React (`ChatWidget.tsx`), nunca
+`window.location.reload()` — "← Voltar" e "⌂ Menu principal" só trocam
+esse estado.
+
+### 1.2 Diagnosticando a mensagem de "instabilidade"
+
+Se o chat mostrar "não consegui acessar o assistente agora", use, nessa
+ordem:
+
+1. **`GET /api/ai/health`** no seu domínio publicado (ex:
+   `https://seusite.vercel.app/api/ai/health`). Essa rota testa SOMENTE a
+   conexão com a Groq (sem Supabase, sem tools, sem streaming) e devolve
+   um JSON dizendo exatamente o que está errado:
+   - `GROQ_API_KEY não está definida` → variável não configurada no
+     ambiente certo (Production/Preview/Development) na Vercel.
+   - `code: "AUTH"` → a chave existe mas é inválida/expirada.
+   - `code: "NOT_FOUND"` → o valor de `AI_MODEL` não existe na Groq
+     (nome de modelo errado ou modelo descontinuado).
+   - `code: "RATE_LIMIT"` → estourou o limite gratuito da Groq.
+   - `{ ok: true, reply: "OK" }` → a conexão com a Groq está funcionando;
+     se o chat completo ainda falhar, o problema está em Supabase ou nas
+     tools, não na Groq.
+2. Se o passo 1 der `ok: true`, teste o chat completo e olhe os
+   **logs de Function** da Vercel (Project → Deployments → clique no
+   deploy → Functions → `/api/ai/chat`). As linhas agora vêm assim,
+   sem nunca imprimir a chave:
+   ```
+   [ai/chat.tools] provider=groq model=openai/gpt-oss-20b code=AUTH status=401 requestId=... message=...
+   ```
+   O `code` já diz a causa: `AUTH` (401/403), `NOT_FOUND` (404, modelo
+   errado), `RATE_LIMIT` (429), `PROVIDER_ERROR` (500 do lado da Groq),
+   `TIMEOUT`, `NETWORK` ou `DATABASE_ERROR` (Supabase, não Groq).
+3. Confirme que as 4 variáveis de ambiente (`GROQ_API_KEY`, `AI_MODEL`,
+   `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`) estão marcadas para
+   **Production** (não só Preview/Development) e que você fez um
+   **Redeploy** depois de salvá-las — variáveis novas só valem a partir do
+   próximo deploy, nunca retroagem para um deploy já existente.
+
 ## 2. Arquivos criados
 
 ```

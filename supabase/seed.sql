@@ -95,14 +95,17 @@ on conflict (slug) do update set
 -- marketplaces
 -- ============================================================
 -- The live site currently links all three to "#" (placeholder, not real
--- URLs yet), so url is left NULL here on purpose — the "public read active
--- marketplaces" policy and the get_marketplace_links tool both already
--- filter out rows with a NULL url, so the agent will correctly omit these
--- until you paste in the real storefront links.
-insert into marketplaces (name, url, active) values
-  ('Mercado Livre', null, true),
-  ('Shopee', null, true),
-  ('TikTok Shop', null, true);
+-- URLs yet), so url is left NULL here on purpose — the deterministic
+-- "Onde comprar" menu still lists the channel, just shows "ainda sendo
+-- configurado" until you paste in the real storefront link (Table Editor,
+-- column `url` on the matching row here).
+insert into marketplaces (name, slug, url, active, display_order) values
+  ('Mercado Livre', 'mercado-livre', null, true, 1),
+  ('Shopee', 'shopee', null, true, 2),
+  ('TikTok Shop', 'tiktok-shop', null, true, 3)
+on conflict (slug) do update set
+  name = excluded.name,
+  display_order = excluded.display_order;
 
 -- ============================================================
 -- store_information

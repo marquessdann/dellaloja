@@ -28,3 +28,24 @@ export type ChatMessage = {
   products?: { products: ChatProductPayload[]; hasMore: boolean };
   retryText?: string;
 };
+
+export type CategorySummary = { slug: string; name: string; description: string | null };
+
+export type MarketplaceChannel = {
+  id: string;
+  name: string;
+  slug: string;
+  url: string | null;
+  icon: string | null;
+};
+
+// The deterministic menu's own navigation state — entirely independent of
+// the AI conversation. Never touches /api/ai/chat, so it works even if
+// Groq is down.
+export type MenuView =
+  | { kind: "main" }
+  | { kind: "categories" }
+  | { kind: "products"; categorySlug?: string; categoryName?: string }
+  | { kind: "whereToBuy" }
+  | { kind: "productLinks"; product: ChatProductPayload }
+  | { kind: "about" };

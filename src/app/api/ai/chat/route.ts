@@ -1,5 +1,5 @@
 import { getSupabaseAdmin } from "@/lib/supabase/admin";
-import { runToolDecision, streamFinalAnswer } from "@/lib/ai/provider";
+import { runToolDecision, streamFinalAnswer, logGroqError } from "@/lib/ai/provider";
 import { chatTools, executeTool, type ProductPayload } from "@/lib/ai/tools";
 import { SYSTEM_PROMPT } from "@/lib/ai/system-prompt";
 import {
@@ -24,6 +24,27 @@ const FALLBACK_MESSAGE =
 
 function jsonError(code: string, message: string, status: number) {
   return Response.json({ error: true, code, message }, { status });
+}
+
+/**
+ * Maps a classified Groq failure to the response we send the browser.
+ * The user always gets the same friendly copy; only the `code` differs,
+ * so client-side logging/analytics can tell causes apart even though the
+ * on-screen message stays simple per the product brief.
+ */
+function respondToGroqFailure(context: string, err: unknown) {
+  const classified = logGroqError(context, err);
+  const statusByCode: Record<string, number> = {
+    MISSING_API_KEY: 500,
+    AUTH: 502,
+    NOT_FOUND: 502,
+    RATE_LIMIT: 503,
+    PROVIDER_ERROR: 503,
+    TIMEOUT: 504,
+    NETWORK: 503,
+    UNKNOWN: 503,
+  };
+  return jsonError(classified.code, FALLBACK_MESSAGE, statusByCode[classified.code] ?? 503);
 }
 
 function getClientIp(req: Request): string {
@@ -87,7 +108,7 @@ export async function POST(req: Request) {
     if (insertError) throw insertError;
   } catch (err) {
     console.error("[ai/chat] erro no Supabase (conversa/mensagem):", err instanceof Error ? err.message : err);
-    return jsonError("UPSTREAM_ERROR", FALLBACK_MESSAGE, 503);
+    return jsonError("DATABASE_ERROR", FALLBACK_MESSAGE, 503);
   }
 
   let historyRows: { role: string; content: string }[] = [];
@@ -162,12 +183,11 @@ export async function POST(req: Request) {
       }
     }
   } catch (err) {
-    const timedOut = err instanceof TimeoutError;
-    console.error(
-      `[ai/chat] erro na etapa de ferramentas${timedOut ? " (timeout)" : ""}:`,
-      err instanceof Error ? err.message : err
-    );
-    return jsonError(timedOut ? "TIMEOUT" : "UPSTREAM_ERROR", FALLBACK_MESSAGE, 503);
+    if (err instanceof TimeoutError) {
+      console.error(`[ai/chat] timeout na etapa de ferramentas (tool-decision), model=${process.env.AI_MODEL ?? "default"}`);
+      return jsonError("TIMEOUT", FALLBACK_MESSAGE, 504);
+    }
+    return respondToGroqFailure("chat.tools", err);
   }
 
   if (hitRoundLimitWithPendingTools) {
@@ -185,12 +205,11 @@ export async function POST(req: Request) {
       STREAM_TIMEOUT_MS + 2_000
     );
   } catch (err) {
-    const timedOut = err instanceof TimeoutError;
-    console.error(
-      `[ai/chat] erro ao iniciar streaming${timedOut ? " (timeout)" : ""}:`,
-      err instanceof Error ? err.message : err
-    );
-    return jsonError(timedOut ? "TIMEOUT" : "UPSTREAM_ERROR", FALLBACK_MESSAGE, 503);
+    if (err instanceof TimeoutError) {
+      console.error(`[ai/chat] timeout ao iniciar streaming, model=${process.env.AI_MODEL ?? "default"}`);
+      return jsonError("TIMEOUT", FALLBACK_MESSAGE, 504);
+    }
+    return respondToGroqFailure("chat.stream_start", err);
   }
 
   const encoder = new TextEncoder();
@@ -210,7 +229,7 @@ export async function POST(req: Request) {
           }
         }
       } catch (err) {
-        console.error("[ai/chat] erro durante streaming:", err instanceof Error ? err.message : err);
+        logGroqError("chat.stream_body", err);
         if (!full) {
           controller.enqueue(encoder.encode(FALLBACK_MESSAGE));
           full = FALLBACK_MESSAGE;
