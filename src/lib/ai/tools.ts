@@ -61,7 +61,22 @@ async function getPolicy(args: { type: string }) {
   return { found: true, policy: data };
 }
 
-async function getStoreInformation() {
+const STORE_FIELDS = ["address", "phone", "whatsapp", "email", "business_hours", "instagram"] as const;
+type StoreField = (typeof STORE_FIELDS)[number];
+
+// Which columns answer each field, so a single-field question only ever
+// gets back what it asked for — this doesn't rely on the model choosing
+// to ignore the rest of the data, the tool itself narrows the response.
+const STORE_FIELD_COLUMNS: Record<StoreField, string[]> = {
+  address: ["address"],
+  phone: ["phone"],
+  whatsapp: ["whatsapp", "whatsapp_link"],
+  email: ["email"],
+  business_hours: ["business_hours"],
+  instagram: ["instagram", "instagram_link"],
+};
+
+async function getStoreInformation(args: { field?: string }) {
   const supabase = getSupabaseAdmin();
   const { data } = await supabase
     .from("store_information")
@@ -70,7 +85,19 @@ async function getStoreInformation() {
     )
     .eq("id", 1)
     .maybeSingle();
-  return { store: data ?? null };
+
+  if (!data) return { store: null };
+
+  const field = args.field as StoreField | undefined;
+  if (!field || !STORE_FIELDS.includes(field)) {
+    return { store: data };
+  }
+
+  const narrowed: Record<string, unknown> = { name: data.name };
+  for (const col of STORE_FIELD_COLUMNS[field]) {
+    narrowed[col] = (data as Record<string, unknown>)[col] ?? null;
+  }
+  return { store: narrowed };
 }
 
 async function getMarketplaceLinks() {
@@ -121,8 +148,17 @@ export const chatTools: ChatCompletionTool[] = [
     function: {
       name: "get_store_information",
       description:
-        "Retorna nome, endereço, telefone/WhatsApp, e-mail, horário de atendimento e redes sociais reais da Della. Use para qualquer pergunta sobre localização, contato, horário ou suporte.",
-      parameters: { type: "object", properties: {} },
+        "Retorna dados reais da Della: endereço, telefone/WhatsApp, e-mail, horário de atendimento e Instagram. Se o cliente perguntou sobre UM item específico (ex.: só o endereço, ou só o Instagram), passe o parâmetro field para receber apenas esse dado. Só omita field quando a pergunta for genérica, tipo 'como entro em contato' ou 'quais são as informações de vocês'.",
+      parameters: {
+        type: "object",
+        properties: {
+          field: {
+            type: "string",
+            enum: [...STORE_FIELDS],
+            description: "Dado específico pedido pelo cliente. Omitir só para perguntas genéricas de contato.",
+          },
+        },
+      },
     },
   },
   {
@@ -141,7 +177,7 @@ type ToolArgs = Record<string, unknown>;
 const toolHandlers: Record<string, (args: ToolArgs) => Promise<unknown>> = {
   search_faq: (args) => searchFaq(args as { query: string; limit?: number }),
   get_policy: (args) => getPolicy(args as { type: string }),
-  get_store_information: () => getStoreInformation(),
+  get_store_information: (args) => getStoreInformation(args as { field?: string }),
   get_marketplace_links: () => getMarketplaceLinks(),
 };
 
