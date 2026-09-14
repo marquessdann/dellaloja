@@ -15,7 +15,56 @@ const WORDMARK_H = 200;
 const WATERMARK_MASK =
   "radial-gradient(ellipse 82% 82% at 50% 50%, black 45%, rgba(0,0,0,0.55) 72%, transparent 96%)";
 
-function AbstractLines() {
+type LineConfig = {
+  d: string;
+  stroke: string;
+  strokeWidth: number;
+  opacity: number;
+  duration: number;
+  delay: number;
+  amp: { x: number; y: number; rotate: number };
+};
+
+const LINES: LineConfig[] = [
+  {
+    d: "M620 40 C 500 200, 560 380, 430 560 C 360 660, 380 720, 320 790",
+    stroke: "#061A3A",
+    strokeWidth: 1.5,
+    opacity: 0.18,
+    duration: 13,
+    delay: 0,
+    amp: { x: 6, y: 10, rotate: 0.8 },
+  },
+  {
+    d: "M660 120 C 540 260, 600 420, 470 600 C 410 690, 430 730, 380 800",
+    stroke: "#C99A3D",
+    strokeWidth: 1.5,
+    opacity: 0.35,
+    duration: 17,
+    delay: 1.2,
+    amp: { x: 8, y: 12, rotate: 1 },
+  },
+  {
+    d: "M560 0 C 470 140, 510 320, 400 480 C 340 570, 360 640, 300 720",
+    stroke: "#061A3A",
+    strokeWidth: 1,
+    opacity: 0.12,
+    duration: 11,
+    delay: 0.6,
+    amp: { x: 5, y: 8, rotate: 0.6 },
+  },
+  {
+    d: "M700 260 C 600 340, 640 460, 540 560",
+    stroke: "#C99A3D",
+    strokeWidth: 1,
+    opacity: 0.22,
+    duration: 19,
+    delay: 2,
+    amp: { x: 7, y: 9, rotate: 0.9 },
+  },
+];
+
+function AbstractLines({ prefersReducedMotion }: { prefersReducedMotion: boolean | null }) {
   return (
     <svg
       viewBox="0 0 700 800"
@@ -23,34 +72,36 @@ function AbstractLines() {
       aria-hidden="true"
       className="absolute inset-y-0 right-0 hidden h-full w-[42vw] max-w-[620px] lg:block"
     >
-      <path
-        d="M620 40 C 500 200, 560 380, 430 560 C 360 660, 380 720, 320 790"
-        stroke="#061A3A"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        opacity="0.18"
-      />
-      <path
-        d="M660 120 C 540 260, 600 420, 470 600 C 410 690, 430 730, 380 800"
-        stroke="#C99A3D"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        opacity="0.35"
-      />
-      <path
-        d="M560 0 C 470 140, 510 320, 400 480 C 340 570, 360 640, 300 720"
-        stroke="#061A3A"
-        strokeWidth="1"
-        strokeLinecap="round"
-        opacity="0.12"
-      />
-      <path
-        d="M700 260 C 600 340, 640 460, 540 560"
-        stroke="#C99A3D"
-        strokeWidth="1"
-        strokeLinecap="round"
-        opacity="0.22"
-      />
+      {LINES.map((line, i) => (
+        <motion.path
+          key={i}
+          d={line.d}
+          stroke={line.stroke}
+          strokeWidth={line.strokeWidth}
+          strokeLinecap="round"
+          opacity={line.opacity}
+          style={{ transformBox: "fill-box", transformOrigin: "50% 50%" }}
+          animate={
+            prefersReducedMotion
+              ? undefined
+              : {
+                  x: [0, line.amp.x, -line.amp.x * 0.6, line.amp.x * 0.4, 0],
+                  y: [0, -line.amp.y, line.amp.y * 0.5, -line.amp.y * 0.3, 0],
+                  rotate: [0, line.amp.rotate, -line.amp.rotate * 0.6, line.amp.rotate * 0.3, 0],
+                }
+          }
+          transition={
+            prefersReducedMotion
+              ? undefined
+              : {
+                  duration: line.duration,
+                  delay: line.delay,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }
+          }
+        />
+      ))}
       <circle cx="470" cy="600" r="3" fill="#C99A3D" opacity="0.5" />
       <circle cx="380" cy="800" r="2.5" fill="#061A3A" opacity="0.2" />
       <circle cx="620" cy="40" r="2.5" fill="#C99A3D" opacity="0.4" />
@@ -69,23 +120,18 @@ export function Hero() {
           "linear-gradient(135deg, #061A3A 0%, #031027 55%, #05070C 100%)",
       }}
     >
-      <div
-        className="pointer-events-none absolute inset-0 opacity-[0.35]"
-        style={{
-          backgroundImage:
-            "radial-gradient(circle, rgba(213,168,75,0.16) 1px, transparent 1px)",
-          backgroundSize: "28px 28px",
-        }}
-      />
-
       {/* Giant DELLA wordmark used as an integrated watermark, not a pasted image */}
       <div className="pointer-events-none absolute inset-0 z-0 flex items-center justify-center overflow-hidden">
         <motion.div
-          animate={prefersReducedMotion ? undefined : { scale: [1, 1.03, 1] }}
+          animate={
+            prefersReducedMotion
+              ? undefined
+              : { scale: [1, 1.015, 1], x: [0, 5, 0] }
+          }
           transition={
             prefersReducedMotion
               ? undefined
-              : { duration: 10, repeat: Infinity, ease: "easeInOut" }
+              : { duration: 15, repeat: Infinity, ease: "easeInOut" }
           }
           style={{ maskImage: WATERMARK_MASK, WebkitMaskImage: WATERMARK_MASK }}
           className="w-[92%] max-w-[720px] opacity-[0.16] sm:w-[82%] sm:max-w-[900px] sm:opacity-[0.16] lg:w-[70%] lg:max-w-[1150px] lg:opacity-[0.18]"
@@ -102,7 +148,7 @@ export function Hero() {
         </motion.div>
       </div>
 
-      <AbstractLines />
+      <AbstractLines prefersReducedMotion={prefersReducedMotion} />
 
       <div className="relative z-10 flex flex-1 items-center justify-center py-16 lg:py-20">
         <div className="mx-auto w-full max-w-[900px] px-4 text-center sm:px-6 lg:px-8">
@@ -121,14 +167,31 @@ export function Hero() {
             transition={{ duration: 0.7, delay: 0.1, ease }}
             className="mt-6"
           >
-            <Image
-              src={WORDMARK_SRC}
-              alt="Della"
-              width={WORDMARK_W}
-              height={WORDMARK_H}
-              priority
-              className="mx-auto h-auto w-[190px] sm:w-[240px] lg:w-[300px]"
-            />
+            <motion.div
+              className="relative mx-auto w-[250px] sm:w-[310px] lg:w-[390px]"
+              animate={
+                prefersReducedMotion
+                  ? undefined
+                  : {
+                      scale: [1, 1.025, 1],
+                      filter: ["brightness(1)", "brightness(1.08)", "brightness(1)"],
+                    }
+              }
+              transition={
+                prefersReducedMotion
+                  ? undefined
+                  : { duration: 6, repeat: Infinity, ease: "easeInOut" }
+              }
+            >
+              <Image
+                src={WORDMARK_SRC}
+                alt="Della"
+                width={WORDMARK_W}
+                height={WORDMARK_H}
+                priority
+                className="h-auto w-full select-none"
+              />
+            </motion.div>
           </motion.div>
 
           <motion.h1
