@@ -41,7 +41,7 @@ export function Header() {
         onMouseLeave={() => setMegaOpen(false)}
       >
         <button
-          className="link-underline flex items-center gap-1 text-sm font-medium text-cream-100 py-2"
+          className="link-underline flex items-center gap-1 text-sm font-medium text-navy-900 py-2"
           aria-expanded={megaOpen}
         >
           {item.label}
@@ -109,7 +109,7 @@ export function Header() {
       <Link
         key={item.href}
         href={item.href}
-        className="link-underline text-sm font-medium text-cream-100 py-2"
+        className="link-underline text-sm font-medium text-navy-900 py-2"
       >
         {item.label}
       </Link>
@@ -121,8 +121,8 @@ export function Header() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 w-full bg-navy-900 transition-shadow duration-300",
-        scrolled && "shadow-[0_4px_24px_-8px_rgba(4,16,31,0.5)]"
+        "sticky top-0 z-50 w-full bg-gold-600 transition-shadow duration-300",
+        scrolled && "shadow-[0_4px_24px_-8px_rgba(4,16,31,0.35)]"
       )}
     >
       <div className="mx-auto flex max-w-7xl items-center px-4 py-3 sm:px-6 lg:px-8">
@@ -140,14 +140,14 @@ export function Header() {
             href={siteConfig.contact.whatsappLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="ml-3 rounded-full bg-gold-500 px-5 py-2.5 text-sm font-semibold text-navy-950 transition-all duration-300 hover:bg-gold-400 hover:shadow-[0_8px_24px_-8px_rgba(213,168,75,0.6)]"
+            className="ml-3 rounded-full bg-navy-900 px-5 py-2.5 text-sm font-semibold text-cream-100 transition-all duration-300 hover:bg-navy-800 hover:shadow-[0_8px_24px_-8px_rgba(6,26,58,0.5)]"
           >
             Fale com a Della
           </a>
         </div>
 
         <button
-          className="ml-auto flex h-10 w-10 items-center justify-center text-cream-100 lg:hidden"
+          className="ml-auto flex h-10 w-10 items-center justify-center text-navy-900 lg:hidden"
           onClick={() => setMobileOpen(true)}
           aria-label="Abrir menu"
         >
