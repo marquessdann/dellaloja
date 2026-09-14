@@ -35,14 +35,26 @@ async function searchFaq(args: { query: string; limit?: number }) {
 
   if (ftsData && ftsData.length > 0) return { results: ftsData };
 
-  const { data: likeData } = await supabase
-    .from("faq")
-    .select("question, answer, category")
-    .eq("active", true)
-    .or(`question.ilike.%${q}%,answer.ilike.%${q}%`)
-    .limit(limit);
+  // Two independent .ilike() calls instead of a single .or("question.ilike.%x%,...")
+  // string. .or() takes a raw PostgREST filter expression, so interpolating
+  // user input into it lets filter syntax (commas, parentheses, operators)
+  // manipulate the query (e.g. injecting extra clauses). .ilike() passes the
+  // value as a bound parameter, so it's safe with any input.
+  const pattern = `%${q}%`;
+  const [{ data: byQuestion }, { data: byAnswer }] = await Promise.all([
+    supabase.from("faq").select("question, answer, category").eq("active", true).ilike("question", pattern).limit(limit),
+    supabase.from("faq").select("question, answer, category").eq("active", true).ilike("answer", pattern).limit(limit),
+  ]);
 
-  return { results: likeData ?? [] };
+  const seen = new Set<string>();
+  const merged: { question: string; answer: string; category: string | null }[] = [];
+  for (const row of [...(byQuestion ?? []), ...(byAnswer ?? [])]) {
+    if (seen.has(row.question)) continue;
+    seen.add(row.question);
+    merged.push(row);
+    if (merged.length >= limit) break;
+  }
+  return { results: merged };
 }
 
 const VALID_POLICY_TYPES = ["delivery", "returns", "exchanges", "payments", "privacy", "warranty"] as const;

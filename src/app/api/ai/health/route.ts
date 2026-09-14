@@ -1,9 +1,16 @@
 import { getSupabaseAdmin } from "@/lib/supabase/admin";
 import { pingModel, getAiModel, logGroqError, runToolDecision } from "@/lib/ai/provider";
 import { chatTools, executeTool } from "@/lib/ai/tools";
+import { isRateLimited, sweepRateLimiter } from "@/lib/ai/security";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
+
+function getClientIp(req: Request): string {
+  const forwarded = req.headers.get("x-forwarded-for");
+  if (forwarded) return forwarded.split(",")[0]!.trim();
+  return req.headers.get("x-real-ip") ?? "unknown";
+}
 
 /**
  * Supabase errors (PostgrestError, AuthError, etc.) are plain objects, not
@@ -30,8 +37,34 @@ function describeError(err: unknown): { message: string; code?: string; details?
 //   1. llm       — can we reach Groq with the configured key/model at all
 //   2. database  — can we reach Supabase with the service role key
 //   3. tools     — does the model actually call a tool and does it resolve
-// Never returns secrets. Safe to leave deployed.
-export async function GET() {
+// Never returns secrets. Runs live Groq + Supabase calls, so it's gated:
+//   - In production, requires HEALTH_CHECK_SECRET (header "x-health-secret"
+//     or "?secret=" query param) — otherwise it's a free, unauthenticated
+//     way for anyone to burn Groq quota and see operational details
+//     (model name, Supabase error internals, which tool got called).
+//   - Always rate-limited by IP regardless of the secret, since even an
+//     authorized caller re-running it repeatedly still costs real calls.
+export async function GET(req: Request) {
+  const isProd = process.env.NODE_ENV === "production";
+  const expectedSecret = process.env.HEALTH_CHECK_SECRET;
+  if (isProd && expectedSecret) {
+    const url = new URL(req.url);
+    const provided = req.headers.get("x-health-secret") ?? url.searchParams.get("secret");
+    if (provided !== expectedSecret) {
+      return Response.json({ error: true, code: "NOT_FOUND" }, { status: 404 });
+    }
+  } else if (isProd && !expectedSecret) {
+    // Misconfiguration: in production without a secret set, fail closed
+    // rather than silently exposing the diagnostic endpoint to anyone.
+    return Response.json({ error: true, code: "NOT_FOUND" }, { status: 404 });
+  }
+
+  sweepRateLimiter();
+  const ip = getClientIp(req);
+  if (isRateLimited(`health:${ip}`, { limit: 10 })) {
+    return Response.json({ error: true, code: "RATE_LIMITED" }, { status: 429 });
+  }
+
   const model = getAiModel();
   const result: Record<string, unknown> = { model };
 

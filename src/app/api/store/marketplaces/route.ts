@@ -1,8 +1,21 @@
 import { listMarketplaces } from "@/lib/store/queries";
+import { isRateLimited, sweepRateLimiter } from "@/lib/ai/security";
 
 export const runtime = "nodejs";
 
-export async function GET() {
+function getClientIp(req: Request): string {
+  const forwarded = req.headers.get("x-forwarded-for");
+  if (forwarded) return forwarded.split(",")[0]!.trim();
+  return req.headers.get("x-real-ip") ?? "unknown";
+}
+
+export async function GET(req: Request) {
+  sweepRateLimiter();
+  const ip = getClientIp(req);
+  if (isRateLimited(`marketplaces:${ip}`, { limit: 60 })) {
+    return Response.json({ error: true, code: "RATE_LIMITED" }, { status: 429 });
+  }
+
   try {
     const marketplaces = await listMarketplaces();
     return Response.json({ marketplaces });
