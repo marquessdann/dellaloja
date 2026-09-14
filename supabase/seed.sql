@@ -115,11 +115,11 @@ values (
   1,
   'Della Distribuidora de Produtos',
   'Rua Salim Tacla, 474, Cajuru, Curitiba - PR',
-  '(41) 99999-9999',
-  'https://wa.me/5541999999999',
+  '(41) 99984-6920',
+  'https://wa.me/5541999846920',
   'danigtba@gmail.com',
-  '@della.distribuidora',
-  'https://instagram.com/della.distribuidora'
+  '@marquessdann',
+  'https://instagram.com/marquessdann'
 )
 on conflict (id) do update set
   name = excluded.name,

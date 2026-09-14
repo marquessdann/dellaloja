@@ -10,10 +10,10 @@ export const siteConfig = {
     "A Della é uma loja online com produtos selecionados para tornar suas escolhas mais simples, práticas e especiais.",
   contact: {
     email: "danigtba@gmail.com",
-    whatsapp: "(41) 99999-9999",
-    whatsappLink: "https://wa.me/5541999999999",
-    instagram: "@della.distribuidora",
-    instagramLink: "https://instagram.com/della.distribuidora",
+    whatsapp: "(41) 99984-6920",
+    whatsappLink: "https://wa.me/5541999846920",
+    instagram: "@marquessdann",
+    instagramLink: "https://instagram.com/marquessdann",
     city: "Curitiba, PR",
   },
   marketplaces: [
