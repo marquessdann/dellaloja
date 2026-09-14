@@ -4,6 +4,25 @@ import { chatTools, executeTool } from "@/lib/ai/tools";
 
 export const runtime = "nodejs";
 
+/**
+ * Supabase errors (PostgrestError, AuthError, etc.) are plain objects, not
+ * `Error` instances — `String(err)` on one just gives "[object Object]".
+ * Pull out the fields that actually explain what went wrong.
+ */
+function describeError(err: unknown): { message: string; code?: string; details?: string; hint?: string } {
+  if (err instanceof Error) return { message: err.message };
+  if (err && typeof err === "object") {
+    const e = err as Record<string, unknown>;
+    return {
+      message: typeof e.message === "string" ? e.message : JSON.stringify(err),
+      code: typeof e.code === "string" ? e.code : undefined,
+      details: typeof e.details === "string" ? e.details : undefined,
+      hint: typeof e.hint === "string" ? e.hint : undefined,
+    };
+  }
+  return { message: String(err) };
+}
+
 // Layered diagnostic endpoint — checks the three things that can each
 // independently break the chat, and reports each one separately instead
 // of collapsing everything into one generic error:
@@ -49,11 +68,9 @@ export async function GET() {
       if (error) throw error;
       result.database = { ok: true };
     } catch (err) {
-      result.database = {
-        ok: false,
-        message: err instanceof Error ? err.message : String(err),
-      };
-      console.error("[ai/health] erro no Supabase:", err instanceof Error ? err.message : err);
+      const described = describeError(err);
+      result.database = { ok: false, ...described };
+      console.error("[ai/health] erro no Supabase:", JSON.stringify(described));
     }
   }
 
