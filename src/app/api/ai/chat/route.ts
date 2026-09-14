@@ -12,6 +12,11 @@ import {
 import type { ChatCompletionMessageParam } from "groq-sdk/resources/chat/completions";
 
 export const runtime = "nodejs";
+// Vercel kills a serverless function after 10s by default on some plans —
+// this route can legitimately take longer (tool-decision call + streamed
+// answer), so extend it explicitly. Well within the 12s+20s worst-case
+// internal timeouts below.
+export const maxDuration = 60;
 
 const HISTORY_LIMIT = 12;
 const MAX_TOOL_ROUNDS = 3;

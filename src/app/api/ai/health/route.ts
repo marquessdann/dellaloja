@@ -3,6 +3,7 @@ import { pingModel, getAiModel, logGroqError, runToolDecision } from "@/lib/ai/p
 import { chatTools, executeTool } from "@/lib/ai/tools";
 
 export const runtime = "nodejs";
+export const maxDuration = 60;
 
 /**
  * Supabase errors (PostgrestError, AuthError, etc.) are plain objects, not

@@ -116,9 +116,29 @@ export function ChatWidget() {
         );
       }
 
-      setMessages((prev) =>
-        prev.map((m) => (m.id === assistantId ? { ...m, content: full.trim(), streaming: false } : m))
-      );
+      const finalText = full.trim();
+      if (finalText) {
+        setMessages((prev) =>
+          prev.map((m) => (m.id === assistantId ? { ...m, content: finalText, streaming: false } : m))
+        );
+      } else {
+        // The connection can be cut mid-stream (e.g. a platform execution
+        // limit) before any text arrives — never leave a blank bubble.
+        setMessages((prev) =>
+          prev.map((m) =>
+            m.id === assistantId
+              ? {
+                  ...m,
+                  role: "error",
+                  content:
+                    "Não consegui responder agora. Tente novamente em alguns instantes ou entre em contato com nosso atendimento.",
+                  streaming: false,
+                  retryText: trimmed,
+                }
+              : m
+          )
+        );
+      }
     } catch {
       setMessages((prev) =>
         prev.map((m) =>
