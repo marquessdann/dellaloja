@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Mail, MessageCircle, AtSign, ArrowUpRight } from "lucide-react";
 import { siteConfig } from "@/data/site-config";
@@ -9,11 +10,15 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-4">
           <div className="md:col-span-2">
-            <div className="flex flex-col leading-none">
-              <span className="font-display text-4xl font-bold text-cream-100">
-                Della
-              </span>
-              <span className="mt-2 flex items-center gap-2">
+            <div className="flex flex-col items-start leading-none">
+              <Image
+                src="/images/della-wordmark.webp"
+                alt="Della"
+                width={1059}
+                height={200}
+                className="h-auto w-[170px] sm:w-[190px]"
+              />
+              <span className="mt-3 flex items-center gap-2">
                 <span className="h-px w-4 bg-gold-400/60" />
                 <span className="text-[10px] font-semibold tracking-[0.32em] text-cream-300 uppercase">
                   Distribuidora de Produtos
