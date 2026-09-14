@@ -5,24 +5,15 @@ import { AnimatePresence, motion } from "framer-motion";
 import { MessageCircle, X, Send, RotateCw, Phone, ArrowLeft, Home } from "lucide-react";
 import { siteConfig } from "@/data/site-config";
 import { cn } from "@/lib/utils";
-import { PRODUCTS_MARKER, MAX_MESSAGE_LENGTH } from "@/lib/ai/constants";
+import { MAX_MESSAGE_LENGTH } from "@/lib/ai/constants";
 import { useSessionId } from "./useSessionId";
-import { ProductCardMini } from "./ProductCardMini";
-import {
-  MainMenuScreen,
-  CategoriesScreen,
-  ProductsScreen,
-  WhereToBuyScreen,
-  ProductLinksScreen,
-  AboutScreen,
-} from "./MenuScreens";
+import { MainMenuScreen, WhereToBuyScreen } from "./MenuScreens";
 import type { ChatMessage, MenuView } from "./types";
 
 const GREETING: ChatMessage = {
   id: "greeting",
   role: "assistant",
-  content:
-    "Olá 👋\nSou o assistente da Della.\nPosso te ajudar a encontrar produtos ou mostrar onde comprar. O que você procura?",
+  content: "Olá 👋\nSou a Della IA. Posso te ajudar com dúvidas sobre compra, contato e localização. Como posso ajudar?",
 };
 
 function makeId() {
@@ -31,11 +22,7 @@ function makeId() {
 
 const MENU_TITLES: Record<MenuView["kind"], string> = {
   main: "Menu principal",
-  categories: "Categorias",
-  products: "Produtos",
   whereToBuy: "Onde comprar",
-  productLinks: "Onde comprar",
-  about: "Sobre a Della",
 };
 
 export function ChatWidget() {
@@ -103,7 +90,7 @@ export function ChatWidget() {
         const data = await res.json().catch(() => null);
         const friendly =
           data?.message ??
-          "Não consegui acessar o assistente agora. Tente novamente em alguns instantes.";
+          "Não consegui responder agora. Tente novamente em alguns instantes ou entre em contato com nosso atendimento.";
         setMessages((prev) =>
           prev.map((m) =>
             m.id === assistantId
@@ -118,34 +105,19 @@ export function ChatWidget() {
 
       const reader = res.body.getReader();
       const decoder = new TextDecoder();
-      let raw = "";
+      let full = "";
 
       for (;;) {
         const { done, value } = await reader.read();
         if (done) break;
-        raw += decoder.decode(value, { stream: true });
-        const markerIdx = raw.indexOf(PRODUCTS_MARKER);
-        const visible = markerIdx === -1 ? raw : raw.slice(0, markerIdx);
+        full += decoder.decode(value, { stream: true });
         setMessages((prev) =>
-          prev.map((m) => (m.id === assistantId ? { ...m, content: visible, streaming: true } : m))
+          prev.map((m) => (m.id === assistantId ? { ...m, content: full, streaming: true } : m))
         );
       }
 
-      const markerIdx = raw.indexOf(PRODUCTS_MARKER);
-      const finalText = markerIdx === -1 ? raw : raw.slice(0, markerIdx);
-      let products: ChatMessage["products"];
-      if (markerIdx !== -1) {
-        try {
-          products = JSON.parse(raw.slice(markerIdx + PRODUCTS_MARKER.length));
-        } catch {
-          products = undefined;
-        }
-      }
-
       setMessages((prev) =>
-        prev.map((m) =>
-          m.id === assistantId ? { ...m, content: finalText.trim(), streaming: false, products } : m
-        )
+        prev.map((m) => (m.id === assistantId ? { ...m, content: full.trim(), streaming: false } : m))
       );
     } catch {
       setMessages((prev) =>
@@ -154,7 +126,8 @@ export function ChatWidget() {
             ? {
                 ...m,
                 role: "error",
-                content: "Não consegui acessar o assistente agora. Tente novamente em alguns instantes.",
+                content:
+                  "Não consegui responder agora. Tente novamente em alguns instantes ou entre em contato com nosso atendimento.",
                 streaming: false,
                 retryText: trimmed,
               }
@@ -260,25 +233,9 @@ export function ChatWidget() {
                     </p>
                   )}
                   {menuView.kind === "main" && (
-                    <MainMenuScreen onNavigate={(view) => goTo({ kind: view } as MenuView)} />
-                  )}
-                  {menuView.kind === "categories" && (
-                    <CategoriesScreen
-                      onSelectCategory={(slug, name) =>
-                        goTo({ kind: "products", categorySlug: slug, categoryName: name })
-                      }
-                    />
-                  )}
-                  {menuView.kind === "products" && (
-                    <ProductsScreen
-                      categorySlug={menuView.categorySlug}
-                      categoryName={menuView.categoryName}
-                      onBuy={(product) => goTo({ kind: "productLinks", product })}
-                    />
+                    <MainMenuScreen onNavigate={(view) => goTo({ kind: view })} />
                   )}
                   {menuView.kind === "whereToBuy" && <WhereToBuyScreen />}
-                  {menuView.kind === "productLinks" && <ProductLinksScreen product={menuView.product} />}
-                  {menuView.kind === "about" && <AboutScreen />}
                   {menuView.kind === "main" && (
                     <p className="pt-1 text-center text-[12px] text-navy-400">
                       Ou me pergunte alguma coisa abaixo…
@@ -339,24 +296,6 @@ export function ChatWidget() {
                           >
                             <Phone size={11} /> Falar com a Della
                           </a>
-                        </div>
-                      )}
-
-                      {m.role === "assistant" && m.products && m.products.products.length > 0 && (
-                        <div className="mt-2 flex w-full max-w-[90%] flex-col gap-2">
-                          {m.products.products.map((p) => (
-                            <ProductCardMini key={p.id} product={p} />
-                          ))}
-                          {m.products.hasMore && (
-                            <a
-                              href="/produtos"
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="text-center text-[12px] font-semibold text-navy-600 underline underline-offset-2 hover:text-navy-900"
-                            >
-                              Ver mais produtos
-                            </a>
-                          )}
                         </div>
                       )}
                     </div>

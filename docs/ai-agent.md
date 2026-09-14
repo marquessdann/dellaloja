@@ -28,33 +28,35 @@ Vercel Serverless Function (src/app/api/ai/chat/route.ts)
 Nenhuma chamada à Groq ou ao Supabase acontece no navegador. O frontend só
 conversa com `/api/ai/chat`, que roda no servidor da Vercel.
 
-### 1.1 Site vitrine — menu determinístico (não depende da IA)
+### 1.1 Della IA é assistente de SUPORTE, não catálogo
 
-O site da Della **não tem checkout próprio** — ele é uma vitrine que
-direciona para marketplaces (Mercado Livre, Shopee, TikTok Shop, e outros
-que forem cadastrados). Por isso, as opções básicas do chat (Ver produtos,
-Categorias, Onde comprar, Sobre a Della) **não passam pela IA** — elas
-chamam rotas determinísticas que só consultam o Supabase:
+A Della IA não navega pelo catálogo nem apresenta a empresa — ela responde
+dúvidas de suporte (onde comprar, contato, localização, horário, redes
+sociais) em linguagem natural. O único atalho fixo na tela inicial do chat
+é **"Onde comprar?"**, e ele **não passa pela IA**: chama uma rota
+determinística que só consulta o Supabase:
 
 ```
-ChatWidget (estado local: menu principal → submenus → voltar)
-   │
-   ├─► GET /api/store/categories
-   ├─► GET /api/store/products?category=...
-   ├─► GET /api/store/marketplaces
-   ├─► GET /api/store/product-links?productId=...
-   └─► GET /api/store/about
+ChatWidget (estado local: menu principal ⇄ "Onde comprar")
+   └─► GET /api/store/marketplaces   (Mercado Livre / Shopee / TikTok Shop)
 ```
 
-Nenhuma dessas rotas usa Groq. Isso significa que, mesmo se a Groq estiver
-fora do ar, o cliente ainda consegue navegar pelo catálogo e achar onde
-comprar — só perguntas em linguagem natural (o campo de texto) usam
-`/api/ai/chat`. Ver `src/lib/store/queries.ts` (consultas compartilhadas)
-e `src/components/chat/MenuScreens.tsx` (telas).
+Isso significa que, mesmo se a Groq estiver fora do ar, o botão "Onde
+comprar?" continua funcionando — só perguntas digitadas em linguagem
+natural usam `/api/ai/chat`. Ver `src/lib/store/queries.ts` (consulta
+compartilhada com a tool `get_marketplace_links`) e
+`src/components/chat/MenuScreens.tsx` (tela).
 
 Navegação do menu é 100% estado local do React (`ChatWidget.tsx`), nunca
 `window.location.reload()` — "← Voltar" e "⌂ Menu principal" só trocam
-esse estado.
+esse estado, inclusive durante uma conversa em andamento.
+
+`listMarketplaces()` só depende das colunas `id, name, url, active` da
+tabela `marketplaces`, que já existem desde a `0001_init_schema.sql` — a
+migration `0002_marketplace_links.sql` (que adiciona `slug`/`icon`/
+`display_order` e a tabela `product_marketplace_links`) é **opcional**
+agora que não há mais fluxo de "comprar este produto específico". Rodá-la
+não quebra nada, mas também não é obrigatória para o chat funcionar.
 
 ### 1.2 Diagnosticando a mensagem de "instabilidade"
 
@@ -98,7 +100,7 @@ supabase/seed.sql                          # dados reais já existentes no site
 
 src/lib/supabase/admin.ts                  # client Supabase (service role, server-only)
 src/lib/ai/provider.ts                     # camada Groq (troca de modelo em 1 lugar)
-src/lib/ai/tools.ts                        # 11 ferramentas read-only
+src/lib/ai/tools.ts                        # 4 ferramentas read-only (suporte/FAQ)
 src/lib/ai/system-prompt.ts                # prompt do agente
 src/lib/ai/security.ts                     # validação, rate limit, timeout
 src/lib/ai/constants.ts                    # constantes compartilhadas front/back
@@ -107,7 +109,7 @@ src/lib/ai/__tests__/security.test.ts      # testes automatizados
 src/app/api/ai/chat/route.ts               # endpoint streaming
 
 src/components/chat/ChatWidget.tsx         # painel de chat
-src/components/chat/ProductCardMini.tsx    # card de produto no chat
+src/components/chat/MenuScreens.tsx        # tela "Onde comprar"
 src/components/chat/useSessionId.ts        # sessão anônima por navegador
 src/components/chat/types.ts
 

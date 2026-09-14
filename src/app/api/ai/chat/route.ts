@@ -1,6 +1,6 @@
 import { getSupabaseAdmin } from "@/lib/supabase/admin";
 import { runToolDecision, streamFinalAnswer, logGroqError } from "@/lib/ai/provider";
-import { chatTools, executeTool, type ProductPayload } from "@/lib/ai/tools";
+import { chatTools, executeTool } from "@/lib/ai/tools";
 import { SYSTEM_PROMPT } from "@/lib/ai/system-prompt";
 import {
   isRateLimited,
@@ -9,7 +9,6 @@ import {
   withTimeout,
   TimeoutError,
 } from "@/lib/ai/security";
-import { PRODUCTS_MARKER } from "@/lib/ai/constants";
 import type { ChatCompletionMessageParam } from "groq-sdk/resources/chat/completions";
 
 export const runtime = "nodejs";
@@ -20,7 +19,7 @@ const TOOL_DECISION_TIMEOUT_MS = 12_000;
 const STREAM_TIMEOUT_MS = 20_000;
 
 const FALLBACK_MESSAGE =
-  "Estou com uma instabilidade agora. Você pode tentar novamente em alguns instantes ou falar diretamente com a Della.";
+  "Não consegui responder agora. Tente novamente em alguns instantes ou entre em contato com nosso atendimento.";
 
 function jsonError(code: string, message: string, status: number) {
   return Response.json({ error: true, code, message }, { status });
@@ -137,7 +136,6 @@ export async function POST(req: Request) {
     ),
   ];
 
-  let latestProducts: { products: ProductPayload[]; hasMore: boolean } | null = null;
   let hitRoundLimitWithPendingTools = false;
 
   try {
@@ -161,15 +159,6 @@ export async function POST(req: Request) {
 
       for (const call of toolCalls) {
         const result = await executeTool(call.function.name, call.function.arguments);
-
-        if (
-          (call.function.name === "search_products" || call.function.name === "get_products_by_category") &&
-          result &&
-          typeof result === "object" &&
-          "products" in result
-        ) {
-          latestProducts = result as { products: ProductPayload[]; hasMore: boolean };
-        }
 
         messages.push({
           role: "tool",
@@ -213,9 +202,6 @@ export async function POST(req: Request) {
   }
 
   const encoder = new TextEncoder();
-  const productsForClient = latestProducts
-    ? { products: latestProducts.products.slice(0, 3), hasMore: latestProducts.hasMore || latestProducts.products.length > 3 }
-    : null;
 
   const body_ = new ReadableStream<Uint8Array>({
     async start(controller) {
@@ -239,10 +225,6 @@ export async function POST(req: Request) {
       if (!full.trim()) {
         full = FALLBACK_MESSAGE;
         controller.enqueue(encoder.encode(full));
-      }
-
-      if (productsForClient && productsForClient.products.length > 0) {
-        controller.enqueue(encoder.encode(PRODUCTS_MARKER + JSON.stringify(productsForClient)));
       }
 
       try {
