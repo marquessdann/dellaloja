@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
-import { ArrowRight, MessageCircle } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { siteConfig } from "@/data/site-config";
 
 const ease = [0.22, 1, 0.36, 1] as const;
@@ -169,15 +169,6 @@ export function Hero() {
                 className="transition-transform duration-300 group-hover:translate-x-1"
               />
             </Link>
-            <a
-              href={siteConfig.contact.whatsappLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 rounded-full border border-white/25 px-7 py-3.5 text-sm font-semibold text-white transition-colors duration-300 hover:border-gold-400 hover:text-gold-300"
-            >
-              <MessageCircle size={16} />
-              Fale com a Della
-            </a>
           </motion.div>
 
           <motion.div

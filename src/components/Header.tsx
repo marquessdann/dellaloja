@@ -136,14 +136,6 @@ export function Header() {
           <nav className="flex items-center gap-7">
             {rightNav.map(renderNavItem)}
           </nav>
-          <a
-            href={siteConfig.contact.whatsappLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="ml-3 rounded-full bg-navy-900 px-5 py-2.5 text-sm font-semibold text-cream-100 transition-all duration-300 hover:bg-navy-800 hover:shadow-[0_8px_24px_-8px_rgba(6,26,58,0.5)]"
-          >
-            Fale com a Della
-          </a>
         </div>
 
         <button
@@ -246,15 +238,6 @@ export function Header() {
                   )
                 )}
               </nav>
-
-              <a
-                href={siteConfig.contact.whatsappLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-8 rounded-full bg-navy-900 px-5 py-3 text-center text-sm font-semibold text-cream-100"
-              >
-                Fale com a Della
-              </a>
             </motion.div>
           </motion.div>
         )}
