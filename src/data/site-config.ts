@@ -1,3 +1,8 @@
+// Mensagem pré-preenchida ao abrir o WhatsApp pelo site — mantém o número e
+// o texto consistentes em todos os botões/links que usam whatsappLink.
+const WHATSAPP_MESSAGE =
+  "Olá, vim através do site da Della Distribuidora e gostaria de tirar uma dúvida! Pode me ajudar?!";
+
 export const siteConfig = {
   name: "DELLA",
   fullName: "Della Distribuidora de Produtos",
@@ -9,9 +14,9 @@ export const siteConfig = {
   description:
     "A Della é uma loja online com produtos selecionados para tornar suas escolhas mais simples, práticas e especiais.",
   contact: {
-    email: "danigtba@gmail.com",
-    whatsapp: "(41) 99984-6920",
-    whatsappLink: "https://wa.me/5541999846920",
+    email: "contato@dellastore.com.br",
+    whatsapp: "(41) 99679-0904",
+    whatsappLink: `https://wa.me/5541996790904?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`,
     instagram: "@marquessdann",
     instagramLink: "https://instagram.com/marquessdann",
     city: "Curitiba, PR",

@@ -13,6 +13,10 @@ const faqs = [
     answer: `A Della está localizada em ${siteConfig.contact.city}, com entregas e atendimento para todo o Brasil.`,
   },
   {
+    question: "Qual é o horário de atendimento?",
+    answer: "Nosso atendimento funciona de segunda a sexta-feira, das 09h às 17h.",
+  },
+  {
     question: "Como faço para comprar os produtos?",
     answer:
       "Entre em contato pelo WhatsApp ou e-mail para tirar dúvidas e receber mais informações sobre os produtos. Em breve, também será possível comprar diretamente pelo Mercado Livre.",

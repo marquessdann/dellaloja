@@ -1,7 +1,7 @@
 import { ArrowUpRight, MapPin } from "lucide-react";
 import { Reveal } from "./Reveal";
 
-const ADDRESS = "Rua Salim Tacla, 474, Cajuru, Curitiba - PR";
+const ADDRESS = "Rua Assis Figueiredo, 59, Parolin, Curitiba - PR, CEP 80.630-280";
 const MAPS_SEARCH_URL = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
   ADDRESS
 )}`;
@@ -22,9 +22,9 @@ export function LocationSection() {
               Venha conhecer a Della
             </h2>
             <p className="mt-4 text-[15px] leading-relaxed text-navy-600">
-              Rua Salim Tacla, 474
+              Rua Assis Figueiredo, 59
               <br />
-              Cajuru, Curitiba - PR
+              Parolin, Curitiba - PR - CEP 80.630-280
             </p>
             <a
               href={MAPS_SEARCH_URL}

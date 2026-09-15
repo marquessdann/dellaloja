@@ -110,14 +110,15 @@ on conflict (slug) do update set
 -- ============================================================
 -- store_information
 -- ============================================================
-insert into store_information (id, name, address, whatsapp, whatsapp_link, email, instagram, instagram_link)
+insert into store_information (id, name, address, whatsapp, whatsapp_link, email, business_hours, instagram, instagram_link)
 values (
   1,
   'Della Distribuidora de Produtos',
-  'Rua Salim Tacla, 474, Cajuru, Curitiba - PR',
-  '(41) 99984-6920',
-  'https://wa.me/5541999846920',
-  'danigtba@gmail.com',
+  'Rua Assis Figueiredo, 59, Parolin, Curitiba - PR, CEP 80.630-280',
+  '(41) 99679-0904',
+  'https://wa.me/5541996790904?text=Ol%C3%A1%2C%20vim%20atrav%C3%A9s%20do%20site%20da%20Della%20Distribuidora%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida!%20Pode%20me%20ajudar%3F!',
+  'contato@dellastore.com.br',
+  'Segunda a sexta-feira, das 09h às 17h.',
   '@marquessdann',
   'https://instagram.com/marquessdann'
 )
@@ -127,6 +128,7 @@ on conflict (id) do update set
   whatsapp = excluded.whatsapp,
   whatsapp_link = excluded.whatsapp_link,
   email = excluded.email,
+  business_hours = excluded.business_hours,
   instagram = excluded.instagram,
   instagram_link = excluded.instagram_link;
 
@@ -138,10 +140,13 @@ insert into faq (question, answer, category, active) values
    'Você pode navegar pelos produtos no site e, para fechar a compra, falar direto com a Della pelo WhatsApp — é por lá que confirmamos disponibilidade, preço e forma de envio.',
    'compra', true),
   ('Vocês têm loja física?',
-   'Sim. A Della fica na Rua Salim Tacla, 474, Cajuru, Curitiba - PR.',
+   'Sim. A Della fica na Rua Assis Figueiredo, 59, Parolin, Curitiba - PR, CEP 80.630-280.',
    'loja', true),
   ('Como falo com a Della?',
    'O jeito mais rápido é pelo WhatsApp, disponível no botão de contato do site.',
+   'atendimento', true),
+  ('Qual é o horário de atendimento?',
+   'Nosso atendimento funciona de segunda a sexta-feira, das 09h às 17h.',
    'atendimento', true)
 on conflict do nothing;
 
