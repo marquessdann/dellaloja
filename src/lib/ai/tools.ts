@@ -1,6 +1,7 @@
 import "server-only";
 import { getSupabaseAdmin } from "@/lib/supabase/admin";
 import { listLinkedMarketplaces } from "@/lib/store/queries";
+import { buildGoogleMapsSearchUrl } from "@/lib/maps";
 import type { ChatCompletionTool } from "groq-sdk/resources/chat/completions";
 
 // ============================================================
@@ -100,14 +101,22 @@ async function getStoreInformation(args: { field?: string }) {
 
   if (!data) return { store: null };
 
+  // Computed from the real address on file, never a separate/invented URL —
+  // lets the assistant share a working Google Maps link whenever it answers
+  // an address question, without the model having to build the URL itself.
+  const mapsLink = data.address ? buildGoogleMapsSearchUrl(data.address) : null;
+
   const field = args.field as StoreField | undefined;
   if (!field || !STORE_FIELDS.includes(field)) {
-    return { store: data };
+    return { store: { ...data, maps_link: mapsLink } };
   }
 
   const narrowed: Record<string, unknown> = { name: data.name };
   for (const col of STORE_FIELD_COLUMNS[field]) {
     narrowed[col] = (data as Record<string, unknown>)[col] ?? null;
+  }
+  if (field === "address" && mapsLink) {
+    narrowed.maps_link = mapsLink;
   }
   return { store: narrowed };
 }

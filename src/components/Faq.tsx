@@ -10,7 +10,7 @@ import { cn } from "@/lib/utils";
 const faqs = [
   {
     question: "Onde a Della está localizada?",
-    answer: `A Della está localizada em ${siteConfig.contact.city}, com entregas e atendimento para todo o Brasil.`,
+    answer: `A Della está localizada na ${siteConfig.contact.address}, com entregas e atendimento para todo o Brasil.`,
   },
   {
     question: "Qual é o horário de atendimento?",
@@ -38,7 +38,7 @@ const faqs = [
   },
   {
     question: "Quais são os canais de contato disponíveis?",
-    answer: `WhatsApp (${siteConfig.contact.whatsapp}), e-mail (${siteConfig.contact.email}) e Instagram (${siteConfig.contact.instagram}).`,
+    answer: `Você pode entrar em contato conosco pelos nossos canais oficiais: WhatsApp: ${siteConfig.contact.whatsapp}, e-mail: ${siteConfig.contact.email} ou Instagram: ${siteConfig.contact.instagram}. Nossa equipe estará à disposição para ajudar.`,
   },
 ];
 

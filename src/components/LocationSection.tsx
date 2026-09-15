@@ -1,12 +1,11 @@
 import { ArrowUpRight, MapPin } from "lucide-react";
 import { Reveal } from "./Reveal";
+import { siteConfig } from "@/data/site-config";
+import { buildGoogleMapsSearchUrl } from "@/lib/maps";
 
-const ADDRESS = "Rua Assis Figueiredo, 59, Parolin, Curitiba - PR, CEP 80.630-280";
-const MAPS_SEARCH_URL = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-  ADDRESS
-)}`;
+const MAPS_SEARCH_URL = buildGoogleMapsSearchUrl(siteConfig.contact.address);
 const MAPS_EMBED_URL = `https://www.google.com/maps?q=${encodeURIComponent(
-  ADDRESS
+  siteConfig.contact.address
 )}&output=embed`;
 
 export function LocationSection() {
@@ -22,9 +21,9 @@ export function LocationSection() {
               Venha conhecer a Della
             </h2>
             <p className="mt-4 text-[15px] leading-relaxed text-navy-600">
-              Rua Assis Figueiredo, 59
+              Rua Assis Figueiredo, 59 - Parolin
               <br />
-              Parolin, Curitiba - PR - CEP 80.630-280
+              Curitiba - PR, CEP 80.630-280
             </p>
             <a
               href={MAPS_SEARCH_URL}

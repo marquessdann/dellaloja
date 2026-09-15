@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Mail, MessageCircle, AtSign, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { siteConfig } from "@/data/site-config";
 import { categories } from "@/data/categories";
 
@@ -70,41 +70,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-14 grid grid-cols-1 gap-6 border-t border-cream-100/10 pt-8 sm:grid-cols-3">
-          <a
-            href={`mailto:${siteConfig.contact.email}`}
-            className="group flex items-center gap-3 text-sm text-cream-200/90"
-          >
-            <span className="flex h-9 w-9 items-center justify-center rounded-full border border-gold-400/40 text-gold-400 transition-colors group-hover:bg-gold-400 group-hover:text-navy-950">
-              <Mail size={16} />
-            </span>
-            {siteConfig.contact.email}
-          </a>
-          <a
-            href={siteConfig.contact.whatsappLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group flex items-center gap-3 text-sm text-cream-200/90"
-          >
-            <span className="flex h-9 w-9 items-center justify-center rounded-full border border-gold-400/40 text-gold-400 transition-colors group-hover:bg-gold-400 group-hover:text-navy-950">
-              <MessageCircle size={16} />
-            </span>
-            {siteConfig.contact.whatsapp}
-          </a>
-          <a
-            href={siteConfig.contact.instagramLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group flex items-center gap-3 text-sm text-cream-200/90"
-          >
-            <span className="flex h-9 w-9 items-center justify-center rounded-full border border-gold-400/40 text-gold-400 transition-colors group-hover:bg-gold-400 group-hover:text-navy-950">
-              <AtSign size={16} />
-            </span>
-            {siteConfig.contact.instagram}
-          </a>
-        </div>
-
-        <div className="mt-10 flex flex-col items-center gap-3 border-t border-cream-100/10 pt-8 text-center">
+        <div className="mt-14 flex flex-col items-center gap-3 border-t border-cream-100/10 pt-8 text-center">
           <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-cream-300/60">
             Compre também em
           </p>

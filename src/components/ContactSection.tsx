@@ -2,6 +2,7 @@ import { Mail, MessageCircle, AtSign, MapPin, ArrowUpRight } from "lucide-react"
 import { SectionHeading } from "./SectionHeading";
 import { Reveal, StaggerGroup, StaggerItem } from "./Reveal";
 import { siteConfig } from "@/data/site-config";
+import { buildGoogleMapsSearchUrl } from "@/lib/maps";
 
 const cards = [
   {
@@ -25,8 +26,8 @@ const cards = [
   {
     icon: MapPin,
     label: "Localização",
-    value: siteConfig.contact.city,
-    href: undefined,
+    value: siteConfig.contact.address,
+    href: buildGoogleMapsSearchUrl(siteConfig.contact.address),
   },
 ];
 
@@ -68,7 +69,7 @@ export function ContactSection() {
                     <p className="text-xs uppercase tracking-[0.16em] text-navy-400">
                       {card.label}
                     </p>
-                    <p className="mt-1 text-base font-medium text-navy-900 break-words">
+                    <p className="mt-1 text-[15px] font-medium leading-snug text-navy-900 break-words">
                       {card.value}
                     </p>
                   </div>

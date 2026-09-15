@@ -15,11 +15,11 @@ export const siteConfig = {
     "A Della é uma loja online com produtos selecionados para tornar suas escolhas mais simples, práticas e especiais.",
   contact: {
     email: "contato@dellastore.com.br",
-    whatsapp: "(41) 99679-0904",
+    whatsapp: "41 99679-0904",
     whatsappLink: `https://wa.me/5541996790904?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`,
     instagram: "@marquessdann",
     instagramLink: "https://instagram.com/marquessdann",
-    city: "Curitiba, PR",
+    address: "Rua Assis Figueiredo, 59 - Parolin, Curitiba - PR, CEP 80.630-280",
   },
   marketplaces: [
     { label: "Mercado Livre", href: "#" },

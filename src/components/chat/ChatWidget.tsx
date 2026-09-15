@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils";
 import { MAX_MESSAGE_LENGTH } from "@/lib/ai/constants";
 import { useSessionId } from "./useSessionId";
 import { MainMenuScreen, WhereToBuyScreen } from "./MenuScreens";
+import { linkifyText } from "./linkify";
 import type { ChatMessage, MenuView } from "./types";
 
 const GREETING: ChatMessage = {
@@ -280,7 +281,7 @@ export function ChatWidget() {
                         )}
                       >
                         {m.content.length > 0 ? (
-                          m.content
+                          linkifyText(m.content)
                         ) : m.streaming ? (
                           <span className="flex gap-1 py-1">
                             <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-navy-300 [animation-delay:-0.3s]" />
