@@ -110,11 +110,14 @@ on conflict (slug) do update set
 -- ============================================================
 -- store_information
 -- ============================================================
-insert into store_information (id, name, address, whatsapp, whatsapp_link, email, business_hours, instagram, instagram_link)
+-- phone e whatsapp são o mesmo número na Della — preenchendo os dois, uma
+-- pergunta sobre "telefone" responde igual a uma sobre "WhatsApp".
+insert into store_information (id, name, address, phone, whatsapp, whatsapp_link, email, business_hours, instagram, instagram_link)
 values (
   1,
   'Della Distribuidora de Produtos',
   'Rua Assis Figueiredo, 59, Parolin, Curitiba - PR, CEP 80.630-280',
+  '(41) 99679-0904',
   '(41) 99679-0904',
   'https://wa.me/5541996790904?text=Ol%C3%A1%2C%20vim%20atrav%C3%A9s%20do%20site%20da%20Della%20Distribuidora%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida!%20Pode%20me%20ajudar%3F!',
   'contato@dellastore.com.br',
@@ -125,6 +128,7 @@ values (
 on conflict (id) do update set
   name = excluded.name,
   address = excluded.address,
+  phone = excluded.phone,
   whatsapp = excluded.whatsapp,
   whatsapp_link = excluded.whatsapp_link,
   email = excluded.email,
