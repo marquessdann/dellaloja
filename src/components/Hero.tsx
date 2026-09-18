@@ -120,6 +120,31 @@ export function Hero() {
           "linear-gradient(135deg, #061A3A 0%, #031027 55%, #05070C 100%)",
       }}
     >
+      {/* Animated background video — the gradient above stays in place as a
+          fallback: it's always painted first, the video just paints over it
+          once it can play, and disappears again (via motion-reduce:hidden)
+          for prefers-reduced-motion. Decorative only: aria-hidden + no
+          controls/focus, so it's never announced or reachable by keyboard. */}
+      <video
+        aria-hidden="true"
+        tabIndex={-1}
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+        disablePictureInPicture
+        className="pointer-events-none absolute inset-0 z-0 h-full w-full object-cover motion-reduce:hidden"
+      >
+        <source src="/videos/hero-background.mp4" type="video/mp4" />
+      </video>
+      {/* Very small, fixed-color scrim (same navy as the gradient above) so
+          the brighter moment in the video loop doesn't wash out the white
+          text — barely visible during the rest of the loop, where the video
+          is already this dark. Hidden together with the video for
+          prefers-reduced-motion, keeping the plain gradient untouched. */}
+      <div className="pointer-events-none absolute inset-0 z-0 bg-[#05070C]/40 motion-reduce:hidden" />
+
       {/* Giant DELLA wordmark used as an integrated watermark, not a pasted image */}
       <div className="pointer-events-none absolute inset-0 z-0 flex items-center justify-center overflow-hidden">
         <motion.div
