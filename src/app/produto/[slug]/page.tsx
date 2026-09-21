@@ -8,6 +8,7 @@ import { ProductCard } from "@/components/ProductCard";
 import { ProductGallery } from "@/components/ProductGallery";
 import { Reveal } from "@/components/Reveal";
 import { siteConfig } from "@/data/site-config";
+import { buildOpenGraph, buildTwitter } from "@/lib/seo";
 
 export function generateStaticParams() {
   return products.map((p) => ({ slug: p.slug }));
@@ -19,9 +20,22 @@ export async function generateMetadata({
   const { slug } = await params;
   const product = getProduct(slug);
   if (!product) return {};
+  const path = `/produto/${product.slug}`;
   return {
     title: product.name,
     description: product.shortDescription,
+    alternates: { canonical: path },
+    openGraph: buildOpenGraph({
+      title: product.name,
+      description: product.shortDescription,
+      path,
+      image: { url: product.image, alt: product.name },
+    }),
+    twitter: buildTwitter({
+      title: product.name,
+      description: product.shortDescription,
+      image: { url: product.image, alt: product.name },
+    }),
   };
 }
 

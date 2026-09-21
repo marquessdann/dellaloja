@@ -2,10 +2,17 @@ import type { Metadata } from "next";
 import { PageHeader } from "@/components/PageHeader";
 import { ContactSection } from "@/components/ContactSection";
 import { Faq } from "@/components/Faq";
+import { buildOpenGraph, buildTwitter } from "@/lib/seo";
+
+const title = "Contato";
+const description = "Fale com a Della Distribuidora de Produtos.";
 
 export const metadata: Metadata = {
-  title: "Contato",
-  description: "Fale com a Della Distribuidora de Produtos.",
+  title,
+  description,
+  alternates: { canonical: "/contato" },
+  openGraph: buildOpenGraph({ title, description, path: "/contato" }),
+  twitter: buildTwitter({ title, description }),
 };
 
 export default function ContatoPage() {

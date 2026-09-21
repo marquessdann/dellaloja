@@ -4,6 +4,7 @@ import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { ChatWidget } from "@/components/chat/ChatWidget";
+import { siteUrl, buildOpenGraph, buildTwitter } from "@/lib/seo";
 
 const satoshi = localFont({
   src: "../fonts/Satoshi-Variable.woff2",
@@ -13,13 +14,22 @@ const satoshi = localFont({
   display: "swap",
 });
 
+const homeTitle = "Della Distribuidora de Produtos";
+const homeDescription =
+  "Tudo o que você procura, em um só lugar. Conheça o catálogo de produtos profissionais da Della Distribuidora.";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: {
-    default: "Della Distribuidora de Produtos",
+    default: homeTitle,
     template: "%s | Della",
   },
-  description:
-    "Tudo o que você procura, em um só lugar. Conheça o catálogo de produtos profissionais da Della Distribuidora.",
+  description: homeDescription,
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: buildOpenGraph({ title: homeTitle, description: homeDescription, path: "/" }),
+  twitter: buildTwitter({ title: homeTitle, description: homeDescription }),
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

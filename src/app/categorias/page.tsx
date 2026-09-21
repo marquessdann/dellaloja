@@ -3,10 +3,17 @@ import { PageHeader } from "@/components/PageHeader";
 import { CategoryCard } from "@/components/CategoryCard";
 import { StaggerGroup, StaggerItem } from "@/components/Reveal";
 import { categories } from "@/data/categories";
+import { buildOpenGraph, buildTwitter } from "@/lib/seo";
+
+const title = "Categorias";
+const description = "Conheça as categorias de produtos da Della Distribuidora.";
 
 export const metadata: Metadata = {
-  title: "Categorias",
-  description: "Conheça as categorias de produtos da Della Distribuidora.",
+  title,
+  description,
+  alternates: { canonical: "/categorias" },
+  openGraph: buildOpenGraph({ title, description, path: "/categorias" }),
+  twitter: buildTwitter({ title, description }),
 };
 
 export default function CategoriasPage() {

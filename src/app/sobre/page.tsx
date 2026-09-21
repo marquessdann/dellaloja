@@ -4,11 +4,18 @@ import { PageHeader } from "@/components/PageHeader";
 import { Diferenciais } from "@/components/Diferenciais";
 import { ProductsCta } from "@/components/ProductsCta";
 import { Reveal } from "@/components/Reveal";
+import { buildOpenGraph, buildTwitter } from "@/lib/seo";
+
+const title = "Sobre a Della";
+const description =
+  "Conheça a Della Distribuidora de Produtos, seu propósito e seus diferenciais.";
 
 export const metadata: Metadata = {
-  title: "Sobre a Della",
-  description:
-    "Conheça a Della Distribuidora de Produtos, seu propósito e seus diferenciais.",
+  title,
+  description,
+  alternates: { canonical: "/sobre" },
+  openGraph: buildOpenGraph({ title, description, path: "/sobre" }),
+  twitter: buildTwitter({ title, description }),
 };
 
 export default function SobrePage() {
@@ -53,7 +60,7 @@ export default function SobrePage() {
               <span className="absolute -bottom-2.5 -right-2.5 h-5 w-5 border-b border-r border-gold-500" />
               <div className="relative aspect-[4/5] w-full overflow-hidden bg-navy-900">
                 <Image
-                  src="/images/products/10-kit-lash-lifting-brow-lamination.webp"
+                  src="/images/products/13-gelo-sinistro-body-splash-enaldinho.webp"
                   alt="Produtos Della"
                   fill
                   sizes="(max-width: 1024px) 90vw, 480px"

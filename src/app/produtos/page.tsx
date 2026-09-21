@@ -2,11 +2,18 @@ import type { Metadata } from "next";
 import { Suspense } from "react";
 import { PageHeader } from "@/components/PageHeader";
 import { ProductsExplorer } from "@/components/ProductsExplorer";
+import { buildOpenGraph, buildTwitter } from "@/lib/seo";
+
+const title = "Produtos";
+const description =
+  "Navegue pelo catálogo de produtos da Della, organizados por categoria.";
 
 export const metadata: Metadata = {
-  title: "Produtos",
-  description:
-    "Navegue pelo catálogo de produtos da Della, organizados por categoria.",
+  title,
+  description,
+  alternates: { canonical: "/produtos" },
+  openGraph: buildOpenGraph({ title, description, path: "/produtos" }),
+  twitter: buildTwitter({ title, description }),
 };
 
 export default function ProdutosPage() {

@@ -14,7 +14,7 @@ export function AboutPreview() {
               <span className="absolute -bottom-2.5 -right-2.5 h-5 w-5 border-b border-r border-gold-500" />
               <div className="relative aspect-[4/5] w-full overflow-hidden bg-navy-900">
                 <Image
-                  src="/images/products/11-henna-master-sobrancelhas.webp"
+                  src="/images/products/01-treta-citrica-body-splash-enaldinho.webp"
                   alt="Produtos Della"
                   fill
                   sizes="(max-width: 1024px) 90vw, 480px"
@@ -22,7 +22,7 @@ export function AboutPreview() {
                 />
               </div>
             </div>
-            <div className="absolute -bottom-7 -right-6 flex h-28 w-28 flex-col items-center justify-center rounded-full border border-gold-500/60 bg-cream-100 text-navy-950 shadow-[0_20px_40px_-16px_rgba(8,16,38,0.3)] sm:-right-10">
+            <div className="absolute -bottom-7 right-0 flex h-28 w-28 flex-col items-center justify-center rounded-full border border-gold-500/60 bg-cream-100 text-navy-950 shadow-[0_20px_40px_-16px_rgba(8,16,38,0.3)] sm:-right-10">
               <span className="font-display text-xl font-bold leading-none">
                 Della
               </span>
