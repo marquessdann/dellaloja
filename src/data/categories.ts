@@ -28,7 +28,7 @@ export const categories: Category[] = [
     name: "Adesivos",
     shortName: "Adesivos",
     description: "Colas profissionais de alta fixação para extensão de cílios.",
-    image: "/images/products/01-adesivo-master-elite-diamond.webp",
+    image: "/images/products/01-treta-citrica-body-splash-enaldinho.webp",
   },
   {
     slug: "pincas",

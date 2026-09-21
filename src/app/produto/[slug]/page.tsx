@@ -134,7 +134,7 @@ export default async function ProductPage({
                   rel="noopener noreferrer"
                   className="group flex items-center gap-2 rounded-full border border-navy-900/15 px-6 py-3.5 text-sm font-semibold text-navy-900 transition-colors duration-300 hover:border-gold-500"
                 >
-                  Ver no Mercado Livre
+                  {product.buyButtonLabel ?? "Ver no Mercado Livre"}
                   <ArrowUpRight
                     size={15}
                     className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"

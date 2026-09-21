@@ -32,10 +32,10 @@ on conflict (slug) do update set
 insert into products (slug, name, brand, category_id, short_description, description, image_url, product_url, available)
 select v.slug, v.name, v.brand, c.id, v.short_description, v.description, v.image_url, v.product_url, true
 from (values
-  ('adesivo-master-elite-diamond', 'Master Elite Diamond', 'Master', 'adesivos',
-   'Adesivo transparente de secagem rápida para extensão de cílios.',
-   'Adesivo profissional para extensão de cílios, com acabamento transparente e secagem entre 0,5 e 1 segundo. Desenvolvido para lash designers que buscam alta retenção e conforto para a cliente durante todo o procedimento.',
-   '/images/products/01-adesivo-master-elite-diamond.webp', '/produto/adesivo-master-elite-diamond'),
+  ('body-splash-treta-citrica', 'Treta Cítrica - Body Splash Corporal 120ml (Unissex)', 'Enaldinho', 'adesivos',
+   'Body splash cítrico com brilho perolado e efeito refrescante imediato.',
+   'Um body splash com fragrância Limão e Algodão, direção cítrica combinada a um conceito olfativo limpo e confortável, que deixa o corpo perfumado o dia todo com sensação refrescante logo na primeira borrifada. Vegana, hipoalergênica, dermatologicamente testada e não testada em animais.',
+   '/images/products/01-treta-citrica-body-splash-enaldinho.webp', '/produto/body-splash-treta-citrica'),
   ('removedor-excellent-olive-balm', 'Excellent Olive Remover Balm', 'Excellent', 'cuidados-preparacao',
    'Removedor em balm com óleo de oliva para remoção segura.',
    'Removedor de extensão de cílios em formato balm, enriquecido com óleo de oliva para nutrir os fios naturais durante a remoção completa do adesivo. Textura em bisnaga facilita a aplicação e o controle do produto.',

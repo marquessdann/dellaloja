@@ -14,28 +14,40 @@ export interface Product {
   externalUrl: string;
   featured?: boolean;
   isNew?: boolean;
+  /** Overrides the default "Ver no Mercado Livre" label on the product page. */
+  buyButtonLabel?: string;
 }
 
 export const products: Product[] = [
   {
     id: "1",
-    slug: "adesivo-master-elite-diamond",
-    name: "Master Elite Diamond",
-    brand: "Master",
+    slug: "body-splash-treta-citrica",
+    name: "Treta Cítrica - Body Splash Corporal 120ml (Unissex)",
+    brand: "Enaldinho",
     category: "adesivos",
-    shortDescription: "Adesivo transparente de secagem rápida para extensão de cílios.",
+    shortDescription: "Body splash cítrico com brilho perolado e efeito refrescante imediato.",
     description:
-      "Adesivo profissional para extensão de cílios, com acabamento transparente e secagem entre 0,5 e 1 segundo. Desenvolvido para lash designers que buscam alta retenção e conforto para a cliente durante todo o procedimento.",
+      "Um body splash com fragrância Limão e Algodão, direção cítrica combinada a um conceito olfativo limpo e confortável, que deixa o corpo perfumado o dia todo com sensação refrescante logo na primeira borrifada. O líquido é amarelo vibrante e, ao balançar o frasco, sobem partículas na mesma tonalidade, deixando tudo ainda mais brilhante. Ao agitar o frasco antes de usar, ele revela um visual colorido, com pigmento amarelo e brilho perolado na pele, tornando a aplicação ainda mais especial. Vegana, hipoalergênica, dermatologicamente testada e não testada em animais. Agite bem antes de usar e borrife sobre o corpo a cerca de 15 cm de distância — reaplique sempre que quiser. Faz parte da coleção Enaldinho de 4 Sensações: Explosão Cósmica, Chiclete Irado, Gelo Sinistro e Treta Cítrica. Colecione todas.",
     highlights: [
-      "Secagem ultrarrápida",
-      "Acabamento transparente",
-      "Alta retenção",
-      "Uso profissional",
+      "Fragrância Limão e Algodão",
+      "Direção cítrica e refrescante",
+      "Líquido amarelo vibrante",
+      "Efeito perolado ao agitar",
+      "Vegana",
+      "Hipoalergênica",
+      "Dermatologicamente testada",
+      "Não testada em animais",
+      "120ml",
+      "Unissex",
     ],
-    image: "/images/products/01-adesivo-master-elite-diamond.webp",
-    images: ["/images/products/01-adesivo-master-elite-diamond.webp"],
+    image: "/images/products/01-treta-citrica-body-splash-enaldinho.webp",
+    images: [
+      "/images/products/01-treta-citrica-body-splash-enaldinho.webp",
+      "/images/products/01-treta-citrica-body-splash-enaldinho-verso.webp",
+    ],
     externalUrl: "#",
     featured: true,
+    buyButtonLabel: "Veja na Shopee",
   },
   {
     id: "2",
