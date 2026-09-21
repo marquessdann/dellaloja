@@ -16,10 +16,19 @@ export function ProductCard({ product }: { product: Product }) {
       <span className="pointer-events-none absolute left-0 top-0 z-10 h-px w-6 bg-gold-500 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
       <div className="img-zoom relative aspect-[4/5] w-full bg-cream-300">
-        {product.isNew && (
-          <span className="absolute left-3 top-3 z-10 bg-navy-900 px-3 py-1 text-[9px] font-semibold tracking-[0.18em] text-cream-100 uppercase">
-            Novidade
-          </span>
+        {(product.isNew || product.isBestSeller) && (
+          <div className="absolute left-3 top-3 z-10 flex flex-col items-start gap-1.5">
+            {product.isBestSeller && (
+              <span className="bg-gold-500 px-3 py-1 text-[9px] font-semibold tracking-[0.18em] text-navy-950 uppercase">
+                Mais vendido
+              </span>
+            )}
+            {product.isNew && (
+              <span className="bg-navy-900 px-3 py-1 text-[9px] font-semibold tracking-[0.18em] text-cream-100 uppercase">
+                Novidade
+              </span>
+            )}
+          </div>
         )}
         <Image
           src={product.image}

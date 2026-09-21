@@ -14,6 +14,7 @@ export interface Product {
   externalUrl: string;
   featured?: boolean;
   isNew?: boolean;
+  isBestSeller?: boolean;
   /** Overrides the default "Ver no Mercado Livre" label on the product page. */
   buyButtonLabel?: string;
 }
@@ -50,6 +51,7 @@ export const products: Product[] = [
     ],
     externalUrl: "#",
     featured: true,
+    isBestSeller: true,
     buyButtonLabel: "Veja na Shopee",
   },
   {

@@ -22,7 +22,7 @@ insert into categories (slug, name, description) values
   ('lifting-coloracao', 'Lifting & Coloração', 'Lash lifting, brow lamination, henna e tintura profissional.'),
   ('cuidados-preparacao', 'Cuidados & Preparação', 'Removedores e preparadores para resultados duradouros.'),
   ('home-care', 'Home Care', 'Cuidado diário para prolongar o efeito dos procedimentos.'),
-  ('body-splash', 'Body Splash', 'Sprays corporais perfumados, refrescantes e cheios de personalidade.')
+  ('body-splash', 'Coleção Enaldinho', 'Sprays corporais perfumados, refrescantes e cheios de personalidade.')
 on conflict (slug) do update set
   name = excluded.name,
   description = excluded.description;

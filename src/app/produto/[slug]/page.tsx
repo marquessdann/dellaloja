@@ -55,14 +55,21 @@ export default async function ProductPage({
             </Reveal>
 
             <Reveal delay={0.1}>
-              {category && (
-                <Link
-                  href={`/produtos?categoria=${category.slug}`}
-                  className="inline-flex items-center gap-1.5 border border-gold-500/40 bg-gold-200/50 px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-navy-800"
-                >
-                  {category.name}
-                </Link>
-              )}
+              <div className="flex flex-wrap items-center gap-2.5">
+                {category && (
+                  <Link
+                    href={`/produtos?categoria=${category.slug}`}
+                    className="inline-flex items-center gap-1.5 border border-gold-500/40 bg-gold-200/50 px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-navy-800"
+                  >
+                    {category.name}
+                  </Link>
+                )}
+                {product.isBestSeller && (
+                  <span className="inline-flex items-center gap-1.5 bg-gold-500 px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-navy-950">
+                    Mais vendido
+                  </span>
+                )}
+              </div>
               <h1 className="mt-5 font-display text-4xl font-bold text-navy-900 sm:text-5xl">
                 {product.name}
               </h1>

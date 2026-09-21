@@ -18,6 +18,13 @@ export interface Category {
 
 export const categories: Category[] = [
   {
+    slug: "body-splash",
+    name: "Coleção Enaldinho",
+    shortName: "Enaldinho",
+    description: "Sprays corporais perfumados, refrescantes e cheios de personalidade.",
+    image: "/images/products/01-treta-citrica-body-splash-enaldinho.webp",
+  },
+  {
     slug: "extensao-cilios",
     name: "Extensão de Cílios",
     shortName: "Cílios",
@@ -65,13 +72,6 @@ export const categories: Category[] = [
     shortName: "Home Care",
     description: "Cuidado diário para prolongar o efeito dos procedimentos.",
     image: "/images/products/12-master-lash-brow-serum.webp",
-  },
-  {
-    slug: "body-splash",
-    name: "Body Splash",
-    shortName: "Body Splash",
-    description: "Sprays corporais perfumados, refrescantes e cheios de personalidade.",
-    image: "/images/products/01-treta-citrica-body-splash-enaldinho.webp",
   },
 ];
 
