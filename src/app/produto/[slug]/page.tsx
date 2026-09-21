@@ -53,7 +53,7 @@ export default async function ProductPage({
 
   return (
     <>
-      <section className="border-b border-navy-900/8 bg-cream-100 py-20 sm:py-24">
+      <section className="border-b border-navy-900/8 bg-cream-300 py-20 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <Link
             href="/produtos"
