@@ -32,6 +32,11 @@ const cspHeader = `
 const allowedOrigin = process.env.SITE_URL;
 
 const nextConfig: NextConfig = {
+  images: {
+    // Default quality (75) plus the higher quality ProductGallery requests
+    // for its Mercado-Livre-style zoomed main image.
+    qualities: [75, 92],
+  },
   async headers() {
     return [
       {
