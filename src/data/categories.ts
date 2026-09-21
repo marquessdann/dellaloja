@@ -5,7 +5,8 @@ export type CategorySlug =
   | "pincas"
   | "equipamentos"
   | "lifting-coloracao"
-  | "home-care";
+  | "home-care"
+  | "body-splash";
 
 export interface Category {
   slug: CategorySlug;
@@ -28,7 +29,7 @@ export const categories: Category[] = [
     name: "Adesivos",
     shortName: "Adesivos",
     description: "Colas profissionais de alta fixação para extensão de cílios.",
-    image: "/images/products/01-treta-citrica-body-splash-enaldinho.webp",
+    image: "/images/products/02-removedor-excellent-olive-balm.webp",
   },
   {
     slug: "pincas",
@@ -64,6 +65,13 @@ export const categories: Category[] = [
     shortName: "Home Care",
     description: "Cuidado diário para prolongar o efeito dos procedimentos.",
     image: "/images/products/12-master-lash-brow-serum.webp",
+  },
+  {
+    slug: "body-splash",
+    name: "Body Splash",
+    shortName: "Body Splash",
+    description: "Sprays corporais perfumados, refrescantes e cheios de personalidade.",
+    image: "/images/products/01-treta-citrica-body-splash-enaldinho.webp",
   },
 ];
 

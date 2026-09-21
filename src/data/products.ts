@@ -24,7 +24,7 @@ export const products: Product[] = [
     slug: "body-splash-treta-citrica",
     name: "Treta Cítrica - Body Splash Corporal 120ml (Unissex)",
     brand: "Enaldinho",
-    category: "adesivos",
+    category: "body-splash",
     shortDescription: "Body splash cítrico com brilho perolado e efeito refrescante imediato.",
     description:
       "Um body splash com fragrância Limão e Algodão, direção cítrica combinada a um conceito olfativo limpo e confortável, que deixa o corpo perfumado o dia todo com sensação refrescante logo na primeira borrifada. O líquido é amarelo vibrante e, ao balançar o frasco, sobem partículas na mesma tonalidade, deixando tudo ainda mais brilhante. Ao agitar o frasco antes de usar, ele revela um visual colorido, com pigmento amarelo e brilho perolado na pele, tornando a aplicação ainda mais especial. Vegana, hipoalergênica, dermatologicamente testada e não testada em animais. Agite bem antes de usar e borrife sobre o corpo a cerca de 15 cm de distância — reaplique sempre que quiser. Faz parte da coleção Enaldinho de 4 Sensações: Explosão Cósmica, Chiclete Irado, Gelo Sinistro e Treta Cítrica. Colecione todas.",
@@ -44,6 +44,9 @@ export const products: Product[] = [
     images: [
       "/images/products/01-treta-citrica-body-splash-enaldinho.webp",
       "/images/products/01-treta-citrica-body-splash-enaldinho-verso.webp",
+      "/images/products/01-treta-citrica-body-splash-enaldinho-lab.webp",
+      "/images/products/01-treta-citrica-body-splash-enaldinho-limao-1.webp",
+      "/images/products/01-treta-citrica-body-splash-enaldinho-limao-2.webp",
     ],
     externalUrl: "#",
     featured: true,

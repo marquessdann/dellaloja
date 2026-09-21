@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowUpRight, Check, MessageCircle } from "lucide-react";
 import { getProduct, getProductsByCategory, products } from "@/data/products";
 import { getCategory } from "@/data/categories";
 import { ProductCard } from "@/components/ProductCard";
+import { ProductGallery } from "@/components/ProductGallery";
 import { Reveal } from "@/components/Reveal";
 import { siteConfig } from "@/data/site-config";
 
@@ -51,38 +51,7 @@ export default async function ProductPage({
 
           <div className="mt-8 grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16">
             <Reveal>
-              <div className="relative border border-gold-500/40 p-3">
-                <span className="absolute -left-2.5 -top-2.5 h-5 w-5 border-l border-t border-gold-500" />
-                <span className="absolute -bottom-2.5 -right-2.5 h-5 w-5 border-b border-r border-gold-500" />
-                <div className="img-zoom relative aspect-square w-full overflow-hidden bg-cream-300">
-                  <Image
-                    src={product.image}
-                    alt={product.name}
-                    fill
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                    className="object-contain p-10 sm:p-14"
-                    priority
-                  />
-                </div>
-              </div>
-              {product.images.length > 1 && (
-                <div className="mt-4 grid grid-cols-4 gap-3">
-                  {product.images.map((img) => (
-                    <div
-                      key={img}
-                      className="relative aspect-square overflow-hidden border border-navy-900/10 bg-cream-300"
-                    >
-                      <Image
-                        src={img}
-                        alt={product.name}
-                        fill
-                        sizes="120px"
-                        className="object-contain p-2"
-                      />
-                    </div>
-                  ))}
-                </div>
-              )}
+              <ProductGallery images={product.images} name={product.name} />
             </Reveal>
 
             <Reveal delay={0.1}>
