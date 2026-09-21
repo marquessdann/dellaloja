@@ -37,7 +37,11 @@ from (values
   ('body-splash-explosao-cosmica', 'Explosão Cósmica - Body Splash Corporal 120ml (unissex)', 'Enaldinho', 'body-splash',
    'Body splash frutado com tom lilás e partículas brancas brilhantes.',
    'Um body splash com fragrância Mix de Frutas, de perfil frutado e envolvente, que deixa o corpo perfumado o dia todo com uma sensação refrescante logo na primeira borrifada. Vegana, hipoalergênica, dermatologicamente testada e não testada em animais.',
-   '/images/products/14-explosao-cosmica-body-splash-enaldinho.webp', '/produto/body-splash-explosao-cosmica')
+   '/images/products/14-explosao-cosmica-body-splash-enaldinho.webp', '/produto/body-splash-explosao-cosmica'),
+  ('body-splash-chiclete-irado', 'Chiclete Irado - Body Splash Corporal 120ml (Feminino)', 'Enaldinho', 'body-splash',
+   'Body splash doce de chiclete com cor rosa arroxeada e partículas azuis brilhantes.',
+   'Um body splash com fragrância Chiclete, doce e divertida, inspirada no cheiro característico de chiclete, que deixa o corpo perfumado o dia todo com sensação refrescante logo na primeira borrifada. Vegana, hipoalergênica, dermatologicamente testada e não testada em animais.',
+   '/images/products/15-chiclete-irado-body-splash-enaldinho.webp', '/produto/body-splash-chiclete-irado')
 ) as v(slug, name, brand, category_slug, short_description, description, image_url, product_url)
 join categories c on c.slug = v.category_slug
 on conflict (slug) do update set

@@ -115,6 +115,38 @@ export const products: Product[] = [
     externalUrl: "#",
     buyButtonLabel: "Veja na Shopee",
   },
+  {
+    id: "15",
+    slug: "body-splash-chiclete-irado",
+    name: "Chiclete Irado - Body Splash Corporal 120ml (Feminino)",
+    brand: "Enaldinho",
+    category: "body-splash",
+    shortDescription: "Body splash doce de chiclete com cor rosa arroxeada e partículas azuis brilhantes.",
+    description:
+      "Um body splash com fragrância Chiclete, doce e divertida, inspirada no cheiro característico de chiclete, que deixa o corpo perfumado o dia todo com sensação refrescante logo na primeira borrifada. O líquido tem uma cor rosa arroxeada e, ao balançar o frasco, sobem partículas azuis que deixam tudo ainda mais brilhante. Ao agitar o frasco antes de usar, ele revela um brilho perolado na pele, tornando a aplicação ainda mais especial. Vegana, hipoalergênica, dermatologicamente testada e não testada em animais. Agite bem antes de usar e borrife sobre o corpo a cerca de 15 cm de distância — reaplique sempre que quiser. Faz parte da coleção Enaldinho de 4 Sensações: Explosão Cósmica, Chiclete Irado, Gelo Sinistro e Treta Cítrica. Colecione todas.",
+    highlights: [
+      "Fragrância de Chiclete",
+      "Doce e divertida",
+      "Líquido rosa arroxeado com partículas azuis",
+      "Efeito perolado ao agitar",
+      "Vegana",
+      "Hipoalergênica",
+      "Dermatologicamente testada",
+      "Não testada em animais",
+      "120ml",
+      "Feminino",
+    ],
+    image: "/images/products/15-chiclete-irado-body-splash-enaldinho.webp",
+    images: [
+      "/images/products/15-chiclete-irado-body-splash-enaldinho.webp",
+      "/images/products/15-chiclete-irado-body-splash-enaldinho-verso.webp",
+      "/images/products/15-chiclete-irado-body-splash-enaldinho-lab.webp",
+      "/images/products/15-chiclete-irado-body-splash-enaldinho-destaques.webp",
+      "/images/products/15-chiclete-irado-body-splash-enaldinho-como-usar.webp",
+    ],
+    externalUrl: "#",
+    buyButtonLabel: "Veja na Shopee",
+  },
 ];
 
 export function getProduct(slug: string) {
