@@ -40,14 +40,6 @@ export default function SobrePage() {
               qualidade. Nosso compromisso é oferecer variedade, confiança e
               novidades para tornar suas escolhas mais simples e especiais.
             </p>
-            <p className="mt-4 text-[15px] leading-relaxed text-navy-600">
-              Começamos com um catálogo focado em produtos profissionais de
-              beleza e estética — cílios, sobrancelhas e cuidados
-              relacionados — selecionados com atenção à qualidade e à
-              aplicação. É apenas o começo: a estrutura da Della foi criada
-              para acompanhar o crescimento do nosso portfólio, incluindo
-              futuramente novas categorias para você descobrir.
-            </p>
             <p className="mt-6 font-display text-xl text-navy-900">
               &ldquo;Variedade para todos os momentos.&rdquo;
             </p>
