@@ -65,7 +65,7 @@ html {
 }
 
 body {
-  background: var(--color-cream-200);
+  background: var(--color-cream-100);
   color: var(--foreground);
   font-family: var(--font-sans);
 }

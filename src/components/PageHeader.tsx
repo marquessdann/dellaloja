@@ -10,7 +10,7 @@ export function PageHeader({
   description?: string;
 }) {
   return (
-    <section className="relative overflow-hidden bg-cream-300/60 py-24 sm:py-28">
+    <section className="relative overflow-hidden bg-cream-100 py-24 sm:py-28">
       <div
         className="pointer-events-none absolute inset-0 opacity-60"
         style={{

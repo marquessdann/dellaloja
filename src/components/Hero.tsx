@@ -302,7 +302,7 @@ export function Hero() {
         </div>
       </div>
 
-      <div className="relative z-10 border-t border-navy-900/8 bg-cream-300/50">
+      <div className="relative z-10 border-t border-navy-900/8 bg-cream-100">
         <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-x-10 gap-y-3 px-4 py-4 sm:px-6 lg:px-8">
           {["Vegano", "Hipoalergênico", "Dermatologicamente Testado", "Não Testado em Animais"].map(
             (label) => (

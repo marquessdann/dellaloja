@@ -33,7 +33,7 @@ const cards = [
 
 export function ContactSection() {
   return (
-    <section className="bg-cream-300/60 py-20 sm:py-28">
+    <section className="bg-cream-100 py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <Reveal>
           <SectionHeading

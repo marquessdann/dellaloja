@@ -10,7 +10,7 @@ const MAPS_EMBED_URL = `https://www.google.com/maps?q=${encodeURIComponent(
 
 export function LocationSection() {
   return (
-    <section className="bg-cream-200 py-20 sm:py-28">
+    <section className="bg-cream-100 py-20 sm:py-28">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <Reveal>
           <div className="text-center">

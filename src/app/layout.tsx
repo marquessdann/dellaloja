@@ -35,7 +35,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="pt-BR" className={`${satoshi.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col bg-cream-200">
+      <body className="min-h-full flex flex-col bg-cream-100">
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

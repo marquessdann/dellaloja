@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function NotFound() {
   return (
-    <section className="relative overflow-hidden bg-cream-300/60 py-24 sm:py-32">
+    <section className="relative overflow-hidden bg-cream-100 py-24 sm:py-32">
       <div
         className="pointer-events-none absolute inset-0 opacity-60"
         style={{
