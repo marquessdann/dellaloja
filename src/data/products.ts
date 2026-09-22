@@ -209,6 +209,38 @@ export const products: Product[] = [
     isBestSeller: true,
     buyButtonLabel: "Veja na Shopee",
   },
+  {
+    id: "18",
+    slug: "hidratante-labial-chocomenta-subzero",
+    name: "Chocomenta Subzero - Hidratante Labial Incolor 10g (unissex)",
+    brand: "Enaldinho",
+    category: "body-splash",
+    shortDescription: "Hidratante labial de chocolate com menta e efeito gelado intenso.",
+    description:
+      "Um hidratante labial com aroma e sabor de chocolate com menta bem marcantes, um combo irresistível que traz um efeito gelado intenso logo na primeira aplicação — aquele frescor que vicia e vira brincadeira com os amigos. Deixa os lábios macios e protegidos contra o ressecamento, com uma textura leve que não fica pesada nem grudenta. Conta com Manteiga de Karité, que hidrata e dá maciez aos lábios, e Mentol, que garante o efeito gelado ainda mais intenso. Como usar: aplique nos lábios ao longo do dia e antes de dormir, sempre que quiser renovar a sensação. Fórmula incolor, vegana, hipoalergênica, dermatologicamente testada e não testada em animais, para meninas e meninos. Faz parte da linha Mutação Labial, que também tem as versões Milk Shake de Morango e Chiclete Congelante. Colecione as três.",
+    highlights: [
+      "Aroma e sabor de chocolate com menta",
+      "Efeito gelado intenso",
+      "Hidrata e protege contra o ressecamento",
+      "Textura leve, não grudenta",
+      "Com Manteiga de Karité",
+      "Com Mentol",
+      "Fórmula incolor",
+      "Vegana",
+      "Hipoalergênica",
+      "10g",
+    ],
+    image: "/images/products/18-chocomenta-subzero-hidratante-labial-enaldinho.webp",
+    images: [
+      "/images/products/18-chocomenta-subzero-hidratante-labial-enaldinho.webp",
+      "/images/products/18-chocomenta-subzero-hidratante-labial-enaldinho-destaques.webp",
+      "/images/products/18-chocomenta-subzero-hidratante-labial-enaldinho-lab.webp",
+      "/images/products/18-chocomenta-subzero-hidratante-labial-enaldinho-neon.webp",
+    ],
+    externalUrl: "#",
+    isBestSeller: true,
+    buyButtonLabel: "Veja na Shopee",
+  },
 ];
 
 export function getProduct(slug: string) {

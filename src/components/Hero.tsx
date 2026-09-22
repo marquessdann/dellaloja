@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
@@ -111,6 +112,29 @@ function AbstractLines({ prefersReducedMotion }: { prefersReducedMotion: boolean
 
 export function Hero() {
   const prefersReducedMotion = useReducedMotion();
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  // iOS Safari sometimes ignores the `autoplay` attribute on a video mounted
+  // by React (a timing/hydration quirk) and shows its native play button
+  // instead of looping the background. Explicitly calling play() once the
+  // element is mounted is the reliable fix; a rejected promise (e.g. Low
+  // Power Mode blocking autoplay outright) is fine to ignore since the
+  // static gradient/watermark behind it already works as a fallback.
+  useEffect(() => {
+    if (prefersReducedMotion) return;
+    const video = videoRef.current;
+    if (!video) return;
+    const tryPlay = () => {
+      video.play().catch(() => {});
+    };
+    tryPlay();
+    video.addEventListener("loadedmetadata", tryPlay);
+    video.addEventListener("canplay", tryPlay);
+    return () => {
+      video.removeEventListener("loadedmetadata", tryPlay);
+      video.removeEventListener("canplay", tryPlay);
+    };
+  }, [prefersReducedMotion]);
 
   return (
     <section
@@ -126,6 +150,7 @@ export function Hero() {
           for prefers-reduced-motion. Decorative only: aria-hidden + no
           controls/focus, so it's never announced or reachable by keyboard. */}
       <video
+        ref={videoRef}
         aria-hidden="true"
         tabIndex={-1}
         autoPlay

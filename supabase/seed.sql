@@ -49,7 +49,11 @@ from (values
   ('hidratante-labial-chiclete-congelante', 'Chiclete Congelante - Hidratante Labial Incolor 18g (unissex)', 'Enaldinho', 'body-splash',
    'Hidratante labial de chiclete com efeito congelante e toque incolor.',
    'Um hidratante labial com aroma de chiclete e tutti-frutti, que surpreende com um efeito congelante na primeira aplicação. Deixa os lábios macios e protegidos contra o ressecamento. Vegana, hipoalergênica, dermatologicamente testada e não testada em animais.',
-   '/images/products/17-chiclete-congelante-hidratante-labial-enaldinho.webp', '/produto/hidratante-labial-chiclete-congelante')
+   '/images/products/17-chiclete-congelante-hidratante-labial-enaldinho.webp', '/produto/hidratante-labial-chiclete-congelante'),
+  ('hidratante-labial-chocomenta-subzero', 'Chocomenta Subzero - Hidratante Labial Incolor 10g (unissex)', 'Enaldinho', 'body-splash',
+   'Hidratante labial de chocolate com menta e efeito gelado intenso.',
+   'Um hidratante labial com aroma e sabor de chocolate com menta, que traz um efeito gelado intenso na primeira aplicação. Deixa os lábios macios e protegidos contra o ressecamento. Vegana, hipoalergênica, dermatologicamente testada e não testada em animais.',
+   '/images/products/18-chocomenta-subzero-hidratante-labial-enaldinho.webp', '/produto/hidratante-labial-chocomenta-subzero')
 ) as v(slug, name, brand, category_slug, short_description, description, image_url, product_url)
 join categories c on c.slug = v.category_slug
 on conflict (slug) do update set
