@@ -329,6 +329,38 @@ export const products: Product[] = [
     externalUrl: "#",
     isBestSeller: true,
   },
+  {
+    id: "22",
+    slug: "removedor-cilios-balm-olive-excellent",
+    name: "Removedor De Cílios Balm Olive Excellent 7g",
+    brand: "Excellent",
+    category: "cilios",
+    shortDescription: "Removedor em gel tipo balm para extensão de cílios, com azeite de oliva e uso profissional.",
+    description:
+      "O Removedor Gel Excellent Olive foi desenvolvido para profissionais que buscam praticidade e segurança na remoção de extensões de cílios. Sua fórmula contém azeite de oliva, que auxilia na remoção completa da cola enquanto contribui para a nutrição e hidratação dos cílios naturais. Com textura em gel tipo balm, permite uma aplicação localizada e controlada. Além disso, sua fórmula é hipoalergênica e livre de odores, proporcionando mais conforto durante o procedimento. Como usar: posicione um protetor de pálpebras abaixo dos cílios inferiores, aplique uma pequena quantidade sobre os fios evitando contato direto com a pele e os olhos, deixe agir por aproximadamente 10 a 15 minutos e remova cuidadosamente os cílios artificiais com dois microbrushes ou uma pinça apropriada. Após a remoção, higienize os cílios naturais com uma espuma de limpeza adequada. Produto de uso exclusivamente profissional, regularizado pela ANVISA.",
+    highlights: [
+      "Facilita a remoção completa da cola",
+      "Textura em gel para aplicação precisa",
+      "Procedimento seguro e indolor quando bem aplicado",
+      "Remoção sem ardência",
+      "Fórmula livre de odores",
+      "Nutre e hidrata os cílios naturais",
+      "Com azeite de oliva",
+      "Hipoalergênico",
+      "7g",
+      "Uso profissional",
+    ],
+    image: "/images/products/22-removedor-cilios-balm-olive-excellent.webp",
+    images: [
+      "/images/products/22-removedor-cilios-balm-olive-excellent.webp",
+      "/images/products/22-removedor-cilios-balm-olive-excellent-infografico.webp",
+      "/images/products/22-removedor-cilios-balm-olive-excellent-aplicacao.webp",
+      "/images/products/22-removedor-cilios-balm-olive-excellent-detalhes.webp",
+      "/images/products/22-removedor-cilios-balm-olive-excellent-mao.webp",
+    ],
+    externalUrl: "#",
+    isBestSeller: true,
+  },
 ];
 
 export function getProduct(slug: string) {

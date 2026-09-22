@@ -67,7 +67,11 @@ from (values
   ('protetor-palpebras-eyepatch-master-flor', 'Protetor Para Pálpebras Eyepatch Master Flor', 'Master', 'cilios',
    'Protetor de pálpebras em hidrogel, com recorte floral que cobre os cílios inferiores.',
    'Protetor de pálpebras em hidrogel, com recorte floral que acompanha o contorno do olho e cobre os cílios inferiores sem tocar na linha d''água. Ideal para procedimentos de extensão de cílios e outros serviços que exigem proteção da pálpebra inferior.',
-   '/images/products/21-protetor-palpebras-eyepatch-master-flor.webp', '/produto/protetor-palpebras-eyepatch-master-flor')
+   '/images/products/21-protetor-palpebras-eyepatch-master-flor.webp', '/produto/protetor-palpebras-eyepatch-master-flor'),
+  ('removedor-cilios-balm-olive-excellent', 'Removedor De Cílios Balm Olive Excellent 7g', 'Excellent', 'cilios',
+   'Removedor em gel tipo balm para extensão de cílios, com azeite de oliva e uso profissional.',
+   'Removedor em gel tipo balm desenvolvido para remoção de extensões de cílios, com azeite de oliva que auxilia na remoção completa da cola e nutre os cílios naturais. Fórmula hipoalergênica e livre de odores, de uso profissional.',
+   '/images/products/22-removedor-cilios-balm-olive-excellent.webp', '/produto/removedor-cilios-balm-olive-excellent')
 ) as v(slug, name, brand, category_slug, short_description, description, image_url, product_url)
 join categories c on c.slug = v.category_slug
 on conflict (slug) do update set
