@@ -53,7 +53,11 @@ from (values
   ('hidratante-labial-chocomenta-subzero', 'Chocomenta Subzero - Hidratante Labial Incolor 10g (unissex)', 'Enaldinho', 'body-splash',
    'Hidratante labial de chocolate com menta e efeito gelado intenso.',
    'Um hidratante labial com aroma e sabor de chocolate com menta, que traz um efeito gelado intenso na primeira aplicação. Deixa os lábios macios e protegidos contra o ressecamento. Vegana, hipoalergênica, dermatologicamente testada e não testada em animais.',
-   '/images/products/18-chocomenta-subzero-hidratante-labial-enaldinho.webp', '/produto/hidratante-labial-chocomenta-subzero')
+   '/images/products/18-chocomenta-subzero-hidratante-labial-enaldinho.webp', '/produto/hidratante-labial-chocomenta-subzero'),
+  ('hidratante-labial-milkshake-morango', 'Milk Shake de Morango - Hidratante Labial Incolor 10g (unissex)', 'Enaldinho', 'body-splash',
+   'Hidratante labial de milk shake de morango com efeito gelado surpreendente.',
+   'Um hidratante labial com aroma de frutas vermelhas e milk shake de morango, que traz um efeito gelado surpreendente na primeira aplicação. Deixa os lábios macios e protegidos contra o ressecamento. Vegana, hipoalergênica, dermatologicamente testada e não testada em animais.',
+   '/images/products/19-milkshake-morango-hidratante-labial-enaldinho.webp', '/produto/hidratante-labial-milkshake-morango')
 ) as v(slug, name, brand, category_slug, short_description, description, image_url, product_url)
 join categories c on c.slug = v.category_slug
 on conflict (slug) do update set

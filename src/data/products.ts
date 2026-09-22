@@ -241,6 +241,38 @@ export const products: Product[] = [
     isBestSeller: true,
     buyButtonLabel: "Veja na Shopee",
   },
+  {
+    id: "19",
+    slug: "hidratante-labial-milkshake-morango",
+    name: "Milk Shake de Morango - Hidratante Labial Incolor 10g (unissex)",
+    brand: "Enaldinho",
+    category: "body-splash",
+    shortDescription: "Hidratante labial de milk shake de morango com efeito gelado surpreendente.",
+    description:
+      "Um hidratante labial com aroma de frutas vermelhas, o cheirinho doce e cremoso de milk shake de morango, que traz um frescor gelado surpreendente logo na primeira aplicação — aquele efeito que vicia e vira brincadeira com os amigos. Deixa os lábios macios e protegidos contra o ressecamento, com uma textura leve que não fica pesada nem grudenta. Conta com Manteiga de Karité, que hidrata e dá maciez aos lábios, e Mentol, que garante o efeito gelado. Como usar: aplique nos lábios ao longo do dia e antes de dormir, sempre que quiser renovar a sensação. Fórmula incolor, vegana, hipoalergênica, dermatologicamente testada e não testada em animais, para meninas e meninos. Faz parte da linha Mutação Labial, que também tem as versões Chocomenta Subzero e Chiclete Congelante. Colecione as três.",
+    highlights: [
+      "Aroma de frutas vermelhas e milk shake de morango",
+      "Efeito gelado surpreendente",
+      "Hidrata e protege contra o ressecamento",
+      "Textura leve, não grudenta",
+      "Com Manteiga de Karité",
+      "Com Mentol",
+      "Fórmula incolor",
+      "Vegana",
+      "Hipoalergênica",
+      "10g",
+    ],
+    image: "/images/products/19-milkshake-morango-hidratante-labial-enaldinho.webp",
+    images: [
+      "/images/products/19-milkshake-morango-hidratante-labial-enaldinho.webp",
+      "/images/products/19-milkshake-morango-hidratante-labial-enaldinho-destaques.webp",
+      "/images/products/19-milkshake-morango-hidratante-labial-enaldinho-lab.webp",
+      "/images/products/19-milkshake-morango-hidratante-labial-enaldinho-neon.webp",
+    ],
+    externalUrl: "#",
+    isBestSeller: true,
+    buyButtonLabel: "Veja na Shopee",
+  },
 ];
 
 export function getProduct(slug: string) {
