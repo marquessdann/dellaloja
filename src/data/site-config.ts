@@ -17,8 +17,8 @@ export const siteConfig = {
     email: "contato@dellastore.com.br",
     whatsapp: "41 99679-0904",
     whatsappLink: `https://wa.me/5541996790904?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`,
-    instagram: "@marquessdann",
-    instagramLink: "https://instagram.com/marquessdann",
+    instagram: "@dellanewstore",
+    instagramLink: "https://www.instagram.com/dellanewstore",
     address: "Rua Assis Figueiredo, 59 - Parolin, Curitiba - PR, CEP 80.630-280",
   },
   marketplaces: [

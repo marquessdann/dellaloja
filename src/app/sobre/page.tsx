@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { PageHeader } from "@/components/PageHeader";
 import { Diferenciais } from "@/components/Diferenciais";
 import { ProductsCta } from "@/components/ProductsCta";
@@ -28,7 +27,7 @@ export default function SobrePage() {
       />
 
       <section className="py-16 sm:py-24">
-        <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
+        <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
           <Reveal>
             <span className="ornament-rule text-[13px] font-medium uppercase tracking-[0.12em] text-[#0b2347]">
               Nossa história
@@ -52,22 +51,6 @@ export default function SobrePage() {
             <p className="mt-6 font-display text-xl text-navy-900">
               &ldquo;Variedade para todos os momentos.&rdquo;
             </p>
-          </Reveal>
-
-          <Reveal delay={0.1}>
-            <div className="relative mx-auto max-w-md border border-gold-500/50 p-3">
-              <span className="absolute -left-2.5 -top-2.5 h-5 w-5 border-l border-t border-gold-500" />
-              <span className="absolute -bottom-2.5 -right-2.5 h-5 w-5 border-b border-r border-gold-500" />
-              <div className="relative aspect-[4/5] w-full overflow-hidden bg-navy-900">
-                <Image
-                  src="/images/products/13-gelo-sinistro-body-splash-enaldinho.webp"
-                  alt="Produtos Della"
-                  fill
-                  sizes="(max-width: 1024px) 90vw, 480px"
-                  className="object-contain p-14"
-                />
-              </div>
-            </div>
           </Reveal>
         </div>
       </section>

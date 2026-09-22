@@ -177,6 +177,38 @@ export const products: Product[] = [
     isBestSeller: true,
     buyButtonLabel: "Veja na Shopee",
   },
+  {
+    id: "17",
+    slug: "hidratante-labial-chiclete-congelante",
+    name: "Chiclete Congelante - Hidratante Labial Incolor 18g (unissex)",
+    brand: "Enaldinho",
+    category: "body-splash",
+    shortDescription: "Hidratante labial de chiclete com efeito congelante e toque incolor.",
+    description:
+      "Um hidratante labial com aroma de chiclete e tutti-frutti, docinho e gostoso, que surpreende com um efeito congelante na primeira aplicação — aquele frescor que vicia e vira brincadeira com os amigos. Deixa os lábios macios e protegidos contra o ressecamento, com uma textura leve que não fica pesada nem grudenta. Conta com Manteiga de Karité, que hidrata e dá maciez aos lábios, e Mentol, que garante o efeito gelado surpreendente. Como usar: aplique nos lábios ao longo do dia e antes de dormir, sempre que quiser renovar a sensação. Fórmula incolor, vegana, hipoalergênica, dermatologicamente testada e não testada em animais, para meninas e meninos. Faz parte da linha Mutação Labial, que também tem as versões Milk Shake de Morango e Chocomenta Subzero. Colecione as três.",
+    highlights: [
+      "Aroma de chiclete e tutti-frutti",
+      "Efeito congelante refrescante",
+      "Hidrata e protege contra o ressecamento",
+      "Textura leve, não grudenta",
+      "Com Manteiga de Karité",
+      "Com Mentol",
+      "Fórmula incolor",
+      "Vegana",
+      "Hipoalergênica",
+      "18g",
+    ],
+    image: "/images/products/17-chiclete-congelante-hidratante-labial-enaldinho.webp",
+    images: [
+      "/images/products/17-chiclete-congelante-hidratante-labial-enaldinho.webp",
+      "/images/products/17-chiclete-congelante-hidratante-labial-enaldinho-destaques.webp",
+      "/images/products/17-chiclete-congelante-hidratante-labial-enaldinho-lab.webp",
+      "/images/products/17-chiclete-congelante-hidratante-labial-enaldinho-neon.webp",
+    ],
+    externalUrl: "#",
+    isBestSeller: true,
+    buyButtonLabel: "Veja na Shopee",
+  },
 ];
 
 export function getProduct(slug: string) {

@@ -45,7 +45,11 @@ from (values
   ('gel-controle-mental-gelatinoso', 'Controle Mental Gelatinoso - Gel para Cabelo 170g (unissex)', 'Enaldinho', 'body-splash',
    'Gel modelador com efeito gelado, fixação leve e fragrância Ice Water.',
    'Um gel modelador que define o penteado com fixação leve e efeito natural. Não gruda nas mãos nem nos fios. Vegana, dermatologicamente e oftalmologicamente testada, não testada em animais.',
-   '/images/products/16-controle-mental-gel-cabelo-enaldinho.webp', '/produto/gel-controle-mental-gelatinoso')
+   '/images/products/16-controle-mental-gel-cabelo-enaldinho.webp', '/produto/gel-controle-mental-gelatinoso'),
+  ('hidratante-labial-chiclete-congelante', 'Chiclete Congelante - Hidratante Labial Incolor 18g (unissex)', 'Enaldinho', 'body-splash',
+   'Hidratante labial de chiclete com efeito congelante e toque incolor.',
+   'Um hidratante labial com aroma de chiclete e tutti-frutti, que surpreende com um efeito congelante na primeira aplicação. Deixa os lábios macios e protegidos contra o ressecamento. Vegana, hipoalergênica, dermatologicamente testada e não testada em animais.',
+   '/images/products/17-chiclete-congelante-hidratante-labial-enaldinho.webp', '/produto/hidratante-labial-chiclete-congelante')
 ) as v(slug, name, brand, category_slug, short_description, description, image_url, product_url)
 join categories c on c.slug = v.category_slug
 on conflict (slug) do update set
@@ -88,8 +92,8 @@ values (
   'https://wa.me/5541996790904?text=Ol%C3%A1%2C%20vim%20atrav%C3%A9s%20do%20site%20da%20Della%20Distribuidora%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida!%20Pode%20me%20ajudar%3F!',
   'contato@dellastore.com.br',
   'Segunda a sexta-feira, das 09h às 17h.',
-  '@marquessdann',
-  'https://instagram.com/marquessdann'
+  '@dellanewstore',
+  'https://www.instagram.com/dellanewstore'
 )
 on conflict (id) do update set
   name = excluded.name,
