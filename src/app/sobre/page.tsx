@@ -66,12 +66,6 @@ export default function SobrePage() {
             <h2 className="mt-4 font-display text-3xl font-semibold text-navy-900 sm:text-4xl">
               Sempre com novidades pensadas para você
             </h2>
-            <p className="mt-5 text-[15px] leading-relaxed text-navy-600">
-              Hoje, o catálogo da Della reúne produtos profissionais de
-              beleza, estética e cuidados relacionados. E esse é só o começo:
-              novas categorias estão a caminho, sempre com o mesmo compromisso
-              com qualidade e confiança.
-            </p>
           </Reveal>
         </div>
       </section>

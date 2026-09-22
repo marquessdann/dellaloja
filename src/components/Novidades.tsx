@@ -16,7 +16,6 @@ export function Novidades() {
             <SectionHeading
               eyebrow="Fique por dentro"
               title="Novidades e outras categorias"
-              description="Mais itens do catálogo Della para você conhecer o portfólio completo."
             />
             <Link
               href="/produtos"

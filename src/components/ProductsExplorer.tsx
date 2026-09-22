@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { useSearchParams } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Search, PackageSearch } from "lucide-react";
 import { products } from "@/data/products";
@@ -12,15 +12,33 @@ import { cn } from "@/lib/utils";
 type TabValue = "todos" | CategorySlug;
 
 export function ProductsExplorer() {
+  const router = useRouter();
+  const pathname = usePathname();
   const searchParams = useSearchParams();
-  const initialCategory = searchParams.get("categoria") ?? undefined;
-  const validInitial = categories.some((c) => c.slug === initialCategory)
-    ? (initialCategory as CategorySlug)
-    : "todos";
-  const initialQuery = searchParams.get("busca") ?? "";
 
-  const [activeTab, setActiveTab] = useState<TabValue>(validInitial);
-  const [query, setQuery] = useState(initialQuery);
+  // The URL is the single source of truth for the active category: deriving
+  // it fresh on every render (instead of seeding a useState once) is what
+  // makes the tab respond when the URL's ?categoria= changes after the
+  // component is already mounted — e.g. clicking a different category in
+  // the header's menu, which navigates within the same /produtos route
+  // rather than remounting this component.
+  const categoriaParam = searchParams.get("categoria");
+  const activeTab: TabValue = categories.some((c) => c.slug === categoriaParam)
+    ? (categoriaParam as CategorySlug)
+    : "todos";
+
+  const [query, setQuery] = useState(searchParams.get("busca") ?? "");
+
+  function selectTab(value: TabValue) {
+    const params = new URLSearchParams(searchParams.toString());
+    if (value === "todos") {
+      params.delete("categoria");
+    } else {
+      params.set("categoria", value);
+    }
+    const qs = params.toString();
+    router.push(qs ? `${pathname}?${qs}` : pathname, { scroll: false });
+  }
 
   const tabs: { value: TabValue; label: string }[] = [
     { value: "todos", label: "Todos" },
@@ -45,7 +63,7 @@ export function ProductsExplorer() {
           {tabs.map((tab) => (
             <button
               key={tab.value}
-              onClick={() => setActiveTab(tab.value)}
+              onClick={() => selectTab(tab.value)}
               className={cn(
                 "relative shrink-0 whitespace-nowrap pb-3 text-[13px] font-semibold uppercase tracking-[0.08em] transition-colors duration-300",
                 activeTab === tab.value
