@@ -390,6 +390,34 @@ export const products: Product[] = [
     externalUrl: "#",
     isBestSeller: true,
   },
+  {
+    id: "24",
+    slug: "cola-cilios-charm-master-3g",
+    name: "Cola Adesivo para Extensão de Cílios Charm Master 3g",
+    brand: "Master Elite",
+    category: "cilios",
+    shortDescription: "Cola profissional para extensão de cílios com secagem ultrarrápida e retenção de até 9 semanas.",
+    description:
+      "Apresentamos a Charm, a nova cola profissional para extensão de cílios desenvolvida para ser a estrela do seu estúdio. Com secagem ultrarrápida de 0,3 a 1 segundo, acompanha o ritmo das profissionais mais ágeis, evitando stickies e otimizando o tempo do atendimento. Garante retenção extraordinária, com cílios intactos por até 9 semanas. Tem uma janela de trabalho ampla, com alta performance em temperaturas de 16°C a 30°C e umidade de 30% a 75%, garantindo estabilidade em diferentes condições de estúdio. Indicada exclusivamente para procedimentos profissionais de extensão de cílios realizados por lash designers. Não usar em tufo e não fazer auto aplicação.",
+    highlights: [
+      "Secagem de 0,3 a 1 segundo",
+      "Retenção de até 9 semanas",
+      "Temperatura ideal de 16°C a 30°C",
+      "Umidade ideal de 30% a 75%",
+      "Viscosidade fina",
+      "3g por embalagem",
+      "País de origem: Coreia do Sul",
+      "Uso exclusivamente profissional",
+    ],
+    image: "/images/products/24-cola-cilios-charm-master-3g.webp",
+    images: [
+      "/images/products/24-cola-cilios-charm-master-3g.webp",
+      "/images/products/24-cola-cilios-charm-master-3g-detalhe.webp",
+      "/images/products/24-cola-cilios-charm-master-3g-especificacoes.webp",
+    ],
+    externalUrl: "#",
+    isBestSeller: true,
+  },
 ];
 
 export function getProduct(slug: string) {

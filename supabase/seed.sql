@@ -75,7 +75,11 @@ from (values
   ('pinca-cilios-7m-pro-master', 'Pinça Profissional de Cílios 7M-PRO Master', 'Master', 'cilios',
    'Pinça profissional para extensão de cílios, em aço inox com nanotecnologia diamantada.',
    'Pinça profissional para extensão de cílios, produzida em aço inox, leve e resistente a autoclave. Conta com nanotecnologia diamantada na ponta, que aumenta a aderência e a precisão no manuseio dos fios.',
-   '/images/products/23-pinca-cilios-7m-pro-master.webp', '/produto/pinca-cilios-7m-pro-master')
+   '/images/products/23-pinca-cilios-7m-pro-master.webp', '/produto/pinca-cilios-7m-pro-master'),
+  ('cola-cilios-charm-master-3g', 'Cola Adesivo para Extensão de Cílios Charm Master 3g', 'Master Elite', 'cilios',
+   'Cola profissional para extensão de cílios com secagem ultrarrápida e retenção de até 9 semanas.',
+   'Cola profissional para extensão de cílios, com secagem de 0,3 a 1 segundo e retenção de até 9 semanas. Ampla janela de trabalho, com boa performance em temperaturas de 16°C a 30°C e umidade de 30% a 75%. Uso exclusivamente profissional.',
+   '/images/products/24-cola-cilios-charm-master-3g.webp', '/produto/cola-cilios-charm-master-3g')
 ) as v(slug, name, brand, category_slug, short_description, description, image_url, product_url)
 join categories c on c.slug = v.category_slug
 on conflict (slug) do update set
