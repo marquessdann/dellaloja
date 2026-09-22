@@ -71,7 +71,11 @@ from (values
   ('removedor-cilios-balm-olive-excellent', 'Removedor De Cílios Balm Olive Excellent 7g', 'Excellent', 'cilios',
    'Removedor em gel tipo balm para extensão de cílios, com azeite de oliva e uso profissional.',
    'Removedor em gel tipo balm desenvolvido para remoção de extensões de cílios, com azeite de oliva que auxilia na remoção completa da cola e nutre os cílios naturais. Fórmula hipoalergênica e livre de odores, de uso profissional.',
-   '/images/products/22-removedor-cilios-balm-olive-excellent.webp', '/produto/removedor-cilios-balm-olive-excellent')
+   '/images/products/22-removedor-cilios-balm-olive-excellent.webp', '/produto/removedor-cilios-balm-olive-excellent'),
+  ('pinca-cilios-7m-pro-master', 'Pinça Profissional de Cílios 7M-PRO Master', 'Master', 'cilios',
+   'Pinça profissional para extensão de cílios, em aço inox com nanotecnologia diamantada.',
+   'Pinça profissional para extensão de cílios, produzida em aço inox, leve e resistente a autoclave. Conta com nanotecnologia diamantada na ponta, que aumenta a aderência e a precisão no manuseio dos fios.',
+   '/images/products/23-pinca-cilios-7m-pro-master.webp', '/produto/pinca-cilios-7m-pro-master')
 ) as v(slug, name, brand, category_slug, short_description, description, image_url, product_url)
 join categories c on c.slug = v.category_slug
 on conflict (slug) do update set

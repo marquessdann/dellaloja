@@ -361,6 +361,35 @@ export const products: Product[] = [
     externalUrl: "#",
     isBestSeller: true,
   },
+  {
+    id: "23",
+    slug: "pinca-cilios-7m-pro-master",
+    name: "Pinça Profissional de Cílios 7M-PRO Master",
+    brand: "Master",
+    category: "cilios",
+    shortDescription: "Pinça profissional para extensão de cílios, em aço inox com nanotecnologia diamantada.",
+    description:
+      "As pinças Master representam uma nova era no mundo lash: leve (específica para lashes), consistente (projetada ergonomicamente) e duradoura (aplicação 100% precisa). A Pinça Profissional de Cílios 7M-PRO Master é produzida em aço inox com tecnologia paquistanesa, resistente a autoclave, leve e extremamente precisa. Conta com nanotecnologia diamantada: uma superfície texturizada e microestruturada na ponta que aumenta a aderência e a precisão, facilitando o manuseio dos fios e evitando que deslizem — ideal para profissionais que buscam mais controle e eficiência na extensão de cílios.",
+    highlights: [
+      "Leve, específica para lashes",
+      "Projetada ergonomicamente",
+      "Aplicação 100% precisa",
+      "Produzida em aço inox",
+      "Tecnologia paquistanesa",
+      "Resistente a autoclave",
+      "Nanotecnologia diamantada na ponta",
+      "Maior aderência e precisão",
+      "Uso profissional",
+    ],
+    image: "/images/products/23-pinca-cilios-7m-pro-master.webp",
+    images: [
+      "/images/products/23-pinca-cilios-7m-pro-master.webp",
+      "/images/products/23-pinca-cilios-7m-pro-master-infografico.webp",
+      "/images/products/23-pinca-cilios-7m-pro-master-nanotecnologia.webp",
+    ],
+    externalUrl: "#",
+    isBestSeller: true,
+  },
 ];
 
 export function getProduct(slug: string) {
