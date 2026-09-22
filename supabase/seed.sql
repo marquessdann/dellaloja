@@ -16,7 +16,8 @@
 -- ============================================================
 insert into categories (slug, name, description) values
   ('body-splash', 'Coleção Enaldinho', 'Sprays corporais perfumados, refrescantes e cheios de personalidade.'),
-  ('sobrancelhas', 'Sobrancelhas', 'Henna e produtos profissionais para design e coloração de sobrancelhas.')
+  ('sobrancelhas', 'Sobrancelhas', 'Henna e produtos profissionais para design e coloração de sobrancelhas.'),
+  ('cilios', 'Cílios', 'Produtos profissionais para aplicação, proteção e cuidado de cílios.')
 on conflict (slug) do update set
   name = excluded.name,
   description = excluded.description;
@@ -62,7 +63,11 @@ from (values
   ('henna-sobrancelhas-master-loiro-escuro', 'Henna Para Sobrancelhas Master - Loiro Escuro', 'Master', 'sobrancelhas',
    'Henna profissional para sobrancelhas na cor loiro escuro, com pigmentação uniforme.',
    'Henna profissional para sobrancelhas na cor loiro escuro, com pigmentação uniforme e boa fixação. Fórmula com extratos de Jaborandi e Bamboo, ideal para corrigir falhas com naturalidade em sobrancelhas claras e loiras.',
-   '/images/products/20-henna-sobrancelhas-master-loiro-escuro.webp', '/produto/henna-sobrancelhas-master-loiro-escuro')
+   '/images/products/20-henna-sobrancelhas-master-loiro-escuro.webp', '/produto/henna-sobrancelhas-master-loiro-escuro'),
+  ('protetor-palpebras-eyepatch-master-flor', 'Protetor Para Pálpebras Eyepatch Master Flor', 'Master', 'cilios',
+   'Protetor de pálpebras em hidrogel, com recorte floral que cobre os cílios inferiores.',
+   'Protetor de pálpebras em hidrogel, com recorte floral que acompanha o contorno do olho e cobre os cílios inferiores sem tocar na linha d''água. Ideal para procedimentos de extensão de cílios e outros serviços que exigem proteção da pálpebra inferior.',
+   '/images/products/21-protetor-palpebras-eyepatch-master-flor.webp', '/produto/protetor-palpebras-eyepatch-master-flor')
 ) as v(slug, name, brand, category_slug, short_description, description, image_url, product_url)
 join categories c on c.slug = v.category_slug
 on conflict (slug) do update set

@@ -303,6 +303,32 @@ export const products: Product[] = [
     externalUrl: "#",
     isBestSeller: true,
   },
+  {
+    id: "21",
+    slug: "protetor-palpebras-eyepatch-master-flor",
+    name: "Protetor Para Pálpebras Eyepatch Master Flor",
+    brand: "Master",
+    category: "cilios",
+    shortDescription: "Protetor de pálpebras em hidrogel, com recorte floral que cobre os cílios inferiores.",
+    description:
+      "Protetor de pálpebras em hidrogel, com recorte floral que acompanha o contorno do olho e cobre os cílios inferiores sem tocar na linha d'água — ideal para procedimentos de extensão de cílios e outros serviços que exigem proteção da pálpebra inferior. Modo de uso: retire a película protetora e aplique o Master Hidrogel Eye Patch Flor abaixo dos olhos, cobrindo os cílios inferiores sem tocar na linha d'água. Para uso externo apenas; evite que o produto entre nos olhos; não utilize em caso de vermelhidão na pele; em caso de irritação, lave os olhos com água corrente e interrompa a aplicação imediatamente; evite exposição do produto ao sol; mantenha fora do alcance de crianças.",
+    highlights: [
+      "Recorte floral que acompanha o contorno do olho",
+      "Cobre os cílios inferiores sem tocar na linha d'água",
+      "Hidrogel macio e confortável",
+      "Ideal para extensão de cílios e outros procedimentos",
+      "Para uso externo",
+      "1 par por unidade",
+    ],
+    image: "/images/products/21-protetor-palpebras-eyepatch-master-flor.webp",
+    images: [
+      "/images/products/21-protetor-palpebras-eyepatch-master-flor.webp",
+      "/images/products/21-protetor-palpebras-eyepatch-master-flor-verso.webp",
+      "/images/products/21-protetor-palpebras-eyepatch-master-flor-uso.webp",
+    ],
+    externalUrl: "#",
+    isBestSeller: true,
+  },
 ];
 
 export function getProduct(slug: string) {
