@@ -14,7 +14,7 @@ export const categories: Category[] = [
     name: "Coleção Enaldinho",
     shortName: "Enaldinho",
     description: "Sprays corporais perfumados, refrescantes e cheios de personalidade.",
-    image: "/images/products/01-treta-citrica-body-splash-enaldinho.webp",
+    image: "/images/promo/colecao-enaldinho-completa.webp",
   },
 ];
 
