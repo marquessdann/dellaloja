@@ -41,7 +41,11 @@ from (values
   ('body-splash-chiclete-irado', 'Chiclete Irado - Body Splash Corporal 120ml (Feminino)', 'Enaldinho', 'body-splash',
    'Body splash doce de chiclete com cor rosa arroxeada e partículas azuis brilhantes.',
    'Um body splash com fragrância Chiclete, doce e divertida, inspirada no cheiro característico de chiclete, que deixa o corpo perfumado o dia todo com sensação refrescante logo na primeira borrifada. Vegana, hipoalergênica, dermatologicamente testada e não testada em animais.',
-   '/images/products/15-chiclete-irado-body-splash-enaldinho.webp', '/produto/body-splash-chiclete-irado')
+   '/images/products/15-chiclete-irado-body-splash-enaldinho.webp', '/produto/body-splash-chiclete-irado'),
+  ('gel-controle-mental-gelatinoso', 'Controle Mental Gelatinoso - Gel para Cabelo 170g (unissex)', 'Enaldinho', 'body-splash',
+   'Gel modelador com efeito gelado, fixação leve e fragrância Ice Water.',
+   'Um gel modelador que define o penteado com fixação leve e efeito natural. Não gruda nas mãos nem nos fios. Vegana, dermatologicamente e oftalmologicamente testada, não testada em animais.',
+   '/images/products/16-controle-mental-gel-cabelo-enaldinho.webp', '/produto/gel-controle-mental-gelatinoso')
 ) as v(slug, name, brand, category_slug, short_description, description, image_url, product_url)
 join categories c on c.slug = v.category_slug
 on conflict (slug) do update set
