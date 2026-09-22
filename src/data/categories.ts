@@ -1,4 +1,4 @@
-export type CategorySlug = "body-splash";
+export type CategorySlug = "body-splash" | "sobrancelhas";
 
 export interface Category {
   slug: CategorySlug;
@@ -15,6 +15,13 @@ export const categories: Category[] = [
     shortName: "Enaldinho",
     description: "Sprays corporais perfumados, refrescantes e cheios de personalidade.",
     image: "/images/promo/colecao-enaldinho-completa.webp",
+  },
+  {
+    slug: "sobrancelhas",
+    name: "Sobrancelhas",
+    shortName: "Sobrancelhas",
+    description: "Henna e produtos profissionais para design e coloração de sobrancelhas.",
+    image: "/images/products/20-henna-sobrancelhas-master-loiro-escuro.webp",
   },
 ];
 

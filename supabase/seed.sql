@@ -15,7 +15,8 @@
 -- categories
 -- ============================================================
 insert into categories (slug, name, description) values
-  ('body-splash', 'Coleção Enaldinho', 'Sprays corporais perfumados, refrescantes e cheios de personalidade.')
+  ('body-splash', 'Coleção Enaldinho', 'Sprays corporais perfumados, refrescantes e cheios de personalidade.'),
+  ('sobrancelhas', 'Sobrancelhas', 'Henna e produtos profissionais para design e coloração de sobrancelhas.')
 on conflict (slug) do update set
   name = excluded.name,
   description = excluded.description;
@@ -57,7 +58,11 @@ from (values
   ('hidratante-labial-milkshake-morango', 'Milk Shake de Morango - Hidratante Labial Incolor 10g (unissex)', 'Enaldinho', 'body-splash',
    'Hidratante labial de milk shake de morango com efeito gelado surpreendente.',
    'Um hidratante labial com aroma de frutas vermelhas e milk shake de morango, que traz um efeito gelado surpreendente na primeira aplicação. Deixa os lábios macios e protegidos contra o ressecamento. Vegana, hipoalergênica, dermatologicamente testada e não testada em animais.',
-   '/images/products/19-milkshake-morango-hidratante-labial-enaldinho.webp', '/produto/hidratante-labial-milkshake-morango')
+   '/images/products/19-milkshake-morango-hidratante-labial-enaldinho.webp', '/produto/hidratante-labial-milkshake-morango'),
+  ('henna-sobrancelhas-master-loiro-escuro', 'Henna Para Sobrancelhas Master - Loiro Escuro', 'Master', 'sobrancelhas',
+   'Henna profissional para sobrancelhas na cor loiro escuro, com pigmentação uniforme.',
+   'Henna profissional para sobrancelhas na cor loiro escuro, com pigmentação uniforme e boa fixação. Fórmula com extratos de Jaborandi e Bamboo, ideal para corrigir falhas com naturalidade em sobrancelhas claras e loiras.',
+   '/images/products/20-henna-sobrancelhas-master-loiro-escuro.webp', '/produto/henna-sobrancelhas-master-loiro-escuro')
 ) as v(slug, name, brand, category_slug, short_description, description, image_url, product_url)
 join categories c on c.slug = v.category_slug
 on conflict (slug) do update set

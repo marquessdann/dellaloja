@@ -273,6 +273,36 @@ export const products: Product[] = [
     isBestSeller: true,
     buyButtonLabel: "Veja na Shopee",
   },
+  {
+    id: "20",
+    slug: "henna-sobrancelhas-master-loiro-escuro",
+    name: "Henna Para Sobrancelhas Master - Loiro Escuro",
+    brand: "Master",
+    category: "sobrancelhas",
+    shortDescription: "Henna profissional para sobrancelhas na cor loiro escuro, com pigmentação uniforme.",
+    description:
+      "Henna profissional para sobrancelhas na cor loiro escuro, com pigmentação uniforme e boa fixação. Fórmula com extratos de Jaborandi e Bamboo, ideal para corrigir falhas com naturalidade em sobrancelhas claras e loiras. Tom equilibrado e acabamento natural: define com suavidade e mantém a cor por mais tempo, com mistura fácil e ótimo rendimento. O kit vem com o fixador e intensificador de henna, além de cubeta, espátula e sachê para aplicação.",
+    highlights: [
+      "Define e corrige falhas com naturalidade",
+      "Acabamento suave e profissional",
+      "Mistura fácil e ótimo rendimento",
+      "Ideal para sobrancelhas claras e loiras",
+      "Com extratos de Jaborandi e Bamboo",
+      "Cor Loiro Escuro",
+      "Formato em pó",
+      "3g",
+      "Acompanha fixador",
+    ],
+    image: "/images/products/20-henna-sobrancelhas-master-loiro-escuro.webp",
+    images: [
+      "/images/products/20-henna-sobrancelhas-master-loiro-escuro.webp",
+      "/images/products/20-henna-sobrancelhas-master-loiro-escuro-frasco.webp",
+      "/images/products/20-henna-sobrancelhas-master-loiro-escuro-kit.webp",
+      "/images/products/20-henna-sobrancelhas-master-loiro-escuro-acessorios.webp",
+    ],
+    externalUrl: "#",
+    isBestSeller: true,
+  },
 ];
 
 export function getProduct(slug: string) {
