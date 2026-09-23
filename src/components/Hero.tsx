@@ -301,21 +301,6 @@ export function Hero() {
           </motion.div>
         </div>
       </div>
-
-      <div className="relative z-10 border-t border-navy-900/8 bg-cream-100">
-        <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-x-10 gap-y-3 px-4 py-4 sm:px-6 lg:px-8">
-          {["Vegano", "Hipoalergênico", "Dermatologicamente Testado", "Não Testado em Animais"].map(
-            (label) => (
-              <span
-                key={label}
-                className="text-[10px] font-semibold uppercase tracking-[0.22em] text-navy-500/70"
-              >
-                {label}
-              </span>
-            )
-          )}
-        </div>
-      </div>
     </section>
   );
 }

@@ -90,10 +90,7 @@ export function Header() {
                   </Link>
                 ))}
               </div>
-              <div className="mt-4 flex items-center justify-between border-t border-navy-900/10 pt-4">
-                <p className="text-xs text-navy-500">
-                  Novas categorias em breve, à medida que o portfólio Della cresce.
-                </p>
+              <div className="mt-4 flex items-center justify-end border-t border-navy-900/10 pt-4">
                 <Link
                   href="/categorias"
                   className="link-underline flex items-center gap-1 text-xs font-semibold text-navy-700"
