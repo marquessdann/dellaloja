@@ -119,7 +119,9 @@ from (values
   ('body-splash-gelo-sinistro', 'mercado-livre', 'https://produto.mercadolivre.com.br/MLB-5289241709-body-splash-enaldinho-gelo-sinistro-120ml-masculino-_JM'),
   ('body-splash-gelo-sinistro', 'shopee', 'https://shopee.com.br/product/1931210934/58268954948'),
   ('body-splash-explosao-cosmica', 'mercado-livre', 'https://www.mercadolivre.com.br/body-splash-enaldinho-spray-radiativo-120ml-unissex-desodora/up/MLBU5268548153?pdp_filters=item_id:MLB5290949839'),
-  ('body-splash-explosao-cosmica', 'shopee', 'https://shopee.com.br/product/1931210934/58218980035')
+  ('body-splash-explosao-cosmica', 'shopee', 'https://shopee.com.br/product/1931210934/58218980035'),
+  ('body-splash-treta-citrica', 'mercado-livre', 'https://produto.mercadolivre.com.br/MLB-5288912475-body-splash-enaldinho-treta-citrica-corporal-120ml-unissex-fragrncia-citrica-_JM'),
+  ('body-splash-treta-citrica', 'shopee', 'https://shopee.com.br/product/1931210934/58268946196')
 ) as v(product_slug, marketplace_slug, url)
 join products p on p.slug = v.product_slug
 join marketplaces m on m.slug = v.marketplace_slug

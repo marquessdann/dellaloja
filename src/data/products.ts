@@ -55,6 +55,16 @@ export const products: Product[] = [
     featured: true,
     isBestSeller: true,
     buyButtonLabel: "Veja na Shopee",
+    marketplaceLinks: [
+      {
+        label: "Ver no Mercado Livre",
+        url: "https://produto.mercadolivre.com.br/MLB-5288912475-body-splash-enaldinho-treta-citrica-corporal-120ml-unissex-fragrncia-citrica-_JM",
+      },
+      {
+        label: "Ver na Shopee",
+        url: "https://shopee.com.br/product/1931210934/58268946196",
+      },
+    ],
   },
   {
     id: "13",
