@@ -108,6 +108,22 @@ on conflict (slug) do update set
   display_order = excluded.display_order;
 
 -- ============================================================
+-- product_marketplace_links — per-product override links (requires
+-- migrations/0002_marketplace_links.sql to have been run first).
+-- ============================================================
+insert into product_marketplace_links (product_id, marketplace_id, url, active)
+select p.id, m.id, v.url, true
+from (values
+  ('body-splash-chiclete-irado', 'mercado-livre', 'https://produto.mercadolivre.com.br/MLB-7699634080-body-splash-enaldinho-chiclete-irado-120ml-_JM'),
+  ('body-splash-chiclete-irado', 'shopee', 'https://shopee.com.br/product/1931210934/58218961064')
+) as v(product_slug, marketplace_slug, url)
+join products p on p.slug = v.product_slug
+join marketplaces m on m.slug = v.marketplace_slug
+on conflict (product_id, marketplace_id) do update set
+  url = excluded.url,
+  active = true;
+
+-- ============================================================
 -- store_information
 -- ============================================================
 -- phone e whatsapp são o mesmo número na Della — preenchendo os dois, uma

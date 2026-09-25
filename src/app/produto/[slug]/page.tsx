@@ -118,23 +118,42 @@ export default async function ProductPage({
                   <MessageCircle size={16} />
                   Tenho interesse
                 </a>
-                <a
-                  href={product.externalUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group flex items-center gap-2 rounded-full border border-navy-900/15 px-6 py-3.5 text-sm font-semibold text-navy-900 transition-colors duration-300 hover:border-gold-500"
-                >
-                  {product.buyButtonLabel ?? "Ver no Mercado Livre"}
-                  <ArrowUpRight
-                    size={15}
-                    className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                  />
-                </a>
+                {product.marketplaceLinks && product.marketplaceLinks.length > 0 ? (
+                  product.marketplaceLinks.map((link) => (
+                    <a
+                      key={link.url}
+                      href={link.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group flex items-center gap-2 rounded-full border border-navy-900/15 px-6 py-3.5 text-sm font-semibold text-navy-900 transition-colors duration-300 hover:border-gold-500"
+                    >
+                      {link.label}
+                      <ArrowUpRight
+                        size={15}
+                        className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                      />
+                    </a>
+                  ))
+                ) : (
+                  <a
+                    href={product.externalUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group flex items-center gap-2 rounded-full border border-navy-900/15 px-6 py-3.5 text-sm font-semibold text-navy-900 transition-colors duration-300 hover:border-gold-500"
+                  >
+                    {product.buyButtonLabel ?? "Ver no Mercado Livre"}
+                    <ArrowUpRight
+                      size={15}
+                      className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                    />
+                  </a>
+                )}
               </div>
 
               <p className="mt-6 text-xs text-navy-400">
-                Produto disponível para consulta. Em breve, compra direta pelo
-                Mercado Livre e WhatsApp.
+                {product.marketplaceLinks && product.marketplaceLinks.length > 0
+                  ? "Produto disponível para compra direta pelo Mercado Livre e Shopee, ou consulta pelo WhatsApp."
+                  : "Produto disponível para consulta. Em breve, compra direta pelo Mercado Livre e WhatsApp."}
               </p>
             </Reveal>
           </div>

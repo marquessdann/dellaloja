@@ -17,6 +17,8 @@ export interface Product {
   isBestSeller?: boolean;
   /** Overrides the default "Ver no Mercado Livre" label on the product page. */
   buyButtonLabel?: string;
+  /** One button per marketplace link; when set, replaces the single externalUrl/buyButtonLabel button on the product page. */
+  marketplaceLinks?: { label: string; url: string }[];
 }
 
 export const products: Product[] = [
@@ -149,6 +151,16 @@ export const products: Product[] = [
     externalUrl: "#",
     isBestSeller: true,
     buyButtonLabel: "Veja na Shopee",
+    marketplaceLinks: [
+      {
+        label: "Ver no Mercado Livre",
+        url: "https://produto.mercadolivre.com.br/MLB-7699634080-body-splash-enaldinho-chiclete-irado-120ml-_JM",
+      },
+      {
+        label: "Ver na Shopee",
+        url: "https://shopee.com.br/product/1931210934/58218961064",
+      },
+    ],
   },
   {
     id: "16",
