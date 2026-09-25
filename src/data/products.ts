@@ -462,6 +462,119 @@ export const products: Product[] = [
     externalUrl: "#",
     isBestSeller: true,
   },
+  {
+    id: "25",
+    slug: "kit-pinca-ponta-fina-edel-solingen-inox",
+    name: "Kit 3 Pinças Ponta Fina Edel Solingen Aço Inox",
+    brand: "Edel Solingen",
+    category: "pinca-depilacao",
+    shortDescription: "Kit com 3 pinças profissionais em aço inox, pontas reta, fina e oblíqua.",
+    description:
+      "Kit com 3 pinças profissionais Edel Solingen em aço inox de alta qualidade, com pontas reta, fina e oblíqua para cobrir toda a necessidade de design de sobrancelhas e depilação de precisão. Pontas alinhadas e firmes, com caneluras internas que garantem aderência superior mesmo em pelos curtos e encravados. Fabricadas com qualidade Solingen legítima, são esterilizáveis e de longa duração, ideais para uso profissional e doméstico.",
+    highlights: [
+      "Kit com 3 pinças: reta, fina e oblíqua",
+      "Aço inox de alta qualidade",
+      "Pontas alinhadas e firmes",
+      "Caneluras internas — maior aderência",
+      "Qualidade Solingen legítima",
+      "Esterilizável com álcool 70%",
+      "Uso profissional e doméstico",
+    ],
+    image: "/images/products/25-kit-pinca-ponta-fina-edel-solingen-inox.webp",
+    images: [
+      "/images/products/25-kit-pinca-ponta-fina-edel-solingen-inox.webp",
+      "/images/products/25-kit-pinca-ponta-fina-edel-solingen-inox-pontas.webp",
+      "/images/products/25-kit-pinca-ponta-fina-edel-solingen-inox-detalhe.webp",
+      "/images/products/25-kit-pinca-ponta-fina-edel-solingen-inox-infografico.webp",
+    ],
+    externalUrl: "#",
+    isNew: true,
+    marketplaceLinks: [
+      {
+        label: "Ver no Mercado Livre",
+        url: "https://www.mercadolivre.com.br/kit-3-pincas-ponta-fina-edel-solingen-aco-inox/up/MLBU5310448868?pdp_filters=item_id:MLB5292492887",
+      },
+      {
+        label: "Ver na Shopee",
+        url: "https://shopee.com.br/product/1931210934/58219026130",
+      },
+    ],
+  },
+  {
+    id: "26",
+    slug: "kit-pinca-laqueada-edel-solingen-curva-obliqua",
+    name: "Kit 3 Pinças Laqueadas Ponta Fina Curva Oblíqua Edel Solingen",
+    brand: "Edel Solingen",
+    category: "pinca-depilacao",
+    shortDescription: "Kit com 3 pinças laqueadas coloridas, pontas fina, oblíqua e curva.",
+    description:
+      "Kit com 3 pinças profissionais Edel Solingen em acabamento laqueado colorido, com pontas fina, oblíqua e curva para design de sobrancelhas e depilação de precisão. Cabo emborrachado antiderrapante para mais controle durante o uso, com a qualidade e a precisão Solingen legítimas em cada ponta. Esterilizável com álcool 70%, ideal para uso profissional em estúdios de beleza e sobrancelhas.",
+    highlights: [
+      "Kit com 3 pinças: fina, oblíqua e curva",
+      "Acabamento laqueado colorido",
+      "Cabo emborrachado antiderrapante",
+      "Qualidade Solingen legítima",
+      "Esterilizável com álcool 70%",
+      "Ideal para design de sobrancelhas profissional",
+    ],
+    image: "/images/products/26-kit-pinca-laqueada-edel-solingen-curva-obliqua.webp",
+    images: [
+      "/images/products/26-kit-pinca-laqueada-edel-solingen-curva-obliqua.webp",
+      "/images/products/26-kit-pinca-laqueada-edel-solingen-curva-obliqua-detalhe.webp",
+      "/images/products/26-kit-pinca-laqueada-edel-solingen-curva-obliqua-preta.webp",
+      "/images/products/26-kit-pinca-laqueada-edel-solingen-curva-obliqua-uso.webp",
+    ],
+    externalUrl: "#",
+    isNew: true,
+    marketplaceLinks: [
+      {
+        label: "Ver no Mercado Livre",
+        url: "https://www.mercadolivre.com.br/kit-3-pincas-laqueadas-ponta-fina-curva-obliqua-edel-solinge/up/MLBU5310285098?pdp_filters=item_id:MLB5292452561",
+      },
+      {
+        label: "Ver na Shopee",
+        url: "https://shopee.com.br/product/1931210934/58219012276",
+      },
+    ],
+  },
+  {
+    id: "27",
+    slug: "kit-pinca-depilacao-9cm-pontas-variadas-edel-solingen",
+    name: "Kit Pinça Depilação 9cm Pontas Variadas Edel Solingen",
+    brand: "Edel Solingen",
+    category: "pinca-depilacao",
+    shortDescription: "Kit de pinças 9cm com pontas douradas variadas para precisão milimétrica.",
+    description:
+      "Kit de pinças profissionais Edel Solingen de 9cm, com pontas de acabamento dourado e variedade de formatos para atender diferentes técnicas de design de sobrancelhas e depilação. Ponta estreita e reta para precisão milimétrica, com caneluras internas que garantem aderência superior mesmo em pelos mais finos e curtos, sem quebrar. Aço inox premium com qualidade Solingen legítima, esterilizável e de longa duração.",
+    highlights: [
+      "Pontas variadas em acabamento dourado",
+      "9cm — precisão milimétrica",
+      "Caneluras internas — maior aderência",
+      "Agarra pelos finos e curtos sem quebrar",
+      "Aço inox premium",
+      "Qualidade Solingen legítima",
+      "Esterilizável com álcool 70%",
+    ],
+    image: "/images/products/27-kit-pinca-depilacao-9cm-pontas-variadas-edel-solingen.webp",
+    images: [
+      "/images/products/27-kit-pinca-depilacao-9cm-pontas-variadas-edel-solingen.webp",
+      "/images/products/27-kit-pinca-depilacao-9cm-pontas-variadas-edel-solingen-pontas.webp",
+      "/images/products/27-kit-pinca-depilacao-9cm-pontas-variadas-edel-solingen-detalhe.webp",
+      "/images/products/27-kit-pinca-depilacao-9cm-pontas-variadas-edel-solingen-uso.webp",
+    ],
+    externalUrl: "#",
+    isNew: true,
+    marketplaceLinks: [
+      {
+        label: "Ver no Mercado Livre",
+        url: "https://produto.mercadolivre.com.br/MLB-5292305735-kit-pinca-depilaco-9cm-pontas-variadas-edel-solingen-_JM",
+      },
+      {
+        label: "Ver na Shopee",
+        url: "https://shopee.com.br/product/1931210934/58269035891",
+      },
+    ],
+  },
 ];
 
 export function getProduct(slug: string) {

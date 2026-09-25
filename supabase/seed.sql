@@ -17,7 +17,8 @@
 insert into categories (slug, name, description) values
   ('body-splash', 'Coleção Enaldinho', 'Sprays corporais perfumados, refrescantes e cheios de personalidade.'),
   ('sobrancelhas', 'Sobrancelhas', 'Henna e produtos profissionais para design e coloração de sobrancelhas.'),
-  ('cilios', 'Cílios', 'Produtos profissionais para aplicação, proteção e cuidado de cílios.')
+  ('cilios', 'Cílios', 'Produtos profissionais para aplicação, proteção e cuidado de cílios.'),
+  ('pinca-depilacao', 'Pinças & Depilação', 'Pinças profissionais Edel Solingen para design de sobrancelhas e depilação de precisão.')
 on conflict (slug) do update set
   name = excluded.name,
   description = excluded.description;
@@ -79,7 +80,19 @@ from (values
   ('cola-cilios-charm-master-3g', 'Cola Adesivo para Extensão de Cílios Charm Master 3g', 'Master Elite', 'cilios',
    'Cola profissional para extensão de cílios com secagem ultrarrápida e retenção de até 9 semanas.',
    'Cola profissional para extensão de cílios, com secagem de 0,3 a 1 segundo e retenção de até 9 semanas. Ampla janela de trabalho, com boa performance em temperaturas de 16°C a 30°C e umidade de 30% a 75%. Uso exclusivamente profissional.',
-   '/images/products/24-cola-cilios-charm-master-3g.webp', '/produto/cola-cilios-charm-master-3g')
+   '/images/products/24-cola-cilios-charm-master-3g.webp', '/produto/cola-cilios-charm-master-3g'),
+  ('kit-pinca-ponta-fina-edel-solingen-inox', 'Kit 3 Pinças Ponta Fina Edel Solingen Aço Inox', 'Edel Solingen', 'pinca-depilacao',
+   'Kit com 3 pinças profissionais em aço inox, pontas reta, fina e oblíqua.',
+   'Kit com 3 pinças profissionais Edel Solingen em aço inox de alta qualidade, com pontas reta, fina e oblíqua. Pontas alinhadas e firmes, com caneluras internas que garantem aderência superior. Esterilizável, ideal para uso profissional e doméstico.',
+   '/images/products/25-kit-pinca-ponta-fina-edel-solingen-inox.webp', '/produto/kit-pinca-ponta-fina-edel-solingen-inox'),
+  ('kit-pinca-laqueada-edel-solingen-curva-obliqua', 'Kit 3 Pinças Laqueadas Ponta Fina Curva Oblíqua Edel Solingen', 'Edel Solingen', 'pinca-depilacao',
+   'Kit com 3 pinças laqueadas coloridas, pontas fina, oblíqua e curva.',
+   'Kit com 3 pinças profissionais Edel Solingen em acabamento laqueado colorido, com pontas fina, oblíqua e curva. Cabo emborrachado antiderrapante, qualidade Solingen legítima, esterilizável com álcool 70%. Ideal para design de sobrancelhas profissional.',
+   '/images/products/26-kit-pinca-laqueada-edel-solingen-curva-obliqua.webp', '/produto/kit-pinca-laqueada-edel-solingen-curva-obliqua'),
+  ('kit-pinca-depilacao-9cm-pontas-variadas-edel-solingen', 'Kit Pinça Depilação 9cm Pontas Variadas Edel Solingen', 'Edel Solingen', 'pinca-depilacao',
+   'Kit de pinças 9cm com pontas douradas variadas para precisão milimétrica.',
+   'Kit de pinças profissionais Edel Solingen de 9cm, com pontas de acabamento dourado e variedade de formatos. Ponta estreita e reta para precisão milimétrica, caneluras internas, aço inox premium com qualidade Solingen legítima.',
+   '/images/products/27-kit-pinca-depilacao-9cm-pontas-variadas-edel-solingen.webp', '/produto/kit-pinca-depilacao-9cm-pontas-variadas-edel-solingen')
 ) as v(slug, name, brand, category_slug, short_description, description, image_url, product_url)
 join categories c on c.slug = v.category_slug
 on conflict (slug) do update set
@@ -121,7 +134,13 @@ from (values
   ('body-splash-explosao-cosmica', 'mercado-livre', 'https://produto.mercadolivre.com.br/MLB-5290949839-body-splash-enaldinho-spray-radiativo-120ml-unissex-desodora-_JM'),
   ('body-splash-explosao-cosmica', 'shopee', 'https://shopee.com.br/product/1931210934/58218980035'),
   ('body-splash-treta-citrica', 'mercado-livre', 'https://produto.mercadolivre.com.br/MLB-5288912475-body-splash-enaldinho-treta-citrica-corporal-120ml-unissex-fragrncia-citrica-_JM'),
-  ('body-splash-treta-citrica', 'shopee', 'https://shopee.com.br/product/1931210934/58268946196')
+  ('body-splash-treta-citrica', 'shopee', 'https://shopee.com.br/product/1931210934/58268946196'),
+  ('kit-pinca-ponta-fina-edel-solingen-inox', 'mercado-livre', 'https://www.mercadolivre.com.br/kit-3-pincas-ponta-fina-edel-solingen-aco-inox/up/MLBU5310448868?pdp_filters=item_id:MLB5292492887'),
+  ('kit-pinca-ponta-fina-edel-solingen-inox', 'shopee', 'https://shopee.com.br/product/1931210934/58219026130'),
+  ('kit-pinca-laqueada-edel-solingen-curva-obliqua', 'mercado-livre', 'https://www.mercadolivre.com.br/kit-3-pincas-laqueadas-ponta-fina-curva-obliqua-edel-solinge/up/MLBU5310285098?pdp_filters=item_id:MLB5292452561'),
+  ('kit-pinca-laqueada-edel-solingen-curva-obliqua', 'shopee', 'https://shopee.com.br/product/1931210934/58219012276'),
+  ('kit-pinca-depilacao-9cm-pontas-variadas-edel-solingen', 'mercado-livre', 'https://produto.mercadolivre.com.br/MLB-5292305735-kit-pinca-depilaco-9cm-pontas-variadas-edel-solingen-_JM'),
+  ('kit-pinca-depilacao-9cm-pontas-variadas-edel-solingen', 'shopee', 'https://shopee.com.br/product/1931210934/58269035891')
 ) as v(product_slug, marketplace_slug, url)
 join products p on p.slug = v.product_slug
 join marketplaces m on m.slug = v.marketplace_slug
