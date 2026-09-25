@@ -115,7 +115,9 @@ insert into product_marketplace_links (product_id, marketplace_id, url, active)
 select p.id, m.id, v.url, true
 from (values
   ('body-splash-chiclete-irado', 'mercado-livre', 'https://produto.mercadolivre.com.br/MLB-7699634080-body-splash-enaldinho-chiclete-irado-120ml-_JM'),
-  ('body-splash-chiclete-irado', 'shopee', 'https://shopee.com.br/product/1931210934/58218961064')
+  ('body-splash-chiclete-irado', 'shopee', 'https://shopee.com.br/product/1931210934/58218961064'),
+  ('body-splash-gelo-sinistro', 'mercado-livre', 'https://produto.mercadolivre.com.br/MLB-5289241709-body-splash-enaldinho-gelo-sinistro-120ml-masculino-_JM'),
+  ('body-splash-gelo-sinistro', 'shopee', 'https://shopee.com.br/product/1931210934/58268954948')
 ) as v(product_slug, marketplace_slug, url)
 join products p on p.slug = v.product_slug
 join marketplaces m on m.slug = v.marketplace_slug

@@ -88,6 +88,16 @@ export const products: Product[] = [
     externalUrl: "#",
     isBestSeller: true,
     buyButtonLabel: "Veja na Shopee",
+    marketplaceLinks: [
+      {
+        label: "Ver no Mercado Livre",
+        url: "https://produto.mercadolivre.com.br/MLB-5289241709-body-splash-enaldinho-gelo-sinistro-120ml-masculino-_JM",
+      },
+      {
+        label: "Ver na Shopee",
+        url: "https://shopee.com.br/product/1931210934/58268954948",
+      },
+    ],
   },
   {
     id: "14",
