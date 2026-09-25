@@ -141,7 +141,7 @@ export const products: Product[] = [
     marketplaceLinks: [
       {
         label: "Ver no Mercado Livre",
-        url: "https://www.mercadolivre.com.br/body-splash-enaldinho-spray-radiativo-120ml-unissex-desodora/up/MLBU5268548153?pdp_filters=item_id:MLB5290949839",
+        url: "https://produto.mercadolivre.com.br/MLB-5290949839-body-splash-enaldinho-spray-radiativo-120ml-unissex-desodora-_JM",
       },
       {
         label: "Ver na Shopee",
