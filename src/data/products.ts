@@ -134,6 +134,8 @@ export const products: Product[] = [
     images: [
       "/images/products/14-explosao-cosmica-body-splash-enaldinho.webp",
       "/images/products/14-explosao-cosmica-body-splash-enaldinho-verso.webp",
+      "/images/products/14-explosao-cosmica-body-splash-enaldinho-destaques.webp",
+      "/images/products/14-explosao-cosmica-body-splash-enaldinho-frutada.webp",
     ],
     externalUrl: "#",
     isBestSeller: true,
