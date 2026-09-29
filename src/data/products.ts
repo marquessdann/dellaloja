@@ -143,7 +143,7 @@ export const products: Product[] = [
     marketplaceLinks: [
       {
         label: "Ver no Mercado Livre",
-        url: "https://produto.mercadolivre.com.br/MLB-5290949839-body-splash-enaldinho-spray-radiativo-120ml-unissex-desodora-_JM",
+        url: "https://www.mercadolivre.com.br/body-splash-enaldinho-exp-cosmica-120ml-unissex-frutado/up/MLBU5307871155",
       },
       {
         label: "Ver na Shopee",
@@ -468,31 +468,31 @@ export const products: Product[] = [
     name: "Kit 3 Pinças Ponta Fina Edel Solingen Aço Inox",
     brand: "Edel Solingen",
     category: "pinca-depilacao",
-    shortDescription: "Kit com 3 pinças profissionais em aço inox, pontas reta, fina e oblíqua.",
+    shortDescription: "Kit com 3 pinças ponta fina idênticas em aço inox, ideais para pelos curtos e finos.",
     description:
-      "Kit com 3 pinças profissionais Edel Solingen em aço inox de alta qualidade, com pontas reta, fina e oblíqua para cobrir toda a necessidade de design de sobrancelhas e depilação de precisão. Pontas alinhadas e firmes, com caneluras internas que garantem aderência superior mesmo em pelos curtos e encravados. Fabricadas com qualidade Solingen legítima, são esterilizáveis e de longa duração, ideais para uso profissional e doméstico.",
+      "Kit com 3 pinças ponta fina idênticas Edel Solingen — Ref. 2271504, produzidas em aço inoxidável de alta qualidade para remover até os pelos mais curtos e finos com facilidade e um acabamento impecável. As pontas finas são perfeitamente alinhadas, garantindo ótima aderência mesmo nos pelos mais curtos, com alta durabilidade e resistência ao desgaste do dia a dia. Ideal para pelos encravados, trabalhos de alta precisão e acabamentos detalhados. Ter 3 pinças traz mais praticidade e economia: profissionais podem alternar entre clientes enquanto uma é higienizada, sempre com uma reserva pronta para uso — deixe uma em casa, uma no trabalho e uma na bolsa. Perfeito para designers de sobrancelhas, profissionais da beleza e uso pessoal.",
     highlights: [
-      "Kit com 3 pinças: reta, fina e oblíqua",
-      "Aço inox de alta qualidade",
-      "Pontas alinhadas e firmes",
-      "Caneluras internas — maior aderência",
-      "Qualidade Solingen legítima",
-      "Esterilizável com álcool 70%",
-      "Uso profissional e doméstico",
+      "Kit com 3 pinças ponta fina idênticas — Ref. 2271504",
+      "Aço inoxidável de alta qualidade",
+      "Pontas finas perfeitamente alinhadas",
+      "Ótima aderência em pelos curtos e finos",
+      "Resistente ao desgaste do dia a dia",
+      "Ideal para pelos encravados e acabamentos detalhados",
+      "Mais praticidade e economia com 3 unidades",
+      "Indicado para designers de sobrancelhas e uso pessoal",
     ],
     image: "/images/products/25-kit-pinca-ponta-fina-edel-solingen-inox.webp",
     images: [
       "/images/products/25-kit-pinca-ponta-fina-edel-solingen-inox.webp",
       "/images/products/25-kit-pinca-ponta-fina-edel-solingen-inox-pontas.webp",
       "/images/products/25-kit-pinca-ponta-fina-edel-solingen-inox-detalhe.webp",
-      "/images/products/25-kit-pinca-ponta-fina-edel-solingen-inox-infografico.webp",
     ],
     externalUrl: "#",
     isNew: true,
     marketplaceLinks: [
       {
         label: "Ver no Mercado Livre",
-        url: "https://www.mercadolivre.com.br/kit-3-pincas-ponta-fina-edel-solingen-aco-inox/up/MLBU5310448868?pdp_filters=item_id:MLB5292492887",
+        url: "https://www.mercadolivre.com.br/kit-3-pincas-ponta-fina-edel-solingen-aco-inox/up/MLBU5307428323",
       },
       {
         label: "Ver na Shopee",
@@ -572,6 +572,44 @@ export const products: Product[] = [
       {
         label: "Ver na Shopee",
         url: "https://shopee.com.br/product/1931210934/58269035891",
+      },
+    ],
+  },
+  {
+    id: "28",
+    slug: "kit-pinca-ponta-fina-edel-solingen-inox-sobrancelha",
+    name: "Kit 3 Pinças Ponta Fina Edel Solingen Aço Inox Sobrancelha",
+    brand: "Edel Solingen",
+    category: "pinca-depilacao",
+    shortDescription: "Kit com 3 pinças ponta fina idênticas em aço inox, para sobrancelhas e pelos curtos.",
+    description:
+      "Kit com 3 pinças ponta fina idênticas Edel Solingen, ideais para remover até os pelos mais curtos e finos com facilidade, garantindo um acabamento impecável. Com 3 unidades, você sempre tem uma pinça à mão: no estúdio, em casa ou na bolsa. Produzidas em aço inoxidável de alta qualidade, com pontas finas perfeitamente alinhadas e de alta precisão, garantem ótima aderência até nos pelos mais curtos, além de alta durabilidade, resistência ao desgaste do dia a dia, conforto e excelente desempenho. Indicada para pelos curtos e finos, pelos encravados, trabalhos de alta precisão e acabamentos detalhados. Profissionais podem alternar entre clientes enquanto uma pinça é higienizada, sempre com uma reserva pronta para uso. Ideal para designers de sobrancelhas, profissionais da beleza e uso pessoal.",
+    highlights: [
+      "Kit com 3 pinças ponta fina idênticas",
+      "Aço inoxidável de alta qualidade",
+      "Pontas finas perfeitamente alinhadas e de alta precisão",
+      "Ótima aderência até nos pelos mais curtos",
+      "Alta durabilidade e resistência ao desgaste",
+      "Conforto e excelente desempenho",
+      "Ideal para pelos encravados e acabamentos detalhados",
+      "Indicado para designers de sobrancelhas",
+    ],
+    image: "/images/products/28-kit-pinca-ponta-fina-edel-solingen-inox-sobrancelha.webp",
+    images: [
+      "/images/products/28-kit-pinca-ponta-fina-edel-solingen-inox-sobrancelha.webp",
+      "/images/products/28-kit-pinca-ponta-fina-edel-solingen-inox-sobrancelha-pontas.webp",
+      "/images/products/28-kit-pinca-ponta-fina-edel-solingen-inox-sobrancelha-detalhe.webp",
+    ],
+    externalUrl: "#",
+    isNew: true,
+    marketplaceLinks: [
+      {
+        label: "Ver no Mercado Livre",
+        url: "https://www.mercadolivre.com.br/kit-3-pincas-ponta-fina-edel-solingen-aco-inox-sobrancelha/up/MLBU5307703075",
+      },
+      {
+        label: "Ver na Shopee",
+        url: "https://shopee.com.br/product/1931210934/58219283545",
       },
     ],
   },
