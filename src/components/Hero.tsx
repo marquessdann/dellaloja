@@ -155,7 +155,13 @@ export function Hero() {
           fallback: it's always painted first, the video just paints over it
           once it can play, and disappears again (via motion-reduce:hidden)
           for prefers-reduced-motion. Decorative only: aria-hidden + no
-          controls/focus, so it's never announced or reachable by keyboard. */}
+          controls/focus, so it's never announced or reachable by keyboard.
+          opacity: 0.999 (not 1) is intentional: some Android browsers promote
+          a fully-opaque <video> into a hardware overlay plane that composites
+          above the rest of the page regardless of z-index — which is why a
+          native control could survive even a fully opaque covering div
+          placed after it in the DOM. A hair under full opacity keeps the
+          video in the normal software compositing path with everything else. */}
       <video
         ref={videoRef}
         aria-hidden="true"
@@ -169,6 +175,7 @@ export function Hero() {
         disableRemotePlayback
         controlsList="nodownload noremoteplayback noplaybackrate nofullscreen"
         x-webkit-airplay="deny"
+        style={{ opacity: 0.999 }}
         className="bg-video pointer-events-none absolute left-1/2 top-1/2 z-0 h-auto min-h-full w-auto min-w-full -translate-x-1/2 -translate-y-1/2 motion-reduce:hidden"
       >
         <source src="/videos/hero-background.mp4" type="video/mp4" />
