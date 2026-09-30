@@ -142,11 +142,13 @@ from (values
   ('kit-pinca-ponta-fina-edel-solingen-inox', 'mercado-livre', 'https://www.mercadolivre.com.br/kit-3-pincas-ponta-fina-edel-solingen-aco-inox/up/MLBU5307428323'),
   ('kit-pinca-ponta-fina-edel-solingen-inox', 'shopee', 'https://shopee.com.br/product/1931210934/58219026130'),
   ('kit-pinca-laqueada-edel-solingen-curva-obliqua', 'mercado-livre', 'https://www.mercadolivre.com.br/kit-3-pincas-laqueadas-ponta-fina-curva-obliqua-edel-solinge/up/MLBU5310285098?pdp_filters=item_id:MLB5292452561'),
-  ('kit-pinca-laqueada-edel-solingen-curva-obliqua', 'shopee', 'https://shopee.com.br/product/1931210934/58219012276'),
+  ('kit-pinca-laqueada-edel-solingen-curva-obliqua', 'shopee', 'https://shopee.com.br/product/1931210934/58269035891'),
   ('kit-pinca-depilacao-9cm-pontas-variadas-edel-solingen', 'mercado-livre', 'https://produto.mercadolivre.com.br/MLB-5292305735-kit-pinca-depilaco-9cm-pontas-variadas-edel-solingen-_JM'),
-  ('kit-pinca-depilacao-9cm-pontas-variadas-edel-solingen', 'shopee', 'https://shopee.com.br/product/1931210934/58269035891'),
+  ('kit-pinca-depilacao-9cm-pontas-variadas-edel-solingen', 'shopee', 'https://shopee.com.br/product/1931210934/58219012276'),
   ('kit-pinca-ponta-fina-edel-solingen-inox-sobrancelha', 'mercado-livre', 'https://www.mercadolivre.com.br/kit-3-pincas-ponta-fina-edel-solingen-aco-inox-sobrancelha/up/MLBU5307703075'),
-  ('kit-pinca-ponta-fina-edel-solingen-inox-sobrancelha', 'shopee', 'https://shopee.com.br/product/1931210934/58219283545')
+  ('kit-pinca-ponta-fina-edel-solingen-inox-sobrancelha', 'shopee', 'https://shopee.com.br/product/1931210934/58219283545'),
+  ('hidratante-labial-milkshake-morango', 'mercado-livre', 'https://produto.mercadolivre.com.br/MLB-7701912788-hidratante-labial-enaldinho-milk-shake-de-morango-10g-_JM'),
+  ('hidratante-labial-chocomenta-subzero', 'mercado-livre', 'https://produto.mercadolivre.com.br/MLB-7702055106-hidratante-labial-enaldinho-chocomenta-subzero-10g-_JM')
 ) as v(product_slug, marketplace_slug, url)
 join products p on p.slug = v.product_slug
 join marketplaces m on m.slug = v.marketplace_slug

@@ -283,7 +283,12 @@ export const products: Product[] = [
     ],
     externalUrl: "#",
     isBestSeller: true,
-    buyButtonLabel: "Veja na Shopee",
+    marketplaceLinks: [
+      {
+        label: "Ver no Mercado Livre",
+        url: "https://produto.mercadolivre.com.br/MLB-7702055106-hidratante-labial-enaldinho-chocomenta-subzero-10g-_JM",
+      },
+    ],
   },
   {
     id: "19",
@@ -315,7 +320,12 @@ export const products: Product[] = [
     ],
     externalUrl: "#",
     isBestSeller: true,
-    buyButtonLabel: "Veja na Shopee",
+    marketplaceLinks: [
+      {
+        label: "Ver no Mercado Livre",
+        url: "https://produto.mercadolivre.com.br/MLB-7701912788-hidratante-labial-enaldinho-milk-shake-de-morango-10g-_JM",
+      },
+    ],
   },
   {
     id: "20",
@@ -533,7 +543,7 @@ export const products: Product[] = [
       },
       {
         label: "Ver na Shopee",
-        url: "https://shopee.com.br/product/1931210934/58219012276",
+        url: "https://shopee.com.br/product/1931210934/58269035891",
       },
     ],
   },
@@ -571,7 +581,7 @@ export const products: Product[] = [
       },
       {
         label: "Ver na Shopee",
-        url: "https://shopee.com.br/product/1931210934/58269035891",
+        url: "https://shopee.com.br/product/1931210934/58219012276",
       },
     ],
   },
@@ -597,6 +607,7 @@ export const products: Product[] = [
     image: "/images/products/28-kit-pinca-ponta-fina-edel-solingen-inox-sobrancelha.webp",
     images: [
       "/images/products/28-kit-pinca-ponta-fina-edel-solingen-inox-sobrancelha.webp",
+      "/images/products/28-kit-pinca-ponta-fina-edel-solingen-inox-sobrancelha-kit.webp",
       "/images/products/28-kit-pinca-ponta-fina-edel-solingen-inox-sobrancelha-pontas.webp",
       "/images/products/28-kit-pinca-ponta-fina-edel-solingen-inox-sobrancelha-detalhe.webp",
     ],
