@@ -150,7 +150,9 @@ from (values
   ('hidratante-labial-milkshake-morango', 'mercado-livre', 'https://produto.mercadolivre.com.br/MLB-7701912788-hidratante-labial-enaldinho-milk-shake-de-morango-10g-_JM'),
   ('hidratante-labial-chocomenta-subzero', 'mercado-livre', 'https://produto.mercadolivre.com.br/MLB-7702055106-hidratante-labial-enaldinho-chocomenta-subzero-10g-_JM'),
   ('hidratante-labial-chiclete-congelante', 'mercado-livre', 'https://www.mercadolivre.com.br/hidratante-labial--enaldinho-chiclete-congelante-10g/up/MLBU4697286606'),
-  ('hidratante-labial-chiclete-congelante', 'shopee', 'https://shopee.com.br/product/1931210934/58219429441')
+  ('hidratante-labial-chiclete-congelante', 'shopee', 'https://shopee.com.br/product/1931210934/58219429441'),
+  ('gel-controle-mental-gelatinoso', 'mercado-livre', 'https://produto.mercadolivre.com.br/MLB-5317245545-gel-para-cabelo-enaldinho-controle-mental-efeito-gelado-170g-_JM'),
+  ('gel-controle-mental-gelatinoso', 'shopee', 'https://shopee.com.br/product/1931210934/58269450316')
 ) as v(product_slug, marketplace_slug, url)
 join products p on p.slug = v.product_slug
 join marketplaces m on m.slug = v.marketplace_slug

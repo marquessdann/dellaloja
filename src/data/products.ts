@@ -219,7 +219,16 @@ export const products: Product[] = [
     images: ["/images/products/16-controle-mental-gel-cabelo-enaldinho.webp"],
     externalUrl: "#",
     isBestSeller: true,
-    buyButtonLabel: "Veja na Shopee",
+    marketplaceLinks: [
+      {
+        label: "Ver no Mercado Livre",
+        url: "https://produto.mercadolivre.com.br/MLB-5317245545-gel-para-cabelo-enaldinho-controle-mental-efeito-gelado-170g-_JM",
+      },
+      {
+        label: "Ver na Shopee",
+        url: "https://shopee.com.br/product/1931210934/58269450316",
+      },
+    ],
   },
   {
     id: "17",

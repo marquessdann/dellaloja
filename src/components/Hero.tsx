@@ -159,7 +159,7 @@ export function Hero() {
         playsInline
         preload="auto"
         disablePictureInPicture
-        className="pointer-events-none absolute inset-0 z-0 h-full w-full object-cover motion-reduce:hidden"
+        className="bg-video pointer-events-none absolute inset-0 z-0 h-full w-full object-cover motion-reduce:hidden"
       >
         <source src="/videos/hero-background.mp4" type="video/mp4" />
       </video>
