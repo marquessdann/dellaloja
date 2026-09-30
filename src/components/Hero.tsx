@@ -130,6 +130,8 @@ export function Hero() {
     const tryPlay = () => {
       video.muted = true;
       video.defaultMuted = true;
+      video.disablePictureInPicture = true;
+      video.disableRemotePlayback = true;
       video.play().catch(() => {});
     };
     tryPlay();
@@ -167,7 +169,7 @@ export function Hero() {
         disableRemotePlayback
         controlsList="nodownload noremoteplayback noplaybackrate nofullscreen"
         x-webkit-airplay="deny"
-        className="bg-video pointer-events-none absolute inset-0 z-0 h-full w-full object-cover motion-reduce:hidden"
+        className="bg-video pointer-events-none absolute left-1/2 top-1/2 z-0 h-auto min-h-full w-auto min-w-full -translate-x-1/2 -translate-y-1/2 motion-reduce:hidden"
       >
         <source src="/videos/hero-background.mp4" type="video/mp4" />
       </video>
