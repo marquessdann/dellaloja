@@ -245,13 +245,26 @@ export const products: Product[] = [
     image: "/images/products/17-chiclete-congelante-hidratante-labial-enaldinho.webp",
     images: [
       "/images/products/17-chiclete-congelante-hidratante-labial-enaldinho.webp",
+      "/images/products/17-chiclete-congelante-hidratante-labial-enaldinho-textura.webp",
+      "/images/products/17-chiclete-congelante-hidratante-labial-enaldinho-aplicacao.webp",
       "/images/products/17-chiclete-congelante-hidratante-labial-enaldinho-destaques.webp",
       "/images/products/17-chiclete-congelante-hidratante-labial-enaldinho-lab.webp",
+      "/images/products/17-chiclete-congelante-hidratante-labial-enaldinho-lifestyle.webp",
       "/images/products/17-chiclete-congelante-hidratante-labial-enaldinho-neon.webp",
+      "/images/products/17-chiclete-congelante-hidratante-labial-enaldinho-caixa.webp",
     ],
     externalUrl: "#",
     isBestSeller: true,
-    buyButtonLabel: "Veja na Shopee",
+    marketplaceLinks: [
+      {
+        label: "Ver no Mercado Livre",
+        url: "https://www.mercadolivre.com.br/hidratante-labial--enaldinho-chiclete-congelante-10g/up/MLBU4697286606",
+      },
+      {
+        label: "Ver na Shopee",
+        url: "https://shopee.com.br/product/1931210934/58219429441",
+      },
+    ],
   },
   {
     id: "18",
