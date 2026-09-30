@@ -180,6 +180,22 @@ export function Hero() {
           prefers-reduced-motion, keeping the plain gradient untouched. */}
       <div className="pointer-events-none absolute inset-0 z-0 bg-[#05070C]/40 motion-reduce:hidden" />
 
+      {/* Opaque cover over the very top strip of the video: several mobile
+          browsers (both iOS Safari and Android Chrome) render a small native
+          media-control affordance (AirPlay/cast/PiP — the exact one varies
+          by browser and hasn't responded to any of the attribute-level fixes
+          tried) right at the top edge of this autoplaying, muted, controls-
+          less video. Painting over just that strip with the same navy tone
+          as the gradient underneath hides it outright, regardless of which
+          native control is actually responsible. */}
+      <div
+        className="pointer-events-none absolute inset-x-0 top-0 z-[1] h-24 motion-reduce:hidden sm:h-28"
+        style={{
+          background:
+            "linear-gradient(to bottom, #061A3A 0%, #061A3A 45%, transparent 100%)",
+        }}
+      />
+
       {/* Giant DELLA wordmark used as an integrated watermark, not a pasted image */}
       <div className="pointer-events-none absolute inset-0 z-0 flex items-center justify-center overflow-hidden">
         <motion.div
