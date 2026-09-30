@@ -114,17 +114,22 @@ export function Hero() {
   const prefersReducedMotion = useReducedMotion();
   const videoRef = useRef<HTMLVideoElement>(null);
 
-  // iOS Safari sometimes ignores the `autoplay` attribute on a video mounted
-  // by React (a timing/hydration quirk) and shows its native play button
-  // instead of looping the background. Explicitly calling play() once the
-  // element is mounted is the reliable fix; a rejected promise (e.g. Low
-  // Power Mode blocking autoplay outright) is fine to ignore since the
-  // static gradient/watermark behind it already works as a fallback.
+  // Mobile browsers require `muted` to be set as a DOM *property*, not just
+  // the JSX/HTML attribute, before they'll honor autoplay — React doesn't
+  // reliably sync that property on <video> through hydration (a long-standing
+  // React bug), so a muted-looking video can still fail to autoplay and fall
+  // back to the browser's native "paused video" play button. Setting it
+  // explicitly here, before every play() attempt, is the reliable fix. A
+  // rejected play() promise (e.g. Low Power Mode blocking autoplay outright)
+  // is fine to ignore since the static gradient/watermark behind it already
+  // works as a fallback.
   useEffect(() => {
     if (prefersReducedMotion) return;
     const video = videoRef.current;
     if (!video) return;
     const tryPlay = () => {
+      video.muted = true;
+      video.defaultMuted = true;
       video.play().catch(() => {});
     };
     tryPlay();
