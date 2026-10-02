@@ -131,11 +131,11 @@ on conflict (slug) do update set
 insert into product_marketplace_links (product_id, marketplace_id, url, active)
 select p.id, m.id, v.url, true
 from (values
-  ('body-splash-chiclete-irado', 'mercado-livre', 'https://produto.mercadolivre.com.br/MLB-7699634080-body-splash-enaldinho-chiclete-irado-120ml-_JM'),
+  ('body-splash-chiclete-irado', 'mercado-livre', 'https://www.mercadolivre.com.br/body-splash-enaldinho-chiclete-irado--120ml/up/MLBU5378463776'),
   ('body-splash-chiclete-irado', 'shopee', 'https://shopee.com.br/product/1931210934/58218961064'),
   ('body-splash-gelo-sinistro', 'mercado-livre', 'https://produto.mercadolivre.com.br/MLB-5289241709-body-splash-enaldinho-gelo-sinistro-120ml-masculino-_JM'),
   ('body-splash-gelo-sinistro', 'shopee', 'https://shopee.com.br/product/1931210934/58268954948'),
-  ('body-splash-explosao-cosmica', 'mercado-livre', 'https://www.mercadolivre.com.br/body-splash-enaldinho-exp-cosmica-120ml-unissex-frutado/up/MLBU5307871155'),
+  ('body-splash-explosao-cosmica', 'mercado-livre', 'https://produto.mercadolivre.com.br/MLB-5325275209-body-splash-enaldinho-exp-cosmica-unissex-120ml-_JM'),
   ('body-splash-explosao-cosmica', 'shopee', 'https://shopee.com.br/product/1931210934/58218980035'),
   ('body-splash-treta-citrica', 'mercado-livre', 'https://produto.mercadolivre.com.br/MLB-5288912475-body-splash-enaldinho-treta-citrica-corporal-120ml-unissex-fragrncia-citrica-_JM'),
   ('body-splash-treta-citrica', 'shopee', 'https://shopee.com.br/product/1931210934/58268946196'),
@@ -147,9 +147,9 @@ from (values
   ('kit-pinca-depilacao-9cm-pontas-variadas-edel-solingen', 'shopee', 'https://shopee.com.br/product/1931210934/58219012276'),
   ('kit-pinca-ponta-fina-edel-solingen-inox-sobrancelha', 'mercado-livre', 'https://www.mercadolivre.com.br/kit-3-pincas-ponta-fina-edel-solingen-aco-inox-sobrancelha/up/MLBU5307703075'),
   ('kit-pinca-ponta-fina-edel-solingen-inox-sobrancelha', 'shopee', 'https://shopee.com.br/product/1931210934/58219283545'),
-  ('hidratante-labial-milkshake-morango', 'mercado-livre', 'https://produto.mercadolivre.com.br/MLB-7701912788-hidratante-labial-enaldinho-milk-shake-de-morango-10g-_JM'),
-  ('hidratante-labial-chocomenta-subzero', 'mercado-livre', 'https://produto.mercadolivre.com.br/MLB-7702055106-hidratante-labial-enaldinho-chocomenta-subzero-10g-_JM'),
-  ('hidratante-labial-chiclete-congelante', 'mercado-livre', 'https://www.mercadolivre.com.br/hidratante-labial--enaldinho-chiclete-congelante-10g/up/MLBU4697286606'),
+  ('hidratante-labial-milkshake-morango', 'mercado-livre', 'https://produto.mercadolivre.com.br/MLB-7739352220-hidratante-labial-enaldinho-milk-shake-de-morango-10g-_JM'),
+  ('hidratante-labial-chocomenta-subzero', 'mercado-livre', 'https://produto.mercadolivre.com.br/MLB-5324933883-hidratante-labial-enaldinho-chocomenta-subzero-10g-_JM'),
+  ('hidratante-labial-chiclete-congelante', 'mercado-livre', 'https://produto.mercadolivre.com.br/MLB-5324895533-hidratante-labial-enaldinho-chiclete-congelante-10g-_JM'),
   ('hidratante-labial-chiclete-congelante', 'shopee', 'https://shopee.com.br/product/1931210934/58219429441'),
   ('gel-controle-mental-gelatinoso', 'mercado-livre', 'https://produto.mercadolivre.com.br/MLB-5317245545-gel-para-cabelo-enaldinho-controle-mental-efeito-gelado-170g-_JM'),
   ('gel-controle-mental-gelatinoso', 'shopee', 'https://shopee.com.br/product/1931210934/58269450316')

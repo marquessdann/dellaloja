@@ -143,7 +143,7 @@ export const products: Product[] = [
     marketplaceLinks: [
       {
         label: "Ver no Mercado Livre",
-        url: "https://www.mercadolivre.com.br/body-splash-enaldinho-exp-cosmica-120ml-unissex-frutado/up/MLBU5307871155",
+        url: "https://produto.mercadolivre.com.br/MLB-5325275209-body-splash-enaldinho-exp-cosmica-unissex-120ml-_JM",
       },
       {
         label: "Ver na Shopee",
@@ -186,7 +186,7 @@ export const products: Product[] = [
     marketplaceLinks: [
       {
         label: "Ver no Mercado Livre",
-        url: "https://produto.mercadolivre.com.br/MLB-7699634080-body-splash-enaldinho-chiclete-irado-120ml-_JM",
+        url: "https://www.mercadolivre.com.br/body-splash-enaldinho-chiclete-irado--120ml/up/MLBU5378463776",
       },
       {
         label: "Ver na Shopee",
@@ -267,7 +267,7 @@ export const products: Product[] = [
     marketplaceLinks: [
       {
         label: "Ver no Mercado Livre",
-        url: "https://www.mercadolivre.com.br/hidratante-labial--enaldinho-chiclete-congelante-10g/up/MLBU4697286606",
+        url: "https://produto.mercadolivre.com.br/MLB-5324895533-hidratante-labial-enaldinho-chiclete-congelante-10g-_JM",
       },
       {
         label: "Ver na Shopee",
@@ -308,7 +308,7 @@ export const products: Product[] = [
     marketplaceLinks: [
       {
         label: "Ver no Mercado Livre",
-        url: "https://produto.mercadolivre.com.br/MLB-7702055106-hidratante-labial-enaldinho-chocomenta-subzero-10g-_JM",
+        url: "https://produto.mercadolivre.com.br/MLB-5324933883-hidratante-labial-enaldinho-chocomenta-subzero-10g-_JM",
       },
     ],
   },
@@ -345,7 +345,7 @@ export const products: Product[] = [
     marketplaceLinks: [
       {
         label: "Ver no Mercado Livre",
-        url: "https://produto.mercadolivre.com.br/MLB-7701912788-hidratante-labial-enaldinho-milk-shake-de-morango-10g-_JM",
+        url: "https://produto.mercadolivre.com.br/MLB-7739352220-hidratante-labial-enaldinho-milk-shake-de-morango-10g-_JM",
       },
     ],
   },
