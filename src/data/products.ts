@@ -761,6 +761,47 @@ export const products: Product[] = [
       },
     ],
   },
+  {
+    id: "33",
+    slug: "cola-cilios-master-elite-emerald-3g",
+    name: "Cola para Extensão de Cílios Master Elite Emerald 3g",
+    brand: "Master Elite",
+    category: "cilios",
+    shortDescription: "Cola profissional com secagem ultrarrápida de 0,5 segundo e retenção de até 7 semanas.",
+    description:
+      "A Emerald é a cola profissional Master Elite para extensão de cílios, com secagem ultrarrápida de 0,5 segundo e retenção de até 7 semanas, garantindo acabamento impecável. Versátil em diferentes níveis de umidade e temperatura, tem performance ideal em temperaturas de 18°C a 24°C e umidade de 30% a 75%. Possui selo holográfico e registro na ANVISA, evitando problemas com falsificação — o produto original traz garantia completa. Indicada exclusivamente para procedimentos profissionais de extensão de cílios realizados por lash designers.",
+    highlights: [
+      "Secagem ultrarrápida de 0,5 segundo",
+      "Retenção de até 7 semanas",
+      "Temperatura ideal de 18°C a 24°C",
+      "Umidade ideal de 30% a 75%",
+      "Garante acabamento impecável",
+      "Versátil em diferentes níveis de umidade e temperatura",
+      "Selo holográfico de autenticidade",
+      "Registro na ANVISA",
+      "3g por embalagem",
+      "Uso exclusivamente profissional",
+    ],
+    image: "/images/products/33-cola-cilios-master-elite-emerald-3g.webp",
+    images: [
+      "/images/products/33-cola-cilios-master-elite-emerald-3g.webp",
+      "/images/products/33-cola-cilios-master-elite-emerald-3g-propriedades.webp",
+      "/images/products/33-cola-cilios-master-elite-emerald-3g-beneficios.webp",
+      "/images/products/33-cola-cilios-master-elite-emerald-3g-autenticidade.webp",
+    ],
+    externalUrl: "#",
+    isNew: true,
+    marketplaceLinks: [
+      {
+        label: "Ver no Mercado Livre",
+        url: "https://www.mercadolivre.com.br/cola-emerald-master-elite-3g-secagem-rapida-extensao-cilios/up/MLBU5380094104",
+      },
+      {
+        label: "Ver na Shopee",
+        url: "https://shopee.com.br/product/1931210934/58269638745",
+      },
+    ],
+  },
 ];
 
 export function getProduct(slug: string) {

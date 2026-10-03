@@ -104,7 +104,11 @@ from (values
   ('cola-cilios-master-elite-diamond-3g', 'Cola para Extensão de Cílios Master Elite Diamond 3g', 'Master Elite', 'cilios',
    'Adesivo coreano transparente, secagem de 1 a 1,5 segundo e retenção de até 7 semanas.',
    'Adesivo coreano transparente Master Elite Diamond para extensão de cílios, com fixação forte, retenção de até 7 semanas e secagem de 1 a 1,5 segundo. Viscosidade fina, baixo odor, fórmula livre de carbono e parabenos. Performance ideal em temperaturas de 18°C a 28°C e umidade de 40% a 80%. Certificado pela ANVISA, importado pela Vermonth.',
-   '/images/products/32-cola-cilios-master-elite-diamond-3g.webp', '/produto/cola-cilios-master-elite-diamond-3g')
+   '/images/products/32-cola-cilios-master-elite-diamond-3g.webp', '/produto/cola-cilios-master-elite-diamond-3g'),
+  ('cola-cilios-master-elite-emerald-3g', 'Cola para Extensão de Cílios Master Elite Emerald 3g', 'Master Elite', 'cilios',
+   'Cola profissional com secagem ultrarrápida de 0,5 segundo e retenção de até 7 semanas.',
+   'Cola profissional Master Elite Emerald para extensão de cílios, com secagem ultrarrápida de 0,5 segundo e retenção de até 7 semanas. Versátil em diferentes níveis de umidade e temperatura (18°C a 24°C, 30% a 75% de umidade). Selo holográfico de autenticidade e registro na ANVISA.',
+   '/images/products/33-cola-cilios-master-elite-emerald-3g.webp', '/produto/cola-cilios-master-elite-emerald-3g')
 ) as v(slug, name, brand, category_slug, short_description, description, image_url, product_url)
 join categories c on c.slug = v.category_slug
 on conflict (slug) do update set
