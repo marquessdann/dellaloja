@@ -129,11 +129,12 @@ on conflict (slug) do update set
 -- configurado" until you paste in the real storefront link (Table Editor,
 -- column `url` on the matching row here).
 insert into marketplaces (name, slug, url, active, display_order) values
-  ('Mercado Livre', 'mercado-livre', null, true, 1),
-  ('Shopee', 'shopee', null, true, 2),
+  ('Mercado Livre', 'mercado-livre', 'https://www.mercadolivre.com.br/cola-emerald-master-elite-3g-secagem-rapida-extensao-cilios/up/MLBU5380094104', true, 1),
+  ('Shopee', 'shopee', 'https://shopee.com.br/product/1931210934/58219623204', true, 2),
   ('TikTok Shop', 'tiktok-shop', null, true, 3)
 on conflict (slug) do update set
   name = excluded.name,
+  url = excluded.url,
   display_order = excluded.display_order;
 
 -- ============================================================
