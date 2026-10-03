@@ -69,14 +69,6 @@ from (values
    'Protetor de pálpebras em hidrogel, com recorte floral que cobre os cílios inferiores.',
    'Protetor de pálpebras em hidrogel, com recorte floral que acompanha o contorno do olho e cobre os cílios inferiores sem tocar na linha d''água. Ideal para procedimentos de extensão de cílios e outros serviços que exigem proteção da pálpebra inferior.',
    '/images/products/21-protetor-palpebras-eyepatch-master-flor.webp', '/produto/protetor-palpebras-eyepatch-master-flor'),
-  ('removedor-cilios-balm-olive-excellent', 'Removedor De Cílios Balm Olive Excellent 7g', 'Excellent', 'cilios',
-   'Removedor em gel tipo balm para extensão de cílios, com azeite de oliva e uso profissional.',
-   'Removedor em gel tipo balm desenvolvido para remoção de extensões de cílios, com azeite de oliva que auxilia na remoção completa da cola e nutre os cílios naturais. Fórmula hipoalergênica e livre de odores, de uso profissional.',
-   '/images/products/22-removedor-cilios-balm-olive-excellent.webp', '/produto/removedor-cilios-balm-olive-excellent'),
-  ('pinca-cilios-7m-pro-master', 'Pinça Profissional de Cílios 7M-PRO Master', 'Master', 'cilios',
-   'Pinça profissional para extensão de cílios, em aço inox com nanotecnologia diamantada.',
-   'Pinça profissional para extensão de cílios, produzida em aço inox, leve e resistente a autoclave. Conta com nanotecnologia diamantada na ponta, que aumenta a aderência e a precisão no manuseio dos fios.',
-   '/images/products/23-pinca-cilios-7m-pro-master.webp', '/produto/pinca-cilios-7m-pro-master'),
   ('cola-cilios-charm-master-3g', 'Cola Adesivo para Extensão de Cílios Charm Master 3g', 'Master Elite', 'cilios',
    'Cola profissional para extensão de cílios com secagem ultrarrápida e retenção de até 9 semanas.',
    'Cola profissional para extensão de cílios, com secagem de 0,3 a 1 segundo e retenção de até 9 semanas. Ampla janela de trabalho, com boa performance em temperaturas de 16°C a 30°C e umidade de 30% a 75%. Uso exclusivamente profissional.',
@@ -96,7 +88,11 @@ from (values
   ('kit-pinca-ponta-fina-edel-solingen-inox-sobrancelha', 'Kit 3 Pinças Ponta Fina Edel Solingen Aço Inox Sobrancelha', 'Edel Solingen', 'pinca-depilacao',
    'Kit com 3 pinças ponta fina idênticas em aço inox, para sobrancelhas e pelos curtos.',
    'Kit com 3 pinças ponta fina idênticas Edel Solingen, em aço inoxidável de alta qualidade, com pontas finas perfeitamente alinhadas e de alta precisão. Ótima aderência até nos pelos mais curtos, alta durabilidade e resistência ao desgaste. Ideal para designers de sobrancelhas, profissionais da beleza e uso pessoal.',
-   '/images/products/28-kit-pinca-ponta-fina-edel-solingen-inox-sobrancelha.webp', '/produto/kit-pinca-ponta-fina-edel-solingen-inox-sobrancelha')
+   '/images/products/28-kit-pinca-ponta-fina-edel-solingen-inox-sobrancelha.webp', '/produto/kit-pinca-ponta-fina-edel-solingen-inox-sobrancelha'),
+  ('cola-cilios-master-elite-purple-diamond-3g', 'Cola para Extensão de Cílios Master Elite Purple Diamond 3g', 'Master Elite', 'cilios',
+   'Cola profissional para extensão de cílios com secagem ultrarrápida e retenção de até 7 semanas.',
+   'Cola profissional Master Elite Purple Diamond para extensão de cílios, com secagem de 0,5 a 1 segundo e retenção de até 7 semanas. Performance ideal em temperaturas de 16°C a 30°C e umidade de 30% a 75%. Embalagem Magic Pack Master com vedação completa. Dermatologicamente e oftalmologicamente testada, produto 100% original, fabricado na Coreia do Sul.',
+   '/images/products/29-cola-cilios-master-elite-purple-diamond-3g.webp', '/produto/cola-cilios-master-elite-purple-diamond-3g')
 ) as v(slug, name, brand, category_slug, short_description, description, image_url, product_url)
 join categories c on c.slug = v.category_slug
 on conflict (slug) do update set
