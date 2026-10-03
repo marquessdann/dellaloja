@@ -719,6 +719,48 @@ export const products: Product[] = [
       },
     ],
   },
+  {
+    id: "32",
+    slug: "cola-cilios-master-elite-diamond-3g",
+    name: "Cola para Extensão de Cílios Master Elite Diamond 3g",
+    brand: "Master Elite",
+    category: "cilios",
+    shortDescription: "Adesivo coreano transparente, secagem de 1 a 1,5 segundo e retenção de até 7 semanas.",
+    description:
+      "A Diamond é o verdadeiro adesivo coreano transparente Master Elite para extensão de cílios, com fixação forte e duradoura — retenção de até 7 semanas — e secagem super rápida, de 1 a 1,5 segundo. Viscosidade fina, que facilita uma aplicação mais precisa e evita excesso de produto nas extensões, com baixo odor e irritação reduzida. Fórmula mais segura, livre de carbono e parabenos, reduzindo os riscos de reação em clientes com peles mais sensíveis. Adaptada ao clima tropical, com performance ideal em temperaturas de 18°C a 28°C e umidade de 40% a 80%. Produto certificado pela ANVISA, importado pela Vermonth. Indicada exclusivamente para procedimentos profissionais de extensão de cílios realizados por lash designers.",
+    highlights: [
+      "Adesivo coreano transparente",
+      "Secagem de 1 a 1,5 segundo",
+      "Retenção de até 7 semanas",
+      "Temperatura ideal de 18°C a 28°C",
+      "Umidade ideal de 40% a 80%",
+      "Viscosidade fina — aplicação precisa",
+      "Baixo odor e irritação reduzida",
+      "Fórmula livre de carbono e parabenos",
+      "Certificado pela ANVISA",
+      "3g por embalagem",
+      "Uso exclusivamente profissional",
+    ],
+    image: "/images/products/32-cola-cilios-master-elite-diamond-3g.webp",
+    images: [
+      "/images/products/32-cola-cilios-master-elite-diamond-3g.webp",
+      "/images/products/32-cola-cilios-master-elite-diamond-3g-beneficios.webp",
+      "/images/products/32-cola-cilios-master-elite-diamond-3g-especificacoes.webp",
+      "/images/products/32-cola-cilios-master-elite-diamond-3g-uso.webp",
+    ],
+    externalUrl: "#",
+    isNew: true,
+    marketplaceLinks: [
+      {
+        label: "Ver no Mercado Livre",
+        url: "https://www.mercadolivre.com.br/cola-diamond-p-alongamento-de-cilios-secagem-rapida/up/MLBU5338696129",
+      },
+      {
+        label: "Ver na Shopee",
+        url: "https://shopee.com.br/product/1931210934/58219619426",
+      },
+    ],
+  },
 ];
 
 export function getProduct(slug: string) {
