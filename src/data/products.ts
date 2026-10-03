@@ -678,6 +678,47 @@ export const products: Product[] = [
       },
     ],
   },
+  {
+    id: "31",
+    slug: "cola-cilios-master-elite-pink-diamond-3g",
+    name: "Cola para Extensão de Cílios Master Elite Pink Diamond 3g",
+    brand: "Master Elite",
+    category: "cilios",
+    shortDescription: "Cola profissional para extensão de cílios com secagem ultrarrápida e retenção de até 7 semanas.",
+    description:
+      "A Pink Diamond é a cola profissional Master Elite para extensão de cílios, com secagem ultrarrápida de 0,5 a 1 segundo e retenção de até 7 semanas. Tem performance ideal em temperaturas de 16°C a 30°C e umidade de 30% a 75%, garantindo estabilidade em diferentes condições de estúdio. Acompanha a embalagem Magic Pack Master, com vedação completa e proteção contra temperatura e umidade para maior durabilidade do produto. Fórmula dermatologicamente e oftalmologicamente testada, com redução de irritações. Produto 100% original, fabricado na Coreia do Sul. Indicada exclusivamente para procedimentos profissionais de extensão de cílios realizados por lash designers.",
+    highlights: [
+      "Secagem de 0,5 a 1 segundo",
+      "Retenção de até 7 semanas",
+      "Temperatura ideal de 16°C a 30°C",
+      "Umidade ideal de 30% a 75%",
+      "Embalagem Magic Pack Master — vedação completa",
+      "Dermatologicamente testada",
+      "Oftalmologicamente testada",
+      "3g por embalagem",
+      "País de origem: Coreia do Sul",
+      "Uso exclusivamente profissional",
+    ],
+    image: "/images/products/31-cola-cilios-master-elite-pink-diamond-3g.webp",
+    images: [
+      "/images/products/31-cola-cilios-master-elite-pink-diamond-3g.webp",
+      "/images/products/31-cola-cilios-master-elite-pink-diamond-3g-detalhe.webp",
+      "/images/products/31-cola-cilios-master-elite-pink-diamond-3g-aplicacao.webp",
+      "/images/products/31-cola-cilios-master-elite-pink-diamond-3g-especificacoes.webp",
+    ],
+    externalUrl: "#",
+    isNew: true,
+    marketplaceLinks: [
+      {
+        label: "Ver no Mercado Livre",
+        url: "https://produto.mercadolivre.com.br/MLB-5325906027-cola-para-cilios-master-elite-pink-diamond-3ml-secagem-rapid-_JM",
+      },
+      {
+        label: "Ver na Shopee",
+        url: "https://shopee.com.br/product/1931210934/58219624057",
+      },
+    ],
+  },
 ];
 
 export function getProduct(slug: string) {
