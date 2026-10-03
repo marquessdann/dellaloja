@@ -92,7 +92,11 @@ from (values
   ('cola-cilios-master-elite-purple-diamond-3g', 'Cola para Extensão de Cílios Master Elite Purple Diamond 3g', 'Master Elite', 'cilios',
    'Cola profissional para extensão de cílios com secagem ultrarrápida e retenção de até 7 semanas.',
    'Cola profissional Master Elite Purple Diamond para extensão de cílios, com secagem de 0,5 a 1 segundo e retenção de até 7 semanas. Performance ideal em temperaturas de 16°C a 30°C e umidade de 30% a 75%. Embalagem Magic Pack Master com vedação completa. Dermatologicamente e oftalmologicamente testada, produto 100% original, fabricado na Coreia do Sul.',
-   '/images/products/29-cola-cilios-master-elite-purple-diamond-3g.webp', '/produto/cola-cilios-master-elite-purple-diamond-3g')
+   '/images/products/29-cola-cilios-master-elite-purple-diamond-3g.webp', '/produto/cola-cilios-master-elite-purple-diamond-3g'),
+  ('cola-cilios-master-elite-ruby-3g', 'Cola para Extensão de Cílios Master Elite Ruby 3g', 'Master Elite', 'cilios',
+   'Cola profissional com adesivo preto, secagem de 0,5 a 1 segundo e retenção de até 7 semanas.',
+   'Cola profissional Master Elite Ruby para extensão de cílios, com adesivo preto, secagem de 0,5 a 1 segundo e retenção de até 7 semanas. Performance ideal em temperaturas de 18°C a 28°C e umidade de 40% a 80%. Viscosidade fina, baixo nível de odor e ardor. Embalagem Magic Pack Master, aprovado pela ANVISA, fabricado na Coreia do Sul.',
+   '/images/products/30-cola-cilios-master-elite-ruby-3g.webp', '/produto/cola-cilios-master-elite-ruby-3g')
 ) as v(slug, name, brand, category_slug, short_description, description, image_url, product_url)
 join categories c on c.slug = v.category_slug
 on conflict (slug) do update set

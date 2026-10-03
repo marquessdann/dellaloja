@@ -636,6 +636,48 @@ export const products: Product[] = [
       },
     ],
   },
+  {
+    id: "30",
+    slug: "cola-cilios-master-elite-ruby-3g",
+    name: "Cola para Extensão de Cílios Master Elite Ruby 3g",
+    brand: "Master Elite",
+    category: "cilios",
+    shortDescription: "Cola profissional com adesivo preto, secagem de 0,5 a 1 segundo e retenção de até 7 semanas.",
+    description:
+      "A Ruby é a cola profissional Master Elite para extensão de cílios, com adesivo preto, secagem de 0,5 a 1 segundo e retenção de até 7 semanas. Tem performance ideal em temperaturas de 18°C a 28°C e umidade de 40% a 80%, sendo adaptável a variações climáticas típicas de países tropicais. Fórmula de viscosidade fina, com baixo nível de odor e ardor, hipoalergênica e durável. Acompanha a embalagem Magic Pack Master, com vedação completa e proteção contra temperatura e umidade. Produto aprovado pela ANVISA, fabricado na Coreia do Sul. Indicada exclusivamente para procedimentos profissionais de extensão de cílios realizados por lash designers.",
+    highlights: [
+      "Adesivo preto",
+      "Secagem de 0,5 a 1 segundo",
+      "Retenção de até 7 semanas",
+      "Temperatura ideal de 18°C a 28°C",
+      "Umidade ideal de 40% a 80%",
+      "Viscosidade fina",
+      "Baixo nível de odor e ardor",
+      "Hipoalergênica e durável",
+      "Aprovado pela ANVISA",
+      "3g por embalagem",
+      "Uso exclusivamente profissional",
+    ],
+    image: "/images/products/30-cola-cilios-master-elite-ruby-3g.webp",
+    images: [
+      "/images/products/30-cola-cilios-master-elite-ruby-3g.webp",
+      "/images/products/30-cola-cilios-master-elite-ruby-3g-aplicacao.webp",
+      "/images/products/30-cola-cilios-master-elite-ruby-3g-especificacoes.webp",
+      "/images/products/30-cola-cilios-master-elite-ruby-3g-beneficios.webp",
+    ],
+    externalUrl: "#",
+    isNew: true,
+    marketplaceLinks: [
+      {
+        label: "Ver no Mercado Livre",
+        url: "https://www.mercadolivre.com.br/cola-ruby-master-elite-3ml-preta-secagem-rapida-alongamento/up/MLBU5338459613",
+      },
+      {
+        label: "Ver na Shopee",
+        url: "https://shopee.com.br/product/1931210934/58219618143",
+      },
+    ],
+  },
 ];
 
 export function getProduct(slug: string) {
