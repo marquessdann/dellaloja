@@ -444,8 +444,9 @@ export const products: Product[] = [
       "Mais praticidade e economia com 3 unidades",
       "Indicado para designers de sobrancelhas e uso pessoal",
     ],
-    image: "/images/products/25-kit-pinca-ponta-fina-edel-solingen-inox-trio.webp",
+    image: "/images/products/25-kit-pinca-ponta-fina-edel-solingen-inox-trio-render.webp",
     images: [
+      "/images/products/25-kit-pinca-ponta-fina-edel-solingen-inox-trio-render.webp",
       "/images/products/25-kit-pinca-ponta-fina-edel-solingen-inox-trio.webp",
       "/images/products/25-kit-pinca-ponta-fina-edel-solingen-inox.webp",
       "/images/products/25-kit-pinca-ponta-fina-edel-solingen-inox-pontas.webp",
@@ -558,8 +559,9 @@ export const products: Product[] = [
       "Ideal para pelos encravados e acabamentos detalhados",
       "Indicado para designers de sobrancelhas",
     ],
-    image: "/images/products/28-kit-pinca-ponta-fina-edel-solingen-inox-sobrancelha.webp",
+    image: "/images/products/28-kit-pinca-ponta-fina-edel-solingen-inox-sobrancelha-trio.webp",
     images: [
+      "/images/products/28-kit-pinca-ponta-fina-edel-solingen-inox-sobrancelha-trio.webp",
       "/images/products/28-kit-pinca-ponta-fina-edel-solingen-inox-sobrancelha.webp",
       "/images/products/28-kit-pinca-ponta-fina-edel-solingen-inox-sobrancelha-kit.webp",
       "/images/products/28-kit-pinca-ponta-fina-edel-solingen-inox-sobrancelha-pontas.webp",

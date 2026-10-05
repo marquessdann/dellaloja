@@ -24,9 +24,12 @@ export const siteConfig = {
   marketplaces: [
     {
       label: "Mercado Livre",
-      href: "https://lista.mercadolivre.com.br/_CustId_3692836444?item_id=MLB5292305735&category_id=MLB257279&seller_id=3692836444&client=recoview-selleritems&recos_listing=true#origin=upp&component=sellerData&typeSeller=classic",
+      href: "https://lista.mercadolivre.com.br/_CustId_3692836444?item_id=MLB5305023545&category_id=MLB199175&seller_id=3692836444&client=recoview-selleritems&recos_listing=true#origin=pdp&component=sellerData&typeSeller=classic",
     },
-    { label: "Shopee", href: "https://shopee.com.br/dellanewstore#product_list" },
+    {
+      label: "Shopee",
+      href: "https://shopee.com.br/dellanewstore?categoryId=100630&entryPoint=ShopByPDP&itemId=58219618143",
+    },
     { label: "TikTok Shop", href: "#" },
   ],
   nav: [

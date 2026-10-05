@@ -72,7 +72,7 @@ from (values
   ('kit-pinca-ponta-fina-edel-solingen-inox', 'Kit 3 Pinças Ponta Fina Edel Solingen Aço Inox', 'Edel Solingen', 'pinca-depilacao',
    'Kit com 3 pinças ponta fina idênticas em aço inox, ideais para pelos curtos e finos.',
    'Kit com 3 pinças ponta fina idênticas Edel Solingen — Ref. 2271504, produzidas em aço inoxidável de alta qualidade. Pontas finas perfeitamente alinhadas, ótima aderência mesmo em pelos curtos e encravados, alta durabilidade. Ideal para designers de sobrancelhas, profissionais da beleza e uso pessoal.',
-   '/images/products/25-kit-pinca-ponta-fina-edel-solingen-inox-trio.webp', '/produto/kit-pinca-ponta-fina-edel-solingen-inox'),
+   '/images/products/25-kit-pinca-ponta-fina-edel-solingen-inox-trio-render.webp', '/produto/kit-pinca-ponta-fina-edel-solingen-inox'),
   ('kit-pinca-laqueada-edel-solingen-curva-obliqua', 'Kit 3 Pinças Laqueadas Ponta Fina Curva Oblíqua Edel Solingen', 'Edel Solingen', 'pinca-depilacao',
    'Kit com 3 pinças laqueadas coloridas, pontas fina, oblíqua e curva.',
    'Kit com 3 pinças profissionais Edel Solingen em acabamento laqueado colorido, com pontas fina, oblíqua e curva. Cabo emborrachado antiderrapante, qualidade Solingen legítima, esterilizável com álcool 70%. Ideal para design de sobrancelhas profissional.',
@@ -84,7 +84,7 @@ from (values
   ('kit-pinca-ponta-fina-edel-solingen-inox-sobrancelha', 'Kit 3 Pinças Ponta Fina Edel Solingen Aço Inox Sobrancelha', 'Edel Solingen', 'pinca-depilacao',
    'Kit com 3 pinças ponta fina idênticas em aço inox, para sobrancelhas e pelos curtos.',
    'Kit com 3 pinças ponta fina idênticas Edel Solingen, em aço inoxidável de alta qualidade, com pontas finas perfeitamente alinhadas e de alta precisão. Ótima aderência até nos pelos mais curtos, alta durabilidade e resistência ao desgaste. Ideal para designers de sobrancelhas, profissionais da beleza e uso pessoal.',
-   '/images/products/28-kit-pinca-ponta-fina-edel-solingen-inox-sobrancelha.webp', '/produto/kit-pinca-ponta-fina-edel-solingen-inox-sobrancelha'),
+   '/images/products/28-kit-pinca-ponta-fina-edel-solingen-inox-sobrancelha-trio.webp', '/produto/kit-pinca-ponta-fina-edel-solingen-inox-sobrancelha'),
   ('cola-cilios-master-elite-purple-diamond-3g', 'Cola para Extensão de Cílios Master Elite Purple Diamond 3g', 'Master Elite', 'cilios',
    'Cola profissional para extensão de cílios com secagem ultrarrápida e retenção de até 7 semanas.',
    'Cola profissional Master Elite Purple Diamond para extensão de cílios, com secagem de 0,5 a 1 segundo e retenção de até 7 semanas. Performance ideal em temperaturas de 16°C a 30°C e umidade de 30% a 75%. Embalagem Magic Pack Master com vedação completa. Dermatologicamente e oftalmologicamente testada, produto 100% original, fabricado na Coreia do Sul.',
@@ -145,8 +145,8 @@ on conflict (slug) do update set
 -- "ainda sendo configurado" until you paste in the real storefront link
 -- (Table Editor, column `url` on the matching row here).
 insert into marketplaces (name, slug, url, active, display_order) values
-  ('Mercado Livre', 'mercado-livre', 'https://lista.mercadolivre.com.br/_CustId_3692836444?item_id=MLB5292305735&category_id=MLB257279&seller_id=3692836444&client=recoview-selleritems&recos_listing=true#origin=upp&component=sellerData&typeSeller=classic', true, 1),
-  ('Shopee', 'shopee', 'https://shopee.com.br/dellanewstore#product_list', true, 2),
+  ('Mercado Livre', 'mercado-livre', 'https://lista.mercadolivre.com.br/_CustId_3692836444?item_id=MLB5305023545&category_id=MLB199175&seller_id=3692836444&client=recoview-selleritems&recos_listing=true#origin=pdp&component=sellerData&typeSeller=classic', true, 1),
+  ('Shopee', 'shopee', 'https://shopee.com.br/dellanewstore?categoryId=100630&entryPoint=ShopByPDP&itemId=58219618143', true, 2),
   ('TikTok Shop', 'tiktok-shop', null, true, 3)
 on conflict (slug) do update set
   name = excluded.name,
