@@ -72,7 +72,7 @@ from (values
   ('kit-pinca-ponta-fina-edel-solingen-inox', 'Kit 3 Pinças Ponta Fina Edel Solingen Aço Inox', 'Edel Solingen', 'pinca-depilacao',
    'Kit com 3 pinças ponta fina idênticas em aço inox, ideais para pelos curtos e finos.',
    'Kit com 3 pinças ponta fina idênticas Edel Solingen — Ref. 2271504, produzidas em aço inoxidável de alta qualidade. Pontas finas perfeitamente alinhadas, ótima aderência mesmo em pelos curtos e encravados, alta durabilidade. Ideal para designers de sobrancelhas, profissionais da beleza e uso pessoal.',
-   '/images/products/25-kit-pinca-ponta-fina-edel-solingen-inox.webp', '/produto/kit-pinca-ponta-fina-edel-solingen-inox'),
+   '/images/products/25-kit-pinca-ponta-fina-edel-solingen-inox-trio.webp', '/produto/kit-pinca-ponta-fina-edel-solingen-inox'),
   ('kit-pinca-laqueada-edel-solingen-curva-obliqua', 'Kit 3 Pinças Laqueadas Ponta Fina Curva Oblíqua Edel Solingen', 'Edel Solingen', 'pinca-depilacao',
    'Kit com 3 pinças laqueadas coloridas, pontas fina, oblíqua e curva.',
    'Kit com 3 pinças profissionais Edel Solingen em acabamento laqueado colorido, com pontas fina, oblíqua e curva. Cabo emborrachado antiderrapante, qualidade Solingen legítima, esterilizável com álcool 70%. Ideal para design de sobrancelhas profissional.',

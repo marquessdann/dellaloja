@@ -444,8 +444,9 @@ export const products: Product[] = [
       "Mais praticidade e economia com 3 unidades",
       "Indicado para designers de sobrancelhas e uso pessoal",
     ],
-    image: "/images/products/25-kit-pinca-ponta-fina-edel-solingen-inox.webp",
+    image: "/images/products/25-kit-pinca-ponta-fina-edel-solingen-inox-trio.webp",
     images: [
+      "/images/products/25-kit-pinca-ponta-fina-edel-solingen-inox-trio.webp",
       "/images/products/25-kit-pinca-ponta-fina-edel-solingen-inox.webp",
       "/images/products/25-kit-pinca-ponta-fina-edel-solingen-inox-pontas.webp",
       "/images/products/25-kit-pinca-ponta-fina-edel-solingen-inox-detalhe.webp",
