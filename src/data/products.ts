@@ -784,6 +784,45 @@ export const products: Product[] = [
       },
     ],
   },
+  {
+    id: "34",
+    slug: "henna-sobrancelhas-master-castanho-claro-3g",
+    name: "Henna Para Sobrancelhas Master - Castanho Claro",
+    brand: "Master",
+    category: "sobrancelhas",
+    shortDescription: "Henna profissional para sobrancelhas na cor castanho claro, com pigmentação uniforme.",
+    description:
+      "Henna profissional para sobrancelhas na cor castanho claro, com pigmentação uniforme e boa fixação. Fórmula com extratos de Jaborandi e Bamboo, ideal para corrigir falhas com naturalidade em sobrancelhas claras. Tom equilibrado e acabamento natural: define com suavidade e mantém a cor por mais tempo, com mistura fácil e ótimo rendimento. O kit vem com o fixador e intensificador de henna, além de cubeta, espátula e sachê para aplicação.",
+    highlights: [
+      "Define e corrige falhas com naturalidade",
+      "Acabamento suave e profissional",
+      "Mistura fácil e ótimo rendimento",
+      "Ideal para sobrancelhas claras",
+      "Com extratos de Jaborandi e Bamboo",
+      "Cor Castanho Claro",
+      "Formato em pó, 3g",
+      "Acompanha fixador e intensificador de henna",
+    ],
+    image: "/images/products/34-henna-sobrancelhas-master-castanho-claro-3g.webp",
+    images: [
+      "/images/products/34-henna-sobrancelhas-master-castanho-claro-3g.webp",
+      "/images/products/34-henna-sobrancelhas-master-castanho-claro-3g-frasco.webp",
+      "/images/products/34-henna-sobrancelhas-master-castanho-claro-3g-kit.webp",
+      "/images/products/34-henna-sobrancelhas-master-castanho-claro-3g-fixador.webp",
+      "/images/products/34-henna-sobrancelhas-master-castanho-claro-3g-acessorios.webp",
+    ],
+    externalUrl: "#",
+    marketplaceLinks: [
+      {
+        label: "Ver no Mercado Livre",
+        url: "https://www.mercadolivre.com.br/henna-castanho-claro-master-3g-profissional-sobrancelhas/up/MLBU5364917845?pdp_filters=item_id:MLB5337833365",
+      },
+      {
+        label: "Ver na Shopee",
+        url: "https://shopee.com.br/product/1931210934/58219777927",
+      },
+    ],
+  },
 ];
 
 export function getProduct(slug: string) {

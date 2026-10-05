@@ -104,7 +104,11 @@ from (values
   ('cola-cilios-master-elite-emerald-3g', 'Cola para Extensão de Cílios Master Elite Emerald 3g', 'Master Elite', 'cilios',
    'Cola profissional com secagem ultrarrápida de 0,5 segundo e retenção de até 7 semanas.',
    'Cola profissional Master Elite Emerald para extensão de cílios, com secagem ultrarrápida de 0,5 segundo e retenção de até 7 semanas. Versátil em diferentes níveis de umidade e temperatura (18°C a 24°C, 30% a 75% de umidade). Selo holográfico de autenticidade e registro na ANVISA.',
-   '/images/products/33-cola-cilios-master-elite-emerald-3g.webp', '/produto/cola-cilios-master-elite-emerald-3g')
+   '/images/products/33-cola-cilios-master-elite-emerald-3g.webp', '/produto/cola-cilios-master-elite-emerald-3g'),
+  ('henna-sobrancelhas-master-castanho-claro-3g', 'Henna Para Sobrancelhas Master - Castanho Claro', 'Master', 'sobrancelhas',
+   'Henna profissional para sobrancelhas na cor castanho claro, com pigmentação uniforme.',
+   'Henna profissional para sobrancelhas na cor castanho claro, com pigmentação uniforme e boa fixação. Fórmula com extratos de Jaborandi e Bamboo, ideal para corrigir falhas com naturalidade em sobrancelhas claras.',
+   '/images/products/34-henna-sobrancelhas-master-castanho-claro-3g.webp', '/produto/henna-sobrancelhas-master-castanho-claro-3g')
 ) as v(slug, name, brand, category_slug, short_description, description, image_url, product_url)
 join categories c on c.slug = v.category_slug
 on conflict (slug) do update set
@@ -163,7 +167,9 @@ from (values
   ('gel-controle-mental-gelatinoso', 'mercado-livre', 'https://produto.mercadolivre.com.br/MLB-5317245545-gel-para-cabelo-enaldinho-controle-mental-efeito-gelado-170g-_JM'),
   ('gel-controle-mental-gelatinoso', 'shopee', 'https://shopee.com.br/product/1931210934/58269450316'),
   ('kit-henna-sobrancelhas-master', 'mercado-livre', 'https://www.mercadolivre.com.br/kit-henna-sobrancelhas-master-castanho-claro-medio-e-escuro/up/MLBU3459364955?pdp_filters=item_id%3AMLB5765210048&quantity=1'),
-  ('kit-henna-sobrancelhas-master', 'shopee', 'https://shopee.com.br/product/1931210934/58269795372')
+  ('kit-henna-sobrancelhas-master', 'shopee', 'https://shopee.com.br/product/1931210934/58269795372'),
+  ('henna-sobrancelhas-master-castanho-claro-3g', 'mercado-livre', 'https://www.mercadolivre.com.br/henna-castanho-claro-master-3g-profissional-sobrancelhas/up/MLBU5364917845?pdp_filters=item_id:MLB5337833365'),
+  ('henna-sobrancelhas-master-castanho-claro-3g', 'shopee', 'https://shopee.com.br/product/1931210934/58219777927')
 ) as v(product_slug, marketplace_slug, url)
 join products p on p.slug = v.product_slug
 join marketplaces m on m.slug = v.marketplace_slug
