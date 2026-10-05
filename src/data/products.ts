@@ -860,6 +860,44 @@ export const products: Product[] = [
       },
     ],
   },
+  {
+    id: "36",
+    slug: "henna-sobrancelhas-master-castanho-escuro-3g",
+    name: "Henna Para Sobrancelhas Master - Castanho Escuro",
+    brand: "Master",
+    category: "sobrancelhas",
+    shortDescription: "Henna profissional para sobrancelhas na cor castanho escuro, com alta cobertura e acabamento natural.",
+    description:
+      "Henna profissional para sobrancelhas na cor castanho escuro, com alta cobertura e boa fixação. Fórmula com extratos de Jaborandi e Bamboo, ideal para corrigir falhas e preencher visualmente sobrancelhas de tom escuro. Define o desenho com acabamento natural e mantém a cor por mais tempo, com mistura fácil e ótimo rendimento. O kit vem com o fixador e intensificador de henna, além de cubeta, espátula e sachê para aplicação.",
+    highlights: [
+      "Alta cobertura e definição do desenho",
+      "Acabamento natural",
+      "Auxilia no preenchimento visual das sobrancelhas",
+      "Mistura fácil e ótimo rendimento",
+      "Com extratos de Jaborandi e Bamboo",
+      "Cor Castanho Escuro",
+      "Formato em pó, 3g",
+      "Acompanha fixador e intensificador de henna",
+    ],
+    image: "/images/products/36-henna-sobrancelhas-master-castanho-escuro-3g.webp",
+    images: [
+      "/images/products/36-henna-sobrancelhas-master-castanho-escuro-3g.webp",
+      "/images/products/36-henna-sobrancelhas-master-castanho-escuro-3g-beneficios.webp",
+      "/images/products/36-henna-sobrancelhas-master-castanho-escuro-3g-especificacoes.webp",
+      "/images/products/36-henna-sobrancelhas-master-castanho-escuro-3g-kit.webp",
+    ],
+    externalUrl: "#",
+    marketplaceLinks: [
+      {
+        label: "Ver no Mercado Livre",
+        url: "https://www.mercadolivre.com.br/henna-master-castanho-escuro-sobrancelha-profissional-3g/up/MLBU5364957177?pdp_filters=item_id:MLB5337828391",
+      },
+      {
+        label: "Ver na Shopee",
+        url: "https://shopee.com.br/product/1931210934/58269802900",
+      },
+    ],
+  },
 ];
 
 export function getProduct(slug: string) {
