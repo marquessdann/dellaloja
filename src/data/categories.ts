@@ -21,7 +21,7 @@ export const categories: Category[] = [
     name: "Sobrancelhas",
     shortName: "Sobrancelhas",
     description: "Henna e produtos profissionais para design e coloração de sobrancelhas.",
-    image: "/images/products/20-henna-sobrancelhas-master-loiro-escuro.webp",
+    image: "/images/products/20-trio-henna-sobrancelhas-master.webp",
   },
   {
     slug: "cilios",

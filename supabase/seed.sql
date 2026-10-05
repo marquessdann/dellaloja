@@ -61,10 +61,10 @@ from (values
    'Hidratante labial de milk shake de morango com efeito gelado surpreendente.',
    'Um hidratante labial com aroma de frutas vermelhas e milk shake de morango, que traz um efeito gelado surpreendente na primeira aplicação. Deixa os lábios macios e protegidos contra o ressecamento. Vegana, hipoalergênica, dermatologicamente testada e não testada em animais.',
    '/images/products/19-milkshake-morango-hidratante-labial-enaldinho.webp', '/produto/hidratante-labial-milkshake-morango'),
-  ('henna-sobrancelhas-master-loiro-escuro', 'Henna Para Sobrancelhas Master - Loiro Escuro', 'Master', 'sobrancelhas',
-   'Henna profissional para sobrancelhas na cor loiro escuro, com pigmentação uniforme.',
-   'Henna profissional para sobrancelhas na cor loiro escuro, com pigmentação uniforme e boa fixação. Fórmula com extratos de Jaborandi e Bamboo, ideal para corrigir falhas com naturalidade em sobrancelhas claras e loiras.',
-   '/images/products/20-henna-sobrancelhas-master-loiro-escuro.webp', '/produto/henna-sobrancelhas-master-loiro-escuro'),
+  ('trio-henna-sobrancelhas-master', 'Trio Master Henna - Castanho Claro, Médio e Escuro', 'Master', 'sobrancelhas',
+   'Kit com as 3 tonalidades de henna profissional para sobrancelhas Master: castanho claro, médio e escuro.',
+   'Trio Master Henna: kit profissional com as 3 tonalidades de henna para sobrancelhas — castanho claro, castanho médio e castanho escuro, 3g cada. Fórmula com extratos de Jaborandi e Bamboo, ideal para corrigir falhas com naturalidade e cobrir toda a variedade de tons de sobrancelha.',
+   '/images/products/20-trio-henna-sobrancelhas-master.webp', '/produto/trio-henna-sobrancelhas-master'),
   ('cola-cilios-charm-master-3g', 'Cola Adesivo para Extensão de Cílios Charm Master 3g', 'Master Elite', 'cilios',
    'Cola profissional para extensão de cílios com secagem ultrarrápida e retenção de até 9 semanas.',
    'Cola profissional para extensão de cílios, com secagem de 0,3 a 1 segundo e retenção de até 9 semanas. Ampla janela de trabalho, com boa performance em temperaturas de 16°C a 30°C e umidade de 30% a 75%. Uso exclusivamente profissional.',
@@ -161,7 +161,9 @@ from (values
   ('hidratante-labial-chiclete-congelante', 'mercado-livre', 'https://produto.mercadolivre.com.br/MLB-5324895533-hidratante-labial-enaldinho-chiclete-congelante-10g-_JM'),
   ('hidratante-labial-chiclete-congelante', 'shopee', 'https://shopee.com.br/product/1931210934/58219429441'),
   ('gel-controle-mental-gelatinoso', 'mercado-livre', 'https://produto.mercadolivre.com.br/MLB-5317245545-gel-para-cabelo-enaldinho-controle-mental-efeito-gelado-170g-_JM'),
-  ('gel-controle-mental-gelatinoso', 'shopee', 'https://shopee.com.br/product/1931210934/58269450316')
+  ('gel-controle-mental-gelatinoso', 'shopee', 'https://shopee.com.br/product/1931210934/58269450316'),
+  ('trio-henna-sobrancelhas-master', 'mercado-livre', 'https://www.mercadolivre.com.br/kit-henna-sobrancelhas-master-castanho-claro-medio-e-escuro/up/MLBU3459364955?pdp_filters=item_id%3AMLB5765210048&quantity=1'),
+  ('trio-henna-sobrancelhas-master', 'shopee', 'https://shopee.com.br/product/1931210934/58269795372')
 ) as v(product_slug, marketplace_slug, url)
 join products p on p.slug = v.product_slug
 join marketplaces m on m.slug = v.marketplace_slug
