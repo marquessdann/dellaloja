@@ -726,8 +726,9 @@ export const products: Product[] = [
       "3g por embalagem",
       "Uso exclusivamente profissional",
     ],
-    image: "/images/products/32-cola-cilios-master-elite-diamond-3g.webp",
+    image: "/images/products/32-cola-cilios-master-elite-diamond-3g-sache.webp",
     images: [
+      "/images/products/32-cola-cilios-master-elite-diamond-3g-sache.webp",
       "/images/products/32-cola-cilios-master-elite-diamond-3g.webp",
       "/images/products/32-cola-cilios-master-elite-diamond-3g-beneficios.webp",
       "/images/products/32-cola-cilios-master-elite-diamond-3g-especificacoes.webp",
