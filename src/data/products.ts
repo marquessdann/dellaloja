@@ -898,6 +898,45 @@ export const products: Product[] = [
       },
     ],
   },
+  {
+    id: "37",
+    slug: "henna-sobrancelhas-master-preto-3g",
+    name: "Henna Para Sobrancelhas Master - Preto",
+    brand: "Master",
+    category: "sobrancelhas",
+    shortDescription: "Henna profissional para sobrancelhas na cor preto, com alta cobertura e fixação intensa.",
+    description:
+      "Henna profissional para sobrancelhas na cor preto, com alta cobertura e fixação intensa. Fórmula com extratos de Jaborandi e Bamboo, ideal para corrigir falhas e definir sobrancelhas de tom bem escuro ou preto. Define o desenho com acabamento uniforme e mantém a cor por mais tempo, com mistura fácil e ótimo rendimento. O kit vem com o fixador e intensificador de henna, além de cubeta, espátula e sachê para aplicação.",
+    highlights: [
+      "Alta cobertura e fixação intensa",
+      "Define o desenho com acabamento uniforme",
+      "Auxilia no preenchimento visual das sobrancelhas",
+      "Mistura fácil e ótimo rendimento",
+      "Com extratos de Jaborandi e Bamboo",
+      "Cor Preto",
+      "Formato em pó, 3g",
+      "Acompanha fixador e intensificador de henna",
+    ],
+    image: "/images/products/37-henna-sobrancelhas-master-preto-3g.webp",
+    images: [
+      "/images/products/37-henna-sobrancelhas-master-preto-3g.webp",
+      "/images/products/37-henna-sobrancelhas-master-preto-3g-ambiente.webp",
+      "/images/products/37-henna-sobrancelhas-master-preto-3g-caracteristicas.webp",
+      "/images/products/37-henna-sobrancelhas-master-preto-3g-kit.webp",
+      "/images/products/37-henna-sobrancelhas-master-preto-3g-close.webp",
+    ],
+    externalUrl: "#",
+    marketplaceLinks: [
+      {
+        label: "Ver no Mercado Livre",
+        url: "http://produto.mercadolivre.com.br/MLB-5337956293-henna-master-preto-sobrancelha-profissional-3g-_JM",
+      },
+      {
+        label: "Ver na Shopee",
+        url: "https://shopee.com.br/product/1931210934/58219790333",
+      },
+    ],
+  },
 ];
 
 export function getProduct(slug: string) {
