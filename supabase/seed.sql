@@ -104,7 +104,7 @@ from (values
   ('cola-cilios-master-elite-emerald-3g', 'Cola para Extensão de Cílios Master Elite Emerald 3g', 'Master Elite', 'cilios',
    'Cola profissional com secagem ultrarrápida de 0,5 segundo e retenção de até 7 semanas.',
    'Cola profissional Master Elite Emerald para extensão de cílios, com secagem ultrarrápida de 0,5 segundo e retenção de até 7 semanas. Versátil em diferentes níveis de umidade e temperatura (18°C a 24°C, 30% a 75% de umidade). Selo holográfico de autenticidade e registro na ANVISA.',
-   '/images/products/33-cola-cilios-master-elite-emerald-3g.webp', '/produto/cola-cilios-master-elite-emerald-3g'),
+   '/images/products/33-cola-cilios-master-elite-emerald-3g-sache.webp', '/produto/cola-cilios-master-elite-emerald-3g'),
   ('henna-sobrancelhas-master-castanho-claro-3g', 'Henna Para Sobrancelhas Master - Castanho Claro', 'Master', 'sobrancelhas',
    'Henna profissional para sobrancelhas na cor castanho claro, com pigmentação uniforme.',
    'Henna profissional para sobrancelhas na cor castanho claro, com pigmentação uniforme e boa fixação. Fórmula com extratos de Jaborandi e Bamboo, ideal para corrigir falhas com naturalidade em sobrancelhas claras.',

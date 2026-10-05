@@ -768,8 +768,9 @@ export const products: Product[] = [
       "3g por embalagem",
       "Uso exclusivamente profissional",
     ],
-    image: "/images/products/33-cola-cilios-master-elite-emerald-3g.webp",
+    image: "/images/products/33-cola-cilios-master-elite-emerald-3g-sache.webp",
     images: [
+      "/images/products/33-cola-cilios-master-elite-emerald-3g-sache.webp",
       "/images/products/33-cola-cilios-master-elite-emerald-3g.webp",
       "/images/products/33-cola-cilios-master-elite-emerald-3g-propriedades.webp",
       "/images/products/33-cola-cilios-master-elite-emerald-3g-beneficios.webp",
