@@ -190,19 +190,3 @@ body {
 .animate-marquee {
   animation: marquee 18s linear infinite;
 }
-
-/* Decorative autoplaying background videos (e.g. Hero): some browsers show a
-   Picture-in-Picture affordance or a "click to play" overlay on <video>
-   elements even without the `controls` attribute. Since these videos are
-   aria-hidden and unreachable by keyboard, that overlay is never meant to be
-   interactive — hide every vendor control surface so nothing floats over it. */
-.bg-video::-webkit-media-controls,
-.bg-video::-webkit-media-controls-enclosure,
-.bg-video::-webkit-media-controls-panel,
-.bg-video::-webkit-media-controls-start-playback-button,
-.bg-video::-webkit-media-controls-play-button,
-.bg-video::-webkit-media-controls-overlay-play-button {
-  display: none !important;
-  opacity: 0 !important;
-  pointer-events: none !important;
-}

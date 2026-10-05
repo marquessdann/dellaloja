@@ -113,33 +113,69 @@ function AbstractLines({ prefersReducedMotion }: { prefersReducedMotion: boolean
 export function Hero() {
   const prefersReducedMotion = useReducedMotion();
   const videoRef = useRef<HTMLVideoElement>(null);
+  const canvasRef = useRef<HTMLCanvasElement>(null);
 
-  // Mobile browsers require `muted` to be set as a DOM *property*, not just
-  // the JSX/HTML attribute, before they'll honor autoplay — React doesn't
-  // reliably sync that property on <video> through hydration (a long-standing
-  // React bug), so a muted-looking video can still fail to autoplay and fall
-  // back to the browser's native "paused video" play button. Setting it
-  // explicitly here, before every play() attempt, is the reliable fix. A
-  // rejected play() promise (e.g. Low Power Mode blocking autoplay outright)
-  // is fine to ignore since the static gradient/watermark behind it already
-  // works as a fallback.
+  // Every browser-level fix for the native video overlay (PiP affordance,
+  // AirPlay/cast icon, play button — the exact one depends on browser/OS and
+  // none of the attribute- or CSS-level fixes tried suppressed all of them)
+  // shares the same root cause: a real, visible <video> element always gets
+  // the browser's own media-control UI layered on top of it, outside normal
+  // stacking-context rules. The only way to have animated video with zero
+  // native UI is to not have a visible <video> at all: decode it into an
+  // off-screen 1x1 element and paint its frames onto a plain <canvas>, which
+  // the browser has no media-control concept for.
   useEffect(() => {
     if (prefersReducedMotion) return;
     const video = videoRef.current;
-    if (!video) return;
+    const canvas = canvasRef.current;
+    if (!video || !canvas) return;
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
+
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    let rafId = 0;
+
+    const resize = () => {
+      const { width, height } = canvas.getBoundingClientRect();
+      canvas.width = Math.round(width * dpr);
+      canvas.height = Math.round(height * dpr);
+    };
+
+    const draw = () => {
+      const { videoWidth, videoHeight } = video;
+      if (videoWidth && videoHeight && canvas.width && canvas.height) {
+        // Same math as CSS `object-fit: cover`: scale to fill, crop overflow.
+        const scale = Math.max(canvas.width / videoWidth, canvas.height / videoHeight);
+        const drawWidth = videoWidth * scale;
+        const drawHeight = videoHeight * scale;
+        ctx.drawImage(
+          video,
+          (canvas.width - drawWidth) / 2,
+          (canvas.height - drawHeight) / 2,
+          drawWidth,
+          drawHeight
+        );
+      }
+      rafId = requestAnimationFrame(draw);
+    };
+
     const tryPlay = () => {
       video.muted = true;
       video.defaultMuted = true;
-      video.disablePictureInPicture = true;
-      video.disableRemotePlayback = true;
       video.play().catch(() => {});
     };
+
+    resize();
     tryPlay();
+    draw();
     video.addEventListener("loadedmetadata", tryPlay);
     video.addEventListener("canplay", tryPlay);
+    window.addEventListener("resize", resize);
     return () => {
+      cancelAnimationFrame(rafId);
       video.removeEventListener("loadedmetadata", tryPlay);
       video.removeEventListener("canplay", tryPlay);
+      window.removeEventListener("resize", resize);
     };
   }, [prefersReducedMotion]);
 
@@ -151,17 +187,13 @@ export function Hero() {
           "linear-gradient(135deg, #061A3A 0%, #031027 55%, #05070C 100%)",
       }}
     >
-      {/* Animated background video — the gradient above stays in place as a
-          fallback: it's always painted first, the video just paints over it
-          once it can play, and disappears again (via motion-reduce:hidden)
-          for prefers-reduced-motion. Decorative only: aria-hidden + no
-          controls/focus, so it's never announced or reachable by keyboard.
-          opacity: 0.999 (not 1) is intentional: some Android browsers promote
-          a fully-opaque <video> into a hardware overlay plane that composites
-          above the rest of the page regardless of z-index — which is why a
-          native control could survive even a fully opaque covering div
-          placed after it in the DOM. A hair under full opacity keeps the
-          video in the normal software compositing path with everything else. */}
+      {/* The real <video> is never rendered at visible size — a visible
+          <video> always gets the browser's own media-control UI (PiP/cast/
+          play-button overlay) layered on top of it, outside the page's
+          normal stacking rules, which no CSS or attribute combination can
+          fully suppress across browsers. Keeping it a 1x1, invisible element
+          confines whatever native affordance the browser adds to a single
+          imperceptible pixel; the canvas below paints its actual frames. */}
       <video
         ref={videoRef}
         aria-hidden="true"
@@ -171,37 +203,25 @@ export function Hero() {
         loop
         playsInline
         preload="auto"
-        disablePictureInPicture
-        disableRemotePlayback
-        controlsList="nodownload noremoteplayback noplaybackrate nofullscreen"
-        x-webkit-airplay="deny"
-        style={{ opacity: 0.999 }}
-        className="bg-video pointer-events-none absolute left-1/2 top-1/2 z-0 h-auto min-h-full w-auto min-w-full -translate-x-1/2 -translate-y-1/2 motion-reduce:hidden"
+        style={{ position: "absolute", width: 1, height: 1, opacity: 0, pointerEvents: "none" }}
       >
         <source src="/videos/hero-background.mp4" type="video/mp4" />
       </video>
+      {/* Canvas painted with the video's frames every animation frame — the
+          gradient above stays in place as a fallback (painted first, the
+          canvas draws over it once the video can play) and for
+          prefers-reduced-motion, where the canvas is never drawn to. */}
+      <canvas
+        ref={canvasRef}
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 z-0 h-full w-full motion-reduce:hidden"
+      />
       {/* Very small, fixed-color scrim (same navy as the gradient above) so
           the brighter moment in the video loop doesn't wash out the white
           text — barely visible during the rest of the loop, where the video
-          is already this dark. Hidden together with the video for
+          is already this dark. Hidden together with the canvas for
           prefers-reduced-motion, keeping the plain gradient untouched. */}
       <div className="pointer-events-none absolute inset-0 z-0 bg-[#05070C]/40 motion-reduce:hidden" />
-
-      {/* Opaque cover over the very top strip of the video: several mobile
-          browsers (both iOS Safari and Android Chrome) render a small native
-          media-control affordance (AirPlay/cast/PiP — the exact one varies
-          by browser and hasn't responded to any of the attribute-level fixes
-          tried) right at the top edge of this autoplaying, muted, controls-
-          less video. Painting over just that strip with the same navy tone
-          as the gradient underneath hides it outright, regardless of which
-          native control is actually responsible. */}
-      <div
-        className="pointer-events-none absolute inset-x-0 top-0 z-[1] h-24 motion-reduce:hidden sm:h-28"
-        style={{
-          background:
-            "linear-gradient(to bottom, #061A3A 0%, #061A3A 45%, transparent 100%)",
-        }}
-      />
 
       {/* Giant DELLA wordmark used as an integrated watermark, not a pasted image */}
       <div className="pointer-events-none absolute inset-0 z-0 flex items-center justify-center overflow-hidden">
