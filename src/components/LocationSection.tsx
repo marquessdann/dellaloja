@@ -21,7 +21,7 @@ export function LocationSection() {
               Venha conhecer a Della
             </h2>
             <p className="mt-4 text-[15px] leading-relaxed text-navy-600">
-              Rua Assis Figueiredo, 59 - Parolin
+              Rua Assis Figueiredo, 59 - Guaíra
               <br />
               Curitiba - PR, CEP 80.630-280
             </p>

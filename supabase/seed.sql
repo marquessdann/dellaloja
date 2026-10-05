@@ -65,10 +65,6 @@ from (values
    'Henna profissional para sobrancelhas na cor loiro escuro, com pigmentação uniforme.',
    'Henna profissional para sobrancelhas na cor loiro escuro, com pigmentação uniforme e boa fixação. Fórmula com extratos de Jaborandi e Bamboo, ideal para corrigir falhas com naturalidade em sobrancelhas claras e loiras.',
    '/images/products/20-henna-sobrancelhas-master-loiro-escuro.webp', '/produto/henna-sobrancelhas-master-loiro-escuro'),
-  ('protetor-palpebras-eyepatch-master-flor', 'Protetor Para Pálpebras Eyepatch Master Flor', 'Master', 'cilios',
-   'Protetor de pálpebras em hidrogel, com recorte floral que cobre os cílios inferiores.',
-   'Protetor de pálpebras em hidrogel, com recorte floral que acompanha o contorno do olho e cobre os cílios inferiores sem tocar na linha d''água. Ideal para procedimentos de extensão de cílios e outros serviços que exigem proteção da pálpebra inferior.',
-   '/images/products/21-protetor-palpebras-eyepatch-master-flor.webp', '/produto/protetor-palpebras-eyepatch-master-flor'),
   ('cola-cilios-charm-master-3g', 'Cola Adesivo para Extensão de Cílios Charm Master 3g', 'Master Elite', 'cilios',
    'Cola profissional para extensão de cílios com secagem ultrarrápida e retenção de até 9 semanas.',
    'Cola profissional para extensão de cílios, com secagem de 0,3 a 1 segundo e retenção de até 9 semanas. Ampla janela de trabalho, com boa performance em temperaturas de 16°C a 30°C e umidade de 30% a 75%. Uso exclusivamente profissional.',
@@ -123,14 +119,14 @@ on conflict (slug) do update set
 -- ============================================================
 -- marketplaces
 -- ============================================================
--- The live site currently links all three to "#" (placeholder, not real
--- URLs yet), so url is left NULL here on purpose — the deterministic
--- "Onde comprar" menu still lists the channel, just shows "ainda sendo
--- configurado" until you paste in the real storefront link (Table Editor,
--- column `url` on the matching row here).
+-- Mercado Livre and Shopee link to the real Della storefront pages.
+-- TikTok Shop has no URL yet, so it's left NULL on purpose — the
+-- deterministic "Onde comprar" menu still lists the channel, just shows
+-- "ainda sendo configurado" until you paste in the real storefront link
+-- (Table Editor, column `url` on the matching row here).
 insert into marketplaces (name, slug, url, active, display_order) values
-  ('Mercado Livre', 'mercado-livre', 'https://www.mercadolivre.com.br/cola-emerald-master-elite-3g-secagem-rapida-extensao-cilios/up/MLBU5380094104', true, 1),
-  ('Shopee', 'shopee', 'https://shopee.com.br/product/1931210934/58219623204', true, 2),
+  ('Mercado Livre', 'mercado-livre', 'https://lista.mercadolivre.com.br/_CustId_3692836444?item_id=MLB5292305735&category_id=MLB257279&seller_id=3692836444&client=recoview-selleritems&recos_listing=true#origin=upp&component=sellerData&typeSeller=classic', true, 1),
+  ('Shopee', 'shopee', 'https://shopee.com.br/dellanewstore#product_list', true, 2),
   ('TikTok Shop', 'tiktok-shop', null, true, 3)
 on conflict (slug) do update set
   name = excluded.name,
@@ -182,7 +178,7 @@ insert into store_information (id, name, address, phone, whatsapp, whatsapp_link
 values (
   1,
   'Della Distribuidora de Produtos',
-  'Rua Assis Figueiredo, 59 - Parolin, Curitiba - PR, CEP 80.630-280',
+  'Rua Assis Figueiredo, 59 - Guaíra, Curitiba - PR, CEP 80.630-280',
   '41 99679-0904',
   '41 99679-0904',
   'https://wa.me/5541996790904?text=Ol%C3%A1%2C%20vim%20atrav%C3%A9s%20do%20site%20da%20Della%20Distribuidora%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida!%20Pode%20me%20ajudar%3F!',
@@ -210,7 +206,7 @@ insert into faq (question, answer, category, active) values
    'Você pode navegar pelos produtos no site e, para fechar a compra, falar direto com a Della pelo WhatsApp — é por lá que confirmamos disponibilidade, preço e forma de envio.',
    'compra', true),
   ('Vocês têm loja física?',
-   'Sim. A Della fica na Rua Assis Figueiredo, 59 - Parolin, Curitiba - PR, CEP 80.630-280.',
+   'Sim. A Della fica na Rua Assis Figueiredo, 59 - Guaíra, Curitiba - PR, CEP 80.630-280.',
    'loja', true),
   ('Como falo com a Della?',
    'O jeito mais rápido é pelo WhatsApp, disponível no botão de contato do site.',

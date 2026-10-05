@@ -19,7 +19,7 @@ const faqs = [
   {
     question: "Como faço para comprar os produtos?",
     answer:
-      "Entre em contato pelo WhatsApp ou e-mail para tirar dúvidas e receber mais informações sobre os produtos. Em breve, também será possível comprar diretamente pelo Mercado Livre.",
+      "Você pode comprar diretamente pelo Mercado Livre ou pela Shopee, nossos canais oficiais de venda. Qualquer dúvida antes de fechar a compra, é só falar com a gente pelo WhatsApp ou e-mail.",
   },
   {
     question: "Os produtos têm procedência garantida?",
@@ -34,7 +34,7 @@ const faqs = [
   {
     question: "Por que o site não mostra preços?",
     answer:
-      "Nesta primeira versão, o site funciona como uma vitrine do catálogo Della. Para consultar valores e condições, fale diretamente com a gente.",
+      "Vendemos nossos produtos em plataformas online verificadas e seguras, como Mercado Livre e Shopee — é lá que ficam os preços e a finalização da compra. Aqui no site você conhece todo o catálogo Della com fotos e detalhes; ao encontrar o produto ideal, é só acessar um desses canais oficiais.",
   },
   {
     question: "Quais são os canais de contato disponíveis?",

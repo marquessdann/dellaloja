@@ -28,7 +28,7 @@ export const categories: Category[] = [
     name: "Cílios",
     shortName: "Cílios",
     description: "Produtos profissionais para aplicação, proteção e cuidado de cílios.",
-    image: "/images/products/21-protetor-palpebras-eyepatch-master-flor.webp",
+    image: "/images/products/29-cola-cilios-master-elite-purple-diamond-3g.webp",
   },
   {
     slug: "pinca-depilacao",

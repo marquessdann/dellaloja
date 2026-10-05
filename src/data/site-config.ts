@@ -19,11 +19,14 @@ export const siteConfig = {
     whatsappLink: `https://wa.me/5541996790904?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`,
     instagram: "@dellanewstore",
     instagramLink: "https://www.instagram.com/dellanewstore",
-    address: "Rua Assis Figueiredo, 59 - Parolin, Curitiba - PR, CEP 80.630-280",
+    address: "Rua Assis Figueiredo, 59 - Guaíra, Curitiba - PR, CEP 80.630-280",
   },
   marketplaces: [
-    { label: "Mercado Livre", href: "#" },
-    { label: "Shopee", href: "#" },
+    {
+      label: "Mercado Livre",
+      href: "https://lista.mercadolivre.com.br/_CustId_3692836444?item_id=MLB5292305735&category_id=MLB257279&seller_id=3692836444&client=recoview-selleritems&recos_listing=true#origin=upp&component=sellerData&typeSeller=classic",
+    },
+    { label: "Shopee", href: "https://shopee.com.br/dellanewstore#product_list" },
     { label: "TikTok Shop", href: "#" },
   ],
   nav: [
