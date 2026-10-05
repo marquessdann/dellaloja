@@ -120,7 +120,11 @@ from (values
   ('henna-sobrancelhas-master-preto-3g', 'Henna Para Sobrancelhas Master - Preto', 'Master', 'sobrancelhas',
    'Henna profissional para sobrancelhas na cor preto, com alta cobertura e fixação intensa.',
    'Henna profissional para sobrancelhas na cor preto, com alta cobertura e fixação intensa. Fórmula com extratos de Jaborandi e Bamboo, ideal para corrigir falhas e definir sobrancelhas de tom bem escuro ou preto.',
-   '/images/products/37-henna-sobrancelhas-master-preto-3g.webp', '/produto/henna-sobrancelhas-master-preto-3g')
+   '/images/products/37-henna-sobrancelhas-master-preto-3g.webp', '/produto/henna-sobrancelhas-master-preto-3g'),
+  ('henna-sobrancelhas-master-loiro-escuro-3g', 'Henna Para Sobrancelhas Master - Loiro Escuro', 'Master', 'sobrancelhas',
+   'Henna profissional para sobrancelhas na cor loiro escuro, com pigmentação uniforme.',
+   'Henna profissional para sobrancelhas na cor loiro escuro, com pigmentação uniforme e boa fixação. Fórmula com extratos de Jaborandi e Bamboo, ideal para corrigir falhas com naturalidade em sobrancelhas claras e loiras.',
+   '/images/products/38-henna-sobrancelhas-master-loiro-escuro-3g.webp', '/produto/henna-sobrancelhas-master-loiro-escuro-3g')
 ) as v(slug, name, brand, category_slug, short_description, description, image_url, product_url)
 join categories c on c.slug = v.category_slug
 on conflict (slug) do update set
@@ -187,7 +191,9 @@ from (values
   ('henna-sobrancelhas-master-castanho-escuro-3g', 'mercado-livre', 'https://www.mercadolivre.com.br/henna-master-castanho-escuro-sobrancelha-profissional-3g/up/MLBU5364957177?pdp_filters=item_id:MLB5337828391'),
   ('henna-sobrancelhas-master-castanho-escuro-3g', 'shopee', 'https://shopee.com.br/product/1931210934/58269802900'),
   ('henna-sobrancelhas-master-preto-3g', 'mercado-livre', 'http://produto.mercadolivre.com.br/MLB-5337956293-henna-master-preto-sobrancelha-profissional-3g-_JM'),
-  ('henna-sobrancelhas-master-preto-3g', 'shopee', 'https://shopee.com.br/product/1931210934/58219790333')
+  ('henna-sobrancelhas-master-preto-3g', 'shopee', 'https://shopee.com.br/product/1931210934/58219790333'),
+  ('henna-sobrancelhas-master-loiro-escuro-3g', 'mercado-livre', 'http://produto.mercadolivre.com.br/MLB-5338012403-henna-para-sobrancelhas-master-loiro-escuro-profissional-3-_JM'),
+  ('henna-sobrancelhas-master-loiro-escuro-3g', 'shopee', 'https://shopee.com.br/product/1931210934/58269806541')
 ) as v(product_slug, marketplace_slug, url)
 join products p on p.slug = v.product_slug
 join marketplaces m on m.slug = v.marketplace_slug
