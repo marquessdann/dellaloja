@@ -453,6 +453,7 @@ export const products: Product[] = [
       "/images/products/25-kit-pinca-ponta-fina-edel-solingen-inox-detalhe.webp",
     ],
     externalUrl: "#",
+    featured: true,
     isNew: true,
     marketplaceLinks: [
       {
@@ -735,6 +736,7 @@ export const products: Product[] = [
       "/images/products/32-cola-cilios-master-elite-diamond-3g-uso.webp",
     ],
     externalUrl: "#",
+    featured: true,
     isNew: true,
     marketplaceLinks: [
       {
