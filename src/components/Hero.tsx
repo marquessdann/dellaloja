@@ -121,9 +121,9 @@ export function Hero() {
   // shares the same root cause: a real, visible <video> element always gets
   // the browser's own media-control UI layered on top of it, outside normal
   // stacking-context rules. The only way to have animated video with zero
-  // native UI is to not have a visible <video> at all: decode it into an
-  // off-screen 1x1 element and paint its frames onto a plain <canvas>, which
-  // the browser has no media-control concept for.
+  // native UI is to not have a visible <video> at all: decode it off-screen
+  // (full size, so the browser never throttles its decoding) and paint its
+  // frames onto a plain <canvas>, which has no media-control concept at all.
   useEffect(() => {
     if (prefersReducedMotion) return;
     const video = videoRef.current;
@@ -142,19 +142,23 @@ export function Hero() {
     };
 
     const draw = () => {
-      const { videoWidth, videoHeight } = video;
-      if (videoWidth && videoHeight && canvas.width && canvas.height) {
-        // Same math as CSS `object-fit: cover`: scale to fill, crop overflow.
-        const scale = Math.max(canvas.width / videoWidth, canvas.height / videoHeight);
-        const drawWidth = videoWidth * scale;
-        const drawHeight = videoHeight * scale;
-        ctx.drawImage(
-          video,
-          (canvas.width - drawWidth) / 2,
-          (canvas.height - drawHeight) / 2,
-          drawWidth,
-          drawHeight
-        );
+      try {
+        const { videoWidth, videoHeight } = video;
+        if (videoWidth && videoHeight && canvas.width && canvas.height) {
+          // Same math as CSS `object-fit: cover`: scale to fill, crop overflow.
+          const scale = Math.max(canvas.width / videoWidth, canvas.height / videoHeight);
+          const drawWidth = videoWidth * scale;
+          const drawHeight = videoHeight * scale;
+          ctx.drawImage(
+            video,
+            (canvas.width - drawWidth) / 2,
+            (canvas.height - drawHeight) / 2,
+            drawWidth,
+            drawHeight
+          );
+        }
+      } catch {
+        // A single bad frame (e.g. video seeking) should never stop the loop.
       }
       rafId = requestAnimationFrame(draw);
     };
@@ -187,13 +191,20 @@ export function Hero() {
           "linear-gradient(135deg, #061A3A 0%, #031027 55%, #05070C 100%)",
       }}
     >
-      {/* The real <video> is never rendered at visible size — a visible
-          <video> always gets the browser's own media-control UI (PiP/cast/
-          play-button overlay) layered on top of it, outside the page's
-          normal stacking rules, which no CSS or attribute combination can
-          fully suppress across browsers. Keeping it a 1x1, invisible element
-          confines whatever native affordance the browser adds to a single
-          imperceptible pixel; the canvas below paints its actual frames. */}
+      {/* The real <video> never appears on screen — a visible <video> always
+          gets the browser's own media-control UI (PiP/cast/play-button
+          overlay) layered on top of it, outside the page's normal stacking
+          rules, which no CSS or attribute combination can fully suppress.
+          But shrinking it to 1x1/opacity:0 (the first thing tried) made
+          browsers treat it as "not really visible" and throttle/pause its
+          decoding after the first frame — the video froze instead of
+          looping. Keeping it at full, real size (so decoding is never
+          throttled) and instead translating it entirely outside this
+          section's own `overflow-hidden` clip area avoids both problems: the
+          browser treats it as a normal, fully "visible" video (decodes
+          every frame, no throttling), but no pixel of it — or any native
+          control floating over it — ever reaches the viewport. The canvas
+          below paints its actual frames where they're meant to be seen. */}
       <video
         ref={videoRef}
         aria-hidden="true"
@@ -203,7 +214,7 @@ export function Hero() {
         loop
         playsInline
         preload="auto"
-        style={{ position: "absolute", width: 1, height: 1, opacity: 0, pointerEvents: "none" }}
+        className="pointer-events-none absolute inset-0 h-full w-full -translate-x-[200%]"
       >
         <source src="/videos/hero-background.mp4" type="video/mp4" />
       </video>
