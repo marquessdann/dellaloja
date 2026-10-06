@@ -8,12 +8,35 @@ const PROMO_IMAGES = [
     alt: "Coleção Enaldinho - toda a linha de produtos",
     width: 1063,
     height: 1456,
+    category: "body-splash",
+  },
+  {
+    src: "/images/products/25-kit-pinca-ponta-fina-edel-solingen-inox-trio-render.webp",
+    alt: "Kit 3 Pinças Ponta Fina Edel Solingen Aço Inox",
+    width: 1200,
+    height: 1200,
+    category: "pinca-depilacao",
   },
   {
     src: "/images/promo/mutacao-labial-trio.webp",
     alt: "Linha Mutação Labial Enaldinho",
     width: 1696,
     height: 1567,
+    category: "body-splash",
+  },
+  {
+    src: "/images/products/32-cola-cilios-master-elite-diamond-3g-sache.webp",
+    alt: "Cola para Extensão de Cílios Master Elite Diamond 3g",
+    width: 970,
+    height: 970,
+    category: "cilios",
+  },
+  {
+    src: "/images/products/20-kit-henna-sobrancelhas-master.webp",
+    alt: "Kit Master Henna - Castanho Claro, Médio e Escuro",
+    width: 1200,
+    height: 1200,
+    category: "sobrancelhas",
   },
 ];
 
@@ -31,9 +54,9 @@ export function CategoryStrip() {
                   {TRACK.map((img, i) => (
                     <Link
                       key={`${dup}-${i}`}
-                      href="/produtos?categoria=body-splash"
+                      href={`/produtos?categoria=${img.category}`}
                       tabIndex={dup === 1 ? -1 : undefined}
-                      aria-label="Ver Coleção Enaldinho"
+                      aria-label={img.alt}
                       className="block shrink-0 overflow-hidden rounded-xl border border-navy-900/10 bg-cream-300 transition-colors duration-300 hover:border-gold-500/60"
                     >
                       <Image
