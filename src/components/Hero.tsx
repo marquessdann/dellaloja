@@ -177,7 +177,7 @@ export function Hero() {
 
   return (
     <section
-      className="relative flex min-h-[620px] flex-col overflow-hidden sm:min-h-[680px]"
+      className="relative flex min-h-[520px] flex-col overflow-hidden sm:min-h-[680px]"
       style={{
         background:
           "linear-gradient(135deg, #061A3A 0%, #031027 55%, #05070C 100%)",
@@ -228,7 +228,7 @@ export function Hero() {
 
       <AbstractLines prefersReducedMotion={prefersReducedMotion} />
 
-      <div className="relative z-10 flex flex-1 items-center justify-center py-16 lg:py-20">
+      <div className="relative z-10 flex flex-1 items-center justify-center py-10 sm:py-16 lg:py-20">
         <div className="mx-auto w-full max-w-[900px] px-4 text-center sm:px-6 lg:px-8">
           <motion.span
             initial={{ opacity: 0, y: 12 }}
