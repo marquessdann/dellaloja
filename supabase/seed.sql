@@ -139,15 +139,11 @@ on conflict (slug) do update set
 -- ============================================================
 -- marketplaces
 -- ============================================================
--- Mercado Livre and Shopee link to the real Della storefront pages.
--- TikTok Shop has no URL yet, so it's left NULL on purpose — the
--- deterministic "Onde comprar" menu still lists the channel, just shows
--- "ainda sendo configurado" until you paste in the real storefront link
--- (Table Editor, column `url` on the matching row here).
+-- Mercado Livre, Shopee e TikTok Shop linkam para as páginas reais da loja.
 insert into marketplaces (name, slug, url, active, display_order) values
   ('Mercado Livre', 'mercado-livre', 'https://lista.mercadolivre.com.br/_CustId_3692836444?item_id=MLB5305023545&category_id=MLB199175&seller_id=3692836444&client=recoview-selleritems&recos_listing=true#origin=pdp&component=sellerData&typeSeller=classic', true, 1),
   ('Shopee', 'shopee', 'https://shopee.com.br/dellanewstore?categoryId=100630&entryPoint=ShopByPDP&itemId=58219618143', true, 2),
-  ('TikTok Shop', 'tiktok-shop', null, true, 3)
+  ('TikTok Shop', 'tiktok-shop', 'https://www.tiktok.com/@della.comrcio.e.di?_r=1&_t=ZS-9AY8LZxE7Sm', true, 3)
 on conflict (slug) do update set
   name = excluded.name,
   url = excluded.url,

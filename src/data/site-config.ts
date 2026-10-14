@@ -30,7 +30,10 @@ export const siteConfig = {
       label: "Shopee",
       href: "https://shopee.com.br/dellanewstore?categoryId=100630&entryPoint=ShopByPDP&itemId=58219618143",
     },
-    { label: "TikTok Shop", href: "#" },
+    {
+      label: "TikTok Shop",
+      href: "https://www.tiktok.com/@della.comrcio.e.di?_r=1&_t=ZS-9AY8LZxE7Sm",
+    },
   ],
   nav: [
     { label: "Início", href: "/" },
