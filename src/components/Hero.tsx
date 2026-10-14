@@ -137,27 +137,15 @@ export function Hero() {
       try {
         const { videoWidth, videoHeight } = video;
         if (videoWidth && videoHeight && canvas.width && canvas.height) {
-          // The source video has a large "Della" logo animation baked into
-          // the vertical center of every frame (roughly 35%–56% of its
-          // height) — directly where the page's own headline sits, since
-          // both are centered. No amount of scrim/darkening makes a
-          // high-contrast logo illegible without also hiding the headline
-          // above it. Instead, only the decorative strip below the logo
-          // (flowing gold lines, no text) is used as the actual background,
-          // cropped and scaled with the same "cover" math `object-fit: cover`
-          // would use, just against that sub-rectangle instead of the full
-          // frame.
-          const srcY = videoHeight * 0.62;
-          const srcHeight = videoHeight - srcY;
-          const scale = Math.max(canvas.width / videoWidth, canvas.height / srcHeight);
+          // Same math as CSS `object-fit: cover`: scale to fill, crop overflow.
+          // The video's own "Della" logo (baked into every frame, centered)
+          // is meant to show — the Hero's own text is laid out around it
+          // (see the top/bottom split below) instead of cropping it out.
+          const scale = Math.max(canvas.width / videoWidth, canvas.height / videoHeight);
           const drawWidth = videoWidth * scale;
-          const drawHeight = srcHeight * scale;
+          const drawHeight = videoHeight * scale;
           ctx.drawImage(
             video,
-            0,
-            srcY,
-            videoWidth,
-            srcHeight,
             (canvas.width - drawWidth) / 2,
             (canvas.height - drawHeight) / 2,
             drawWidth,
@@ -243,7 +231,7 @@ export function Hero() {
 
       <AbstractLines prefersReducedMotion={prefersReducedMotion} />
 
-      <div className="relative z-10 flex flex-1 items-center justify-center py-10 sm:py-16 lg:py-20">
+      <div className="relative z-10 flex flex-1 flex-col py-10 sm:py-16 lg:py-20">
         <div className="mx-auto w-full max-w-[900px] px-4 text-center sm:px-6 lg:px-8">
           <motion.span
             initial={{ opacity: 0, y: 12 }}
@@ -254,6 +242,11 @@ export function Hero() {
             Distribuidora de Produtos
           </motion.span>
 
+          {/* The video's own "Della" logo (baked into every frame) sits
+              centered in this section, roughly spanning its 35%–56% band
+              regardless of viewport. The headline sits above that band; the
+              rest of the copy below (see the large margin-top further down)
+              — leaving the logo itself fully visible and unobstructed. */}
           <motion.h1
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
@@ -266,12 +259,14 @@ export function Hero() {
               </span>
             ))}
           </motion.h1>
+        </div>
 
+        <div className="mx-auto mt-[160px] w-full max-w-[900px] px-4 text-center sm:mt-[210px] sm:px-6 lg:mt-[250px] lg:px-8">
           <motion.p
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3, ease }}
-            className="mx-auto mt-6 max-w-md text-[15px] leading-relaxed text-white/60"
+            className="mx-auto max-w-md text-[15px] leading-relaxed text-white/60"
           >
             Seu próximo best-seller está aqui.
           </motion.p>
