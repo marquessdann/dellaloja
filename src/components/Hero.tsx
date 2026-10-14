@@ -137,12 +137,27 @@ export function Hero() {
       try {
         const { videoWidth, videoHeight } = video;
         if (videoWidth && videoHeight && canvas.width && canvas.height) {
-          // Same math as CSS `object-fit: cover`: scale to fill, crop overflow.
-          const scale = Math.max(canvas.width / videoWidth, canvas.height / videoHeight);
+          // The source video has a large "Della" logo animation baked into
+          // the vertical center of every frame (roughly 35%–56% of its
+          // height) — directly where the page's own headline sits, since
+          // both are centered. No amount of scrim/darkening makes a
+          // high-contrast logo illegible without also hiding the headline
+          // above it. Instead, only the decorative strip below the logo
+          // (flowing gold lines, no text) is used as the actual background,
+          // cropped and scaled with the same "cover" math `object-fit: cover`
+          // would use, just against that sub-rectangle instead of the full
+          // frame.
+          const srcY = videoHeight * 0.62;
+          const srcHeight = videoHeight - srcY;
+          const scale = Math.max(canvas.width / videoWidth, canvas.height / srcHeight);
           const drawWidth = videoWidth * scale;
-          const drawHeight = videoHeight * scale;
+          const drawHeight = srcHeight * scale;
           ctx.drawImage(
             video,
+            0,
+            srcY,
+            videoWidth,
+            srcHeight,
             (canvas.width - drawWidth) / 2,
             (canvas.height - drawHeight) / 2,
             drawWidth,
