@@ -1,20 +1,12 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { siteConfig } from "@/data/site-config";
 
 const ease = [0.22, 1, 0.36, 1] as const;
-
-const WORDMARK_SRC = "/images/della-wordmark.webp";
-const WORDMARK_W = 1059;
-const WORDMARK_H = 200;
-
-const WATERMARK_MASK =
-  "radial-gradient(ellipse 82% 82% at 50% 50%, black 45%, rgba(0,0,0,0.55) 72%, transparent 96%)";
 
 type LineConfig = {
   d: string;
@@ -234,34 +226,6 @@ export function Hero() {
           prefers-reduced-motion, keeping the plain gradient untouched. */}
       <div className="pointer-events-none absolute inset-0 z-0 bg-[#05070C]/40 motion-reduce:hidden" />
 
-      {/* Giant DELLA wordmark used as an integrated watermark, not a pasted image */}
-      <div className="pointer-events-none absolute inset-0 z-0 flex items-center justify-center overflow-hidden">
-        <motion.div
-          animate={
-            prefersReducedMotion
-              ? undefined
-              : { scale: [1, 1.015, 1], x: [0, 5, 0] }
-          }
-          transition={
-            prefersReducedMotion
-              ? undefined
-              : { duration: 15, repeat: Infinity, ease: "easeInOut" }
-          }
-          style={{ maskImage: WATERMARK_MASK, WebkitMaskImage: WATERMARK_MASK }}
-          className="w-[92%] max-w-[720px] opacity-[0.16] sm:w-[82%] sm:max-w-[900px] sm:opacity-[0.16] lg:w-[70%] lg:max-w-[1150px] lg:opacity-[0.18]"
-        >
-          <Image
-            src={WORDMARK_SRC}
-            alt=""
-            aria-hidden="true"
-            width={WORDMARK_W}
-            height={WORDMARK_H}
-            priority
-            className="h-auto w-full select-none"
-          />
-        </motion.div>
-      </div>
-
       <AbstractLines prefersReducedMotion={prefersReducedMotion} />
 
       <div className="relative z-10 flex flex-1 items-center justify-center py-16 lg:py-20">
@@ -275,44 +239,11 @@ export function Hero() {
             Distribuidora de Produtos
           </motion.span>
 
-          <motion.div
-            initial={{ opacity: 0, y: 18 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.1, ease }}
-            className="mt-6"
-          >
-            <motion.div
-              className="relative mx-auto w-[250px] sm:w-[310px] lg:w-[390px]"
-              animate={
-                prefersReducedMotion
-                  ? undefined
-                  : {
-                      scale: [1, 1.025, 1],
-                      filter: ["brightness(1)", "brightness(1.08)", "brightness(1)"],
-                    }
-              }
-              transition={
-                prefersReducedMotion
-                  ? undefined
-                  : { duration: 6, repeat: Infinity, ease: "easeInOut" }
-              }
-            >
-              <Image
-                src={WORDMARK_SRC}
-                alt="Della"
-                width={WORDMARK_W}
-                height={WORDMARK_H}
-                priority
-                className="h-auto w-full select-none"
-              />
-            </motion.div>
-          </motion.div>
-
           <motion.h1
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.18, ease }}
-            className="mt-5 font-display text-[clamp(2.125rem,4.6vw,3.625rem)] font-semibold leading-[1.15] text-white"
+            className="mt-7 font-display text-[clamp(2.125rem,4.6vw,3.625rem)] font-semibold leading-[1.15] text-white"
           >
             {siteConfig.heroSlogan.split("\n").map((line) => (
               <span key={line} className="block">
