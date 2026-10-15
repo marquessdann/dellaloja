@@ -32,7 +32,7 @@ export const siteConfig = {
     },
     {
       label: "TikTok Shop",
-      href: "https://www.tiktok.com/@della.comrcio.e.di?_r=1&_t=ZS-9AY8LZxE7Sm",
+      href: "https://vt.tiktok.com/ZSg8vV8ot/?page=TikTokShop",
     },
   ],
   nav: [

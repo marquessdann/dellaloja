@@ -143,7 +143,7 @@ on conflict (slug) do update set
 insert into marketplaces (name, slug, url, active, display_order) values
   ('Mercado Livre', 'mercado-livre', 'https://lista.mercadolivre.com.br/_CustId_3692836444?item_id=MLB5305023545&category_id=MLB199175&seller_id=3692836444&client=recoview-selleritems&recos_listing=true#origin=pdp&component=sellerData&typeSeller=classic', true, 1),
   ('Shopee', 'shopee', 'https://shopee.com.br/dellanewstore?categoryId=100630&entryPoint=ShopByPDP&itemId=58219618143', true, 2),
-  ('TikTok Shop', 'tiktok-shop', 'https://www.tiktok.com/@della.comrcio.e.di?_r=1&_t=ZS-9AY8LZxE7Sm', true, 3)
+  ('TikTok Shop', 'tiktok-shop', 'https://vt.tiktok.com/ZSg8vV8ot/?page=TikTokShop', true, 3)
 on conflict (slug) do update set
   name = excluded.name,
   url = excluded.url,
