@@ -133,6 +133,59 @@ export function Hero() {
       canvas.height = Math.round(height * dpr);
     };
 
+    // The video also has a small 4-pointed sparkle glyph baked into every
+    // frame at a FIXED position (it doesn't move with the flowing gold
+    // lines, unlike everything else) — measured by sampling frames across
+    // the whole 10s loop. SPARKLE_SRC is its bounding box in the video's
+    // native 1920x1080 space, with a margin for a soft, blurred, darkened
+    // patch (sourced from that same region of the frame, so it blends into
+    // whatever gold lines/background happen to be there) instead of a flat
+    // color that would look like an obvious hole.
+    const SPARKLE_SRC = { x: 1660, y: 830, w: 130, h: 140 };
+    const SPARKLE_MARGIN = 55;
+    const patchCanvas = document.createElement("canvas");
+    const patchCtx = patchCanvas.getContext("2d");
+
+    const drawSparklePatch = (scale: number, offsetX: number, offsetY: number) => {
+      if (!patchCtx) return;
+      const srcX = SPARKLE_SRC.x - SPARKLE_MARGIN;
+      const srcY = SPARKLE_SRC.y - SPARKLE_MARGIN;
+      const srcW = SPARKLE_SRC.w + SPARKLE_MARGIN * 2;
+      const srcH = SPARKLE_SRC.h + SPARKLE_MARGIN * 2;
+      const patchW = Math.max(1, Math.round(srcW * scale));
+      const patchH = Math.max(1, Math.round(srcH * scale));
+
+      if (patchCanvas.width !== patchW || patchCanvas.height !== patchH) {
+        patchCanvas.width = patchW;
+        patchCanvas.height = patchH;
+      }
+
+      patchCtx.clearRect(0, 0, patchW, patchH);
+      patchCtx.filter = "blur(16px) brightness(0.72)";
+      patchCtx.drawImage(video, srcX, srcY, srcW, srcH, 0, 0, patchW, patchH);
+      patchCtx.filter = "none";
+
+      // Soft radial fade so the blurred patch blends into the sharp frame
+      // around it instead of leaving a visible rectangular edge.
+      const gradient = patchCtx.createRadialGradient(
+        patchW / 2,
+        patchH / 2,
+        0,
+        patchW / 2,
+        patchH / 2,
+        Math.min(patchW, patchH) / 2
+      );
+      gradient.addColorStop(0, "rgba(0,0,0,1)");
+      gradient.addColorStop(0.45, "rgba(0,0,0,1)");
+      gradient.addColorStop(1, "rgba(0,0,0,0)");
+      patchCtx.globalCompositeOperation = "destination-in";
+      patchCtx.fillStyle = gradient;
+      patchCtx.fillRect(0, 0, patchW, patchH);
+      patchCtx.globalCompositeOperation = "source-over";
+
+      ctx!.drawImage(patchCanvas, offsetX + srcX * scale, offsetY + srcY * scale, patchW, patchH);
+    };
+
     const draw = () => {
       try {
         const { videoWidth, videoHeight } = video;
@@ -144,13 +197,10 @@ export function Hero() {
           const scale = Math.max(canvas.width / videoWidth, canvas.height / videoHeight);
           const drawWidth = videoWidth * scale;
           const drawHeight = videoHeight * scale;
-          ctx.drawImage(
-            video,
-            (canvas.width - drawWidth) / 2,
-            (canvas.height - drawHeight) / 2,
-            drawWidth,
-            drawHeight
-          );
+          const offsetX = (canvas.width - drawWidth) / 2;
+          const offsetY = (canvas.height - drawHeight) / 2;
+          ctx.drawImage(video, offsetX, offsetY, drawWidth, drawHeight);
+          drawSparklePatch(scale, offsetX, offsetY);
         }
       } catch {
         // A single bad frame (e.g. video seeking) should never stop the loop.
