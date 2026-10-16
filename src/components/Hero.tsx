@@ -137,12 +137,17 @@ export function Hero() {
     // frame at a FIXED position (it doesn't move with the flowing gold
     // lines, unlike everything else) — measured by sampling frames across
     // the whole 10s loop. SPARKLE_SRC is its bounding box in the video's
-    // native 1920x1080 space, with a margin for a soft, blurred, darkened
-    // patch (sourced from that same region of the frame, so it blends into
-    // whatever gold lines/background happen to be there) instead of a flat
-    // color that would look like an obvious hole.
+    // native 1920x1080 space. A blurred/darkened patch was tried first, but
+    // blurring a bright overlay just spreads its brightness into a bigger,
+    // softer (and more visible) smudge. Instead this clone-stamps a patch
+    // from elsewhere in the SAME frame (shifted up by SPARKLE_CLONE_DY,
+    // where the gold lines pass but no sparkle sits) over the glyph — since
+    // both source and destination come from the live frame every tick, the
+    // cloned lines are always in whatever motion state the rest of the
+    // frame is in, so it stays sharp and in sync instead of a blurred hole.
     const SPARKLE_SRC = { x: 1660, y: 830, w: 130, h: 140 };
-    const SPARKLE_MARGIN = 55;
+    const SPARKLE_MARGIN = 45;
+    const SPARKLE_CLONE_DY = -220;
     const patchCanvas = document.createElement("canvas");
     const patchCtx = patchCanvas.getContext("2d");
 
@@ -161,11 +166,9 @@ export function Hero() {
       }
 
       patchCtx.clearRect(0, 0, patchW, patchH);
-      patchCtx.filter = "blur(16px) brightness(0.72)";
-      patchCtx.drawImage(video, srcX, srcY, srcW, srcH, 0, 0, patchW, patchH);
-      patchCtx.filter = "none";
+      patchCtx.drawImage(video, srcX, srcY + SPARKLE_CLONE_DY, srcW, srcH, 0, 0, patchW, patchH);
 
-      // Soft radial fade so the blurred patch blends into the sharp frame
+      // Soft radial fade so the cloned patch blends into the sharp frame
       // around it instead of leaving a visible rectangular edge.
       const gradient = patchCtx.createRadialGradient(
         patchW / 2,
@@ -176,7 +179,7 @@ export function Hero() {
         Math.min(patchW, patchH) / 2
       );
       gradient.addColorStop(0, "rgba(0,0,0,1)");
-      gradient.addColorStop(0.45, "rgba(0,0,0,1)");
+      gradient.addColorStop(0.5, "rgba(0,0,0,1)");
       gradient.addColorStop(1, "rgba(0,0,0,0)");
       patchCtx.globalCompositeOperation = "destination-in";
       patchCtx.fillStyle = gradient;
