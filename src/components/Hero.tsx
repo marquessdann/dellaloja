@@ -198,14 +198,9 @@ export function Hero() {
         const { videoWidth, videoHeight } = video;
         if (videoWidth && videoHeight && canvas.width && canvas.height) {
           ctx.clearRect(0, 0, canvas.width, canvas.height);
-          // Mirror the <video>'s own CSS object-fit here (object-contain
-          // below the `sm` breakpoint, object-cover at and above it — see
-          // the className below) so the patch lands exactly where the
-          // video content actually renders on screen.
-          const isContainFit = window.innerWidth < 640;
-          const scale = isContainFit
-            ? Math.min(canvas.width / videoWidth, canvas.height / videoHeight)
-            : Math.max(canvas.width / videoWidth, canvas.height / videoHeight);
+          // Mirror the <video>'s own CSS `object-fit: cover` here so the
+          // patch lands exactly where the video content actually renders.
+          const scale = Math.max(canvas.width / videoWidth, canvas.height / videoHeight);
           const drawWidth = videoWidth * scale;
           const drawHeight = videoHeight * scale;
           const offsetX = (canvas.width - drawWidth) / 2;
@@ -246,13 +241,10 @@ export function Hero() {
           "linear-gradient(135deg, #061A3A 0%, #031027 55%, #05070C 100%)",
       }}
     >
-      {/* Shown directly — object-contain below `sm` (so the tall mobile
-          layout never crops the video's sides, just letterboxes top/bottom)
-          and object-cover at `sm` and up (full-bleed, matches the video's
-          own ~16:9 shape closely at those widths). disablePictureInPicture/
-          disableRemotePlayback/controlsList suppress every native overlay
-          (PiP hover icon, cast icon, right-click menu) without needing to
-          hide the element itself. */}
+      {/* Shown directly, full-bleed (object-cover) on every breakpoint —
+          disablePictureInPicture/disableRemotePlayback/controlsList
+          suppress every native overlay (PiP hover icon, cast icon,
+          right-click menu) without needing to hide the element itself. */}
       <video
         ref={videoRef}
         aria-hidden="true"
@@ -265,7 +257,7 @@ export function Hero() {
         disablePictureInPicture
         disableRemotePlayback
         controlsList="nodownload nofullscreen noremoteplayback noplaybackrate"
-        className="pointer-events-none absolute inset-0 h-full w-full object-contain sm:object-cover"
+        className="pointer-events-none absolute inset-0 h-full w-full object-cover"
       >
         <source src="/videos/hero-background.mp4" type="video/mp4" />
       </video>
