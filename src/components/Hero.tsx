@@ -107,15 +107,19 @@ export function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
-  // Every browser-level fix for the native video overlay (PiP affordance,
-  // AirPlay/cast icon, play button — the exact one depends on browser/OS and
-  // none of the attribute- or CSS-level fixes tried suppressed all of them)
-  // shares the same root cause: a real, visible <video> element always gets
-  // the browser's own media-control UI layered on top of it, outside normal
-  // stacking-context rules. The only way to have animated video with zero
-  // native UI is to not have a visible <video> at all: decode it off-screen
-  // (full size, so the browser never throttles its decoding) and paint its
-  // frames onto a plain <canvas>, which has no media-control concept at all.
+  // The video is shown directly (native <video>, object-fit via CSS below)
+  // instead of being decoded off-screen onto a canvas — that hidden-video
+  // trick was meant to dodge the browser's native media-control UI (PiP/cast
+  // icon on hover), but translating a real video far outside the viewport
+  // made some browsers throttle its decoding into never actually rendering
+  // a frame (reported as the video/logo not showing at all on desktop). The
+  // disablePictureInPicture/disableRemotePlayback/controlsList attributes on
+  // the <video> below suppress that native UI instead, with zero risk to
+  // playback since the video is a normal, fully "visible" element.
+  //
+  // A small canvas still sits on top, used only to paint a patch over the
+  // sparkle glyph baked into the video (see drawSparklePatch) — much
+  // cheaper than redrawing the whole frame every tick.
   useEffect(() => {
     if (prefersReducedMotion) return;
     const video = videoRef.current;
@@ -193,16 +197,19 @@ export function Hero() {
       try {
         const { videoWidth, videoHeight } = video;
         if (videoWidth && videoHeight && canvas.width && canvas.height) {
-          // Same math as CSS `object-fit: cover`: scale to fill, crop overflow.
-          // The video's own "Della" logo (baked into every frame, centered)
-          // is meant to show — the Hero's own text is laid out around it
-          // (see the top/bottom split below) instead of cropping it out.
-          const scale = Math.max(canvas.width / videoWidth, canvas.height / videoHeight);
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          // Mirror the <video>'s own CSS object-fit here (object-contain
+          // below the `sm` breakpoint, object-cover at and above it — see
+          // the className below) so the patch lands exactly where the
+          // video content actually renders on screen.
+          const isContainFit = window.innerWidth < 640;
+          const scale = isContainFit
+            ? Math.min(canvas.width / videoWidth, canvas.height / videoHeight)
+            : Math.max(canvas.width / videoWidth, canvas.height / videoHeight);
           const drawWidth = videoWidth * scale;
           const drawHeight = videoHeight * scale;
           const offsetX = (canvas.width - drawWidth) / 2;
           const offsetY = (canvas.height - drawHeight) / 2;
-          ctx.drawImage(video, offsetX, offsetY, drawWidth, drawHeight);
           drawSparklePatch(scale, offsetX, offsetY);
         }
       } catch {
@@ -239,20 +246,13 @@ export function Hero() {
           "linear-gradient(135deg, #061A3A 0%, #031027 55%, #05070C 100%)",
       }}
     >
-      {/* The real <video> never appears on screen — a visible <video> always
-          gets the browser's own media-control UI (PiP/cast/play-button
-          overlay) layered on top of it, outside the page's normal stacking
-          rules, which no CSS or attribute combination can fully suppress.
-          But shrinking it to 1x1/opacity:0 (the first thing tried) made
-          browsers treat it as "not really visible" and throttle/pause its
-          decoding after the first frame — the video froze instead of
-          looping. Keeping it at full, real size (so decoding is never
-          throttled) and instead translating it entirely outside this
-          section's own `overflow-hidden` clip area avoids both problems: the
-          browser treats it as a normal, fully "visible" video (decodes
-          every frame, no throttling), but no pixel of it — or any native
-          control floating over it — ever reaches the viewport. The canvas
-          below paints its actual frames where they're meant to be seen. */}
+      {/* Shown directly — object-contain below `sm` (so the tall mobile
+          layout never crops the video's sides, just letterboxes top/bottom)
+          and object-cover at `sm` and up (full-bleed, matches the video's
+          own ~16:9 shape closely at those widths). disablePictureInPicture/
+          disableRemotePlayback/controlsList suppress every native overlay
+          (PiP hover icon, cast icon, right-click menu) without needing to
+          hide the element itself. */}
       <video
         ref={videoRef}
         aria-hidden="true"
@@ -262,14 +262,16 @@ export function Hero() {
         loop
         playsInline
         preload="auto"
-        className="pointer-events-none absolute inset-0 h-full w-full -translate-x-[200%]"
+        disablePictureInPicture
+        disableRemotePlayback
+        controlsList="nodownload nofullscreen noremoteplayback noplaybackrate"
+        className="pointer-events-none absolute inset-0 h-full w-full object-contain sm:object-cover"
       >
         <source src="/videos/hero-background.mp4" type="video/mp4" />
       </video>
-      {/* Canvas painted with the video's frames every animation frame — the
-          gradient above stays in place as a fallback (painted first, the
-          canvas draws over it once the video can play) and for
-          prefers-reduced-motion, where the canvas is never drawn to. */}
+      {/* Small canvas layered on top, used only to paint a patch over the
+          video's baked-in sparkle glyph (see drawSparklePatch) — hidden for
+          prefers-reduced-motion along with the rest of the motion here. */}
       <canvas
         ref={canvasRef}
         aria-hidden="true"
