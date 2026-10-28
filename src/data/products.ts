@@ -982,6 +982,48 @@ export const products: Product[] = [
       },
     ],
   },
+  {
+    id: "39",
+    slug: "kit-3-pincas-laqueadas-preta-ponta-fina",
+    name: "Kit 3 Pinças Laqueadas Ponta Fina Preta Edel Solingen",
+    brand: "Edel Solingen",
+    category: "pinca-depilacao",
+    shortDescription: "Kit com 3 pinças laqueadas pretas, ponta fina de precisão, idênticas.",
+    description:
+      "Kit com 3 pinças laqueadas idênticas Edel Solingen, em acabamento preto fosco e ponta fina de precisão, ideais para design de sobrancelhas e remoção de pelos curtos e finos. As pontas são perfeitamente alinhadas, garantindo ótima aderência mesmo nos pelos mais curtos, com qualidade e precisão Solingen legítimas em cada peça. Ter 3 pinças traz mais praticidade e economia: profissionais podem alternar entre clientes enquanto uma é higienizada, sempre com uma reserva pronta para uso — deixe uma em casa, uma no trabalho e uma na bolsa. Esterilizável com álcool 70%, perfeito para designers de sobrancelhas, profissionais da beleza e uso pessoal.",
+    highlights: [
+      "Kit com 3 pinças laqueadas idênticas",
+      "Acabamento preto fosco",
+      "Ponta fina de precisão",
+      "Pontas perfeitamente alinhadas",
+      "Qualidade Solingen legítima",
+      "Esterilizável com álcool 70%",
+      "Mais praticidade e economia com 3 unidades",
+      "Indicado para designers de sobrancelhas e uso pessoal",
+    ],
+    image: "/images/products/39-kit-pinca-laqueada-preta-ponta-fina.webp",
+    images: [
+      "/images/products/39-kit-pinca-laqueada-preta-ponta-fina.webp",
+      "/images/products/39-kit-pinca-laqueada-preta-ponta-fina-trio.webp",
+      "/images/products/39-kit-pinca-laqueada-preta-ponta-fina-detalhe.webp",
+    ],
+    externalUrl: "#",
+    isNew: true,
+    marketplaceLinks: [
+      {
+        label: "Ver no Mercado Livre",
+        url: "https://www.mercadolivre.com.br/kit-3-pincas-pontas-finas-laqueadas/up/MLBU5645818538?pdp_filters=item_id:MLB7861994330",
+      },
+      {
+        label: "Ver na Shopee",
+        url: "https://shopee.com.br/product/1931210934/58221032048",
+      },
+      {
+        label: "Ver no TikTok Shop",
+        url: "https://www.tiktok.com/shop/br/pdp/1738143389286696030",
+      },
+    ],
+  },
 ];
 
 export function getProduct(slug: string) {

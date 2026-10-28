@@ -50,9 +50,14 @@ export default async function ProductPage({
   const related = getProductsByCategory(product.category)
     .filter((p) => p.slug !== product.slug)
     .slice(0, 4);
-  // Generic store-wide TikTok Shop profile — no per-product TikTok links
-  // exist, so every product shows the same one next to its own ML/Shopee buttons.
-  const tiktokLink = siteConfig.marketplaces.find((m) => m.label === "TikTok Shop")?.href;
+  // Falls back to the generic store-wide TikTok Shop profile when a product
+  // doesn't have its own product-specific TikTok Shop link in marketplaceLinks.
+  const hasOwnTiktokLink = product.marketplaceLinks?.some((link) =>
+    link.label.toLowerCase().includes("tiktok")
+  );
+  const tiktokLink = hasOwnTiktokLink
+    ? undefined
+    : siteConfig.marketplaces.find((m) => m.label === "TikTok Shop")?.href;
 
   return (
     <>
