@@ -1,4 +1,5 @@
 import { Hero } from "@/components/Hero";
+import { ShopLinks } from "@/components/ShopLinks";
 import { ExploreCategories } from "@/components/ExploreCategories";
 import { FeaturedProducts } from "@/components/FeaturedProducts";
 import { InstitutionalBanner } from "@/components/InstitutionalBanner";
@@ -14,6 +15,7 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <ShopLinks />
       <ExploreCategories />
       <FeaturedProducts />
       <InstitutionalBanner />
