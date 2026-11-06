@@ -1067,6 +1067,48 @@ export const products: Product[] = [
       },
     ],
   },
+  {
+    id: "41",
+    slug: "pomada-matte-effect-carmesim-50g",
+    name: "Pomada de Fixação Matte Effect Efeito Seco Carmesim 50g",
+    brand: "Carmesim",
+    category: "mirras",
+    shortDescription: "Pomada de fixação matte effect, toque seco e textura leve, para fixação forte sem brilho.",
+    description:
+      "A Pomada de Fixação Matte Effect Efeito Seco Carmesim possui ativos inovadores que proporcionam maior flexibilidade para modelar, definir e fixar o penteado no estilo que desejar, deixando os cabelos com toque natural. Com textura leve e não oleosa, é ideal para finalizar cabelos curtos e médios com acabamento sem brilho, além disso, garante a fixação do penteado durante o dia todo. Modo de usar: espalhe uma pequena quantidade do produto nas mãos e aplique nos cabelos secos ou úmidos, modelando conforme desejar — evite a raiz do cabelo. A Pomada Matte não permite remodelação ao longo do dia: use com os fios molhados para um efeito mais natural e com os cabelos secos para finalização matte sem brilho.",
+    highlights: [
+      "Efeito seco — acabamento sem brilho",
+      "Textura leve e não oleosa",
+      "Fixação forte e duradoura",
+      "Não deixa resíduos nos fios",
+      "Acabamento natural e estilizado",
+      "Fácil de aplicar e remover",
+      "Ideal para cabelos curtos e médios",
+      "Pote de 50g",
+    ],
+    image: "/images/products/41-pomada-matte-effect-carmesim-50g.webp",
+    images: [
+      "/images/products/41-pomada-matte-effect-carmesim-50g.webp",
+      "/images/products/41-pomada-matte-effect-carmesim-50g-textura.webp",
+      "/images/products/41-pomada-matte-effect-carmesim-50g-uso.webp",
+    ],
+    externalUrl: "#",
+    isNew: true,
+    marketplaceLinks: [
+      {
+        label: "Ver no Mercado Livre",
+        url: "https://produto.mercadolivre.com.br/MLB-5477544623-pomada-matte-50g-carmesim-capilar-modeladora-toque-seco-poma-_JM",
+      },
+      {
+        label: "Ver na Shopee",
+        url: "https://shopee.com.br/product/1931210934/58271017905",
+      },
+      {
+        label: "Ver no TikTok Shop",
+        url: "https://www.tiktok.com/shop/br/pdp/1738143264751322206",
+      },
+    ],
+  },
 ];
 
 export function getProduct(slug: string) {

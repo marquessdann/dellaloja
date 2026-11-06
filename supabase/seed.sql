@@ -133,7 +133,11 @@ from (values
   ('pasta-modeladora-efeito-cola-carmesim-80g', 'Pasta Modeladora Efeito Cola Carmesim 80g', 'Carmesim', 'mirras',
    'Pasta modeladora efeito cola, vegana e dermatologicamente testada, para fixação e estilo duradouros.',
    'Pasta modeladora efeito cola Carmesim, dermatologicamente testada — a fórmula vegana e livre de glúten garante segurança e conforto para o uso diário. Os ingredientes de alta qualidade promovem não apenas a modelagem, mas também a saúde dos fios, evitando danos e ressecamento. O pote de 80g é prático e fácil de transportar, tornando-se um aliado indispensável na sua rotina de cuidados capilares. Aplique uma pequena quantidade nos cabelos secos ou úmidos e modele conforme desejado — com Carmesim, você tem a liberdade de expressar sua personalidade através do seu cabelo.',
-   '/images/products/40-pasta-modeladora-carmesim-80g.webp', '/produto/pasta-modeladora-efeito-cola-carmesim-80g')
+   '/images/products/40-pasta-modeladora-carmesim-80g.webp', '/produto/pasta-modeladora-efeito-cola-carmesim-80g'),
+  ('pomada-matte-effect-carmesim-50g', 'Pomada de Fixação Matte Effect Efeito Seco Carmesim 50g', 'Carmesim', 'mirras',
+   'Pomada de fixação matte effect, toque seco e textura leve, para fixação forte sem brilho.',
+   'A Pomada de Fixação Matte Effect Efeito Seco Carmesim possui ativos inovadores que proporcionam maior flexibilidade para modelar, definir e fixar o penteado no estilo que desejar, deixando os cabelos com toque natural. Com textura leve e não oleosa, é ideal para finalizar cabelos curtos e médios com acabamento sem brilho, além disso, garante a fixação do penteado durante o dia todo.',
+   '/images/products/41-pomada-matte-effect-carmesim-50g.webp', '/produto/pomada-matte-effect-carmesim-50g')
 ) as v(slug, name, brand, category_slug, short_description, description, image_url, product_url)
 join categories c on c.slug = v.category_slug
 on conflict (slug) do update set
@@ -204,7 +208,10 @@ from (values
   ('kit-3-pincas-laqueadas-preta-ponta-fina', 'tiktok-shop', 'https://www.tiktok.com/shop/br/pdp/1738143389286696030'),
   ('pasta-modeladora-efeito-cola-carmesim-80g', 'mercado-livre', 'https://produto.mercadolivre.com.br/MLB-5477542731-pasta-modeladora-efeito-cola-carmesim-80g-_JM'),
   ('pasta-modeladora-efeito-cola-carmesim-80g', 'shopee', 'https://shopee.com.br/product/1931210934/58271027322'),
-  ('pasta-modeladora-efeito-cola-carmesim-80g', 'tiktok-shop', 'https://www.tiktok.com/shop/br/pdp/1738143320849876062')
+  ('pasta-modeladora-efeito-cola-carmesim-80g', 'tiktok-shop', 'https://www.tiktok.com/shop/br/pdp/1738143320849876062'),
+  ('pomada-matte-effect-carmesim-50g', 'mercado-livre', 'https://produto.mercadolivre.com.br/MLB-5477544623-pomada-matte-50g-carmesim-capilar-modeladora-toque-seco-poma-_JM'),
+  ('pomada-matte-effect-carmesim-50g', 'shopee', 'https://shopee.com.br/product/1931210934/58271017905'),
+  ('pomada-matte-effect-carmesim-50g', 'tiktok-shop', 'https://www.tiktok.com/shop/br/pdp/1738143264751322206')
 ) as v(product_slug, marketplace_slug, url)
 join products p on p.slug = v.product_slug
 join marketplaces m on m.slug = v.marketplace_slug
