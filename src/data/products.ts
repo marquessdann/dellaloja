@@ -1404,6 +1404,41 @@ export const products: Product[] = [
       },
     ],
   },
+  {
+    id: "47",
+    slug: "pomada-finalizadora-efeito-teia-carmesim-80g",
+    name: "Pomada Finalizadora Efeito Teia Carmesim 80g",
+    brand: "Carmesim",
+    category: "carmesim",
+    shortDescription: "Pomada finalizadora efeito teia, fixação flexível e acabamento natural sem pesar os fios.",
+    description:
+      "A Pomada Finalizadora Efeito Teia Carmesim possui ativos inovadores que proporcionam maior flexibilidade para modelar, definir e fixar o penteado no estilo que desejar. Com efeito teia, garante fixação e modelagem para looks modernos e duradouros, com acabamento natural que define os fios sem pesar, mantendo um visual impecável o dia todo. Ideal para quem busca versatilidade e controle total sobre os fios, permite criar penteados ousados ou simplesmente dar aquele toque final de organização — sua fórmula exclusiva oferece uma fixação flexível e um acabamento natural, sem deixar o cabelo com aspecto oleoso ou pesado. Fácil de usar e remover: aplique com praticidade e retire facilmente sem deixar resíduos no cabelo. Perfeita para o dia a dia ou para ocasiões especiais.",
+    highlights: [
+      "Efeito teia — fixação flexível",
+      "Acabamento natural, sem pesar os fios",
+      "Fácil de usar e remover",
+      "Não deixa resíduos no cabelo",
+      "Sem aspecto oleoso ou pesado",
+      "Dermatologicamente testada e aprovada",
+      "Ideal para o dia a dia ou ocasiões especiais",
+      "Pote de 80g",
+    ],
+    image: "/images/products/47-pomada-finalizadora-teia-carmesim-80g.webp",
+    images: [
+      "/images/products/47-pomada-finalizadora-teia-carmesim-80g.webp",
+      "/images/products/47-pomada-finalizadora-teia-carmesim-80g-frente.webp",
+      "/images/products/47-pomada-finalizadora-teia-carmesim-80g-aberta.webp",
+      "/images/products/47-pomada-finalizadora-teia-carmesim-80g-detalhe.webp",
+    ],
+    externalUrl: "#",
+    isNew: true,
+    marketplaceLinks: [
+      {
+        label: "Ver no Mercado Livre",
+        url: "https://produto.mercadolivre.com.br/MLB-7902073960-pomada-modeladora-carmesim-efeito-teia-elastica-80g-cera-_JM",
+      },
+    ],
+  },
 ];
 
 export function getProduct(slug: string) {

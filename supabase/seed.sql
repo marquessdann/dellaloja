@@ -159,7 +159,11 @@ from (values
   ('gel-brilho-molhado-letrinhas-extra-forte-235g', 'Gel Brilho Molhado Letrinhas Extra Forte 235g', 'Letrinhas', 'letrinhas',
    'Gel infantil fixador com efeito brilho molhado, fator extra forte, 0% álcool e sem resíduos.',
    'Gel fixador com efeito brilho molhado e fixação extra forte, ideal para modelar e finalizar o penteado das crianças. Fórmula 0% álcool e anti flakes, que não deixa resíduos brancos no cabelo, com pH neutro. Disponível nas cores Amarelo, Azul, Incolor e Verde — escolha a variação no site.',
-   '/images/products/46-gel-brilho-molhado-letrinhas-235g-amarelo.webp', '/produto/gel-brilho-molhado-letrinhas-extra-forte-235g')
+   '/images/products/46-gel-brilho-molhado-letrinhas-235g-amarelo.webp', '/produto/gel-brilho-molhado-letrinhas-extra-forte-235g'),
+  ('pomada-finalizadora-efeito-teia-carmesim-80g', 'Pomada Finalizadora Efeito Teia Carmesim 80g', 'Carmesim', 'carmesim',
+   'Pomada finalizadora efeito teia, fixação flexível e acabamento natural sem pesar os fios.',
+   'A Pomada Finalizadora Efeito Teia Carmesim possui ativos inovadores que proporcionam maior flexibilidade para modelar, definir e fixar o penteado no estilo que desejar. Com efeito teia, garante fixação e modelagem para looks modernos e duradouros, com acabamento natural que define os fios sem pesar. Fácil de usar e remover, sem deixar resíduos no cabelo.',
+   '/images/products/47-pomada-finalizadora-teia-carmesim-80g.webp', '/produto/pomada-finalizadora-efeito-teia-carmesim-80g')
 ) as v(slug, name, brand, category_slug, short_description, description, image_url, product_url)
 join categories c on c.slug = v.category_slug
 on conflict (slug) do update set
@@ -247,7 +251,8 @@ from (values
   ('pomada-em-po-carmesim-10g', 'tiktok-shop', 'https://www.tiktok.com/shop/br/pdp/1738143320735188062'),
   ('gel-brilho-molhado-letrinhas-extra-forte-235g', 'mercado-livre', 'https://produto.mercadolivre.com.br/MLB-7901926564-gel-para-cabelo-infantil-letrinhas-brilho-molhado-_JM'),
   ('gel-brilho-molhado-letrinhas-extra-forte-235g', 'shopee', 'https://shopee.com.br/product/1931210934/58271554591'),
-  ('gel-brilho-molhado-letrinhas-extra-forte-235g', 'tiktok-shop', 'https://www.tiktok.com/shop/br/pdp/1738231955941721182')
+  ('gel-brilho-molhado-letrinhas-extra-forte-235g', 'tiktok-shop', 'https://www.tiktok.com/shop/br/pdp/1738231955941721182'),
+  ('pomada-finalizadora-efeito-teia-carmesim-80g', 'mercado-livre', 'https://produto.mercadolivre.com.br/MLB-7902073960-pomada-modeladora-carmesim-efeito-teia-elastica-80g-cera-_JM')
 ) as v(product_slug, marketplace_slug, url)
 join products p on p.slug = v.product_slug
 join marketplaces m on m.slug = v.marketplace_slug
