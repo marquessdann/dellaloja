@@ -1232,6 +1232,48 @@ export const products: Product[] = [
       },
     ],
   },
+  {
+    id: "45",
+    slug: "pomada-em-po-carmesim-10g",
+    name: "Pomada Em Pó Carmesim 10g",
+    brand: "Carmesim",
+    category: "carmesim",
+    shortDescription: "Pomada em pó fixadora, modeladora e com efeito volume instantâneo, livre de glúten e vegana.",
+    description:
+      "A Pomada Em Pó 10g Carmesim é o produto ideal para quem busca modelar, fixar e dar volume instantâneo aos cabelos. Com consistência em pó, essa pomada fixadora é livre de glúten, sendo perfeita para quem busca um produto vegano. Sua fórmula exclusiva proporciona resultados incríveis, garantindo um visual impecável o dia todo. Além disso, sua embalagem prática e fácil de usar torna a aplicação ainda mais simples e eficaz. Aproveite para experimentar a Pomada Em Pó 10g Carmesim e conquiste um penteado deslumbrante em instantes.",
+    highlights: [
+      "Fixador, modelador e volume instantâneo",
+      "Consistência em pó",
+      "Livre de glúten",
+      "Fórmula vegana",
+      "Efeito natural sem resíduos",
+      "Fácil de usar e aplicar",
+      "Visual impecável o dia todo",
+      "Embalagem prática de 10g",
+    ],
+    image: "/images/products/45-pomada-em-po-carmesim-10g.webp",
+    images: [
+      "/images/products/45-pomada-em-po-carmesim-10g.webp",
+      "/images/products/45-pomada-em-po-carmesim-10g-tamanhos.webp",
+      "/images/products/45-pomada-em-po-carmesim-10g-medidas.webp",
+    ],
+    externalUrl: "#",
+    isNew: true,
+    marketplaceLinks: [
+      {
+        label: "Ver no Mercado Livre",
+        url: "https://www.mercadolivre.com.br/pomada-em-po-fixadora-pomada-seca-cera-cabelo-carmesim-10g/up/MLBU5681670823?pdp_filters=item_id:MLB7901973182",
+      },
+      {
+        label: "Ver na Shopee",
+        url: "https://shopee.com.br/product/1931210934/58271034921",
+      },
+      {
+        label: "Ver no TikTok Shop",
+        url: "https://www.tiktok.com/shop/br/pdp/1738143320735188062",
+      },
+    ],
+  },
 ];
 
 export function getProduct(slug: string) {

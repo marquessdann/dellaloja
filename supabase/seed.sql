@@ -150,7 +150,11 @@ from (values
   ('pomada-finalizadora-teia-elastica-mirras-150g', 'Pomada Finalizadora Efeito Teia Elástica Mirra''s 150g', 'Mirra''s', 'mirras',
    'Pomada finalizadora efeito teia elástica, fixação e modelagem com resultado duradouro e natural.',
    'A Pomada Finalizadora Efeito Teia Elástica Mirra''s é o produto ideal para quem busca fixação e modelagem dos cabelos. Sua consistência em pomada permite pentear os fios com facilidade, garantindo um visual impecável. Com teste oftalmológico e dermatologicamente testado, é segura para uso diário.',
-   '/images/products/44-pomada-finalizadora-teia-elastica-mirras-150g.webp', '/produto/pomada-finalizadora-teia-elastica-mirras-150g')
+   '/images/products/44-pomada-finalizadora-teia-elastica-mirras-150g.webp', '/produto/pomada-finalizadora-teia-elastica-mirras-150g'),
+  ('pomada-em-po-carmesim-10g', 'Pomada Em Pó Carmesim 10g', 'Carmesim', 'carmesim',
+   'Pomada em pó fixadora, modeladora e com efeito volume instantâneo, livre de glúten e vegana.',
+   'A Pomada Em Pó 10g Carmesim é o produto ideal para quem busca modelar, fixar e dar volume instantâneo aos cabelos. Com consistência em pó, essa pomada fixadora é livre de glúten, sendo perfeita para quem busca um produto vegano. Sua fórmula exclusiva proporciona resultados incríveis, garantindo um visual impecável o dia todo.',
+   '/images/products/45-pomada-em-po-carmesim-10g.webp', '/produto/pomada-em-po-carmesim-10g')
 ) as v(slug, name, brand, category_slug, short_description, description, image_url, product_url)
 join categories c on c.slug = v.category_slug
 on conflict (slug) do update set
@@ -232,7 +236,10 @@ from (values
   ('pomada-estilizadora-3-em-1-mirras-150g', 'shopee', 'https://shopee.com.br/product/1931210934/58270975416'),
   ('pomada-estilizadora-3-em-1-mirras-150g', 'tiktok-shop', 'https://www.tiktok.com/shop/br/pdp/1738105409726022750'),
   ('pomada-finalizadora-teia-elastica-mirras-150g', 'shopee', 'https://shopee.com.br/product/1931210934/58220995844'),
-  ('pomada-finalizadora-teia-elastica-mirras-150g', 'tiktok-shop', 'https://www.tiktok.com/shop/br/pdp/1738143364279993438')
+  ('pomada-finalizadora-teia-elastica-mirras-150g', 'tiktok-shop', 'https://www.tiktok.com/shop/br/pdp/1738143364279993438'),
+  ('pomada-em-po-carmesim-10g', 'mercado-livre', 'https://www.mercadolivre.com.br/pomada-em-po-fixadora-pomada-seca-cera-cabelo-carmesim-10g/up/MLBU5681670823?pdp_filters=item_id:MLB7901973182'),
+  ('pomada-em-po-carmesim-10g', 'shopee', 'https://shopee.com.br/product/1931210934/58271034921'),
+  ('pomada-em-po-carmesim-10g', 'tiktok-shop', 'https://www.tiktok.com/shop/br/pdp/1738143320735188062')
 ) as v(product_slug, marketplace_slug, url)
 join products p on p.slug = v.product_slug
 join marketplaces m on m.slug = v.marketplace_slug
