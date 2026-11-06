@@ -1,5 +1,14 @@
 import type { CategorySlug } from "./categories";
 
+/** One selectable option of a product (e.g. a color) — picking it swaps the
+ *  gallery image(s) and the marketplace links shown on the product page. */
+export interface ProductVariant {
+  label: string;
+  image: string;
+  images: string[];
+  marketplaceLinks: { label: string; url: string }[];
+}
+
 export interface Product {
   id: string;
   slug: string;
@@ -19,6 +28,11 @@ export interface Product {
   buyButtonLabel?: string;
   /** One button per marketplace link; when set, replaces the single externalUrl/buyButtonLabel button on the product page. */
   marketplaceLinks?: { label: string; url: string }[];
+  /** Selectable options (e.g. colors) — when set, the product page shows a
+   *  picker; choosing one swaps the gallery images and marketplace links
+   *  shown (the image/images/marketplaceLinks above are the default shown
+   *  before anything is picked). */
+  variants?: ProductVariant[];
 }
 
 export const products: Product[] = [
@@ -1271,6 +1285,122 @@ export const products: Product[] = [
       {
         label: "Ver no TikTok Shop",
         url: "https://www.tiktok.com/shop/br/pdp/1738143320735188062",
+      },
+    ],
+  },
+  {
+    id: "46",
+    slug: "gel-brilho-molhado-letrinhas-extra-forte-235g",
+    name: "Gel Brilho Molhado Letrinhas Extra Forte 235g",
+    brand: "Letrinhas",
+    category: "letrinhas",
+    shortDescription: "Gel infantil fixador com efeito brilho molhado, fator extra forte, 0% álcool e sem resíduos.",
+    description:
+      "Gel fixador com efeito brilho molhado e fixação extra forte, ideal para modelar e finalizar o penteado das crianças. Fórmula 0% álcool e anti flakes, que não deixa resíduos brancos no cabelo, com pH neutro que não agride os cabelos e deixa-os bonitos e saudáveis. Disponível nas cores Amarelo, Azul, Incolor e Verde — escolha a variação acima. Modo de uso: aplique uma pequena quantidade nos cabelos secos ou úmidos e modele como desejar; para mais fixação, aplique mais produto. Recomendado a partir dos 3 anos, com uso sempre supervisionado por um adulto.",
+    highlights: [
+      "Fator de fixação extra forte",
+      "Efeito brilho molhado",
+      "0% álcool",
+      "Anti flakes — sem resíduos brancos",
+      "pH neutro",
+      "4 variações de cor: Amarelo, Azul, Incolor e Verde",
+      "Pote de 235g",
+      "Recomendado a partir de 3 anos, com supervisão de um adulto",
+    ],
+    image: "/images/products/46-gel-brilho-molhado-letrinhas-235g-amarelo.webp",
+    images: ["/images/products/46-gel-brilho-molhado-letrinhas-235g-amarelo.webp"],
+    externalUrl: "#",
+    isNew: true,
+    marketplaceLinks: [
+      {
+        label: "Ver no Mercado Livre",
+        url: "https://produto.mercadolivre.com.br/MLB-7901926564-gel-para-cabelo-infantil-letrinhas-brilho-molhado-_JM",
+      },
+      {
+        label: "Ver na Shopee",
+        url: "https://shopee.com.br/product/1931210934/58271554591",
+      },
+      {
+        label: "Ver no TikTok Shop",
+        url: "https://www.tiktok.com/shop/br/pdp/1738231955941721182",
+      },
+    ],
+    variants: [
+      {
+        label: "Amarelo",
+        image: "/images/products/46-gel-brilho-molhado-letrinhas-235g-amarelo.webp",
+        images: ["/images/products/46-gel-brilho-molhado-letrinhas-235g-amarelo.webp"],
+        marketplaceLinks: [
+          {
+            label: "Ver no Mercado Livre",
+            url: "https://produto.mercadolivre.com.br/MLB-7901926564-gel-para-cabelo-infantil-letrinhas-brilho-molhado-_JM",
+          },
+          {
+            label: "Ver na Shopee",
+            url: "https://shopee.com.br/product/1931210934/58271554591",
+          },
+          {
+            label: "Ver no TikTok Shop",
+            url: "https://www.tiktok.com/shop/br/pdp/1738231955941721182",
+          },
+        ],
+      },
+      {
+        label: "Azul",
+        image: "/images/products/46-gel-brilho-molhado-letrinhas-235g-azul.webp",
+        images: ["/images/products/46-gel-brilho-molhado-letrinhas-235g-azul.webp"],
+        marketplaceLinks: [
+          {
+            label: "Ver no Mercado Livre",
+            url: "https://produto.mercadolivre.com.br/MLB-5477434257-gel-infantil-fixador-de-cabelo-letrinhas-azul-brilho-molhado-_JM",
+          },
+          {
+            label: "Ver na Shopee",
+            url: "https://shopee.com.br/product/1931210934/58271561861",
+          },
+          {
+            label: "Ver no TikTok Shop",
+            url: "https://www.tiktok.com/shop/br/pdp/1738231954410538078",
+          },
+        ],
+      },
+      {
+        label: "Incolor",
+        image: "/images/products/46-gel-brilho-molhado-letrinhas-235g-incolor.webp",
+        images: ["/images/products/46-gel-brilho-molhado-letrinhas-235g-incolor.webp"],
+        marketplaceLinks: [
+          {
+            label: "Ver no Mercado Livre",
+            url: "https://www.mercadolivre.com.br/gel-infantil-fixador-cabelo-letrinhas-incolor-brilho-molhado/up/MLBU5681751201?pdp_filters=item_id:MLB5477563455",
+          },
+          {
+            label: "Ver na Shopee",
+            url: "https://shopee.com.br/product/1931210934/58221533205",
+          },
+          {
+            label: "Ver no TikTok Shop",
+            url: "https://www.tiktok.com/shop/br/pdp/1738232148767638622",
+          },
+        ],
+      },
+      {
+        label: "Verde",
+        image: "/images/products/46-gel-brilho-molhado-letrinhas-235g-verde.webp",
+        images: ["/images/products/46-gel-brilho-molhado-letrinhas-235g-verde.webp"],
+        marketplaceLinks: [
+          {
+            label: "Ver no Mercado Livre",
+            url: "https://produto.mercadolivre.com.br/MLB-5477552171-gel-infantil-fixador-de-cabelo-letrinhas-brilho-molhado-_JM",
+          },
+          {
+            label: "Ver na Shopee",
+            url: "https://shopee.com.br/product/1931210934/58221532397",
+          },
+          {
+            label: "Ver no TikTok Shop",
+            url: "https://www.tiktok.com/shop/br/pdp/1738231988672103518",
+          },
+        ],
       },
     ],
   },

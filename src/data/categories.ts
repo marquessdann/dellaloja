@@ -4,7 +4,8 @@ export type CategorySlug =
   | "cilios"
   | "pinca-depilacao"
   | "mirras"
-  | "carmesim";
+  | "carmesim"
+  | "letrinhas";
 
 export interface Category {
   slug: CategorySlug;
@@ -56,6 +57,13 @@ export const categories: Category[] = [
     shortName: "Carmesim",
     description: "Pastas e pomadas Carmesim de finalização capilar, para fixação e estilo duradouros.",
     image: "/images/products/40-pasta-modeladora-carmesim-80g.webp",
+  },
+  {
+    slug: "letrinhas",
+    name: "Letrinhas",
+    shortName: "Letrinhas",
+    description: "Géis infantis Letrinhas para modelar e fixar o penteado das crianças, com brilho e sem resíduos.",
+    image: "/images/products/46-gel-brilho-molhado-letrinhas-235g-amarelo.webp",
   },
 ];
 
