@@ -141,7 +141,11 @@ from (values
   ('pomada-estilizadora-carmesim-3-em-1-80g', 'Pomada Estilizadora Carmesim 3 em 1 80g', 'Carmesim', 'mirras',
    'Pomada estilizadora 3 em 1 com ação anti-frizz, não resseca e não deixa resíduos.',
    'A Pomada Estilizadora Carmesim ajuda a modelar e finalizar os cabelos no dia a dia. A fórmula 3 em 1 é indicada na embalagem para estilização, com ação anti-frizz. Segundo o rótulo, não resseca os fios e não deixa resíduos, além de ser dermatologicamente testada e aprovada.',
-   '/images/products/42-pomada-estilizadora-carmesim-3em1-80g.webp', '/produto/pomada-estilizadora-carmesim-3-em-1-80g')
+   '/images/products/42-pomada-estilizadora-carmesim-3em1-80g.webp', '/produto/pomada-estilizadora-carmesim-3-em-1-80g'),
+  ('pomada-estilizadora-3-em-1-mirras-150g', 'Pomada Estilizadora 3 em 1 Mirra''s 150g', 'Mirra''s', 'mirras',
+   'A primeira pomada registrada no Brasil — fórmula 3 em 1 com excelente fixação e que não resseca os fios.',
+   'Lançada em 2012, a Pomada Estilizadora 3 em 1 Mirra''s é referência em qualidade, estilo e performance — a primeira pomada registrada no Brasil. Sua fórmula proporciona fixação, modelagem e acabamento em um único produto, garantindo praticidade e um visual impecável por mais tempo.',
+   '/images/products/43-pomada-estilizadora-3em1-mirras-150g.webp', '/produto/pomada-estilizadora-3-em-1-mirras-150g')
 ) as v(slug, name, brand, category_slug, short_description, description, image_url, product_url)
 join categories c on c.slug = v.category_slug
 on conflict (slug) do update set
@@ -218,7 +222,10 @@ from (values
   ('pomada-matte-effect-carmesim-50g', 'tiktok-shop', 'https://www.tiktok.com/shop/br/pdp/1738143264751322206'),
   ('pomada-estilizadora-carmesim-3-em-1-80g', 'mercado-livre', 'https://www.mercadolivre.com.br/pomada-estilizadora-carmesim-3-em-1-cabelo-80g-modeladora/up/MLBU5730839836?pdp_filters=item_id:MLB5477518475'),
   ('pomada-estilizadora-carmesim-3-em-1-80g', 'shopee', 'https://shopee.com.br/product/1931210934/58271027155'),
-  ('pomada-estilizadora-carmesim-3-em-1-80g', 'tiktok-shop', 'https://www.tiktok.com/shop/br/pdp/1738143360334070878')
+  ('pomada-estilizadora-carmesim-3-em-1-80g', 'tiktok-shop', 'https://www.tiktok.com/shop/br/pdp/1738143360334070878'),
+  ('pomada-estilizadora-3-em-1-mirras-150g', 'mercado-livre', 'https://produto.mercadolivre.com.br/MLB-5433100331-kit-3-pomadas-estlizadora-3-em-1-mirras-_JM'),
+  ('pomada-estilizadora-3-em-1-mirras-150g', 'shopee', 'https://shopee.com.br/product/1931210934/58270975416'),
+  ('pomada-estilizadora-3-em-1-mirras-150g', 'tiktok-shop', 'https://www.tiktok.com/shop/br/pdp/1738105409726022750')
 ) as v(product_slug, marketplace_slug, url)
 join products p on p.slug = v.product_slug
 join marketplaces m on m.slug = v.marketplace_slug

@@ -1151,6 +1151,49 @@ export const products: Product[] = [
       },
     ],
   },
+  {
+    id: "43",
+    slug: "pomada-estilizadora-3-em-1-mirras-150g",
+    name: "Pomada Estilizadora 3 em 1 Mirra's 150g",
+    brand: "Mirra's",
+    category: "mirras",
+    shortDescription: "A primeira pomada registrada no Brasil — fórmula 3 em 1 com excelente fixação e que não resseca os fios.",
+    description:
+      "Lançada em 2012, a Pomada Estilizadora 3 em 1 Mirra's é referência em qualidade, estilo e performance — a primeira pomada registrada no Brasil. Sua fórmula proporciona fixação, modelagem e acabamento em um único produto, garantindo praticidade e um visual impecável por mais tempo. Excelente fixação, modela diversos estilos, fácil de aplicar e remover, e não resseca os fios. A pioneira das pomadas no Brasil, líder em atitude e performance — desde 2012, cuidando da sua beleza e definindo estilos que fazem a diferença.",
+    highlights: [
+      "A primeira pomada registrada no Brasil (desde 2012)",
+      "Fórmula 3 em 1 — modela, esculpe e fixa",
+      "Fixação forte e longa duração",
+      "Ação anti-frizz",
+      "Não resseca os fios",
+      "Não deixa resíduos",
+      "Dermatologicamente testada e aprovada",
+      "Pote de 150g",
+    ],
+    image: "/images/products/43-pomada-estilizadora-3em1-mirras-150g.webp",
+    images: [
+      "/images/products/43-pomada-estilizadora-3em1-mirras-150g.webp",
+      "/images/products/43-pomada-estilizadora-3em1-mirras-150g-fechada.webp",
+      "/images/products/43-pomada-estilizadora-3em1-mirras-150g-duo.webp",
+      "/images/products/43-pomada-estilizadora-3em1-mirras-150g-beneficios.webp",
+    ],
+    externalUrl: "#",
+    isNew: true,
+    marketplaceLinks: [
+      {
+        label: "Ver no Mercado Livre",
+        url: "https://produto.mercadolivre.com.br/MLB-5433100331-kit-3-pomadas-estlizadora-3-em-1-mirras-_JM",
+      },
+      {
+        label: "Ver na Shopee",
+        url: "https://shopee.com.br/product/1931210934/58270975416",
+      },
+      {
+        label: "Ver no TikTok Shop",
+        url: "https://www.tiktok.com/shop/br/pdp/1738105409726022750",
+      },
+    ],
+  },
 ];
 
 export function getProduct(slug: string) {
