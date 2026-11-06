@@ -1439,6 +1439,49 @@ export const products: Product[] = [
       },
     ],
   },
+  {
+    id: "48",
+    slug: "navalha-aco-inox-edel-solingen-3011548",
+    name: "Navalha Aço Inox Edel Solingen 3011.548",
+    brand: "Edel Solingen",
+    category: "barbearia",
+    shortDescription: "Navalha em aço inoxidável para um barbear preciso e rente, com cabo de plástico e lâminas inclusas.",
+    description:
+      "A Navalha Aço Inox 3011.548 Edel Solingen é a ferramenta perfeita para um barbear preciso e rente. Feita de aço inoxidável, um material resistente e durável, garante um corte limpo e suave. O cabo de plástico proporciona um manuseio confortável e seguro, permitindo um controle total durante o uso. Vem com lâminas incluídas, o que significa que você pode começar a usá-la imediatamente — ideal para uso pessoal, seja em casa ou em viagens. Após o uso, é recomendado limpar a navalha com um pedaço de papel higiênico para garantir a sua durabilidade; é importante não armazenar a navalha molhada ou úmida, pois a umidade pode manchar o aço inoxidável — certifique-se de secá-la completamente antes de guardá-la. Com a Navalha Aço Inox Edel Solingen, você terá um barbear de qualidade profissional no conforto da sua casa.",
+    highlights: [
+      "Aço inoxidável resistente e durável",
+      "Corte limpo, preciso e rente",
+      "Cabo de plástico — manuseio confortável e seguro",
+      "Acompanha lâminas inclusas",
+      "Pronta para uso imediato",
+      "Ideal para uso em casa ou em viagens",
+      "Qualidade profissional Edel Solingen",
+      "Ref.: 3011.548",
+    ],
+    image: "/images/products/48-navalha-aco-inox-edel-solingen-3011548.webp",
+    images: [
+      "/images/products/48-navalha-aco-inox-edel-solingen-3011548.webp",
+      "/images/products/48-navalha-aco-inox-edel-solingen-3011548-mesa.webp",
+      "/images/products/48-navalha-aco-inox-edel-solingen-3011548-acessorios.webp",
+      "/images/products/48-navalha-aco-inox-edel-solingen-3011548-uso.webp",
+    ],
+    externalUrl: "#",
+    isNew: true,
+    marketplaceLinks: [
+      {
+        label: "Ver no Mercado Livre",
+        url: "https://www.mercadolivre.com.br/navalha-aco-inox-9cm-edel-solingen-3011548-lamina-68-concava/p/MLB27526489?pdp_filters=item_id:MLB5305023545",
+      },
+      {
+        label: "Ver na Shopee",
+        url: "https://shopee.com.br/product/1931210934/58270846620",
+      },
+      {
+        label: "Ver no TikTok Shop",
+        url: "https://vt.tiktok.com/ZS9fdvXDAj2Nc-gx2lx/",
+      },
+    ],
+  },
 ];
 
 export function getProduct(slug: string) {

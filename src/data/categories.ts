@@ -5,7 +5,8 @@ export type CategorySlug =
   | "pinca-depilacao"
   | "mirras"
   | "carmesim"
-  | "letrinhas";
+  | "letrinhas"
+  | "barbearia";
 
 export interface Category {
   slug: CategorySlug;
@@ -64,6 +65,13 @@ export const categories: Category[] = [
     shortName: "Letrinhas",
     description: "Géis infantis Letrinhas para modelar e fixar o penteado das crianças, com brilho e sem resíduos.",
     image: "/images/products/46-gel-brilho-molhado-letrinhas-235g-amarelo.webp",
+  },
+  {
+    slug: "barbearia",
+    name: "Barbearia",
+    shortName: "Barbearia",
+    description: "Navalhas e acessórios Edel Solingen para um barbear preciso de qualidade profissional.",
+    image: "/images/products/48-navalha-aco-inox-edel-solingen-3011548.webp",
   },
 ];
 

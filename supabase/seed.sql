@@ -21,7 +21,8 @@ insert into categories (slug, name, description) values
   ('pinca-depilacao', 'Pinças & Depilação', 'Pinças profissionais Edel Solingen para design de sobrancelhas e depilação de precisão.'),
   ('mirras', 'Mirras', 'Pomadas e ceras Mirra''s para modelar e fixar o penteado com estilo.'),
   ('carmesim', 'Carmesim', 'Pastas e pomadas Carmesim de finalização capilar, para fixação e estilo duradouros.'),
-  ('letrinhas', 'Letrinhas', 'Géis infantis Letrinhas para modelar e fixar o penteado das crianças, com brilho e sem resíduos.')
+  ('letrinhas', 'Letrinhas', 'Géis infantis Letrinhas para modelar e fixar o penteado das crianças, com brilho e sem resíduos.'),
+  ('barbearia', 'Barbearia', 'Navalhas e acessórios Edel Solingen para um barbear preciso de qualidade profissional.')
 on conflict (slug) do update set
   name = excluded.name,
   description = excluded.description;
@@ -163,7 +164,11 @@ from (values
   ('pomada-finalizadora-efeito-teia-carmesim-80g', 'Pomada Finalizadora Efeito Teia Carmesim 80g', 'Carmesim', 'carmesim',
    'Pomada finalizadora efeito teia, fixação flexível e acabamento natural sem pesar os fios.',
    'A Pomada Finalizadora Efeito Teia Carmesim possui ativos inovadores que proporcionam maior flexibilidade para modelar, definir e fixar o penteado no estilo que desejar. Com efeito teia, garante fixação e modelagem para looks modernos e duradouros, com acabamento natural que define os fios sem pesar. Fácil de usar e remover, sem deixar resíduos no cabelo.',
-   '/images/products/47-pomada-finalizadora-teia-carmesim-80g.webp', '/produto/pomada-finalizadora-efeito-teia-carmesim-80g')
+   '/images/products/47-pomada-finalizadora-teia-carmesim-80g.webp', '/produto/pomada-finalizadora-efeito-teia-carmesim-80g'),
+  ('navalha-aco-inox-edel-solingen-3011548', 'Navalha Aço Inox Edel Solingen 3011.548', 'Edel Solingen', 'barbearia',
+   'Navalha em aço inoxidável para um barbear preciso e rente, com cabo de plástico e lâminas inclusas.',
+   'A Navalha Aço Inox 3011.548 Edel Solingen é a ferramenta perfeita para um barbear preciso e rente. Feita de aço inoxidável, garante um corte limpo e suave. O cabo de plástico proporciona um manuseio confortável e seguro, permitindo um controle total durante o uso. Vem com lâminas incluídas, ideal para uso pessoal, seja em casa ou em viagens.',
+   '/images/products/48-navalha-aco-inox-edel-solingen-3011548.webp', '/produto/navalha-aco-inox-edel-solingen-3011548')
 ) as v(slug, name, brand, category_slug, short_description, description, image_url, product_url)
 join categories c on c.slug = v.category_slug
 on conflict (slug) do update set
@@ -252,7 +257,10 @@ from (values
   ('gel-brilho-molhado-letrinhas-extra-forte-235g', 'mercado-livre', 'https://produto.mercadolivre.com.br/MLB-7901926564-gel-para-cabelo-infantil-letrinhas-brilho-molhado-_JM'),
   ('gel-brilho-molhado-letrinhas-extra-forte-235g', 'shopee', 'https://shopee.com.br/product/1931210934/58271554591'),
   ('gel-brilho-molhado-letrinhas-extra-forte-235g', 'tiktok-shop', 'https://www.tiktok.com/shop/br/pdp/1738231955941721182'),
-  ('pomada-finalizadora-efeito-teia-carmesim-80g', 'mercado-livre', 'https://produto.mercadolivre.com.br/MLB-7902073960-pomada-modeladora-carmesim-efeito-teia-elastica-80g-cera-_JM')
+  ('pomada-finalizadora-efeito-teia-carmesim-80g', 'mercado-livre', 'https://produto.mercadolivre.com.br/MLB-7902073960-pomada-modeladora-carmesim-efeito-teia-elastica-80g-cera-_JM'),
+  ('navalha-aco-inox-edel-solingen-3011548', 'mercado-livre', 'https://www.mercadolivre.com.br/navalha-aco-inox-9cm-edel-solingen-3011548-lamina-68-concava/p/MLB27526489?pdp_filters=item_id:MLB5305023545'),
+  ('navalha-aco-inox-edel-solingen-3011548', 'shopee', 'https://shopee.com.br/product/1931210934/58270846620'),
+  ('navalha-aco-inox-edel-solingen-3011548', 'tiktok-shop', 'https://vt.tiktok.com/ZS9fdvXDAj2Nc-gx2lx/')
 ) as v(product_slug, marketplace_slug, url)
 join products p on p.slug = v.product_slug
 join marketplaces m on m.slug = v.marketplace_slug
