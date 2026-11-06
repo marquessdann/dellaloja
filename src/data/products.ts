@@ -1482,6 +1482,49 @@ export const products: Product[] = [
       },
     ],
   },
+  {
+    id: "49",
+    slug: "cera-modeladora-extra-forte-carmesim",
+    name: "Cera Modeladora Extra Forte Carmesim",
+    brand: "Carmesim",
+    category: "carmesim",
+    shortDescription: "Cera modeladora extra forte, com brilho suave e cera de abelha para maciez e hidratação.",
+    description:
+      "A Cera Modeladora Extra Forte Carmesim ajuda a definir o cabelo sem marcar tanto o penteado como um gel fixador. Proporciona fios mais firmes e agrupados, com consistência adequada. A cera confere um brilho suave sem deixar sensação pegajosa, sendo composta por elementos naturais como a cera de abelha, que contribui para a maciez e hidratação dos cabelos, além de possuir uma fragrância inspiradora.",
+    highlights: [
+      "Fixação extra forte",
+      "Define o cabelo sem marcar como gel",
+      "Fios mais firmes e agrupados",
+      "Brilho suave, sem sensação pegajosa",
+      "Com cera de abelha — maciez e hidratação",
+      "Fragrância inspiradora",
+      "Ação anti-frizz",
+      "Marca Carmesim",
+    ],
+    image: "/images/products/49-cera-modeladora-extra-forte-carmesim.webp",
+    images: [
+      "/images/products/49-cera-modeladora-extra-forte-carmesim.webp",
+      "/images/products/49-cera-modeladora-extra-forte-carmesim-tampa.webp",
+      "/images/products/49-cera-modeladora-extra-forte-carmesim-destaque.webp",
+      "/images/products/49-cera-modeladora-extra-forte-carmesim-aberta.webp",
+    ],
+    externalUrl: "#",
+    isNew: true,
+    marketplaceLinks: [
+      {
+        label: "Ver no Mercado Livre",
+        url: "https://www.mercadolivre.com.br/kit-com-3-pomadas-cera-modeladoras-extra-forte-pomada-cabelo/up/MLBU5681659743?pdp_filters=item_id:MLB7901946794",
+      },
+      {
+        label: "Ver na Shopee",
+        url: "https://shopee.com.br/product/1931210934/58271039008",
+      },
+      {
+        label: "Ver no TikTok Shop",
+        url: "https://www.tiktok.com/shop/br/pdp/1738143325002105950",
+      },
+    ],
+  },
 ];
 
 export function getProduct(slug: string) {

@@ -168,7 +168,11 @@ from (values
   ('navalha-aco-inox-edel-solingen-3011548', 'Navalha Aço Inox Edel Solingen 3011.548', 'Edel Solingen', 'barbearia',
    'Navalha em aço inoxidável para um barbear preciso e rente, com cabo de plástico e lâminas inclusas.',
    'A Navalha Aço Inox 3011.548 Edel Solingen é a ferramenta perfeita para um barbear preciso e rente. Feita de aço inoxidável, garante um corte limpo e suave. O cabo de plástico proporciona um manuseio confortável e seguro, permitindo um controle total durante o uso. Vem com lâminas incluídas, ideal para uso pessoal, seja em casa ou em viagens.',
-   '/images/products/48-navalha-aco-inox-edel-solingen-3011548.webp', '/produto/navalha-aco-inox-edel-solingen-3011548')
+   '/images/products/48-navalha-aco-inox-edel-solingen-3011548.webp', '/produto/navalha-aco-inox-edel-solingen-3011548'),
+  ('cera-modeladora-extra-forte-carmesim', 'Cera Modeladora Extra Forte Carmesim', 'Carmesim', 'carmesim',
+   'Cera modeladora extra forte, com brilho suave e cera de abelha para maciez e hidratação.',
+   'A Cera Modeladora Extra Forte Carmesim ajuda a definir o cabelo sem marcar tanto o penteado como um gel fixador. Proporciona fios mais firmes e agrupados, com consistência adequada. A cera confere um brilho suave sem deixar sensação pegajosa, sendo composta por elementos naturais como a cera de abelha.',
+   '/images/products/49-cera-modeladora-extra-forte-carmesim.webp', '/produto/cera-modeladora-extra-forte-carmesim')
 ) as v(slug, name, brand, category_slug, short_description, description, image_url, product_url)
 join categories c on c.slug = v.category_slug
 on conflict (slug) do update set
@@ -260,7 +264,10 @@ from (values
   ('pomada-finalizadora-efeito-teia-carmesim-80g', 'mercado-livre', 'https://produto.mercadolivre.com.br/MLB-7902073960-pomada-modeladora-carmesim-efeito-teia-elastica-80g-cera-_JM'),
   ('navalha-aco-inox-edel-solingen-3011548', 'mercado-livre', 'https://www.mercadolivre.com.br/navalha-aco-inox-9cm-edel-solingen-3011548-lamina-68-concava/p/MLB27526489?pdp_filters=item_id:MLB5305023545'),
   ('navalha-aco-inox-edel-solingen-3011548', 'shopee', 'https://shopee.com.br/product/1931210934/58270846620'),
-  ('navalha-aco-inox-edel-solingen-3011548', 'tiktok-shop', 'https://vt.tiktok.com/ZS9fdvXDAj2Nc-gx2lx/')
+  ('navalha-aco-inox-edel-solingen-3011548', 'tiktok-shop', 'https://vt.tiktok.com/ZS9fdvXDAj2Nc-gx2lx/'),
+  ('cera-modeladora-extra-forte-carmesim', 'mercado-livre', 'https://www.mercadolivre.com.br/kit-com-3-pomadas-cera-modeladoras-extra-forte-pomada-cabelo/up/MLBU5681659743?pdp_filters=item_id:MLB7901946794'),
+  ('cera-modeladora-extra-forte-carmesim', 'shopee', 'https://shopee.com.br/product/1931210934/58271039008'),
+  ('cera-modeladora-extra-forte-carmesim', 'tiktok-shop', 'https://www.tiktok.com/shop/br/pdp/1738143325002105950')
 ) as v(product_slug, marketplace_slug, url)
 join products p on p.slug = v.product_slug
 join marketplaces m on m.slug = v.marketplace_slug
