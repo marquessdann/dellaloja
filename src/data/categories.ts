@@ -1,4 +1,10 @@
-export type CategorySlug = "body-splash" | "sobrancelhas" | "cilios" | "pinca-depilacao" | "mirras";
+export type CategorySlug =
+  | "body-splash"
+  | "sobrancelhas"
+  | "cilios"
+  | "pinca-depilacao"
+  | "mirras"
+  | "carmesim";
 
 export interface Category {
   slug: CategorySlug;
@@ -41,7 +47,14 @@ export const categories: Category[] = [
     slug: "mirras",
     name: "Mirras",
     shortName: "Mirras",
-    description: "Pastas e produtos de finalização capilar para modelar e fixar o penteado com estilo.",
+    description: "Pomadas e ceras Mirra's para modelar e fixar o penteado com estilo.",
+    image: "/images/products/43-pomada-estilizadora-3em1-mirras-150g.webp",
+  },
+  {
+    slug: "carmesim",
+    name: "Carmesim",
+    shortName: "Carmesim",
+    description: "Pastas e pomadas Carmesim de finalização capilar, para fixação e estilo duradouros.",
     image: "/images/products/40-pasta-modeladora-carmesim-80g.webp",
   },
 ];

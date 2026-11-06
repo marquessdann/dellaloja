@@ -19,7 +19,8 @@ insert into categories (slug, name, description) values
   ('sobrancelhas', 'Sobrancelhas', 'Henna e produtos profissionais para design e coloração de sobrancelhas.'),
   ('cilios', 'Cílios', 'Produtos profissionais para aplicação, proteção e cuidado de cílios.'),
   ('pinca-depilacao', 'Pinças & Depilação', 'Pinças profissionais Edel Solingen para design de sobrancelhas e depilação de precisão.'),
-  ('mirras', 'Mirras', 'Pastas e produtos de finalização capilar para modelar e fixar o penteado com estilo.')
+  ('mirras', 'Mirras', 'Pomadas e ceras Mirra''s para modelar e fixar o penteado com estilo.'),
+  ('carmesim', 'Carmesim', 'Pastas e pomadas Carmesim de finalização capilar, para fixação e estilo duradouros.')
 on conflict (slug) do update set
   name = excluded.name,
   description = excluded.description;
@@ -130,22 +131,26 @@ from (values
    'Kit com 3 pinças laqueadas pretas, ponta fina de precisão, idênticas.',
    'Kit com 3 pinças laqueadas idênticas Edel Solingen, em acabamento preto fosco e ponta fina de precisão, ideais para design de sobrancelhas e remoção de pelos curtos e finos. As pontas são perfeitamente alinhadas, garantindo ótima aderência mesmo nos pelos mais curtos, com qualidade e precisão Solingen legítimas em cada peça. Ter 3 pinças traz mais praticidade e economia: profissionais podem alternar entre clientes enquanto uma é higienizada, sempre com uma reserva pronta para uso — deixe uma em casa, uma no trabalho e uma na bolsa. Esterilizável com álcool 70%, perfeito para designers de sobrancelhas, profissionais da beleza e uso pessoal.',
    '/images/products/39-kit-pinca-laqueada-preta-ponta-fina.webp', '/produto/kit-3-pincas-laqueadas-preta-ponta-fina'),
-  ('pasta-modeladora-efeito-cola-carmesim-80g', 'Pasta Modeladora Efeito Cola Carmesim 80g', 'Carmesim', 'mirras',
+  ('pasta-modeladora-efeito-cola-carmesim-80g', 'Pasta Modeladora Efeito Cola Carmesim 80g', 'Carmesim', 'carmesim',
    'Pasta modeladora efeito cola, vegana e dermatologicamente testada, para fixação e estilo duradouros.',
    'Pasta modeladora efeito cola Carmesim, dermatologicamente testada — a fórmula vegana e livre de glúten garante segurança e conforto para o uso diário. Os ingredientes de alta qualidade promovem não apenas a modelagem, mas também a saúde dos fios, evitando danos e ressecamento. O pote de 80g é prático e fácil de transportar, tornando-se um aliado indispensável na sua rotina de cuidados capilares. Aplique uma pequena quantidade nos cabelos secos ou úmidos e modele conforme desejado — com Carmesim, você tem a liberdade de expressar sua personalidade através do seu cabelo.',
    '/images/products/40-pasta-modeladora-carmesim-80g.webp', '/produto/pasta-modeladora-efeito-cola-carmesim-80g'),
-  ('pomada-matte-effect-carmesim-50g', 'Pomada de Fixação Matte Effect Efeito Seco Carmesim 50g', 'Carmesim', 'mirras',
+  ('pomada-matte-effect-carmesim-50g', 'Pomada de Fixação Matte Effect Efeito Seco Carmesim 50g', 'Carmesim', 'carmesim',
    'Pomada de fixação matte effect, toque seco e textura leve, para fixação forte sem brilho.',
    'A Pomada de Fixação Matte Effect Efeito Seco Carmesim possui ativos inovadores que proporcionam maior flexibilidade para modelar, definir e fixar o penteado no estilo que desejar, deixando os cabelos com toque natural. Com textura leve e não oleosa, é ideal para finalizar cabelos curtos e médios com acabamento sem brilho, além disso, garante a fixação do penteado durante o dia todo.',
    '/images/products/41-pomada-matte-effect-carmesim-50g.webp', '/produto/pomada-matte-effect-carmesim-50g'),
-  ('pomada-estilizadora-carmesim-3-em-1-80g', 'Pomada Estilizadora Carmesim 3 em 1 80g', 'Carmesim', 'mirras',
+  ('pomada-estilizadora-carmesim-3-em-1-80g', 'Pomada Estilizadora Carmesim 3 em 1 80g', 'Carmesim', 'carmesim',
    'Pomada estilizadora 3 em 1 com ação anti-frizz, não resseca e não deixa resíduos.',
    'A Pomada Estilizadora Carmesim ajuda a modelar e finalizar os cabelos no dia a dia. A fórmula 3 em 1 é indicada na embalagem para estilização, com ação anti-frizz. Segundo o rótulo, não resseca os fios e não deixa resíduos, além de ser dermatologicamente testada e aprovada.',
    '/images/products/42-pomada-estilizadora-carmesim-3em1-80g.webp', '/produto/pomada-estilizadora-carmesim-3-em-1-80g'),
   ('pomada-estilizadora-3-em-1-mirras-150g', 'Pomada Estilizadora 3 em 1 Mirra''s 150g', 'Mirra''s', 'mirras',
    'A primeira pomada registrada no Brasil — fórmula 3 em 1 com excelente fixação e que não resseca os fios.',
    'Lançada em 2012, a Pomada Estilizadora 3 em 1 Mirra''s é referência em qualidade, estilo e performance — a primeira pomada registrada no Brasil. Sua fórmula proporciona fixação, modelagem e acabamento em um único produto, garantindo praticidade e um visual impecável por mais tempo.',
-   '/images/products/43-pomada-estilizadora-3em1-mirras-150g.webp', '/produto/pomada-estilizadora-3-em-1-mirras-150g')
+   '/images/products/43-pomada-estilizadora-3em1-mirras-150g.webp', '/produto/pomada-estilizadora-3-em-1-mirras-150g'),
+  ('pomada-finalizadora-teia-elastica-mirras-150g', 'Pomada Finalizadora Efeito Teia Elástica Mirra''s 150g', 'Mirra''s', 'mirras',
+   'Pomada finalizadora efeito teia elástica, fixação e modelagem com resultado duradouro e natural.',
+   'A Pomada Finalizadora Efeito Teia Elástica Mirra''s é o produto ideal para quem busca fixação e modelagem dos cabelos. Sua consistência em pomada permite pentear os fios com facilidade, garantindo um visual impecável. Com teste oftalmológico e dermatologicamente testado, é segura para uso diário.',
+   '/images/products/44-pomada-finalizadora-teia-elastica-mirras-150g.webp', '/produto/pomada-finalizadora-teia-elastica-mirras-150g')
 ) as v(slug, name, brand, category_slug, short_description, description, image_url, product_url)
 join categories c on c.slug = v.category_slug
 on conflict (slug) do update set
@@ -225,7 +230,10 @@ from (values
   ('pomada-estilizadora-carmesim-3-em-1-80g', 'tiktok-shop', 'https://www.tiktok.com/shop/br/pdp/1738143360334070878'),
   ('pomada-estilizadora-3-em-1-mirras-150g', 'mercado-livre', 'https://produto.mercadolivre.com.br/MLB-5433100331-kit-3-pomadas-estlizadora-3-em-1-mirras-_JM'),
   ('pomada-estilizadora-3-em-1-mirras-150g', 'shopee', 'https://shopee.com.br/product/1931210934/58270975416'),
-  ('pomada-estilizadora-3-em-1-mirras-150g', 'tiktok-shop', 'https://www.tiktok.com/shop/br/pdp/1738105409726022750')
+  ('pomada-estilizadora-3-em-1-mirras-150g', 'tiktok-shop', 'https://www.tiktok.com/shop/br/pdp/1738105409726022750'),
+  ('pomada-finalizadora-teia-elastica-mirras-150g', 'mercado-livre', 'https://www.mercadolivre.com.br/pomada-modeladora-carmesim-efeito-teia-elastica-80g-cera/up/MLBU5730971108?pdp_filters=item_id:MLB7902073960'),
+  ('pomada-finalizadora-teia-elastica-mirras-150g', 'shopee', 'https://shopee.com.br/product/1931210934/58220995844'),
+  ('pomada-finalizadora-teia-elastica-mirras-150g', 'tiktok-shop', 'https://www.tiktok.com/shop/br/pdp/1738143364279993438')
 ) as v(product_slug, marketplace_slug, url)
 join products p on p.slug = v.product_slug
 join marketplaces m on m.slug = v.marketplace_slug

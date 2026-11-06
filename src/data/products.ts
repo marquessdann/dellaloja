@@ -1029,7 +1029,7 @@ export const products: Product[] = [
     slug: "pasta-modeladora-efeito-cola-carmesim-80g",
     name: "Pasta Modeladora Efeito Cola Carmesim 80g",
     brand: "Carmesim",
-    category: "mirras",
+    category: "carmesim",
     shortDescription: "Pasta modeladora efeito cola, vegana e dermatologicamente testada, para fixação e estilo duradouros.",
     description:
       "Pasta modeladora efeito cola Carmesim, dermatologicamente testada — a fórmula vegana e livre de glúten garante segurança e conforto para o uso diário. Os ingredientes de alta qualidade promovem não apenas a modelagem, mas também a saúde dos fios, evitando danos e ressecamento. O pote de 80g é prático e fácil de transportar, tornando-se um aliado indispensável na sua rotina de cuidados capilares. Aplique uma pequena quantidade nos cabelos secos ou úmidos e modele conforme desejado — com Carmesim, você tem a liberdade de expressar sua personalidade através do seu cabelo.",
@@ -1072,7 +1072,7 @@ export const products: Product[] = [
     slug: "pomada-matte-effect-carmesim-50g",
     name: "Pomada de Fixação Matte Effect Efeito Seco Carmesim 50g",
     brand: "Carmesim",
-    category: "mirras",
+    category: "carmesim",
     shortDescription: "Pomada de fixação matte effect, toque seco e textura leve, para fixação forte sem brilho.",
     description:
       "A Pomada de Fixação Matte Effect Efeito Seco Carmesim possui ativos inovadores que proporcionam maior flexibilidade para modelar, definir e fixar o penteado no estilo que desejar, deixando os cabelos com toque natural. Com textura leve e não oleosa, é ideal para finalizar cabelos curtos e médios com acabamento sem brilho, além disso, garante a fixação do penteado durante o dia todo. Modo de usar: espalhe uma pequena quantidade do produto nas mãos e aplique nos cabelos secos ou úmidos, modelando conforme desejar — evite a raiz do cabelo. A Pomada Matte não permite remodelação ao longo do dia: use com os fios molhados para um efeito mais natural e com os cabelos secos para finalização matte sem brilho.",
@@ -1114,7 +1114,7 @@ export const products: Product[] = [
     slug: "pomada-estilizadora-carmesim-3-em-1-80g",
     name: "Pomada Estilizadora Carmesim 3 em 1 80g",
     brand: "Carmesim",
-    category: "mirras",
+    category: "carmesim",
     shortDescription: "Pomada estilizadora 3 em 1 com ação anti-frizz, não resseca e não deixa resíduos.",
     description:
       "A Pomada Estilizadora Carmesim ajuda a modelar e finalizar os cabelos no dia a dia. A fórmula 3 em 1 é indicada na embalagem para estilização, com ação anti-frizz. Segundo o rótulo, não resseca os fios e não deixa resíduos, além de ser dermatologicamente testada e aprovada. Modo de usar: aplique uma pequena quantidade nas mãos e distribua pelos cabelos, modelando conforme o penteado desejado — se precisar, acrescente mais produto aos poucos. Consulte as instruções da embalagem antes de usar.",
@@ -1191,6 +1191,48 @@ export const products: Product[] = [
       {
         label: "Ver no TikTok Shop",
         url: "https://www.tiktok.com/shop/br/pdp/1738105409726022750",
+      },
+    ],
+  },
+  {
+    id: "44",
+    slug: "pomada-finalizadora-teia-elastica-mirras-150g",
+    name: "Pomada Finalizadora Efeito Teia Elástica Mirra's 150g",
+    brand: "Mirra's",
+    category: "mirras",
+    shortDescription: "Pomada finalizadora efeito teia elástica, fixação e modelagem com resultado duradouro e natural.",
+    description:
+      "A Pomada Finalizadora Efeito Teia Elástica Mirra's é o produto ideal para quem busca fixação e modelagem dos cabelos. Sua consistência em pomada permite pentear os fios com facilidade, garantindo um visual impecável. Com teste oftalmológico e dermatologicamente testado, é segura para uso diário. A textura elástica tipo teia proporciona um resultado duradouro e natural. A embalagem em pote de 150g é prática e fácil de transportar, ideal para levar na bolsa ou necessaire — uso profissional. Aproveite os benefícios da linha Finalizadora Mirra's e conquiste um penteado impecável em qualquer ocasião.",
+    highlights: [
+      "Efeito teia elástica — fixação e modelagem",
+      "Consistência em pomada, fácil de pentear",
+      "Ação anti-frizz",
+      "Testada dermatologicamente e oftalmologicamente",
+      "Resultado duradouro e natural",
+      "Segura para uso diário",
+      "Uso profissional",
+      "Pote de 150g, prático para transportar",
+    ],
+    image: "/images/products/44-pomada-finalizadora-teia-elastica-mirras-150g.webp",
+    images: [
+      "/images/products/44-pomada-finalizadora-teia-elastica-mirras-150g.webp",
+      "/images/products/44-pomada-finalizadora-teia-elastica-mirras-150g-aberta.webp",
+      "/images/products/44-pomada-finalizadora-teia-elastica-mirras-150g-trio.webp",
+    ],
+    externalUrl: "#",
+    isNew: true,
+    marketplaceLinks: [
+      {
+        label: "Ver no Mercado Livre",
+        url: "https://www.mercadolivre.com.br/pomada-modeladora-carmesim-efeito-teia-elastica-80g-cera/up/MLBU5730971108?pdp_filters=item_id:MLB7902073960",
+      },
+      {
+        label: "Ver na Shopee",
+        url: "https://shopee.com.br/product/1931210934/58220995844",
+      },
+      {
+        label: "Ver no TikTok Shop",
+        url: "https://www.tiktok.com/shop/br/pdp/1738143364279993438",
       },
     ],
   },
