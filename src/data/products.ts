@@ -1024,6 +1024,49 @@ export const products: Product[] = [
       },
     ],
   },
+  {
+    id: "40",
+    slug: "pasta-modeladora-efeito-cola-carmesim-80g",
+    name: "Pasta Modeladora Efeito Cola Carmesim 80g",
+    brand: "Carmesim",
+    category: "mirras",
+    shortDescription: "Pasta modeladora efeito cola, vegana e dermatologicamente testada, para fixação e estilo duradouros.",
+    description:
+      "Pasta modeladora efeito cola Carmesim, dermatologicamente testada — a fórmula vegana e livre de glúten garante segurança e conforto para o uso diário. Os ingredientes de alta qualidade promovem não apenas a modelagem, mas também a saúde dos fios, evitando danos e ressecamento. O pote de 80g é prático e fácil de transportar, tornando-se um aliado indispensável na sua rotina de cuidados capilares. Aplique uma pequena quantidade nos cabelos secos ou úmidos e modele conforme desejado — com Carmesim, você tem a liberdade de expressar sua personalidade através do seu cabelo.",
+    highlights: [
+      "Efeito cola — alta fixação",
+      "Dermatologicamente testada",
+      "Fórmula vegana",
+      "Livre de glúten",
+      "Promove a saúde dos fios",
+      "Evita danos e ressecamento",
+      "Pote de 80g, prático para transportar",
+      "Aplique em cabelos secos ou úmidos",
+    ],
+    image: "/images/products/40-pasta-modeladora-carmesim-80g.webp",
+    images: [
+      "/images/products/40-pasta-modeladora-carmesim-80g.webp",
+      "/images/products/40-pasta-modeladora-carmesim-80g-aberta.webp",
+      "/images/products/40-pasta-modeladora-carmesim-80g-fechada.webp",
+      "/images/products/40-pasta-modeladora-carmesim-80g-ambiente.webp",
+    ],
+    externalUrl: "#",
+    isNew: true,
+    marketplaceLinks: [
+      {
+        label: "Ver no Mercado Livre",
+        url: "https://produto.mercadolivre.com.br/MLB-5477542731-pasta-modeladora-efeito-cola-carmesim-80g-_JM",
+      },
+      {
+        label: "Ver na Shopee",
+        url: "https://shopee.com.br/product/1931210934/58271027322",
+      },
+      {
+        label: "Ver no TikTok Shop",
+        url: "https://www.tiktok.com/shop/br/pdp/1738143320849876062",
+      },
+    ],
+  },
 ];
 
 export function getProduct(slug: string) {

@@ -1,4 +1,4 @@
-export type CategorySlug = "body-splash" | "sobrancelhas" | "cilios" | "pinca-depilacao";
+export type CategorySlug = "body-splash" | "sobrancelhas" | "cilios" | "pinca-depilacao" | "mirras";
 
 export interface Category {
   slug: CategorySlug;
@@ -36,6 +36,13 @@ export const categories: Category[] = [
     shortName: "Pinças",
     description: "Pinças profissionais Edel Solingen para design de sobrancelhas e depilação de precisão.",
     image: "/images/products/25-kit-pinca-ponta-fina-edel-solingen-inox.webp",
+  },
+  {
+    slug: "mirras",
+    name: "Mirras",
+    shortName: "Mirras",
+    description: "Pastas e produtos de finalização capilar para modelar e fixar o penteado com estilo.",
+    image: "/images/products/40-pasta-modeladora-carmesim-80g.webp",
   },
 ];
 

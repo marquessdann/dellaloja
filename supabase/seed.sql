@@ -18,7 +18,8 @@ insert into categories (slug, name, description) values
   ('body-splash', 'Coleção Enaldinho', 'Sprays corporais perfumados, refrescantes e cheios de personalidade.'),
   ('sobrancelhas', 'Sobrancelhas', 'Henna e produtos profissionais para design e coloração de sobrancelhas.'),
   ('cilios', 'Cílios', 'Produtos profissionais para aplicação, proteção e cuidado de cílios.'),
-  ('pinca-depilacao', 'Pinças & Depilação', 'Pinças profissionais Edel Solingen para design de sobrancelhas e depilação de precisão.')
+  ('pinca-depilacao', 'Pinças & Depilação', 'Pinças profissionais Edel Solingen para design de sobrancelhas e depilação de precisão.'),
+  ('mirras', 'Mirras', 'Pastas e produtos de finalização capilar para modelar e fixar o penteado com estilo.')
 on conflict (slug) do update set
   name = excluded.name,
   description = excluded.description;
@@ -128,7 +129,11 @@ from (values
   ('kit-3-pincas-laqueadas-preta-ponta-fina', 'Kit 3 Pinças Laqueadas Ponta Fina Preta Edel Solingen', 'Edel Solingen', 'pinca-depilacao',
    'Kit com 3 pinças laqueadas pretas, ponta fina de precisão, idênticas.',
    'Kit com 3 pinças laqueadas idênticas Edel Solingen, em acabamento preto fosco e ponta fina de precisão, ideais para design de sobrancelhas e remoção de pelos curtos e finos. As pontas são perfeitamente alinhadas, garantindo ótima aderência mesmo nos pelos mais curtos, com qualidade e precisão Solingen legítimas em cada peça. Ter 3 pinças traz mais praticidade e economia: profissionais podem alternar entre clientes enquanto uma é higienizada, sempre com uma reserva pronta para uso — deixe uma em casa, uma no trabalho e uma na bolsa. Esterilizável com álcool 70%, perfeito para designers de sobrancelhas, profissionais da beleza e uso pessoal.',
-   '/images/products/39-kit-pinca-laqueada-preta-ponta-fina.webp', '/produto/kit-3-pincas-laqueadas-preta-ponta-fina')
+   '/images/products/39-kit-pinca-laqueada-preta-ponta-fina.webp', '/produto/kit-3-pincas-laqueadas-preta-ponta-fina'),
+  ('pasta-modeladora-efeito-cola-carmesim-80g', 'Pasta Modeladora Efeito Cola Carmesim 80g', 'Carmesim', 'mirras',
+   'Pasta modeladora efeito cola, vegana e dermatologicamente testada, para fixação e estilo duradouros.',
+   'Pasta modeladora efeito cola Carmesim, dermatologicamente testada — a fórmula vegana e livre de glúten garante segurança e conforto para o uso diário. Os ingredientes de alta qualidade promovem não apenas a modelagem, mas também a saúde dos fios, evitando danos e ressecamento. O pote de 80g é prático e fácil de transportar, tornando-se um aliado indispensável na sua rotina de cuidados capilares. Aplique uma pequena quantidade nos cabelos secos ou úmidos e modele conforme desejado — com Carmesim, você tem a liberdade de expressar sua personalidade através do seu cabelo.',
+   '/images/products/40-pasta-modeladora-carmesim-80g.webp', '/produto/pasta-modeladora-efeito-cola-carmesim-80g')
 ) as v(slug, name, brand, category_slug, short_description, description, image_url, product_url)
 join categories c on c.slug = v.category_slug
 on conflict (slug) do update set
@@ -196,7 +201,10 @@ from (values
   ('henna-sobrancelhas-master-loiro-escuro-3g', 'shopee', 'https://shopee.com.br/product/1931210934/58269806541'),
   ('kit-3-pincas-laqueadas-preta-ponta-fina', 'mercado-livre', 'https://www.mercadolivre.com.br/kit-3-pincas-pontas-finas-laqueadas/up/MLBU5645818538?pdp_filters=item_id:MLB7861994330'),
   ('kit-3-pincas-laqueadas-preta-ponta-fina', 'shopee', 'https://shopee.com.br/product/1931210934/58221032048'),
-  ('kit-3-pincas-laqueadas-preta-ponta-fina', 'tiktok-shop', 'https://www.tiktok.com/shop/br/pdp/1738143389286696030')
+  ('kit-3-pincas-laqueadas-preta-ponta-fina', 'tiktok-shop', 'https://www.tiktok.com/shop/br/pdp/1738143389286696030'),
+  ('pasta-modeladora-efeito-cola-carmesim-80g', 'mercado-livre', 'https://produto.mercadolivre.com.br/MLB-5477542731-pasta-modeladora-efeito-cola-carmesim-80g-_JM'),
+  ('pasta-modeladora-efeito-cola-carmesim-80g', 'shopee', 'https://shopee.com.br/product/1931210934/58271027322'),
+  ('pasta-modeladora-efeito-cola-carmesim-80g', 'tiktok-shop', 'https://www.tiktok.com/shop/br/pdp/1738143320849876062')
 ) as v(product_slug, marketplace_slug, url)
 join products p on p.slug = v.product_slug
 join marketplaces m on m.slug = v.marketplace_slug
