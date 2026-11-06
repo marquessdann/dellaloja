@@ -1223,10 +1223,6 @@ export const products: Product[] = [
     isNew: true,
     marketplaceLinks: [
       {
-        label: "Ver no Mercado Livre",
-        url: "https://www.mercadolivre.com.br/pomada-modeladora-carmesim-efeito-teia-elastica-80g-cera/up/MLBU5730971108?pdp_filters=item_id:MLB7902073960",
-      },
-      {
         label: "Ver na Shopee",
         url: "https://shopee.com.br/product/1931210934/58220995844",
       },

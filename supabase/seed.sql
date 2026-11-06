@@ -231,7 +231,6 @@ from (values
   ('pomada-estilizadora-3-em-1-mirras-150g', 'mercado-livre', 'https://produto.mercadolivre.com.br/MLB-5433100331-kit-3-pomadas-estlizadora-3-em-1-mirras-_JM'),
   ('pomada-estilizadora-3-em-1-mirras-150g', 'shopee', 'https://shopee.com.br/product/1931210934/58270975416'),
   ('pomada-estilizadora-3-em-1-mirras-150g', 'tiktok-shop', 'https://www.tiktok.com/shop/br/pdp/1738105409726022750'),
-  ('pomada-finalizadora-teia-elastica-mirras-150g', 'mercado-livre', 'https://www.mercadolivre.com.br/pomada-modeladora-carmesim-efeito-teia-elastica-80g-cera/up/MLBU5730971108?pdp_filters=item_id:MLB7902073960'),
   ('pomada-finalizadora-teia-elastica-mirras-150g', 'shopee', 'https://shopee.com.br/product/1931210934/58220995844'),
   ('pomada-finalizadora-teia-elastica-mirras-150g', 'tiktok-shop', 'https://www.tiktok.com/shop/br/pdp/1738143364279993438')
 ) as v(product_slug, marketplace_slug, url)
