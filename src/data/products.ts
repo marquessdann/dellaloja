@@ -1109,6 +1109,48 @@ export const products: Product[] = [
       },
     ],
   },
+  {
+    id: "42",
+    slug: "pomada-estilizadora-carmesim-3-em-1-80g",
+    name: "Pomada Estilizadora Carmesim 3 em 1 80g",
+    brand: "Carmesim",
+    category: "mirras",
+    shortDescription: "Pomada estilizadora 3 em 1 com ação anti-frizz, não resseca e não deixa resíduos.",
+    description:
+      "A Pomada Estilizadora Carmesim ajuda a modelar e finalizar os cabelos no dia a dia. A fórmula 3 em 1 é indicada na embalagem para estilização, com ação anti-frizz. Segundo o rótulo, não resseca os fios e não deixa resíduos, além de ser dermatologicamente testada e aprovada. Modo de usar: aplique uma pequena quantidade nas mãos e distribua pelos cabelos, modelando conforme o penteado desejado — se precisar, acrescente mais produto aos poucos. Consulte as instruções da embalagem antes de usar.",
+    highlights: [
+      "Fórmula 3 em 1 — modela, define e controla",
+      "Ação anti-frizz",
+      "Não resseca os fios",
+      "Não deixa resíduos",
+      "Fixação forte e duradoura",
+      "Dermatologicamente testada e aprovada",
+      "Ideal para todos os tipos de cabelo",
+      "Pote de 80g com tampa",
+    ],
+    image: "/images/products/42-pomada-estilizadora-carmesim-3em1-80g.webp",
+    images: [
+      "/images/products/42-pomada-estilizadora-carmesim-3em1-80g.webp",
+      "/images/products/42-pomada-estilizadora-carmesim-3em1-80g-caracteristicas.webp",
+      "/images/products/42-pomada-estilizadora-carmesim-3em1-80g-fixacao.webp",
+    ],
+    externalUrl: "#",
+    isNew: true,
+    marketplaceLinks: [
+      {
+        label: "Ver no Mercado Livre",
+        url: "https://www.mercadolivre.com.br/pomada-estilizadora-carmesim-3-em-1-cabelo-80g-modeladora/up/MLBU5730839836?pdp_filters=item_id:MLB5477518475",
+      },
+      {
+        label: "Ver na Shopee",
+        url: "https://shopee.com.br/product/1931210934/58271027155",
+      },
+      {
+        label: "Ver no TikTok Shop",
+        url: "https://www.tiktok.com/shop/br/pdp/1738143360334070878",
+      },
+    ],
+  },
 ];
 
 export function getProduct(slug: string) {

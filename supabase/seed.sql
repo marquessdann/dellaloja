@@ -137,7 +137,11 @@ from (values
   ('pomada-matte-effect-carmesim-50g', 'Pomada de Fixação Matte Effect Efeito Seco Carmesim 50g', 'Carmesim', 'mirras',
    'Pomada de fixação matte effect, toque seco e textura leve, para fixação forte sem brilho.',
    'A Pomada de Fixação Matte Effect Efeito Seco Carmesim possui ativos inovadores que proporcionam maior flexibilidade para modelar, definir e fixar o penteado no estilo que desejar, deixando os cabelos com toque natural. Com textura leve e não oleosa, é ideal para finalizar cabelos curtos e médios com acabamento sem brilho, além disso, garante a fixação do penteado durante o dia todo.',
-   '/images/products/41-pomada-matte-effect-carmesim-50g.webp', '/produto/pomada-matte-effect-carmesim-50g')
+   '/images/products/41-pomada-matte-effect-carmesim-50g.webp', '/produto/pomada-matte-effect-carmesim-50g'),
+  ('pomada-estilizadora-carmesim-3-em-1-80g', 'Pomada Estilizadora Carmesim 3 em 1 80g', 'Carmesim', 'mirras',
+   'Pomada estilizadora 3 em 1 com ação anti-frizz, não resseca e não deixa resíduos.',
+   'A Pomada Estilizadora Carmesim ajuda a modelar e finalizar os cabelos no dia a dia. A fórmula 3 em 1 é indicada na embalagem para estilização, com ação anti-frizz. Segundo o rótulo, não resseca os fios e não deixa resíduos, além de ser dermatologicamente testada e aprovada.',
+   '/images/products/42-pomada-estilizadora-carmesim-3em1-80g.webp', '/produto/pomada-estilizadora-carmesim-3-em-1-80g')
 ) as v(slug, name, brand, category_slug, short_description, description, image_url, product_url)
 join categories c on c.slug = v.category_slug
 on conflict (slug) do update set
@@ -211,7 +215,10 @@ from (values
   ('pasta-modeladora-efeito-cola-carmesim-80g', 'tiktok-shop', 'https://www.tiktok.com/shop/br/pdp/1738143320849876062'),
   ('pomada-matte-effect-carmesim-50g', 'mercado-livre', 'https://produto.mercadolivre.com.br/MLB-5477544623-pomada-matte-50g-carmesim-capilar-modeladora-toque-seco-poma-_JM'),
   ('pomada-matte-effect-carmesim-50g', 'shopee', 'https://shopee.com.br/product/1931210934/58271017905'),
-  ('pomada-matte-effect-carmesim-50g', 'tiktok-shop', 'https://www.tiktok.com/shop/br/pdp/1738143264751322206')
+  ('pomada-matte-effect-carmesim-50g', 'tiktok-shop', 'https://www.tiktok.com/shop/br/pdp/1738143264751322206'),
+  ('pomada-estilizadora-carmesim-3-em-1-80g', 'mercado-livre', 'https://www.mercadolivre.com.br/pomada-estilizadora-carmesim-3-em-1-cabelo-80g-modeladora/up/MLBU5730839836?pdp_filters=item_id:MLB5477518475'),
+  ('pomada-estilizadora-carmesim-3-em-1-80g', 'shopee', 'https://shopee.com.br/product/1931210934/58271027155'),
+  ('pomada-estilizadora-carmesim-3-em-1-80g', 'tiktok-shop', 'https://www.tiktok.com/shop/br/pdp/1738143360334070878')
 ) as v(product_slug, marketplace_slug, url)
 join products p on p.slug = v.product_slug
 join marketplaces m on m.slug = v.marketplace_slug
