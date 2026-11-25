@@ -1,5 +1,4 @@
 export type CategorySlug =
-  | "body-splash"
   | "sobrancelhas"
   | "cilios"
   | "pinca-depilacao"
@@ -17,13 +16,6 @@ export interface Category {
 }
 
 export const categories: Category[] = [
-  {
-    slug: "body-splash",
-    name: "Coleção Enaldinho",
-    shortName: "Enaldinho",
-    description: "Sprays corporais perfumados, refrescantes e cheios de personalidade.",
-    image: "/images/promo/colecao-enaldinho-completa.webp",
-  },
   {
     slug: "sobrancelhas",
     name: "Sobrancelhas",

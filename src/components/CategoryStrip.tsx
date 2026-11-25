@@ -4,11 +4,11 @@ import { Reveal } from "./Reveal";
 
 const PROMO_IMAGES = [
   {
-    src: "/images/promo/colecao-enaldinho.webp",
-    alt: "Coleção Enaldinho - toda a linha de produtos",
-    width: 1063,
-    height: 1456,
-    category: "body-splash",
+    src: "/images/products/48-navalha-aco-inox-edel-solingen-3011548.webp",
+    alt: "Navalha Aço Inox Edel Solingen 3011.548",
+    width: 450,
+    height: 600,
+    category: "barbearia",
   },
   {
     src: "/images/products/25-kit-pinca-ponta-fina-edel-solingen-inox-trio-render.webp",
@@ -18,11 +18,11 @@ const PROMO_IMAGES = [
     category: "pinca-depilacao",
   },
   {
-    src: "/images/promo/mutacao-labial-trio.webp",
-    alt: "Linha Mutação Labial Enaldinho",
-    width: 1696,
-    height: 1567,
-    category: "body-splash",
+    src: "/images/products/46-gel-brilho-molhado-letrinhas-235g-amarelo.webp",
+    alt: "Gel Brilho Molhado Letrinhas Extra Forte 235g",
+    width: 699,
+    height: 841,
+    category: "letrinhas",
   },
   {
     src: "/images/products/32-cola-cilios-master-elite-diamond-3g-sache.webp",

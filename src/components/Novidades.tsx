@@ -6,9 +6,9 @@ import { ProductCard } from "./ProductCard";
 import { SectionHeading } from "./SectionHeading";
 import { Reveal, StaggerGroup, StaggerItem } from "./Reveal";
 
-// One per category (not just the first 4 array entries, which would all be
-// body-splash) so this section actually shows "outras categorias" as titled.
-const CATEGORY_ORDER: CategorySlug[] = ["sobrancelhas", "pinca-depilacao", "cilios", "body-splash"];
+// One per category so this section actually shows "outras categorias" as
+// titled, instead of just the first 4 array entries from a single category.
+const CATEGORY_ORDER: CategorySlug[] = ["sobrancelhas", "pinca-depilacao", "cilios", "carmesim"];
 
 function pickDiverseNonFeatured(limit: number): Product[] {
   const pool = products.filter((p) => !p.featured);
