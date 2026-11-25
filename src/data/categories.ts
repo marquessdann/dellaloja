@@ -5,7 +5,8 @@ export type CategorySlug =
   | "mirras"
   | "carmesim"
   | "letrinhas"
-  | "barbearia";
+  | "barbearia"
+  | "rosa-selvagem";
 
 export interface Category {
   slug: CategorySlug;
@@ -64,6 +65,13 @@ export const categories: Category[] = [
     shortName: "Barbearia",
     description: "Navalhas e acessórios Edel Solingen para um barbear preciso de qualidade profissional.",
     image: "/images/products/48-navalha-aco-inox-edel-solingen-3011548.webp",
+  },
+  {
+    slug: "rosa-selvagem",
+    name: "Rosa Selvagem",
+    shortName: "Rosa Selvagem",
+    description: "Óleos corporais Rosa Selvagem com rosa mosqueta para uma pele mais uniforme, hidratada e iluminada.",
+    image: "/images/products/50-oleo-rosa-mosqueta-clareador-rosa-selvagem.webp",
   },
 ];
 

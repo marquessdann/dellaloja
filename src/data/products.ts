@@ -1199,6 +1199,35 @@ export const products: Product[] = [
       },
     ],
   },
+  {
+    id: "50",
+    slug: "oleo-rosa-mosqueta-clareador-rosa-selvagem-100ml",
+    name: "Óleo de Rosa Mosqueta Clareador 100ml - Rosa Selvagem",
+    brand: "Rosa Selvagem",
+    category: "rosa-selvagem",
+    shortDescription: "Óleo clareador com rosa mosqueta, girassol e amêndoas, para uma pele mais uniforme, hidratada e iluminada.",
+    description:
+      "Óleo de Rosa Mosqueta Clareador Rosa Selvagem, ideal para quem busca uma pele mais uniforme, hidratada e iluminada. Com óleo de girassol (hidrata, amacia e nutre a pele, ajudando na cicatrização e na reparação dos tecidos graças à vitamina E), óleo de amêndoas 100% puro (rico em vitaminas A, B1, B2, B6 e E, com ação antioxidante que ajuda a desinflamar e amenizar irritações) e óleo de rosa mosqueta — ingrediente raro, obtido das sementes de plantas silvestres do sul dos Andes chilenos, que ajuda a combater estrias, queloides e cicatrizes, além de auxiliar na produção de colágeno e elastina. Conta com tecnologia biomimética, que repõe proteínas, vitaminas e componentes ausentes da pele, ajudando na manutenção e recuperação da coloração original da pele manchada. Como usar: aplique 2 vezes ao dia em qualquer região do corpo com manchas ou foliculite — pode ser usado por gestantes. 100% natural, não testado em animais.",
+    highlights: [
+      "Com óleo de rosa mosqueta — combate estrias, queloides e cicatrizes",
+      "Óleo de girassol — hidrata, amacia e ajuda na cicatrização",
+      "Óleo de amêndoas — rico em vitaminas A, B1, B2, B6 e E",
+      "Tecnologia biomimética — recupera a coloração original da pele",
+      "Ajuda a uniformizar o tom e suavizar manchas escuras",
+      "Pele hidratada e iluminada, absorção rápida",
+      "100% natural, não testado em animais",
+      "100ml",
+    ],
+    image: "/images/products/50-oleo-rosa-mosqueta-clareador-rosa-selvagem.webp",
+    images: [
+      "/images/products/50-oleo-rosa-mosqueta-clareador-rosa-selvagem.webp",
+      "/images/products/50-oleo-rosa-mosqueta-clareador-rosa-selvagem-lifestyle.webp",
+      "/images/products/50-oleo-rosa-mosqueta-clareador-rosa-selvagem-embalagem.webp",
+      "/images/products/50-oleo-rosa-mosqueta-clareador-rosa-selvagem-beneficios.webp",
+    ],
+    externalUrl: "#",
+    isNew: true,
+  },
 ];
 
 export function getProduct(slug: string) {

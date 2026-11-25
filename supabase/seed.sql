@@ -21,7 +21,8 @@ insert into categories (slug, name, description) values
   ('mirras', 'Mirras', 'Pomadas e ceras Mirra''s para modelar e fixar o penteado com estilo.'),
   ('carmesim', 'Carmesim', 'Pastas e pomadas Carmesim de finalização capilar, para fixação e estilo duradouros.'),
   ('letrinhas', 'Letrinhas', 'Géis infantis Letrinhas para modelar e fixar o penteado das crianças, com brilho e sem resíduos.'),
-  ('barbearia', 'Barbearia', 'Navalhas e acessórios Edel Solingen para um barbear preciso de qualidade profissional.')
+  ('barbearia', 'Barbearia', 'Navalhas e acessórios Edel Solingen para um barbear preciso de qualidade profissional.'),
+  ('rosa-selvagem', 'Rosa Selvagem', 'Óleos corporais Rosa Selvagem com rosa mosqueta para uma pele mais uniforme, hidratada e iluminada.')
 on conflict (slug) do update set
   name = excluded.name,
   description = excluded.description;
@@ -139,7 +140,11 @@ from (values
   ('cera-modeladora-extra-forte-carmesim', 'Cera Modeladora Extra Forte Carmesim', 'Carmesim', 'carmesim',
    'Cera modeladora extra forte, com brilho suave e cera de abelha para maciez e hidratação.',
    'A Cera Modeladora Extra Forte Carmesim ajuda a definir o cabelo sem marcar tanto o penteado como um gel fixador. Proporciona fios mais firmes e agrupados, com consistência adequada. A cera confere um brilho suave sem deixar sensação pegajosa, sendo composta por elementos naturais como a cera de abelha.',
-   '/images/products/49-cera-modeladora-extra-forte-carmesim.webp', '/produto/cera-modeladora-extra-forte-carmesim')
+   '/images/products/49-cera-modeladora-extra-forte-carmesim.webp', '/produto/cera-modeladora-extra-forte-carmesim'),
+  ('oleo-rosa-mosqueta-clareador-rosa-selvagem-100ml', 'Óleo de Rosa Mosqueta Clareador 100ml - Rosa Selvagem', 'Rosa Selvagem', 'rosa-selvagem',
+   'Óleo clareador com rosa mosqueta, girassol e amêndoas, para uma pele mais uniforme, hidratada e iluminada.',
+   'Óleo de Rosa Mosqueta Clareador Rosa Selvagem, ideal para quem busca uma pele mais uniforme, hidratada e iluminada. Com óleo de girassol, óleo de amêndoas e óleo de rosa mosqueta, que ajuda a combater estrias, queloides e cicatrizes. Tecnologia biomimética que ajuda na manutenção e recuperação da coloração original da pele manchada.',
+   '/images/products/50-oleo-rosa-mosqueta-clareador-rosa-selvagem.webp', '/produto/oleo-rosa-mosqueta-clareador-rosa-selvagem-100ml')
 ) as v(slug, name, brand, category_slug, short_description, description, image_url, product_url)
 join categories c on c.slug = v.category_slug
 on conflict (slug) do update set
